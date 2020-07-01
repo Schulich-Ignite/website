@@ -1,3 +1,30 @@
 {{ define "main" }}
-    <h1>Hello World!</h1>
+
+    <section class="hero is-dark is-medium">
+        <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+
+            <img src="/img/ignite-logo.svg" width="40" height="60"> Schulich Ignite
+            </h1>
+            <h2 class="subtitle">
+                {{ .Params.tagline }}
+            </h2>
+        </div>
+        </div>
+    </section>
+
+    <section class="section" id="dates">
+        <h3 class="subtitle is-3">Dates/Times/Locations</h3>
+        <!--TODO: Add in a feed from the lecture system-->
+    </section>
+
+    <section class="section" id="signup">
+        <h3 class="subtitle is-3">Signup</h3>
+    </section>
+
+    <section class="section" id="events">
+        <h3 class="subtitle is-3">Events/News</h3>
+        <!--TODO: Add in a feed from the events system-->
+    </section>
 {{ end }}
