@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+    <h1>these are events:</h1>
+    <ul>
+    {{ range .Data.Pages }}
+        <li>
+            <h4>{{ .Params.name }}</h4>
+            <p>{{ .Params.number }}</p>
+            {{ .Summary }}
+        </li>
+        <br />
+    {{ end }}
+    </ul>
+{{ end }}
