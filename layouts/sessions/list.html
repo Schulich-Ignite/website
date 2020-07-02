@@ -1,12 +1,12 @@
 {{ define "main" }}
 
-    <h1>these are events:</h1>
+    <h1>these are the sessions:</h1>
     <ul>
     {{ range .Data.Pages }}
         <li>
             <h4>{{ .Params.name }}</h4>
             <p>{{ .Params.number }}</p>
-            {{ .Summary }}
+            <p>{{ .Summary }}</p>
         </li>
         <br />
     {{ end }}

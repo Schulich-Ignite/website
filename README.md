@@ -1,4 +1,4 @@
-# website
+# Schulich Ignite Website
 
 ## How to add/edit content
 
@@ -11,7 +11,8 @@ To edit any of these go to ```config.toml``` in the root directory and modify th
 Here is a list of the current site variables:
 - email: The primary shulich ignite email
 - instagram: The schulich ignite instagram handle
-- facebook: the link to the schulich ignite facebook page
+- facebook: the link to the schulich ignite facebook page  
+  
 TODO: Figure out remainder of variables
 
 ### Homepage
@@ -27,14 +28,15 @@ The entirety of this page is hardcoded and pulls in feeds of other content types
 
 ## Development guide
 
-Below is all the information you will need to maintain/update any **CODE** for the site. See above for how to handle content.
+Below is all the information you will need to maintain/update any **CODE** for the site. 
+See above for how to handle content.
 
 ### Infastructure
 
-CMS/Static Site Generator: [Hugo](https://gohugo.io/) 
-Hosting: [GitHub Pages](https://pages.github.com/)
-CDN/DNS: [Cloudflare](https://www.cloudflare.com/en-ca/)
-Domain Name Registrar: [IONOS](https://www.ionos.ca/)
+- CMS/Static Site Generator: [Hugo](https://gohugo.io/) 
+- Hosting: [GitHub Pages](https://pages.github.com/)
+- CDN/DNS: [Cloudflare](https://www.cloudflare.com/en-ca/)
+- Domain Name Registrar: [IONOS](https://www.ionos.ca/)
 
 Login details can be found in the usual place ;).
 
