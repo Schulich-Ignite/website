@@ -1,3 +1,6 @@
-baseURL = "http://example.org/"
+baseURL = "https://schulichignite.com/"
 languageCode = "en-us"
 title = "Schulich Ignite"
+[params]
+    email = "info@schulichignite.com"
+    signup = true
