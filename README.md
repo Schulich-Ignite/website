@@ -10,10 +10,11 @@ To edit any of these go to ```config.toml``` in the root directory and modify th
 
 Here is a list of the current site variables:
 - email: The primary shulich ignite email
-- instagram: The schulich ignite instagram handle
-- facebook: the link to the schulich ignite facebook page  
-  
-TODO: Figure out remainder of variables
+- instagram: The schulich ignite instagram link
+- facebook: the link to the schulich ignite facebook page
+- YouTube: The link to the official Schulich ignite YouTube Channel
+- LinkedIn: The link to the Schulich ignite LinkedIn Company
+- Discord: The link to join the discord server
 
 ### Homepage
 

@@ -1,5 +1,47 @@
 {{ define "main" }}
-    <h3 class="subtitle is-3">Get in touch</h3>
-    <!--NOTE: use {{ .Site.Params.email }} for the contact email in formspree form-->
-    <p>Form goes here</p>
+
+<section class="hero is-dark is-medium">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Want to talk more?</h1>
+            <h2 class="subtitle">Reach out through the form below, and follow us on social media!</h2>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="social-links">
+
+    <h3 class="subtitle is-3">Social links</h3>
+
+    <ul>
+        <!--TODO find better representation for social links-->
+        <li>
+            <a href="{{ .Site.Params.Links.youtube }}" target="_blank"> Youtube </a>
+        </li>
+        
+        <li>
+            <a href="{{ .Site.Params.Links.instagram }}" target="_blank"> Instagram </a>
+        </li>
+        
+        <li>
+            <a href="{{ .Site.Params.Links.facebook }}" target="_blank"> FaceBook </a>
+        </li>
+        
+        <li>
+            <a href="{{ .Site.Params.Links.linkedin }}" target="_blank"> LinkedIn </a>
+        </li>
+        
+        <li>
+            <a href="{{ .Site.Params.Links.discord }}" target="_blank"> Discord </a>
+        </li>
+    </ul>
+</section>
+
+<section class="section" id="form">
+    <h3 class="subtitle is-3">Still have more questions?</h3>
+    <h5 class="subtitle is-5">Fill out the form below and we will get back to you as soon as possible</h5>
+
+    {{ partial "contact-form.html" . }}
+</section>
 {{ end }}
+
