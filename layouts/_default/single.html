@@ -10,6 +10,8 @@
       integrity="sha256-aPeK/N8IHpHsvPBCf49iVKMdusfobKo2oxF8lRruWJg="
       crossorigin="anonymous"
     />
+    
+
     <link rel="stylesheet" href="/css/index.css" />
   </head>
 
@@ -18,8 +20,10 @@
   <body>
     <!-- Code that all your templates share, like a header -->
     {{ block "main" . }}
-    <!-- The part of the page that begins to differ between templates -->
-
+      <!-- The part of the page that begins to differ between templates -->
     {{ end }}
+    
+    {{ partial "footer.html" . }}
   </body>
+  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </html>
