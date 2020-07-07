@@ -1,0 +1,7 @@
+.team-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: 5em;
+    column-gap: 5em;
+}

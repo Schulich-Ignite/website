@@ -1,4 +1,4 @@
-# website
+# Schulich Ignite Website
 
 ## How to add/edit content
 
@@ -24,19 +24,40 @@ The entirety of this page is hardcoded and pulls in feeds of other content types
 
 ### News
 
-### Lectures
+### Sessions
 
+### Team
+
+Eveerything that has to do with this page is under `content/team`.  
+The title and sub-title can be changed in the `_index.md` file.  
+
+Every file (excluding `_index.md`) inside the this folder will have card created for it. To add/edit team members, either add a new file here, or edit one. The format for the file is as follows:
+
+```markdown
+---
+<!-- Name of the team member -->
+name: "Jane Doe"
+<!-- Their role on the team -->
+role: "President of things"
+<!-- Image to display on their card -->
+image: "http://placekitten.com/g/300/300"
+---
+
+<!-- Content of the card goes here. This can also include HTML or markdown -->
+example content
+```
 
 ## Development guide
 
-Below is all the information you will need to maintain/update any **CODE** for the site. See above for how to handle content.
+Below is all the information you will need to maintain/update any **CODE** for the site. 
+See above for how to handle content.
 
 ### Infastructure
 
-CMS/Static Site Generator: [Hugo](https://gohugo.io/) 
-Hosting: [GitHub Pages](https://pages.github.com/)
-CDN/DNS: [Cloudflare](https://www.cloudflare.com/en-ca/)
-Domain Name Registrar: [IONOS](https://www.ionos.ca/)
+- CMS/Static Site Generator: [Hugo](https://gohugo.io/) 
+- Hosting: [GitHub Pages](https://pages.github.com/)
+- CDN/DNS: [Cloudflare](https://www.cloudflare.com/en-ca/)
+- Domain Name Registrar: [IONOS](https://www.ionos.ca/)
 
 Login details can be found in the usual place ;).
 
@@ -52,7 +73,7 @@ Login details can be found in the usual place ;).
 
 The entirety of this page is hardcoded and pulls in feeds of other content types. The only exception is the wording found below the first header in the page. This can be customized in ```content/_index.md```.
 
-#### Lectures
+#### Sessions
 
 #### Events
 
