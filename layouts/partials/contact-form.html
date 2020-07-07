@@ -1,0 +1,45 @@
+<form action="https://formspree.io/{{ .Site.Params.email }}" method="POST">
+    <div class="field">
+        <label class="label is-medium">Name</label>
+        <div class="field">
+            <div class="control">
+                <input class="input is-medium" type="text" placeholder="Enter your name here" required="">
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label is-medium">Email</label>
+        <div class="field">
+            <div class="control">
+                <input class="input is-medium" type="email" placeholder="Email: e.g. alex@example.com" required="">
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label is-medium">Subject</label>
+        <div class="control">
+            <div class="select">
+                <select required="">
+                    <option>Lecture Question</option>
+                    <option>Question About Organization</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label is-medium">Message</label>
+        <div class="control">
+            <textarea class="textarea" placeholder="Enter your message here" required=""></textarea>
+        </div>
+    </div>
+
+    <div class="field">
+        <div class="control">
+            <button class="button is-primary is-medium" type="submit">Submit</button>
+        </div>
+    </div>
+</form>
