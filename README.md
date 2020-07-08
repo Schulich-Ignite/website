@@ -47,6 +47,24 @@ image: "http://placekitten.com/g/300/300"
 example content
 ```
 
+### Contact 
+
+The majority of the content is hardcoded to pull from the site variables. For example the email, instagram and all other social links are defined in the site variables. 
+
+The primary exception are the FAQ's, see below for details.
+
+### FAQ's
+
+The FAQ's found on the contact page can be created/edited in ```content/faq```, the default template is:
+
+```markdown
+---
+question: "How Do I Install Processing?"
+---
+
+Your answer goes here :)
+```
+
 ## Development guide
 
 Below is all the information you will need to maintain/update any **CODE** for the site. 
@@ -79,4 +97,12 @@ The entirety of this page is hardcoded and pulls in feeds of other content types
 
 #### Contact
 
-The majority of the content is hardcoded to pull from the site variables. For example the email, instagram and all other social links are defined in the site variables.
+The page pulls from the ```/layouts/contact/single.html``` file for templating. The majority of the display is powered by site variables. For example the email, instagram and all other social links are defined in the site variables.
+
+The primary exception are the FAQ's, see below for details.
+
+#### FAQ's
+
+The content can be found in ```content/faq```, and the display on the contact page is driven through the partial found in ```/layouts/partials/faq.html```. Put simply the html just iterates over pages with the type faq and pulls the question and Content fields into the partial template.
+
+

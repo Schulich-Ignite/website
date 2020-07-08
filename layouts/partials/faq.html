@@ -1,0 +1,6 @@
+
+{{ range where .Site.Pages "Type" "faq" }}
+<h3 class="subtitle is-3">	{{ .Params.question }}</h5>
+
+<h5 class="subtitle is-5">	{{ .Content }}</h5>
+{{ end }}
