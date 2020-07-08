@@ -26,6 +26,10 @@ The entirety of this page is hardcoded and pulls in feeds of other content types
 
 ### Sessions
 
+### Gallery
+
+Any images under the folder `static/img/gallery` will be displayed on the gallery page.
+
 ### Team
 
 Eveerything that has to do with this page is under `content/team`.  
