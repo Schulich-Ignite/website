@@ -1,0 +1,37 @@
+<div class="columns">
+{{ range where .Site.Pages.ByDate "Type" "events" }}
+    <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
+    {{ if  (.Params.title) }}
+    <div class="column is-one-third">
+        <div class="card event">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    {{ if  .Params.image }}
+                    <img src="{{ .Params.image }}" width="640px" height="480px">
+                    {{ else }}
+                    <img src="/img/ignite-logo.svg" width="640px" height="480px">
+                    {{ end }}
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">{{ .Params.title }}</p>
+                        <p class="subtitle is-6"></p>
+                    </div>
+                </div>
+            
+                <div class="content">
+                    <p>{{ .Summary }}...
+                        <a href="{{ ref . .File }}">Read more</a>
+                    </p>
+                    <br>
+                    <time datetime="2016-1-1">{{ .Params.date.Format "Mon, 02 January 2006 15:04:05 MST" }}</time>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+{{ end }}
+</div>
+

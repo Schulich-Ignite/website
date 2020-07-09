@@ -22,6 +22,22 @@ The entirety of this page is hardcoded and pulls in feeds of other content types
 
 ### Events
 
+New events can be added in ```content/events``` and any existing events can be edited at ```content/events```. The format is:
+
+```markdown
+---
+title: "This is the event title"
+date: 2020-07-08T15:04:38-07:00
+image: "/img/ignite-logo.svg"
+---
+
+Enter event description here note the first 20 words will be used in the feed. So make sure to use them wisely, or else your content will be cut off and no one will be able to read it.
+```
+
+The image field is optional, you can specify an image to display for the event. If you choose not to then just delete the image metadata, and by default the ignite logo will appear for that event.
+
+Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and the T splits the date from the time.
+
 ### News
 
 ### Sessions
@@ -76,6 +92,11 @@ The entirety of this page is hardcoded and pulls in feeds of other content types
 #### Sessions
 
 #### Events
+
+The content for events can be found in ```content/events```. There are a number of layouts for the events system:
+1. The single layout; This is what shows up when you navigate to an individual event (```schulichignite.com/events/<event name>```), and can be found in ```layouts/events/single.html```
+2. The list layout; This is a dedicated page that shows **ALL** events. It is what shows up on ```schulichignite.com/events``` and the layout can be found in ```layouts/events/list.html```.
+3. The Feed; This is the feed that pulls in the events lists. It can be found in various places on the site and is typically invoked in a template using ```{{ partial "event-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/event-feed.html```.
 
 #### Contact
 
