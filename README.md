@@ -44,7 +44,7 @@ New news can be added in ```content/news``` and any existing news can be edited 
 
 ```markdown
 ---
-title: "This is the event title"
+title: "This is the news article title"
 date: 2020-07-08T15:04:38-07:00
 image: "/img/ignite-logo.svg"
 ---
@@ -136,7 +136,7 @@ The content for events can be found in ```content/events```. There are a number 
 2. The list layout; This is a dedicated page that shows **ALL** events. It is what shows up on ```schulichignite.com/events``` and the layout can be found in ```layouts/events/list.html```.
 3. The Feed; This is the feed that pulls in the events lists. It can be found in various places on the site and is typically invoked in a template using ```{{ partial "event-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/event-feed.html```.
 
-#### Events
+#### News
 
 The content for events can be found in ```content/news```. There are a number of layouts for the news system:
 1. The single layout; This is what shows up when you navigate to an individual event (```schulichignite.com/news/<news article name>```), and can be found in ```layouts/news/single.html```
