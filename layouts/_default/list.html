@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/index.css" />
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   </head>
 
   {{ partial "header.html" . }}
@@ -21,8 +22,8 @@
       <!-- The part of the page that begins to differ between templates -->
     {{ end }}
     
-    {{ block "footer" . }}
-      <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
-    {{ end }}
+    {{ partial "footer.html" . }}
   </body>
+
+  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </html>

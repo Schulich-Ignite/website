@@ -42,6 +42,10 @@ Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and
 
 ### Sessions
 
+### Gallery
+
+Any images under the folder `static/img/gallery` will be displayed on the gallery page.
+
 ### Team
 
 Eveerything that has to do with this page is under `content/team`.  
