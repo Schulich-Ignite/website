@@ -9,34 +9,6 @@
     </div>
 </section>
 
-<section class="section" id="social-links">
-
-    <h2 class="subtitle is-2">Social links</h2>
-
-    <ul>
-        <!--TODO find better representation for social links-->
-        <li>
-            <a href="{{ .Site.Params.Links.youtube }}" target="_blank"> Youtube </a>
-        </li>
-        
-        <li>
-            <a href="{{ .Site.Params.Links.instagram }}" target="_blank"> Instagram </a>
-        </li>
-        
-        <li>
-            <a href="{{ .Site.Params.Links.facebook }}" target="_blank"> FaceBook </a>
-        </li>
-        
-        <li>
-            <a href="{{ .Site.Params.Links.linkedin }}" target="_blank"> LinkedIn </a>
-        </li>
-        
-        <li>
-            <a href="{{ .Site.Params.Links.discord }}" target="_blank"> Discord </a>
-        </li>
-    </ul>
-</section>
-
 <section class="section" id="faq">
     <h2 class="subtitle is-2">
         Frequently Asked Questions
@@ -49,6 +21,131 @@
     <h5 class="subtitle is-5">Fill out the form below and we will get back to you as soon as possible</h5>
 
     {{ partial "contact-form.html" . }}
+</section>
+
+<section class="section" id="social-links">
+    <h2 class="subtitle is-2">Social links</h2>
+    <div class="columns">
+        <div class="column is-one-third">
+            <a href="{{ .Site.Params.Links.facebook }}" target="_blank">
+            <div class="card event">
+                <div class="card-image">
+                    <figure class="image is-square">
+                        <img src="/img/logos/facebook.svg" />
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">FaceBook</p>
+                            <p class="subtitle is-6"></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p>Check out our facebook page</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        </div>
+
+        <div class="column is-one-third">
+            <a href="{{ .Site.Params.Links.instagram }}" target="_blank">
+            <div class="card event">
+                <div class="card-image">
+                    <figure class="image is-square">
+                        <img src="/img/logos/Instagram.svg" />
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">Instagram</p>
+                            <p class="subtitle is-6"></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p>Follow us on Instagram for weekly challenges</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        </div>
+
+        <div class="column is-one-third">
+            <a href="{{ .Site.Params.Links.discord }}" target="_blank">
+            <div class="card event">
+                <div class="card-image">
+                    <figure class="image is-square">
+                        <img src="/img/logos/discord.svg" />
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">Discord</p>
+                            <p class="subtitle is-6"></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p>Join our discord server</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    </div>
+
+    <div class="columns">
+
+        <div class="column is-half">
+        <a href="{{ .Site.Params.Links.youtube }}" target="_blank">
+
+            <div class="card event">
+                <div class="card-image">
+                    <figure class="image is-16by9">
+                        <img src="/img/logos/youtube.svg" width="400" height="300" />
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">YouTube</p>
+                            <p class="subtitle is-6"></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p>Check Out Our YouTube Channel</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        </div>
+
+        <div class="column is-half">
+    <a href="{{ .Site.Params.Links.linkedin }}" target="_blank">
+
+            <div class="card event">
+                <div class="card-image">
+                    <figure class="image is-16by9">
+                        <img src="/img/logos/linkedin.svg" width="400" height="300" />
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">LinkedIn</p>
+                            <p class="subtitle is-6"></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p>Check us out on LinkedIn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </div>
 </section>
 {{ end }}
 
