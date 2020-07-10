@@ -67,3 +67,27 @@
 .footer > div > a {
     color: white;
 }
+
+/* FAQ */
+  
+  .hide {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+  }
+
+  .trigger{
+    background-color: #3298dc !important;
+    border-color: #3298dc !important;
+  }
+
+  .trigger:hover{
+    background-color: #3c7580 !important;
+    border-color: #3c7580 !important;
+  }
+
+  .trigger:active{
+    background-color: #0dc6eb !important;
+    border-color: #0dc6eb !important;
+  }
