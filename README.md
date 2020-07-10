@@ -58,6 +58,19 @@ Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and
 
 ### Sessions
 
+The sessions view pulls any sessions that exist. The content can be found in ```content/sessions```. The format for a session is:
+
+```markdown
+---
+title: "Name of what the topic is"
+number: 0
+date: 2020-07-08T18:30:00-06:00
+slides: "path/to/slides"
+---
+ 
+Any additional overview content you want to mention
+```
+
 ### Gallery
 
 Any images under the folder `static/img/gallery` will be displayed on the gallery page.
@@ -128,6 +141,11 @@ Login details can be found in the usual place ;).
 The entirety of this page is hardcoded and pulls in feeds of other content types. The only exception is the wording found below the first header in the page. This can be customized in ```content/_index.md```.
 
 #### Sessions
+
+The content for sessions can be found in ```content/sessions```. There are a number of layouts for the sessions system:
+1. The single layout; This is what shows up when you navigate to an individual session (```schulichignite.com/sessions/<esession name>```), and can be found in ```layouts/session/single.html```
+2. The list layout; This is a dedicated page that shows **ALL** sessions. It is what shows up on ```schulichignite.com/sessions``` and the layout can be found in ```layouts/sessions/list.html```.
+3. The Feed; This is the feed that pulls in the sessions lists. It can be found in various places on the site and is typically invoked in a template using ```{{ partial "sessions-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/sessions-feed.html```.
 
 #### Events
 
