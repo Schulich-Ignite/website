@@ -1,0 +1,23 @@
+{{ define "main" }}
+    <div class="section">
+        <div class="container pb-6">
+            <p class="title is-2 has-text-centered">{{ .Params.title }}</p>
+            <p class="subtitle is-5 has-text-centered">{{ .Summary }}</p>
+        </div>
+        <div class="sponsors-container">
+            {{ range .Data.Pages }}
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="{{ .Params.image | absURL }}" />
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <p class="title is-4">{{ .Params.name }}</p>
+                    <div class="content">{{ .Summary }}</div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+{{ end }}

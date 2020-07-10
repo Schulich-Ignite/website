@@ -77,23 +77,35 @@ Any images under the folder `static/img/gallery` will be displayed on the galler
 
 ### Team
 
-Eveerything that has to do with this page is under `content/team`.  
+Everything that has to do with this page is under `content/team`.  
 The title and sub-title can be changed in the `_index.md` file.  
 
 Every file (excluding `_index.md`) inside the this folder will have card created for it. To add/edit team members, either add a new file here, or edit one. The format for the file is as follows:
 
 ```markdown
 ---
-<!-- Name of the team member -->
-name: "Jane Doe"
-<!-- Their role on the team -->
-role: "President of things"
-<!-- Image to display on their card -->
+name: "Team member name"
+role: "Team member role"
+image: "/img/path-to-image.png"
+---
+
+description of the team member goes here
+```
+
+### Sponsors
+
+Eveerything that has to do with this page is under `content/sponsors`.  
+The title and sub-title can be changed in the `_index.md` file.  
+
+Every file (excluding `_index.md`) inside the this folder will have card created for it. To add/edit sponsors, either add a new file here, or edit one. The format for the file is as follows:
+
+```markdown
+---
+name: "Name of the sponsor"
 image: "http://placekitten.com/g/300/300"
 ---
 
-<!-- Content of the card goes here. This can also include HTML or markdown -->
-example content
+description about the sponsor goes here
 ```
 
 ### Contact 
