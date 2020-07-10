@@ -1,0 +1,31 @@
+<div class="columns">
+{{ range where .Site.Pages.ByDate "Type" "sessions" }}
+    <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
+    {{ if  (.Params.title) }}
+    <div class="column is-one-third">
+        
+        <article class="message">
+            <div class="message-header">
+                <a href="{{ ref . .File }}" class="sessionlink"><p>Session {{ .Params.number }}: {{ .Params.title }}</p></a>
+            </div>
+            <div class="message-body">
+                <div class="tags has-addons level-item">
+                    <a href="{{ .Params.slides }}" class="slidelink" target="_blank">
+                        <span class="tag is-rounded is-dark"><time datetime="2016-1-1">{{ .Params.date.Format "January 1, 2006 15:04 MST" }}</time></span>
+                        <span class="tag is-rounded is-primary">Download the slides</span>
+                    </a>
+                </div>
+                <a href="{{ ref . .File }}" class="sessionlink">
+                <p>{{ .Summary }}...
+                    <a href="{{ ref . .File }}">Read more</a>
+                </p>
+                </a>
+            </div>
+          </article>
+        </a>
+
+    </div>
+    {{ end }}
+{{ end }}
+</div>
+
