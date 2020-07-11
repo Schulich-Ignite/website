@@ -8,6 +8,16 @@
   column-gap: 5em;
 }
 
+/* Sponsors page */
+
+.sponsors-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  row-gap: 5em;
+  column-gap: 5em;
+}
+
 /* Gallery page */
 
 .gallery-container {
