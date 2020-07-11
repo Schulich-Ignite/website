@@ -18,10 +18,18 @@
         <h3 class="subtitle is-3">Sessions</h3>
         {{ partial "sessions-feed.html" .}}
     </section>
-
+    
+    {{ if .Site.Params.signup }}
     <section class="section" id="signup">
         <h3 class="subtitle is-3">Signup</h3>
+        <p>Click the links below to sing-up for the program, or apply to become a mentor.</p>
+    </br>
+        <form>
+            <button class="button is-primary is-light" formaction="{{ .Site.Params.menteeSignup }}" target="_blank">Signup to learn</button>
+            <button class="button is-info is-light" formaction="{{ .Site.Params.mentorSignUp }}" target="_blank">Apply to be a mentor</button>
+        </form>
     </section>
+    {{ end }}
 
     <section class="section" id="events">
         <h3 class="subtitle is-3">Events</h3>

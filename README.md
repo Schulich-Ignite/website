@@ -15,6 +15,9 @@ Here is a list of the current site variables:
 - YouTube: The link to the official Schulich ignite YouTube Channel
 - LinkedIn: The link to the Schulich ignite LinkedIn Company
 - Discord: The link to join the discord server
+- signup: Set to true when signups are available
+- mentorSignUp: The link to the mentor application form
+- menteeSignUp: The link to the mentee singup form
 
 ### Homepage
 

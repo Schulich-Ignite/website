@@ -74,6 +74,10 @@
   background-color: #363636;
 }
 
+.footer > div > h3{
+  color: white;
+}
+
 .footer > div > a {
   color: white;
 }
@@ -160,4 +164,17 @@ a.slidelink {
 .tag > a {
   color: inherit;
   text-decoration: none !important ;
+}
+
+/* News */
+
+a.newslink {
+  text-decoration: none !important ;
+  color: inherit;
+}
+
+/* Events */
+a.eventslink {
+  text-decoration: none !important ;
+  color: inherit;
 }
