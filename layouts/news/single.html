@@ -1,28 +1,32 @@
 {{ define "main" }}
-    {{ if  and (.Params.title) (.Params.date) }}
-        <div class="column">
-            <div class="card event">
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                        {{ if  .Params.image }}
-                        <img src="{{ .Params.image }}" width="640px" height="480px">
-                        {{ else }}
-                        <img src="/img/ignite-logo.svg" width="640px" height="480px">
-                        {{ end }}
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-content">
-                            <p class="title is-4">{{ .Params.title }}</p>
-                            <p class="subtitle is-6"><time datetime="2016-1-1">{{ .Params.date.Format "January 1, 2006 15:04 MST" }}</time></p>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <p>{{ .Content }}</p>
-                    </div>
-                </div>
+    {{ if .Params.image }} 
+    <section class="hero is-dark is-medium is-bold">
+        <div class="hero-body" style="background-image: url({{ .Params.image | absURL }});background-position: center; background-size: cover; background-repeat: no-repeat;">
+        
+            <div class="container has-text-centered">
+                <h1 class="title" style="text-shadow: 2px 2px #141414;">{{ .Params.title }}</h1>
             </div>
         </div>
+    </section>
     {{ end }}
+
+    <div class="card article">
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content has-text-centered">
+                    {{ if not .Params.image }} 
+                    <p class="title article-title">{{ .Params.title }}</p>
+                    {{ end}}
+                    <div class="tags has-addons level-item">
+                        <span class="tag is-rounded"><time datetime="2016-1-1">{{ .Params.date.Format "January 1, 2006 15:04 MST" }}</time></span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="content article-body">
+                <p>{{ .Content }}</p>
+    
+            </div>
+        </div>
+    </div>
 {{end}}

@@ -2,14 +2,15 @@
 {{ range where .Site.Pages.ByDate "Type" "news" }}
     <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
     {{ if  (.Params.title) }}
+    <a href="{{ ref . .File }}" class="newslink">
     <div class="column is-one-third">
         <div class="card event">
             <div class="card-image">
                 <figure class="image is-4by3">
                     {{ if  .Params.image }}
-                    <img src="{{ .Params.image }}" width="640px" height="480px">
+                    <img src="{{ .Params.image | absURL }}" width="640px" height="480px">
                     {{ else }}
-                    <img src="/img/ignite-logo.svg" width="640px" height="480px">
+                    <img src='{{ "/img/logos/ignite.svg" | absURL }}' width="640px" height="480px">
                     {{ end }}
                 </figure>
             </div>
@@ -31,6 +32,7 @@
             </div>
         </div>
     </div>
+</a>    
     {{ end }}
 {{ end }}
 </div>
