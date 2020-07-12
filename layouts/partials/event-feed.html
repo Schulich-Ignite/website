@@ -2,6 +2,7 @@
 {{ range where .Site.Pages.ByDate "Type" "events" }}
     <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
     {{ if  (.Params.title) }}
+    <a href="{{ ref . .File }}" class="eventslink">
     <div class="column is-one-third">
         <div class="card event">
             <div class="card-image">
@@ -31,6 +32,7 @@
             </div>
         </div>
     </div>
+    </a>
     {{ end }}
 {{ end }}
 </div>

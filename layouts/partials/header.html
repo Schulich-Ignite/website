@@ -33,6 +33,7 @@
       <a class="navbar-item" href="/sponsors">
         Sponsors
       </a>
+      {{ if .Site.Params.signup }}
       <div class="navbar-item">
         <div class="buttons">
           <a class="button is-primary" href="/#signup">
@@ -40,6 +41,7 @@
           </a>
         </div>
       </div>
+      {{end}}
     </div>
   </div>
 </nav>
