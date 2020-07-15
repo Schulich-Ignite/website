@@ -69,10 +69,15 @@ title: "Name of what the topic is"
 number: 0
 date: 2020-07-08T18:30:00-06:00
 slides: "path/to/slides"
+ready: false
 ---
  
 Any additional overview content you want to mention
 ```
+
+The `ready` variable is used to specify when a session is ready for the public (published & draft were reserved). When false it will not show up in the feed, when true they will. 
+
+If you don't specify slides the download slides options will disapear.
 
 ### Gallery
 
