@@ -1,9 +1,8 @@
 ---
 title: "Introduction to Processing"
-number: 0
-date: 2020-07-08T18:30:00-06:00
-slides: "http://schulichignite.com/assets/summer_2020/lecture_1.pptx"
-ready: false
+number: 2
+date: Mon, 15 Jan 2020 15:04:05 MST
+ready: true
 ---
  
 According to all known laws
