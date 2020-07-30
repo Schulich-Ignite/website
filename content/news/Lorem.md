@@ -1,6 +1,6 @@
 ---
 title: "Lorem"
-date: 2020-07-03T12:04:38-07:00
+date: 2020-07-08T18:30:00-06:00
 image: "/img/default.jpg"
 ---
 

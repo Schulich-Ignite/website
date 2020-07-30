@@ -2,6 +2,10 @@
 
 ## How to add/edit content
 
+### Dates & Times
+
+The Date field in any content follows a consistent format. This format looks like ```2020-07-08T18:30:00-06:00``` which correlates to Wed Jul 8 15:04 MDT. So the format is ```YYYY-MM-DDTHH:MM:SS-TZ:TZ``` so year followed by month, then day, after that there is a "T" which indicates time, then it goes ```hours:minuets:seconds``` in 24 hour format followed by ```-TZ:TZ``` which is the timezone. In our case it's always ```-06:00```.
+
 ### Site Variables
 
 Site variables are used for a large portion of the content. It essentially is the global state for the site.
