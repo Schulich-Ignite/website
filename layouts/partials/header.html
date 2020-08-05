@@ -34,13 +34,18 @@
         Sponsors
       </a>
       {{ if .Site.Params.signup }}
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary" href="/#signup">
-            <strong>Sign up</strong>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link button is-warning">
+          Sign up
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="{{ .Site.Params.menteeSignup }}" target="_blank">
+            To learn
+          </a>
+          <a class="navbar-item" href="{{ .Site.Params.mentorSignup }}" target="_blank">
+            To teach
           </a>
         </div>
-      </div>
       {{end}}
     </div>
   </div>

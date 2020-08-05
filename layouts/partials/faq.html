@@ -1,6 +1,6 @@
 {{ range where .Site.Pages "Type" "faq" }}
 {{ if  (.Params.question) }}
-<article class="message is-medium is-info">
+<article class="message is-medium is-warning">
     <div class="message-header trigger" onclick="openAnswer(this.nextElementSibling)">
       <p>{{ .Params.question }}</p>
         <span class="icon">
