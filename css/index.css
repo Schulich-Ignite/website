@@ -1,0 +1,180 @@
+/* Team page */
+
+.team-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  row-gap: 5em;
+  column-gap: 5em;
+}
+
+/* Sponsors page */
+
+.sponsors-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  row-gap: 5em;
+  column-gap: 5em;
+}
+
+/* Gallery page */
+
+.gallery-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: auto;
+  margin: -0.5em 0 0 -1em;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  flex: auto;
+  margin: 1em 0.5em 0 0.5em;
+  width: 200px;
+  height: 250px;
+}
+
+.gallery-item:nth-child(4n + 1) {
+  width: 300px;
+}
+
+.gallery-item:nth-child(4n + 1):nth-child(4n + 2) {
+  width: 350px;
+}
+
+.gallery-item:nth-child(4n + 1):nth-child(4n + 3) {
+  width: 250px;
+}
+
+.gallery-item:nth-child(4n + 1):nth-child(4n + 4) {
+  width: 400px;
+}
+
+.gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 150ms transform ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+
+.footer {
+  font-size: 2.5em;
+  background-color: #363636;
+}
+
+.footer > div > h3{
+  color: white;
+}
+
+.footer > div > a {
+  color: white;
+}
+
+/* FAQ */
+
+.hide {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.trigger {
+  background-color: #3298dc !important;
+  border-color: #3298dc !important;
+}
+
+.trigger:hover {
+  background-color: #3c7580 !important;
+  border-color: #3c7580 !important;
+}
+
+.trigger:active {
+  background-color: #0dc6eb !important;
+  border-color: #0dc6eb !important;
+}
+
+/* Sessions */
+
+.author-image {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  border: 3px solid #ccc;
+  border-radius: 50%;
+}
+
+.media-center {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.media-content {
+  margin-top: 3rem;
+}
+
+div.column.is-8:first-child {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.article-title {
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 2;
+}
+
+.article-subtitle {
+  color: #909aa0;
+  margin-bottom: 3rem;
+}
+
+.article-body {
+  line-height: 1.4;
+  margin: 0 6rem;
+}
+
+.promo-block .container {
+  margin: 1rem 5rem;
+}
+
+a.sessionlink {
+  text-decoration: none !important ;
+}
+
+a.slidelink {
+  text-decoration: none !important ;
+}
+
+.tag > a {
+  color: inherit;
+  text-decoration: none !important ;
+}
+
+/* News */
+
+a.newslink {
+  text-decoration: none !important ;
+  color: inherit;
+}
+
+/* Events */
+a.eventslink {
+  text-decoration: none !important ;
+  color: inherit;
+}
