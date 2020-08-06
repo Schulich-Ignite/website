@@ -87,12 +87,12 @@ If you don't specify slides the download slides options will disapear.
 
 Any images under the folder `static/img/gallery` will be displayed on the gallery page.
 
-### Team
+### About
 
-Everything that has to do with this page is under `content/team`.  
-The title and sub-title can be changed in the `_index.md` file.  
+Everything that has to do with this page is under `content/about`.  
+The title and subtitle can be changed in the `_index.md` file. The markdown content of this file will be used for the 'about' paragraph.
 
-Every file (excluding `_index.md`) inside the this folder will have card created for it. To add/edit team members, either add a new file here, or edit one. The format for the file is as follows:
+Every file (excluding `_index.md`) inside the this folder will have team member card created for it. To add/edit team members, either add a new file here, or edit one. The format for the file is as follows:
 
 ```markdown
 ---
