@@ -157,6 +157,7 @@ div.column.is-8:first-child {
 .article-body {
   line-height: 1.4;
   margin: 0 6rem;
+  font-size: 1.2em !important;
 }
 
 .promo-block .container {
