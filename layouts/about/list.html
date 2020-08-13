@@ -1,0 +1,35 @@
+{{ define "main" }}
+    <section class="hero is-dark is-medium">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">{{ .Params.title }}</h1>
+                <h2 class="subtitle">{{ .Params.subtitle }}</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="container">
+            <p>{{ .Summary }}</p>
+        </div>
+    </section>
+
+    <section class="section" id="team">
+        <div class="container team-container">
+            {{ range .Data.Pages }}
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="{{ .Params.image | absURL }}" />
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-4">{{ .Params.name }}</p>
+                        <p class="subtitle is-6">{{ .Params.role }}</p>
+                        <div class="content">{{ .Summary }}</div>
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    </section>
+{{ end }}
