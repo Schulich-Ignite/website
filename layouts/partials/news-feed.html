@@ -8,9 +8,9 @@
             <div class="card-image">
                 <figure class="image is-4by3">
                     {{ if  .Params.image }}
-                    <img src="{{ .Params.image | absURL }}" width="640px" height="480px">
+                    <img src="{{ .Params.image }}" width="640px" height="480px">
                     {{ else }}
-                    <img src='{{ "/img/logos/ignite.svg" | absURL }}' width="640px" height="480px">
+                    <img src='{{ "/img/logos/ignite.svg" }}' width="640px" height="480px">
                     {{ end }}
                 </figure>
             </div>
