@@ -1,3 +1,8 @@
+/*Header */
+.button.is-warning {
+  background-color: #ffd480 !important;
+}
+
 /* Team page */
 
 .team-container {
@@ -92,18 +97,23 @@
 }
 
 .trigger {
-  background-color: #3298dc !important;
-  border-color: #3298dc !important;
+  background-color: #ffd480 !important;
+  border-color: #ffd480 !important;
 }
 
 .trigger:hover {
-  background-color: #3c7580 !important;
-  border-color: #3c7580 !important;
+  background-color: #ffcc66 !important;
+  border-color: #ffcc66 !important;
 }
 
 .trigger:active {
-  background-color: #0dc6eb !important;
-  border-color: #0dc6eb !important;
+  background-color: #ffd480 !important;
+  border-color: #ffd480 !important;
+}
+
+
+.answer {
+  border-color: #ffcc66;
 }
 
 /* Sessions */
@@ -147,6 +157,7 @@ div.column.is-8:first-child {
 .article-body {
   line-height: 1.4;
   margin: 0 6rem;
+  font-size: 1.2em !important;
 }
 
 .promo-block .container {

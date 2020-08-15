@@ -1,0 +1,34 @@
+<div class="columns">
+{{ range where .Site.Pages.ByDate "Type" "sponsors" }}
+    <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
+    {{ if  (.Params.name) }}
+    <div class="column is-one-third">
+        <div class="card event">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    {{ if  .Params.image }}
+                    <img src="{{ .Params.image }}" width="640px" height="480px">
+                    {{ else }}
+                    <img src='{{ "/img/logos/ignite.svg" }}' width="640px" height="480px">
+                    {{ end }}
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">{{ .Params.name }}</p>
+                        <p class="subtitle is-6"></p>
+                    </div>
+                </div>
+            
+                <div class="content">
+                    <p>{{ .Content }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+{{ end }}
+</div>
+
