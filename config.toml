@@ -1,4 +1,4 @@
-baseURL = "https://schulichignite.com/"
+baseURL = "https://dev.schulichignite.com/" # TODO: Change to schulichignite.com on launch
 languageCode = "en-us"
 title = "Schulich Ignite"
 summaryLength = 20
