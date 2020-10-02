@@ -2,6 +2,7 @@ baseURL = "https://dev.schulichignite.com/" # TODO: Change to schulichignite.com
 languageCode = "en-us"
 title = "Schulich Ignite"
 summaryLength = 20
+relativeURLs = true
 
 [params]
     email = "info@schulichignite.com"
