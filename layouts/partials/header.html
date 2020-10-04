@@ -1,49 +1,40 @@
-<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img src="/img/logos/ignite.svg" width="40" height="60" /> Schulich Ignite
-    </a>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">
+    <img src="/img/logos/ignite.svg" width="40" height="60" /> Schulich Ignite
+  </a>
 
-    <a
-      role="button"
-      class="navbar-burger burger"
-      aria-label="menu"
-      aria-expanded="false"
-      data-target="navMenu"
-    >
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <div class="navbar-menu" id="navMenu">
-    <div class="navbar-start"></div>
-
-    <div class="navbar-end">
-      <a class="navbar-item" href="/sessions">
-        Sessions
-      </a>
-      <a class="navbar-item" href="/about">
-        About
-      </a>
-      <a class="navbar-item" href="/contact">
-        Contact
-      </a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/sessions">Sessions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
       {{ if .Site.Params.signup }}
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link button is-warning">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
           Sign up
         </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="{{ .Site.Params.menteeSignup }}" target="_blank">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ .Site.Params.menteeSignup }}" target="_blank">
             To learn
           </a>
-          <a class="navbar-item" href="{{ .Site.Params.mentorSignup }}" target="_blank">
+          <a class="dropdown-item" href="{{ .Site.Params.mentorSignup }}" target="_blank">
             To teach
           </a>
         </div>
+      </li>
       {{end}}
-    </div>
+    </ul>
   </div>
 </nav>

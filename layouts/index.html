@@ -1,56 +1,93 @@
 {{ define "main" }}
-
-    <section class="hero is-dark is-medium">
-        <div class="hero-body">
-        <div class="container">
-            <h1 class="title">
-
-            <img src="/img/logos/ignite.svg" width="40" height="60"> Schulich Ignite
-            </h1>
-            <h2 class="subtitle">
+<section class="pretty-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-2">
+                <img class="brand-logo" src="/img/logos/ignite.svg" alt="schulich ignite logo">
+            </div>
+            <div class="col-md-9 col-lg-10">
+                <div class="container logo-name">
+                    <div class="row">
+                        <div class="col">
+                            <h1> <span>Schulich</span><span class="break"></span><span>Ignite</span></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col logo-subtitle">
                 {{ .Params.tagline }}
-            </h2>
+            </div>
         </div>
+        <div class="row">
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="section" id="dates">
-        <h3 class="subtitle is-3">Sessions</h3>
+<section class="section" id="dates">
+    <div class="container">
+        <div class="row">
+            <h3>Sessions</h3>
+        </div>
         {{ partial "sessions-feed.html" .}}
-    </section>
-    
-    {{ if .Site.Params.signup }}
-    <section class="section" id="signup">
-        <h3 class="subtitle is-3">Signup</h3>
-        <p>Click the links below to sing-up for the program, or apply to become a mentor.</p>
-    </br>
-        <form>
-            <button class="button is-primary is-light" formaction="{{ .Site.Params.menteeSignup }}" target="_blank">Signup to learn</button>
-            <button class="button is-info is-light" formaction="{{ .Site.Params.mentorSignUp }}" target="_blank">Apply to be a mentor</button>
-        </form>
-    </section>
-    {{ end }}
+    </div>
+</section>
 
-    {{ $events := (where .Site.Pages.ByDate "Type" "events") }}
-    {{ $numOfEvents := len $events }}
+{{ if .Site.Params.signup }}
+<section class="section" id="signup">
+    <div class="container">
+        <div class="row">
+            <h3>Signup</h3>
+        </div>
+        <div class="row">
+            Click the links below to sing-up for the program, or apply to become a mentor.
+        </div>
+        <div class="row">
+            <form>
+                <button type="button" class="btn btn-primary" formaction="{{ .Site.Params.menteeSignup }}"
+                    target="_blank">Sign up to learn</button>
+                <button type="button" class="btn btn-secondary" formaction="{{ .Site.Params.mentorSignUp }}"
+                    target="_blank">Apply to be a mentor</button>
+            </form>
+        </div>
+    </div>
+</section>
+{{ end }}
 
-    {{ if gt $numOfEvents 1}}
-    <section class="section" id="events">
-        <h3 class="subtitle is-3">Events</h3>
+{{ $events := (where .Site.Pages.ByDate "Type" "events") }}
+{{ $numOfEvents := len $events }}
+{{ if gt $numOfEvents 1}}
+<section class="section" id="events">
+    <div class="container">
+        <div class="row">
+            <h3>Events</h3>
+        </div>
         {{ partial "event-feed.html" .}}
-    </section>
-    {{end}}
+    </div>
+</section>
+{{end}}
 
-    {{ $news := (where .Site.Pages.ByDate "Type" "news") }}
-    {{ $numOfNews := len $news }}
-    {{ if gt $numOfNews 1}}
-    <section class="section" id="news">
-        <h3 class="subtitle is-3">News</h3>
+{{ $news := (where .Site.Pages.ByDate "Type" "news") }}
+{{ $numOfNews := len $news }}
+{{ if gt $numOfNews 1}}
+<section class="section" id="news">
+    <div class="container">
+        <div class="row">
+            <h3>News</h3>
+        </div>
         {{ partial "news-feed.html" .}}
-    </section>
-    {{end}}
-    <section class="section" id="sponsors">
-        <h3 class="subtitle is-3">Our Sponsors</h3>
+    </div>
+</section>
+{{end}}
+
+<section class="section" id="sponsors">
+    <div class="container">
+        <div class="row">
+            <h3>Our Sponsors</h3>
+        </div>
         {{ partial "sponsor-feed.html" .}}
-    </section>
+    </div>
+</section>
 {{ end }}

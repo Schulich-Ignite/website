@@ -1,6 +1,6 @@
 ---
-name: "Nice cat"
-image: "/img/gallery/cat1.jpg"
+name: "Mindfuel"
+image: "/img/gallery/mindfuel-logo.jpg"
 ---
 
-Praesent non ipsum sed ex ornare fermentum. Pellentesque placerat placerat nisl, pellentesque consequat orci posuere vitae. Pellentesque ultrices ipsum ut sem venenatis accumsan. Nulla sit amet quam pharetra, imperdiet elit et, aliquam urna. Quisque lacinia pulvinar orci, quis fermentum purus pellentesque eget. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis auctor diam sit amet volutpat. Cras in ante pretium est elementum consectetur. Duis mattis risus ligula, ac sagittis enim gravida auctor. Cras malesuada augue lectus, et placerat nunc vehicula at. Mauris libero augue, placerat sit amet diam ut, ullamcorper luctus nunc. 

@@ -1,38 +1,28 @@
-<div class="columns">
+<div class="row">
 {{ range where .Site.Pages.ByDate "Type" "sessions" }}
     {{ if .Params.ready }}
-    <div class="column is-one-third">
-        
-        <article class="message">
-            <div class="message-header">
-                <a href="{{ ref . .File }}" class="sessionlink"><p>Session {{ .Params.number }}: {{ .Params.title }}</p></a>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                Session {{ .Params.number }}
             </div>
-            <div class="message-body">
-                <div class="tags has-addons level-item">
-                    {{ if  (.Params.slides) }}
-
-                    <a href="{{ .Params.slides }}" class="slidelink" target="_blank">
-                        <span class="tag is-rounded is-dark">{{ .Params.date.Format "Mon Jan 2 15:04 MST" }}</span>
-                        <span class="tag is-rounded is-primary">Download the slides</span>
-                    </a>
-
-                    {{ else }}
-
-                    <span class="tag is-rounded is-dark">{{ .Params.date.Format "Mon Jan 2 15:04 MST" }}</span>
-
-                    {{ end }}
-                </div>
-                <a href="{{ ref . .File }}" class="sessionlink">
-                <p>{{ .Summary }}...
+            <div class="card-body">
+                <h5 class="card-title">{{ .Params.title }}</h5>
+                <p class="card-text">
+                    <time>{{ .Params.date.Format "Mon Jan 2 15:04 MST" }}</time>
+                </p>
+                <p class="card-text">{{ .Summary }}...
                     <a href="{{ ref . .File }}">Read more</a>
                 </p>
-                </a>
-            </div>
-          </article>
-        </a>
 
+                {{ if  (.Params.slides) }}
+
+                <a href="{{ .Params.slides }}" class="btn btn-primary">Download the slides</a>
+
+                {{ end }}
+            </div>
+        </div>
     </div>
     {{ end }}
 {{ end }}
 </div>
-
