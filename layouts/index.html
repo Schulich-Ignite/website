@@ -2,9 +2,9 @@
 <section class="pretty-header">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-lg-2">
+            <!-- <div class="col-md-3 col-lg-2">
                 <img class="brand-logo" src="/img/logos/ignite.svg" alt="schulich ignite logo">
-            </div>
+            </div> -->
             <div class="col-md-9 col-lg-10">
                 <div class="container logo-name">
                     <div class="row">
@@ -12,17 +12,47 @@
                             <h1> <span>Schulich</span><span class="break"></span><span>Ignite</span></h1>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col dates">
+                            <span id="long-dates">
+                                {{ .Site.Params.startDate.Format "January 2, 2006" }} —
+                                {{ .Site.Params.endDate.Format "January 2, 2006" }}
+                            </span>
+                            <span id="short-dates">
+                                {{ .Site.Params.startDate.Format "01/02/06" }} —
+                                {{ .Site.Params.endDate.Format "01/02/06" }}
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col logo-subtitle">
                 {{ .Params.tagline }}
             </div>
         </div>
-        <div class="row">
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
-        </div>
+
+        {{ if .Site.Params.signup }}
+            <div class="row">
+                <h3>Signup</h3>
+            </div>
+            <div class="row">
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <a href="{{ .Site.Params.menteeSignup }}">
+                        <button type="button" class="btn btn-primary">to LEARN</button>
+                    </a>
+                    <a href="{{ .Site.Params.mentorSignUp }}"></a>
+                    <button type="button" class="btn btn-primary">to TEACH</button>
+                    </a>
+                </div>
+            </div>
+        {{ else }}
+            <div class="row">
+                <a class="btn btn-primary text-uppercase js-scroll-trigger" href="#dates">Continue to Content</a>
+            </div>
+        {{ end }}
     </div>
 </section>
 
@@ -35,7 +65,7 @@
     </div>
 </section>
 
-{{ if .Site.Params.signup }}
+<!-- {{ if .Site.Params.signup }}
 <section class="section" id="signup">
     <div class="container">
         <div class="row">
@@ -54,7 +84,7 @@
         </div>
     </div>
 </section>
-{{ end }}
+{{ end }} -->
 
 {{ $events := (where .Site.Pages.ByDate "Type" "events") }}
 {{ $numOfEvents := len $events }}

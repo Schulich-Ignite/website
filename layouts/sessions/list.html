@@ -1,4 +1,10 @@
 {{ define "main" }}
-<h3 class="subtitle is-3">Sessions</h3>
-    {{ partial "sessions-feed.html" .}}
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <h3>Sessions</h3>
+            </div>
+            {{ partial "sessions-feed.html" .}}
+        </div>
+    </section>
 {{ end }}

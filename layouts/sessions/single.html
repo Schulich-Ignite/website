@@ -1,22 +1,23 @@
 {{ define "main" }}
-<div class="card article">
-    <div class="card-content">
-        <div class="media">
-            <div class="media-content has-text-centered">
-                <p class="title article-title">{{ .Params.title }}</p>
-                <div class="tags has-addons level-item">
-                    <span class="tag is-rounded is-info">Session {{ .Params.number }}</span>
-                    <span class="tag is-rounded is-dark">{{ .Params.date.Format "Mon Jan 2 15:04 MST" }}</span>
-                    {{ if .Params.slides }}
-                    <span class="tag is-rounded is-primary"><a href="{{ .Params.slides }}" target="_blank">Download the slides</a></span>
-                    {{end}}
-                </div>
-                
-            </div>
+<div class="col-lg-4">
+    <div class="card">
+        <div class="card-header">
+            Session {{ .Params.number }}
         </div>
-        <div class="content article-body">
-            <p>{{ .Content }}</p>
+        <div class="card-body">
+            <h5 class="card-title">{{ .Params.title }}</h5>
+            <p class="card-text">
+                <time>{{ .Params.date.Format "Mon Jan 2 15:04 MST" }}</time>
+            </p>
+            <p class="card-text">{{ .Summary }}...
+                <a href="{{ ref . .File }}">Read more</a>
+            </p>
 
+            {{ if  (.Params.slides) }}
+
+            <a href="{{ .Params.slides }}" class="btn btn-primary">Download the slides</a>
+
+            {{ end }}
         </div>
     </div>
 </div>

@@ -6,9 +6,11 @@ relativeURLs = true
 
 [params]
     email = "info@schulichignite.com"
-    signup = true
+    signup = false
     mentorSignUp = "http://docs.google.com/forms/d/e/1FAIpQLScfUYoFgFsdN5uJShpq0CjxmuU9MEdXpjf2w9QXxxc9sdYztQ/viewform?usp=sf_link"
     menteeSignUp = "https://docs.google.com/forms/d/1C-Mc5IerY6yDLNI-2hRyZtmMZtSSPdTyJfWPnDpBO-0/"
+    startDate = 2020-10-17
+    endDate   = 2020-12-08
     [params.links]
         youtube = "https://www.youtube.com/channel/UC7tNvdbu952HOUl_4nK7iww"
         instagram = "https://www.instagram.com/schulichignite"
