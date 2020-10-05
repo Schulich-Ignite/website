@@ -1,32 +1,26 @@
-{{ define "main" }}
-    {{ if .Params.image }} 
-    <section class="hero is-dark is-medium is-bold">
-        <div class="hero-body" style="background-image: url({{ .Params.image | absURL }});background-position: center; background-size: cover; background-repeat: no-repeat;">
-        
-            <div class="container has-text-centered">
-                <h1 class="title" style="text-shadow: 2px 2px #141414;">{{ .Params.title }}</h1>
-            </div>
-        </div>
-    </section>
-    {{ end }}
 
-    <div class="card article">
-        <div class="card-content">
-            <div class="media">
-                <div class="media-content has-text-centered">
-                    {{ if not .Params.image }} 
-                    <p class="title article-title">{{ .Params.title }}</p>
-                    {{ end}}
-                    <div class="tags has-addons level-item">
-                        <span class="tag is-rounded"><time>{{ .Params.date.Format "Mon Jan 2 15:04 MST" }}</time></span>
-                    </div>
-                    
+
+{{ define "main" }}
+<section class="section single-item">
+    <div class="container">
+        <div class="row">
+            <div class="card">
+                {{ if  .Params.image }}
+                <img class="card-img-top" src="{{ .Params.image }}">
+                {{ else }}
+                <img class="card-img-top" src='{{ "/img/logos/ignite.svg" }}'>
+                {{ end }}
+                <div class="card-body">
+                    <h5 class="card-title">{{ .Params.title }}</h5>
+                    <p class="card-text">{{ .Content }} </p>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            <time>{{ .Params.date.Format "Monday, 01/02/2006 15:04 MST" }}</time>
+                        </small>
+                    </p>
                 </div>
-            </div>
-            <div class="content article-body">
-                <p>{{ .Content }}</p>
-    
             </div>
         </div>
     </div>
+</section>
 {{end}}

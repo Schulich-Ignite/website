@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Processing"
 number: 2
-date: Mon, 15 Jan 2020 15:04:05 MST
+date: 2020-07-08T18:30:00-07:00
 ready: true
 ---
  
