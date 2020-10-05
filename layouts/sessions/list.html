@@ -4,7 +4,44 @@
             <div class="row">
                 <h3>Sessions</h3>
             </div>
-            {{ partial "sessions-feed.html" .}}
+            <!-- {{ partial "sessions-feed.html" .}}-->
+
+            {{ range $index, $element := (where .Site.Pages.ByDate "Type" "sessions") }}
+            {{ if  (.Params.ready) }}
+            
+            <div class="card">
+                <div class="card-header" id="heading-{{$index}}">
+                    <h5 class="mb-0">
+                        <button class="faq-heading btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-{{$index}}"
+                            aria-expanded="false" aria-controls="collapse-{{$index}}">
+                            <div class="faq-heading-title">
+                                Session {{ .Params.number }}: {{ .Params.title }}
+                                <span class="arrow-expand iconify" data-icon="ic:baseline-expand-more" data-inline="false"></span>
+                                <span class="arrow-less iconify" data-icon="ic:baseline-expand-less" data-inline="false"></span>
+                            </div>
+                        </button>
+                    </h5>
+                </div>
+            
+                <div id="collapse-{{$index}}" class="collapse" aria-labelledby="heading-{{$index}}" data-parent="#faq-questions">
+                    <div class="card-body">
+                        <h1>{{ .Params.title }}</h1>
+                    </div>
+
+                    {{ if  (.Params.slides) }}
+                    <div class="card-body">
+                        <a href="{{ .Params.slides }}" class="btn btn-primary">Download the slides</a>
+                    </div>
+                    {{ end }}
+
+                    <div class="card-body">
+                        {{ .Content }}
+                    </div>
+                </div>
+            </div>
+            
+            {{ end }}
+            {{ end }}
         </div>
     </section>
 {{ end }}

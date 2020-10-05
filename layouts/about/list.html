@@ -1,35 +1,41 @@
 {{ define "main" }}
-    <section class="hero is-dark is-medium">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">{{ .Params.title }}</h1>
-                <h2 class="subtitle">{{ .Params.subtitle }}</h2>
+
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <h2 class="title">{{ .Params.title }}</h2>
+                <h4 class="subtitle">{{ .Params.subtitle }}</h4>
+            </div>
+            <div class="row">
+                <p>{{ .Summary }}</p>
+            </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="about">
-        <div class="container">
-            <p>{{ .Summary }}</p>
-        </div>
-    </section>
-
     <section class="section" id="team">
-        <div class="container team-container">
-            {{ range .Data.Pages }}
-                <div class="card">
-                    <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="{{ .Params.image | absURL }}" />
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <p class="title is-4">{{ .Params.name }}</p>
-                        <p class="subtitle is-6">{{ .Params.role }}</p>
-                        <div class="content">{{ .Summary }}</div>
+        <div class="container">
+            <div class="row">
+                <h2 class="title">Meet our Team</h2>
+            </div>
+            <div class="row">
+                {{ range .Data.Pages }}
+                <div class="col-lg-4 spaced-col">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ .Params.image | absURL }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ .Params.name }}</h5>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    {{ .Params.role }}
+                                </small>
+                            </p>
+                            <p class="card-text">{{ .Summary }} </p>
+                        </div>
                     </div>
                 </div>
-            {{ end }}
+                {{ end }}
+            </div>
         </div>
     </section>
 {{ end }}

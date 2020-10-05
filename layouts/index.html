@@ -2,41 +2,28 @@
 <section class="pretty-header">
     <div class="container">
         <div class="row">
-            <!-- <div class="col-md-3 col-lg-2">
-                <img class="brand-logo" src="/img/logos/ignite.svg" alt="schulich ignite logo">
-            </div> -->
-            <div class="col-md-9 col-lg-10">
+            <div class="col-lg-12">
                 <div class="container logo-name">
                     <div class="row">
-                        <div class="col">
-                            <h1> <span>Schulich</span><span class="break"></span><span>Ignite</span></h1>
-                        </div>
+                        <h1> <span>Schulich</span><span class="break"></span><span>Ignite</span></h1>
                     </div>
-                    <div class="row">
-                        <div class="col dates">
-                            <span id="long-dates">
-                                {{ .Site.Params.startDate.Format "January 2, 2006" }} —
-                                {{ .Site.Params.endDate.Format "January 2, 2006" }}
-                            </span>
-                            <span id="short-dates">
-                                {{ .Site.Params.startDate.Format "01/02/06" }} —
-                                {{ .Site.Params.endDate.Format "01/02/06" }}
-                            </span>
-                        </div>
+                    <div class="row dates">
+                        <span id="long-dates">
+                            {{ .Site.Params.startDate.Format "January 2, 2006" }} —
+                            {{ .Site.Params.endDate.Format "January 2, 2006" }}
+                        </span>
+                        <span id="short-dates">
+                            {{ .Site.Params.startDate.Format "01/02/06" }} —
+                            {{ .Site.Params.endDate.Format "01/02/06" }}
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col logo-subtitle">
-                {{ .Params.tagline }}
-            </div>
-        </div>
-
         {{ if .Site.Params.signup }}
             <div class="row">
-                <h3>Signup</h3>
+                <h2>Signup</h2>
             </div>
             <div class="row">
                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
@@ -50,41 +37,31 @@
             </div>
         {{ else }}
             <div class="row">
-                <a class="btn btn-primary text-uppercase js-scroll-trigger" href="#dates">Continue to Content</a>
+                <a class="btn btn-primary text-uppercase js-scroll-trigger" href="#content">Continue to Content</a>
             </div>
         {{ end }}
+    </div>
+</section>
+
+<section id="content" class="section" >
+    <div class="container">
+        <div class="row">
+            <h2>Who are we?</h2>
+        </div>
+        <div id="tagline" class="row">
+            {{ .Params.tagline }}
+        </div>
     </div>
 </section>
 
 <section class="section" id="dates">
     <div class="container">
         <div class="row">
-            <h3>Sessions</h3>
+            <h2>Sessions</h2>
         </div>
         {{ partial "sessions-feed.html" .}}
     </div>
 </section>
-
-<!-- {{ if .Site.Params.signup }}
-<section class="section" id="signup">
-    <div class="container">
-        <div class="row">
-            <h3>Signup</h3>
-        </div>
-        <div class="row">
-            Click the links below to sing-up for the program, or apply to become a mentor.
-        </div>
-        <div class="row">
-            <form>
-                <button type="button" class="btn btn-primary" formaction="{{ .Site.Params.menteeSignup }}"
-                    target="_blank">Sign up to learn</button>
-                <button type="button" class="btn btn-secondary" formaction="{{ .Site.Params.mentorSignUp }}"
-                    target="_blank">Apply to be a mentor</button>
-            </form>
-        </div>
-    </div>
-</section>
-{{ end }} -->
 
 {{ $events := (where .Site.Pages.ByDate "Type" "events") }}
 {{ $numOfEvents := len $events }}
@@ -92,7 +69,7 @@
 <section class="section" id="events">
     <div class="container">
         <div class="row">
-            <h3>Events</h3>
+            <h2>Events</h2>
         </div>
         {{ partial "event-feed.html" .}}
     </div>
@@ -105,7 +82,7 @@
 <section class="section" id="news">
     <div class="container">
         <div class="row">
-            <h3>News</h3>
+            <h2>News</h2>
         </div>
         {{ partial "news-feed.html" .}}
     </div>
@@ -115,7 +92,7 @@
 <section class="section" id="sponsors">
     <div class="container">
         <div class="row">
-            <h3>Our Sponsors</h3>
+            <h2>Our Sponsors</h2>
         </div>
         {{ partial "sponsor-feed.html" .}}
     </div>

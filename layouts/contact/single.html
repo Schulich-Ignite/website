@@ -1,26 +1,37 @@
 {{ define "main" }}
 
-<section class="hero is-dark is-medium">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title">Need more info?</h1>
-            <h2 class="subtitle">Take a look at our FAQ, or reach out through the form below. Be sure to also follow us on social media!</h2>
+<!-- <section class="section">
+    <div class="container">
+        <div class="row">
+            <h2>Need more info?</h2>
+        </div>
+        <div class="row">
+            <h4>Take a look at our FAQ, or reach out through the form below. Be sure to also follow us on
+                social media!</h4>
+        </div>
+    </div>
+</section> -->
+
+<section class="section" id="faq">
+    <div class="container">
+        <div class="row">
+            <h2>Frequently Asked Questions</h4>
+        </div>
+        <div id="faq-questions">
+            {{ partial "faq.html" .}}
         </div>
     </div>
 </section>
 
-<section class="section" id="faq">
-    <h2 class="subtitle is-2">
-        Frequently Asked Questions
-    </h2>
-    {{ partial "faq.html" .}}
-</section>
-
 <section class="section" id="form">
-    <h2 class="subtitle is-2">Still have more questions?</h2>
-    <h5 class="subtitle is-5">Fill out the form below and we will get back to you as soon as possible</h5>
+    <div class="container">
+        <div class="row">
+            <h2 class="title">Still have more questions?</h2>
+            <h4 class="subtitle">Fill out the form below and we will get back to you as soon as possible,</h4>
+        </div>
 
-    {{ partial "contact-form.html" . }}
+        {{ partial "contact-form.html" . }}
+    </div>
 </section>
 {{ end }}
 
