@@ -5,44 +5,35 @@
                 <h2>Sessions</h2>
             </div>
             <!-- {{ partial "sessions-feed.html" .}}-->
-
+            <div class="row">
             {{ range $index, $element := (where .Site.Pages.ByDate "Type" "sessions") }}
             {{ if  (.Params.ready) }}
-            
-            <div class="card">
-                <div class="card-header" id="heading-{{$index}}">
-                    <h5 class="mb-0">
-                        <button class="faq-heading btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-{{$index}}"
-                            aria-expanded="false" aria-controls="collapse-{{$index}}">
-                            <div class="faq-heading-title">
-                                Session {{ .Params.number }}: {{ .Params.title }}
-                                <span class="arrow-expand iconify" data-icon="ic:baseline-expand-more" data-inline="false"></span>
-                                <span class="arrow-less iconify" data-icon="ic:baseline-expand-less" data-inline="false"></span>
-                            </div>
-                        </button>
-                    </h5>
+                <div class="col-lg-4 spaced-col">
+                    <div class="card">
+                        <div class="card-header">
+                            Session {{ .Params.number }}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ .Params.title }}</h5>
+                            <p class="card-text">
+                                <time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
+                            </p>
+                            <p class="card-text">{{ .Summary }}...
+                                <a href="{{ ref . .File }}">Read more</a>
+                            </p>
+                
+                            {{ if  (.Params.slides) }}
+                
+                            <a href="{{ .Params.slides }}" class="btn btn-primary">Download the slides</a>
+                
+                            {{ end }}
+                        </div>
+                    </div>
                 </div>
-            
-                <div id="collapse-{{$index}}" class="collapse" aria-labelledby="heading-{{$index}}" data-parent="#faq-questions">
-                    <div class="card-body">
-                        <h1>{{ .Params.title }}</h1>
-                        <time>{{ .Params.date.Format "Monday, 01/02/2006 15:04 MST" }}</time>
-                    </div>
-
-                    {{ if  (.Params.slides) }}
-                    <div class="card-body">
-                        <a href="{{ .Params.slides }}" class="btn btn-primary">Download the slides</a>
-                    </div>
+                    
                     {{ end }}
-
-                    <div class="card-body">
-                        {{ .Content }}
-                    </div>
-                </div>
+                    {{ end }}
             </div>
-            
-            {{ end }}
-            {{ end }}
         </div>
     </section>
 {{ end }}

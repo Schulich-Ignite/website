@@ -7,17 +7,16 @@
                     Session {{ .Params.number }}
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{ .Params.title }}</h5>
+                    <h2 class="card-title">{{ .Params.title }}</h2>
                     <p class="card-text">
                         <time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
                     </p>
-                    <p class="card-text">{{ .Content }}</p>
-
                     {{ if  (.Params.slides) }}
-
-                    <a href="{{ .Params.slides }}" class="btn btn-primary">Download the slides</a>
-
+                    <p class="card-text">
+                        <a href="{{ .Params.slides }}" class="btn btn-primary">Download the slides</a>
+                    </p>
                     {{ end }}
+                    <p class="card-text">{{ .Content }}</p>
                 </div>
             </div>
         </div>
