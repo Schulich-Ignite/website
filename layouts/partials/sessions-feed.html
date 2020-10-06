@@ -1,5 +1,5 @@
 <div class="row">
-{{ range where .Site.Pages.ByDate "Type" "sessions" }}
+{{ range (where .Site.Pages.ByDate "Type" "sessions").Reverse }}
     {{ if .Params.ready }}
     <div class="col-lg-4 spaced-col">
         <div class="card with-header">

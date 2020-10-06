@@ -1,12 +1,12 @@
 {{ range $index, $element := (where .Site.Pages "Type" "faq") }}
 {{ if  (.Params.question) }}
 
-  <div class="card">
+  <div class="card expandable-card">
     <div class="card-header" id="heading-{{$index}}">
       <h5 class="mb-0">
-        <button class="faq-heading btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-{{$index}}" aria-expanded="false"
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-{{$index}}" aria-expanded="false"
           aria-controls="collapse-{{$index}}">
-          <div class="faq-heading-title">
+          <div class="btn-title">
               {{ .Params.question }}
               <span class="arrow-expand iconify" data-icon="ic:baseline-expand-more" data-inline="false"></span>
               <span class="arrow-less iconify" data-icon="ic:baseline-expand-less" data-inline="false"></span>

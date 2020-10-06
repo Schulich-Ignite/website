@@ -1,13 +1,37 @@
 <div class="row">
-{{ range where .Site.Pages.ByDate "Type" "news"}}
+{{ range (where .Site.Pages.ByDate "Type" "news").Reverse}}
     <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
     {{ if  (.Params.title) }}
-    <div class="col-lg-6 spaced-col">
+    <div class="card  mb-5" >
+        <div class="row ">
+            <div class="col-md-4">
+                    {{ if  .Params.image }}
+                        <img class="card-img-top med-image" src="{{ .Params.image }}">
+                    {{ else }}
+                        <img class="card-img-top med-image" src='{{ "/img/logos/ignite.svg" }}'>
+                    {{ end }}
+            </div>
+            <div class="col-md-8">             
+                <div class="card-body">
+                    <h3 class="card-title">{{ .Params.title }}</h3>
+                    <p class="card-text"><small class="text-muted">
+                            <time>{{ .Params.date.Format "Monday, 01/02/2006 15:04 MST" }}</time>
+                        </small></p>
+                    <p class="card-text">
+                        {{ .Summary }}...
+                        <a href="{{ ref . .File }}">Read more</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="col-lg-6 spaced-col">
         <div class="card">
             {{ if  .Params.image }}
-            <img class="card-img-top" src="{{ .Params.image }}">
+            <img class="card-img-top large-image" src="{{ .Params.image }}">
             {{ else }}
-            <img class="card-img-top" src='{{ "/img/logos/ignite.svg" }}'>
+            <img class="card-img-top large-image" src='{{ "/img/logos/ignite.svg" }}'>
             {{ end }}
             <div class="card-body">
                 <h5 class="card-title">{{ .Params.title }}</h5>
@@ -21,7 +45,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </div> -->
     {{ end }}
 {{ end }}
 </div>

@@ -8799,6 +8799,10 @@ body {
   padding-bottom: 2vw;
 }
 .section .container .row {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
   padding-bottom: 20px;
 }
 .section .container .row:last-of-type {
@@ -8897,6 +8901,7 @@ form {
 }
 form .form-control {
   border: 1px solid var(--secondary);
+  background-color: var(--secondary-transparent);
 }
 
 h2 {
@@ -8941,15 +8946,33 @@ h3 {
 .card.with-header .card-text:last-of-type {
   text-align: center;
 }
+.card.with-header .card-img-top {
+  margin-top: -80px;
+}
+.card.with-footer .card-footer {
+  background-color: var(--secondary);
+  border-bottom: 1px solid var(--secondary);
+  font-family: var(--header-font);
+  color: var(--primary);
+  font-size: 1.2em;
+  height: 80px;
+  padding-top: 40px;
+  -webkit-clip-path: polygon(0 0%, 0 100%, 100% 100%, 100% 70%);
+  clip-path: polygon(0 70%, 0 100%, 100% 100%, 100% 0%);
+  text-align: right;
+}
+.card.with-footer .card-img-top {
+  margin-bottom: -80px;
+}
 .card .card-img-top {
   object-fit: cover;
   width: 100%;
 }
 .card .card-img-top.large-image {
-  height: 15vw;
+  height: 400px;
 }
 .card .card-img-top.med-image {
-  height: 10vw;
+  height: 200px;
 }
 .card h3 {
   padding-top: 0px;
@@ -8973,6 +8996,9 @@ h3 {
 .card.highlight-card .card-title {
   font-size: 2em;
 }
+.card.no-background {
+  background-color: white;
+}
 
 .btn {
   font-family: var(--header-font);
@@ -8988,30 +9014,39 @@ h3 {
   }
 }
 
-.faq-heading {
+.expandable-card {
+  background-color: white;
+  border: 1px solid var(--secondary);
+  border-bottom: 1px solid var(--primary-transparent);
+}
+.expandable-card .card-header {
+  background-color: var(--secondary);
+  border-bottom: 1px solid var(--primary-transparent);
+}
+.expandable-card .btn {
   width: 100%;
 }
-.faq-heading .faq-heading-title {
+.expandable-card .btn[data-toggle=collapse] .arrow-expand {
+  display: none;
+}
+.expandable-card .btn[data-toggle=collapse] .arrow-less {
+  display: inline-block;
+}
+.expandable-card .btn[data-toggle=collapse].collapsed .arrow-expand {
+  display: inline-block;
+}
+.expandable-card .btn[data-toggle=collapse].collapsed .arrow-less {
+  display: none;
+}
+.expandable-card .btn .btn-title {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   justify-content: space-between;
-  color: black;
+  color: var(--primary);
 }
-.faq-heading .faq-heading-title .iconify {
+.expandable-card .btn .btn-title .iconify {
   font-size: 1.5em;
-}
-.faq-heading[data-toggle=collapse] .arrow-expand {
-  display: none;
-}
-.faq-heading[data-toggle=collapse] .arrow-less {
-  display: inline-block;
-}
-.faq-heading[data-toggle=collapse].collapsed .arrow-expand {
-  display: inline-block;
-}
-.faq-heading[data-toggle=collapse].collapsed .arrow-less {
-  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */

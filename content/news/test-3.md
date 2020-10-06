@@ -1,7 +1,6 @@
 ---
-title: "Lorem"
-date: 2020-01-01T18:30:00-06:00
-image: "/img/default.jpg"
+title: "Third News"
+date: 2020-09-09T18:30:00-06:00
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eros mauris, ac fringilla velit tristique vel. Donec molestie accumsan arcu et fringilla. Maecenas sollicitudin leo non bibendum molestie. Nam vehicula et neque quis interdum. Fusce sodales varius purus, at sagittis leo tincidunt sed. 

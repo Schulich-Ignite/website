@@ -1,11 +1,8 @@
 {{ define "main" }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Sessions") }}
+
     <section class="section single-item">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Sessions</h2>
-                </div>
-            </div>
             {{ partial "sessions-feed.html" .}}
             </div>
         </div>

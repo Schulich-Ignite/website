@@ -1,26 +1,31 @@
 
 <div class="row">
-    {{ range where .Site.Pages.ByDate "Type" "events" }}
+    {{ range (where .Site.Pages.ByDate "Type" "events").Reverse }}
     <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
         {{ if  (.Params.title) }}
         <div class="col-lg-6 spaced-col">
-            <div class="card">
+            <a href="{{ ref . .File }}">
+            <div class="card with-header with-footer">
+                <div class="card-header">
+                    {{ .Params.title }}
+                </div>
+                
                 {{ if  .Params.image }}
-                    <img class="card-img-top" src="{{ .Params.image }}">
+                    <img class="card-img-top large-image" src="{{ .Params.image }}">
                 {{ else }}
-                    <img class="card-img-top" src='{{ "/img/logos/ignite.svg" }}'>
+                    <img class="card-img-top large-image" src='{{ "/img/logos/ignite.svg" }}'>
                 {{ end }}
-                <div class="card-body">
-                    <h5 class="card-title">{{ .Params.title }}</h5>
-                    <p class="card-text">
-                        <time>{{ .Params.date.Format "Monday, 01/02/2006 15:04 MST"}}</time>
-                    </p>
-                    <p class="card-text">{{ .Summary }}...
-                        <a href="{{ ref . .File }}">Read more</a>
-                    </p>
 
+                <div class="card-footer dates">
+                    <span class="long-dates">
+                        {{ .Params.date.Format "Monday, 01/02/2006" }}
+                    </span>
+                    <span class="short-dates">
+                        {{ .Params.date.Format "01/02/06" }}
+                    </span>
                 </div>
             </div>
+            </a>
         </div>
         {{ end }}
     {{ end }}
