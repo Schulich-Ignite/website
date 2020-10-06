@@ -163,6 +163,13 @@ body {
     .card {
         border: 0px solid;
     }
+
+    .float-center {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 #content {

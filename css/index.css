@@ -8372,6 +8372,12 @@ body {
 #sponsors .card {
   border: 0px solid;
 }
+#sponsors .float-center {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
 
 #content {
   padding-top: 110px;
