@@ -8507,45 +8507,23 @@ body {
   --color: var(--secondary);
   background: var(--dark);
   height: 60vh;
+  min-height: 600px;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  -webkit-clip-path: polygon(0 0, 0 100%, 100% 90%, 100% 0);
+  margin-bottom: -2vh;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 0);
   clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 0);
-}
-@media (max-width: 768px) {
-  .pretty-header {
-    height: 75vh;
-    -webkit-clip-path: polygon(0 0, 0 100%, 100% 90%, 100% 0);
-    clip-path: polygon(0 0, 0 100%, 100% 90%, 100% 0);
-  }
 }
 .pretty-header .container {
   margin-top: -5%;
 }
-.pretty-header .row {
+.pretty-header .container .row {
   justify-content: center;
   align-items: center;
-}
-.pretty-header .logo-name {
-  text-align: center;
-}
-@media (max-width: 768px) {
-  .pretty-header .logo-name {
-    text-align: center;
-    padding-left: 0;
-  }
-}
-.pretty-header .logo-name .break {
-  display: none;
-}
-@media (max-width: 992px) {
-  .pretty-header .logo-name .break {
-    display: block;
-  }
 }
 .pretty-header h1 {
   font-family: var(--header-font);
@@ -8559,11 +8537,6 @@ body {
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: var(--color);
 }
-@media (max-width: 768px) {
-  .pretty-header h1 {
-    font-size: 16vw;
-  }
-}
 .pretty-header .dates {
   color: white;
   font-family: var(--secondary-font);
@@ -8572,7 +8545,32 @@ body {
 .pretty-header .dates #short-dates {
   display: none;
 }
+.pretty-header .btn {
+  font-size: 2em;
+  font-family: var(--secondary-font);
+  margin-top: 50px;
+  color: white;
+  width: 100%;
+}
+.pretty-header .btn.btn-secondary {
+  color: var(--primary);
+}
 @media (max-width: 992px) {
+  .pretty-header h1 {
+    font-size: 6.5em;
+  }
+  .pretty-header .container {
+    margin-top: -12vw;
+  }
+  .pretty-header .logo-name .break {
+    display: block;
+  }
+  .pretty-header .row:last-of-type {
+    padding-top: 0px;
+  }
+  .pretty-header .btn {
+    margin-top: 30px;
+  }
   .pretty-header .dates {
     font-size: 2.5em;
   }
@@ -8584,24 +8582,23 @@ body {
   }
 }
 @media (max-width: 768px) {
+  .pretty-header h1 {
+    font-size: 14vw;
+  }
+  .pretty-header .logo-name {
+    text-align: center;
+    padding-left: 0;
+  }
   .pretty-header .dates {
     font-size: 5vw;
   }
-}
-.pretty-header .btn {
-  font-size: 2em;
-  font-family: var(--secondary-font);
-  margin-top: 50px;
-  color: white;
-}
-@media (max-width: 768px) {
   .pretty-header .btn {
     font-size: 4vw;
+    width: 65%;
   }
-}
-.pretty-header .btn-secondary {
-  min-width: 95%;
-  color: var(--primary);
+  .pretty-header .btn:last-of-type {
+    margin-top: 20px;
+  }
 }
 
 .footer {
@@ -8627,7 +8624,26 @@ body {
   justify-content: center;
 }
 
-.with-icon {
+.section {
+  padding-bottom: 2vw;
+}
+.section .container .row {
+  padding-bottom: 20px;
+}
+.section .container .row:last-of-type {
+  padding-bottom: 0px;
+}
+.section .form-group {
+  padding-bottom: 0px;
+}
+.section:last-of-type {
+  padding-bottom: 100px;
+}
+.section.full-page {
+  padding-top: 40px;
+}
+
+.diagonal-section {
   height: 50vh;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -8635,59 +8651,63 @@ body {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 992px) {
-  .with-icon {
-    height: 40vh;
-  }
+.diagonal-section h5 {
+  font-size: 1.25em;
 }
-.with-icon .iconify {
+.diagonal-section .iconify {
   width: 100%;
-  font-size: 20rem;
+  font-size: 20em;
 }
-@media (max-width: 992px) {
-  .with-icon .iconify {
-    display: none;
-  }
+.diagonal-section:nth-child(even) {
+  height: 60vh;
+  background-color: var(--secondary-transparent);
+  -webkit-clip-path: polygon(0 0, 0 85%, 100% 100%, 100% 15%);
+  clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 15%);
 }
-.with-icon .right-align {
+.diagonal-section:nth-child(even) .iconify {
+  padding-top: 50px;
+}
+.diagonal-section:first-child {
+  margin-top: 0px;
+  background-color: green;
+}
+.diagonal-section .right-align {
   text-align: right;
 }
-.with-icon .row {
+.diagonal-section .row {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-#mission {
-  height: 60vh;
-  background-color: var(--secondary-transparent);
-  -webkit-clip-path: polygon(0 0, 0 85%, 100% 100%, 100% 15%);
-  clip-path: polygon(0 0, 0 85%, 100% 100%, 100% 15%);
-}
 @media (max-width: 992px) {
-  #mission {
+  .diagonal-section {
+    height: 40vh;
+    min-height: 400px;
+  }
+  .diagonal-section:nth-child(even) {
     height: 50vh;
   }
-}
-#mission .iconify {
-  padding-top: 50px;
+  .diagonal-section .iconify {
+    display: none;
+  }
 }
 
-#sponsors .image-container {
+.image-container {
   display: flex;
-  flex-wrap: wrap;
-  padding: 5px;
+  flex-wrap: nowrap;
   justify-content: space-evenly;
 }
-#sponsors .image-container img {
-  width: 17%;
+.image-container img {
   margin: 5px;
+  width: 20%;
 }
-
-#tagline {
-  font-size: 2em;
+.image-container img:first-of-type {
+  margin-left: 0px;
+}
+.image-container img:last-of-type {
+  margin-right: 0px;
 }
 
 form {
@@ -8713,6 +8733,8 @@ h3 {
   font-family: var(--header-font);
   font-size: 1.8em;
   text-transform: uppercase;
+  padding-top: 30px;
+  padding-bottom: 0px;
 }
 
 .single-item .card {
@@ -8725,15 +8747,14 @@ h3 {
 }
 .card .card-img-top {
   width: 100%;
-  height: 15vw;
+  height: 13vw;
   object-fit: cover;
 }
 .card .card-header {
   background-color: rgba(255, 222, 89, 0.2);
   border-bottom: 1px solid var(--secondary);
 }
-
-#team .card {
+.card.highlight-card {
   height: 100%;
   background-color: var(--secondary-transparent);
   padding: 30px 30px 10px 30px;
@@ -8746,25 +8767,6 @@ h3 {
   .spaced-col:last-child {
     margin-bottom: 0px;
   }
-}
-
-.section {
-  padding-bottom: 2vw;
-}
-.section .container .row {
-  padding-bottom: 20px;
-}
-.section .container .row:last-of-type {
-  padding-bottom: 0px;
-}
-.section .form-group {
-  padding-bottom: 0px;
-}
-.section:last-of-type {
-  padding-bottom: 100px;
-}
-.section.full-page {
-  padding-top: 40px;
 }
 
 .title {

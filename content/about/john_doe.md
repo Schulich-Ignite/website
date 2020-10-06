@@ -1,6 +1,7 @@
 ---
 name: "John Doe"
 role: "VP things"
+highlight: true
 image: "http://placekitten.com/g/200/300"
 ---
 
