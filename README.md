@@ -16,10 +16,14 @@ Here is a list of the current site variables:
 - email: The primary shulich ignite email
 - instagram: The schulich ignite instagram link
 - facebook: the link to the schulich ignite facebook page
-- YouTube: The link to the official Schulich ignite YouTube Channel
-- LinkedIn: The link to the Schulich ignite LinkedIn Company
-- Discord: The link to join the discord server
+- youtube: The link to the official Schulich ignite YouTube Channel
+- linkedin: The link to the Schulich ignite LinkedIn Company
+- discord: The link to join the discord server
+- tiktok: The link to the Schulich Ignite TikTok account
 - signup: Set to true when signups are available
+- startDate: The start of the first workshop
+- endDate: The end of the last workshop
+- summaryLength: The number of characters to include in the summary for news, sessions, etc.
 - mentorSignUp: The link to the mentor application form
 - menteeSignUp: The link to the mentee singup form
 
