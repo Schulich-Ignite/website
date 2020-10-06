@@ -8334,11 +8334,15 @@ body {
   font-family: var(--secondary-font);
   margin-top: 50px;
   color: white;
+  min-width: 95%;
 }
 @media (max-width: 768px) {
   .pretty-header .btn {
     font-size: 4vw;
   }
+}
+.pretty-header .btn-secondary {
+  color: var(--primary);
 }
 
 .footer {
