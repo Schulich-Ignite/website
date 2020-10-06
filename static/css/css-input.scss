@@ -117,7 +117,6 @@ body {
         font-family: var(--secondary-font);    
         margin-top: 50px;
         color: white;
-        min-width: 95%;
 
         @media (max-width: 768px) {
             font-size: 4vw;
@@ -125,6 +124,7 @@ body {
     }
 
     .btn-secondary {
+        min-width: 95%;
         color: var(--primary)
     }
 

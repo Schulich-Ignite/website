@@ -2,45 +2,40 @@
 <section class="pretty-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="container logo-name">
-                    <div class="row">
-                        <h1> <span>Schulich</span><span class="break"></span><span>Ignite</span></h1>
-                    </div>
-                    <div class="row dates">
-                        <span id="long-dates">
-                            {{ .Site.Params.startDate.Format "January 2, 2006" }} —
-                            {{ .Site.Params.endDate.Format "January 2, 2006" }}
-                        </span>
-                        <span id="short-dates">
-                            {{ .Site.Params.startDate.Format "01/02/06" }} —
-                            {{ .Site.Params.endDate.Format "01/02/06" }}
-                        </span>
-                    </div>
-                </div>
+            <div class="col-lg-12 logo-name">
+                <h1> <span>Schulich</span><span class="break"></span><span>Ignite</span></h1>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-lg-12 dates">
+                <span id="long-dates">
+                    {{ .Site.Params.startDate.Format "January 2, 2006" }} —
+                    {{ .Site.Params.endDate.Format "January 2, 2006" }}
+                </span>
+                <span id="short-dates">
+                    {{ .Site.Params.startDate.Format "01/02/06" }} —
+                    {{ .Site.Params.endDate.Format "01/02/06" }}
+                </span>
+            </div>
+        </div>
         {{ if .Site.Params.signup }}
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Signup</h2>
-                </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <a class="btn btn-secondary" href="{{ .Site.Params.menteeSignup }}">Signup to LEARN</a>
             </div>
-            <div class="row">
-                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                    <a href="{{ .Site.Params.menteeSignup }}">
-                        <button type="button" class="btn btn-primary">to LEARN</button>
-                    </a>
-                    <a href="{{ .Site.Params.mentorSignUp }}"></a>
-                    <button type="button" class="btn btn-primary">to TEACH</button>
-                    </a>
-                </div>
+            <div class="col-lg-4 col-md-6">
+                <a class="btn btn-secondary" href="{{ .Site.Params.mentorSignUp }}">Signup to TEACH</a>
             </div>
+            <div class="col-lg-4 col-md-12">
+                <a class="btn btn-primary text-uppercase" href="#content">Continue to Content</a>
+            </div>
+        </div>
         {{ else }}
-            <div class="row">
-                <a class="btn btn-primary text-uppercase js-scroll-trigger" href="#content">Continue to Content</a>
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="btn btn-primary text-uppercase" href="#content">Continue to Content</a>
             </div>
+        </div>
         {{ end }}
     </div>
 </section>
