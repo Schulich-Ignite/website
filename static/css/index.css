@@ -8755,28 +8755,34 @@ body {
 }
 
 .diagonal-header {
-  height: 100px;
+  height: 120px;
   width: 100%;
   font-family: var(--header-font);
 }
 .diagonal-header .mainheader {
+  position: relative;
   height: 100%;
-  margin-top: -100px;
   background-color: var(--primary);
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 0);
   clip-path: polygon(0 0, 0 100%, 100% 0%, 100% 0);
   color: var(--secondary);
   padding-left: 30px;
   font-size: 2.5em;
+  text-decoration: var(--secondary) wavy underline;
+  text-underline-offset: 20px;
+  text-decoration-thickness: 3px;
 }
 .diagonal-header .subheader {
+  position: relative;
+  z-index: -1;
   height: 100%;
   text-align: right;
+  margin-top: -120px;
   background-color: var(--success-transparent);
   -webkit-clip-path: polygon(0 0, 0 10%, 100% 100%, 100% 0);
   clip-path: polygon(0 0, 0 0%, 100% 100%, 100% 0);
   padding-right: 30px;
-  padding-top: 30px;
+  padding-top: 40px;
   font-size: 1.5em;
   color: var(--primary);
 }
@@ -8797,6 +8803,17 @@ body {
 }
 .section .container .row:last-of-type {
   padding-bottom: 0px;
+}
+.section .container .row.full-image {
+  display: block;
+  max-height: 300px;
+  /*set an height */
+  overflow: hidden;
+  /* crops/cut off */
+}
+.section .container .row.full-image img {
+  object-fit: cover;
+  vertical-align: middle;
 }
 .section .form-group {
   padding-bottom: 0px;
@@ -8904,6 +8921,8 @@ h3 {
 
 .card {
   height: 100%;
+  border: 0px;
+  background-color: var(--secondary-transparent);
 }
 .card.with-header {
   border: 0px solid var(--secondary);
@@ -8923,15 +8942,36 @@ h3 {
   text-align: center;
 }
 .card .card-img-top {
-  width: 100%;
-  height: 13vw;
   object-fit: cover;
+  width: 100%;
+}
+.card .card-img-top.large-image {
+  height: 15vw;
+}
+.card .card-img-top.med-image {
+  height: 10vw;
+}
+.card h3 {
+  padding-top: 0px;
+}
+.card .card-title {
+  font-size: 1.5em;
+  margin-bottom: 0px;
+}
+.card .text-muted {
+  color: black !important;
 }
 .card.highlight-card {
-  height: 100%;
   border: 0px;
   background-color: var(--success-transparent);
   padding: 30px 30px 10px 30px;
+}
+.card.highlight-card .card-body {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.card.highlight-card .card-title {
+  font-size: 2em;
 }
 
 .btn {
