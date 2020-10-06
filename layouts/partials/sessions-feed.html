@@ -2,7 +2,7 @@
 {{ range where .Site.Pages.ByDate "Type" "sessions" }}
     {{ if .Params.ready }}
     <div class="col-lg-4 spaced-col">
-        <div class="card">
+        <div class="card with-header">
             <div class="card-header">
                 Session {{ .Params.number }}
             </div>
@@ -14,12 +14,11 @@
                 <p class="card-text">{{ .Summary }}...
                     <a href="{{ ref . .File }}">Read more</a>
                 </p>
-
+                <p class="card-text">
                 {{ if  (.Params.slides) }}
-
-                <a href="{{ .Params.slides }}" class="btn btn-primary">Download the slides</a>
-
+                    <a href="{{ .Params.slides }}" class="btn btn-primary">Download the slides</a>
                 {{ end }}
+                </p>
             </div>
         </div>
     </div>
