@@ -3,7 +3,7 @@
     {{ range where .Site.Pages.ByDate "Type" "events" }}
     <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
         {{ if  (.Params.title) }}
-        <div class="col-lg-6">
+        <div class="col-lg-6 spaced-col">
             <div class="card">
                 {{ if  .Params.image }}
                     <img class="card-img-top" src="{{ .Params.image }}">

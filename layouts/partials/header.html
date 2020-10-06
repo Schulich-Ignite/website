@@ -16,11 +16,22 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ .Site.Params.ignitePoints }}">Ignite Points</a>
       </li>
+      {{ $news := (where .Site.Pages.ByDate "Type" "news") }}
+      {{ $numOfNews := len $news }}
+      {{ if gt $numOfNews 1}}
+        <li class="nav-item">
+          <a class="nav-link" href="/news">News</a>
+        </li>
+      {{ end }}
+      {{ $events := (where .Site.Pages.ByDate "Type" "events") }}
+      {{ $numOfEvents := len $events }}
+      {{ if gt $numOfEvents 1}}
+        <li class="nav-item">
+          <a class="nav-link" href="/events">Events</a>
+        </li>
+      {{ end }}
       <li class="nav-item">
         <a class="nav-link" href="/about">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/contact">Contact</a>
       </li>
       {{ if .Site.Params.signup }}
       <li class="nav-item dropdown">
@@ -38,6 +49,9 @@
         </div>
       </li>
       {{end}}
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
     </ul>
   </div>
 </nav>

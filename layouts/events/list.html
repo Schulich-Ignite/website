@@ -1,4 +1,12 @@
 {{ define "main" }}
-<h2>Events</h2>
-{{ partial "event-feed.html" .}}
+<section class="section full-page" id="events">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Events</h2>
+            </div>
+        </div>
+        {{ partial "event-feed.html" .}}
+    </div>
+</section>
 {{ end }}

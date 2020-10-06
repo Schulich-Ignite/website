@@ -1,25 +1,29 @@
 {{ define "main" }}
-<section class="section single-item">
+<section class="section single-item full-page">
     <div class="container">
         <div class="row">
-            <div class="card">
-                <div class="card-header">
-                    Session {{ .Params.number }}
-                </div>
-                <div class="card-body">
-                    <h2 class="card-title">{{ .Params.title }}</h2>
-                    <p class="card-text">
+            <div class="col-lg-7">
+                <h2>{{ .Params.title }}</h2>
+            </div>
+            <div class="col-lg-3">
+                    <div class="col-12">
                         <time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
-                    </p>
-                    {{ if  (.Params.slides) }}
-                    <p class="card-text">
+                    </div>
+                    <div class="col-12">
+                        Session {{ .Params.number }}
+                    </div>
+            </div>
+            <div class="col-lg-2">
+                        {{ if  (.Params.slides) }}
+                        
                         <a href="{{ .Params.slides }}" class="btn btn-primary">Download the slides</a>
-                    </p>
-                    {{ end }}
-                    <p class="card-text">{{ .Content }}</p>
-                </div>
+                        
+                        {{ end }}
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-12">{{ .Content }}</div>
             </div>
         </div>
-    </div>
 </section>
 {{end}}

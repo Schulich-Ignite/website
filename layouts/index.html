@@ -26,56 +26,39 @@
             <div class="col-lg-4 col-md-6">
                 <a class="btn btn-secondary" href="{{ .Site.Params.mentorSignUp }}">Signup to TEACH</a>
             </div>
-            <div class="col-lg-4 col-md-12">
-                <a class="btn btn-primary text-uppercase" href="#content">Continue to Content</a>
-            </div>
-        </div>
-        {{ else }}
-        <div class="row">
-            <div class="col-lg-12">
-                <a class="btn btn-primary text-uppercase" href="#content">Continue to Content</a>
-            </div>
         </div>
         {{ end }}
     </div>
 </section>
 
-<section id="content" class="section" >
+<section id="content" class="section with-icon" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-4 col-sm-0">
+                <span class="iconify" data-icon="emojione:school" data-inline="false"></span>
+            </div>
+            <div class="col-lg-8 col-sm-12 right-align">
                 <h2>Who are we?</h2>
+                <h5>{{ .Params.tagline }}</h5>
             </div>
-                <div class="col-lg-9">
-                    <h3>{{ .Params.tagline }}</h3>
-                </div>
         </div>
     </div>
 </section>
 
-<section id="mission" class="section">
+<section id="mission" class="section with-icon">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-8  col-sm-12">             
                 <h2>Our Mission</h2>
+                <h5>{{ .Params.mission }}</h5>
             </div>
-            <div class="col-lg-9">
-                <h3>{{ .Params.mission }}</h3>
+            <div class="col-lg-4 col-sm-0">
+                <span class="iconify" data-icon="emojione:clipboard" data-inline="false"></span>
             </div>
         </div>
     </div>
 </section>
-
-<!-- <section class="section" id="dates">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>Sessions</h2>
-            </div>
-        </div>
-        {{ partial "sessions-feed.html" .}}
-    </div>
-</section> -->
+<!-- 
 
 {{ $events := (where .Site.Pages.ByDate "Type" "events") }}
 {{ $numOfEvents := len $events }}
@@ -105,7 +88,7 @@
         {{ partial "news-feed.html" .}}
     </div>
 </section>
-{{end}}
+{{end}} -->
 
 <section class="section" id="sponsors">
     <div class="container">
