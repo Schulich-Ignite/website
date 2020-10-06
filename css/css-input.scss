@@ -3,9 +3,10 @@ $theme-colors: (
   "primary": #d14b3b,
   "primary-transparent":  #d14b3b80, 
   "secondary":  #ffde59, 
-  "secondary-transparent":    #ff914c40, 
+  "secondary-transparent": #ffde5920, 
   "dark":  #d14b3b,
   "success": #ff914c,
+  "success-transparent": #ff914c40
 );
 
 
@@ -71,10 +72,6 @@ body {
         color: white;
         font-family: var(--secondary-font); 
         font-size: 3em ;
-
-        #short-dates { 
-            display: none;
-        }
     }
 
     .btn {
@@ -115,12 +112,6 @@ body {
 
         .dates {
             font-size: 2.5em;
-            #long-dates {
-                display: none;
-            }
-            #short-dates { 
-                display: block;
-            }
         }
     }
     
@@ -149,9 +140,24 @@ body {
     }
 }
 
+.dates {
+    .short-dates { 
+        display: none;
+    }
+
+     @media (max-width: 992px) { 
+        .long-dates {
+            display: none;
+        }
+        .short-dates { 
+            display: block;
+        }
+    }
+}
+
 .footer {
     // background-color: var(--success);
-    background-color: var(--secondary-transparent);;
+    background-color: var(--success-transparent);;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -177,6 +183,50 @@ body {
 }
 
 
+.diagonal-header {
+    height: 100px;
+    width: 100%;
+    font-family: var(--header-font);
+
+    .mainheader {
+        height: 100%;
+        margin-top: -100px;
+        background-color: var(--primary);
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 0);
+        clip-path: polygon(0 0, 0 100%, 100% 0%, 100% 0);
+
+        color: var(--secondary);
+        padding-left: 30px;
+        font-size: 2.5em;
+
+    }
+
+    .subheader {
+        height: 100%;
+        text-align: right;
+        
+        background-color: var(--success-transparent);
+        -webkit-clip-path: polygon(0 0, 0 10%, 100% 100%, 100% 0);
+        clip-path: polygon(0 0, 0 0%, 100% 100%, 100% 0);
+
+        padding-right: 30px;
+        padding-top: 30px;
+        font-size: 1.5em;
+        color: var(--primary);
+    }
+
+    
+    @media (max-width: 992px) {
+        .mainheader {
+            font-size: 2.3em;
+        }
+        .subheader {
+            font-size: 1.2em;
+        }
+    }
+}
+
+
 .section {
     padding-bottom: 2vw;
     .container {
@@ -192,12 +242,15 @@ body {
         padding-bottom: 0px;
     }
 
-    &:last-of-type {
-        padding-bottom: 100px; 
-    }
+    &.single-item {
+        &:first-of-type {
+            padding-top: 40px;
+        }
 
-    &.full-page {
-        padding-top: 40px;
+            
+        &:last-of-type {
+            padding-bottom: 100px; 
+        }
     }
 }
 
@@ -221,7 +274,7 @@ body {
 
     &:nth-child(even) {
         height: 60vh;
-        background-color: var(--secondary-transparent);
+        background-color: var(--success-transparent);
         -webkit-clip-path: polygon(0 0, 0 85%, 100% 100%, 100% 15%);
         clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 15%);
 
@@ -313,15 +366,28 @@ h3 {
     padding-bottom: 0px;
 }
 
-.single-item {
-    .card { 
-        width: 100%;
-    }
-}
-
 .card { 
     height: 100%;
-    border: 1px solid var(--secondary);
+
+    &.with-header {
+        border: 0px solid var(--secondary);
+        background-color: var(--secondary-transparent);   
+        
+        .card-header {
+            background-color: var(--secondary);
+            border-bottom: 1px solid var(--secondary);
+            font-family: var(--header-font);
+            color: var(--primary);
+            font-size: 1.7em;
+            height: 80px;
+            -webkit-clip-path: polygon(0 0, 0 100%, 100% 30%, 100% 0%);
+            clip-path: polygon(0 0, 0 100%, 100% 30%, 100% 0%);
+        }
+    
+        .card-text:last-of-type {
+            text-align: center;
+        }
+    }
 
     .card-img-top {
         width: 100%;
@@ -329,18 +395,20 @@ h3 {
         object-fit: cover;
     }
 
-    .card-header {
-        background-color: rgba(255, 222, 89, 0.2);
-        border-bottom: 1px solid var(--secondary);
-    }
 
     &.highlight-card {
         height: 100%;
-        background-color: var(--secondary-transparent);
+        border: 0px;
+        background-color: var(--success-transparent);
         padding: 30px 30px 10px 30px;
     }
 }
 
+
+.btn {
+    font-family: var(--header-font);
+    font-size: 1.3em;
+}
 
 
 .spaced-col {
@@ -351,16 +419,6 @@ h3 {
             margin-bottom: 0px;
         }
     }
-}
-
-
-.title {
-    display: block;
-    width: 100%;
-}
-
-.subtitle {
-    display: block;
 }
 
 .faq-heading {
@@ -376,7 +434,6 @@ h3 {
             font-size: 1.5em;
         }
 
-        
         
         color: black;
         
