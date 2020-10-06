@@ -1,8 +1,10 @@
 
 $theme-colors: (
   "primary": #d14b3b,
-  "secondary": #ffde59, 
-  "dark": #d14b3b,
+  "primary-transparent":  #d14b3b80, 
+  "secondary":  #ffde59, 
+  "secondary-transparent":    #ff914c40, 
+  "dark":  #d14b3b,
   "success": #ff914c,
 );
 
@@ -26,16 +28,14 @@ body {
 .pretty-header {
     --bg: var(--dark);
     --color: var(--secondary);
-    position: relative;
-    background: var(--success);
-    height: 93vh;
-    background-image: url("/img/gallery/campus-image.jpg");
+    background: var(--dark);
+    height: 60vh;
+    // background-image: url("/img/gallery/campus-image.jpg");
     // background-image: url("/img/logos/ignite.svg");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    background-size: cover;
-    margin-bottom: 25px;
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    // background-position: center center;
+    // background-size: cover;
 
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -43,6 +43,20 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 90%, 100% 0);
+        clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 0);
+
+    @media (max-width: 768px) {
+        height: 75vh;
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 90%, 100% 0);
+        clip-path: polygon(0 0, 0 100%, 100% 90%, 100% 0);
+    }
+
+    .container {
+        margin-top: -5%;
+
+    }
 
     .row {
         justify-content: center;
@@ -82,7 +96,7 @@ body {
 
 
         @media (max-width: 768px) {
-            font-size: 15vw;
+            font-size: 16vw;
         }
 
     }
@@ -131,23 +145,22 @@ body {
 }
 
 .footer {
-    background-color: var(--success);
+    // background-color: var(--success);
+    background-color: var(--secondary-transparent);;
     position: absolute;
     bottom: 0;
     width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
     a {
-        color: var(--secondary);
+        color: var(--primary);
     }
 
     .is-large {
-        padding-top: 5px;
-        padding-bottom: 10px;
-        font-size: 4rem;
-    }
-
-    h5 {
-        padding-top: 10px;
+        font-size: 3em;
+        margin-right: 5px;
+        margin-left: 5px;
     }
 
     .row {
@@ -158,23 +171,66 @@ body {
     }
 }
 
-#sponsors {
-    // padding-bottom: 100px;
-    .card {
-        border: 0px solid;
+.with-icon {
+    height: 50vh;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 992px) {
+        height: 40vh;
     }
 
-    .float-center {
+    .iconify {
+        width: 100%;
+        font-size: 20rem;
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    .right-align {
+        text-align: right;
+    }
+    
+    .row {
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
         justify-content: center;
+        align-items: center;
+    }
+
+}
+
+#mission {
+    height: 60vh;
+    @media (max-width: 992px) {
+        height: 50vh;
+    }
+    background-color: var(--secondary-transparent);
+    -webkit-clip-path: polygon(0 0, 0 85%, 100% 100%, 100% 15%);
+    clip-path: polygon(0 0, 0 85%, 100% 100%, 100% 15%);
+    .iconify {
+        padding-top: 50px;
     }
 }
 
-#content {
-    padding-top: 110px;
-    margin-top: -60px;
+
+#sponsors {
+    .image-container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+        justify-content: space-evenly;
+    }
+    .image-container img {
+        width: 17%;
+        margin: 5px;
+    } 
 }
 
 #tagline {
@@ -194,6 +250,18 @@ h2 {
     color: var(--primary);
     font-family: var(--header-font);
     font-size: 2em;
+    text-transform: uppercase;
+
+    text-decoration: var(--primary-transparent) wavy underline;
+    text-underline-offset: 20px;
+    text-decoration-thickness: 3px;
+    padding-bottom: 40px;
+}
+
+h3 {
+    color: var(--primary);
+    font-family: var(--header-font);
+    font-size: 1.8em;
     text-transform: uppercase;
 }
 
@@ -219,6 +287,14 @@ h2 {
     }
 }
 
+#team {
+    .card { 
+        height: 100%;
+        background-color: var(--secondary-transparent);
+        padding: 30px 30px 10px 30px;
+    }
+}
+
 
 .spaced-col {
     @media (max-width: 992px) {
@@ -230,8 +306,8 @@ h2 {
     }
 }
 
+
 .section {
-    padding-top: 2vw;
     padding-bottom: 2vw;
     .container {
         .row {
@@ -248,6 +324,10 @@ h2 {
 
     &:last-of-type {
         padding-bottom: 100px; 
+    }
+
+    &.full-page {
+        padding-top: 40px;
     }
 }
 
