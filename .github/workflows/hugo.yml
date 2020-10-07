@@ -26,18 +26,10 @@ jobs:
         if: steps.calibre.outputs.markdown != ''
         uses: peter-evans/create-pull-request@master
         with:
-          title: Compressed Images Nightly
+          title: Compressed Images
           branch-suffix: timestamp
           commit-message: Compressed Images
           body: ${{ steps.calibre.outputs.markdown }}
-          
-      - name: minisauras
-        uses: TeamTigers/minisauras@v2.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-        id: dir
-        with:
-          directory: 'static/' ## minify all files under static directory
   
       - name: Publish Site
         uses: chabad360/hugo-gh-pages@master
