@@ -5,4 +5,6 @@ highlight: true
 image: "/img/gallery/anmol_ahuja_Portrait.png"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec facilisis auctor diam sit amet volutpat. Cras in ante pretium est elementum consectetur. Duis mattis risus ligula, ac sagittis enim gravida auctor. Cras malesuada augue lectus, et placerat nunc vehicula at. Mauris libero augue, placerat sit amet diam ut, ullamcorper luctus nunc. 
+My name is Anmol Ahuja and I am the President at Schulich Ignite. I am responsible for managing the club, but most importantly, being a mentor. I am in my third year of electrical engineering, and I love playing badminton in my free time!
+
+Contact: anmol.ahuja1@ucalgary.ca
