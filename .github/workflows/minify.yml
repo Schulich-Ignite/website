@@ -1,4 +1,4 @@
-name: Publish Site
+name: Minify JS and CSS on pages branch
 
 on:
   push:
