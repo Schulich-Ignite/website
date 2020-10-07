@@ -1,1 +1,403 @@
-import $ from"jquery";import Util from"./util";const Collapse=(t=>{const e="collapse",s="bs.collapse",i=t.fn[e],n={toggle:!0,parent:""},l={toggle:"boolean",parent:"(string|element)"},r="show",a="collapse",o="collapsing",g="collapsed",h="width",c='[data-toggle="collapse"]';class _{constructor(e,s){this._isTransitioning=!1,this._element=e,this._config=this._getConfig(s),this._triggerArray=t.makeArray(t(`[data-toggle="collapse"][href="#${e.id}"],[data-toggle="collapse"][data-target="#${e.id}"]`));const i=t(c);for(let s=0;s<i.length;s++){const n=i[s],l=Util.getSelectorFromElement(n);null!==l&&t(l).filter(e).length>0&&(this._selector=l,this._triggerArray.push(n))}this._parent=this._config.parent?this._getParent():null,this._config.parent||this._addAriaAndCollapsedClass(this._element,this._triggerArray),this._config.toggle&&this.toggle()}static get VERSION(){return"4.0.0"}static get Default(){return n}toggle(){t(this._element).hasClass(r)?this.hide():this.show()}show(){if(this._isTransitioning||t(this._element).hasClass(r))return;let e,i;if(this._parent&&(e=t.makeArray(t(this._parent).find(".show, .collapsing").filter(`[data-parent="${this._config.parent}"]`)),0===e.length&&(e=null)),e&&(i=t(e).not(this._selector).data(s),i&&i._isTransitioning))return;const n=t.Event("show.bs.collapse");if(t(this._element).trigger(n),n.isDefaultPrevented())return;e&&(_._jQueryInterface.call(t(e).not(this._selector),"hide"),i||t(e).data(s,null));const l=this._getDimension();t(this._element).removeClass(a).addClass(o),this._element.style[l]=0,this._triggerArray.length>0&&t(this._triggerArray).removeClass(g).attr("aria-expanded",!0),this.setTransitioning(!0);const h=()=>{t(this._element).removeClass(o).addClass(a).addClass(r),this._element.style[l]="",this.setTransitioning(!1),t(this._element).trigger("shown.bs.collapse")};if(!Util.supportsTransitionEnd())return void h();const c="scroll"+(l[0].toUpperCase()+l.slice(1));t(this._element).one(Util.TRANSITION_END,h).emulateTransitionEnd(600),this._element.style[l]=this._element[c]+"px"}hide(){if(this._isTransitioning||!t(this._element).hasClass(r))return;const e=t.Event("hide.bs.collapse");if(t(this._element).trigger(e),e.isDefaultPrevented())return;const s=this._getDimension();if(this._element.style[s]=this._element.getBoundingClientRect()[s]+"px",Util.reflow(this._element),t(this._element).addClass(o).removeClass(a).removeClass(r),this._triggerArray.length>0)for(let e=0;e<this._triggerArray.length;e++){const s=this._triggerArray[e],i=Util.getSelectorFromElement(s);null!==i&&(t(i).hasClass(r)||t(s).addClass(g).attr("aria-expanded",!1))}this.setTransitioning(!0);const i=()=>{this.setTransitioning(!1),t(this._element).removeClass(o).addClass(a).trigger("hidden.bs.collapse")};this._element.style[s]="",Util.supportsTransitionEnd()?t(this._element).one(Util.TRANSITION_END,i).emulateTransitionEnd(600):i()}setTransitioning(t){this._isTransitioning=t}dispose(){t.removeData(this._element,s),this._config=null,this._parent=null,this._element=null,this._triggerArray=null,this._isTransitioning=null}_getConfig(t){return(t={...n,...t}).toggle=Boolean(t.toggle),Util.typeCheckConfig(e,t,l),t}_getDimension(){return t(this._element).hasClass(h)?h:"height"}_getParent(){let e=null;Util.isElement(this._config.parent)?(e=this._config.parent,void 0!==this._config.parent.jquery&&(e=this._config.parent[0])):e=t(this._config.parent)[0];const s=`[data-toggle="collapse"][data-parent="${this._config.parent}"]`;return t(e).find(s).each(((t,e)=>{this._addAriaAndCollapsedClass(_._getTargetFromElement(e),[e])})),e}_addAriaAndCollapsedClass(e,s){if(e){const i=t(e).hasClass(r);s.length>0&&t(s).toggleClass(g,!i).attr("aria-expanded",i)}}static _getTargetFromElement(e){const s=Util.getSelectorFromElement(e);return s?t(s)[0]:null}static _jQueryInterface(e){return this.each((function(){const i=t(this);let l=i.data(s);const r={...n,...i.data(),..."object"==typeof e&&e};if(!l&&r.toggle&&/show|hide/.test(e)&&(r.toggle=!1),l||(l=new _(this,r),i.data(s,l)),"string"==typeof e){if(void 0===l[e])throw new TypeError(`No method named "${e}"`);l[e]()}}))}}return t(document).on("click.bs.collapse.data-api",c,(function(e){"A"===e.currentTarget.tagName&&e.preventDefault();const i=t(this),n=Util.getSelectorFromElement(this);t(n).each((function(){const e=t(this),n=e.data(s)?"toggle":i.data();_._jQueryInterface.call(e,n)}))})),t.fn[e]=_._jQueryInterface,t.fn[e].Constructor=_,t.fn[e].noConflict=function(){return t.fn[e]=i,_._jQueryInterface},_})($);export default Collapse;
+import $ from 'jquery'
+import Util from './util'
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0): collapse.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+const Collapse = (($) => {
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
+
+  const NAME                = 'collapse'
+  const VERSION             = '4.0.0'
+  const DATA_KEY            = 'bs.collapse'
+  const EVENT_KEY           = `.${DATA_KEY}`
+  const DATA_API_KEY        = '.data-api'
+  const JQUERY_NO_CONFLICT  = $.fn[NAME]
+  const TRANSITION_DURATION = 600
+
+  const Default = {
+    toggle : true,
+    parent : ''
+  }
+
+  const DefaultType = {
+    toggle : 'boolean',
+    parent : '(string|element)'
+  }
+
+  const Event = {
+    SHOW           : `show${EVENT_KEY}`,
+    SHOWN          : `shown${EVENT_KEY}`,
+    HIDE           : `hide${EVENT_KEY}`,
+    HIDDEN         : `hidden${EVENT_KEY}`,
+    CLICK_DATA_API : `click${EVENT_KEY}${DATA_API_KEY}`
+  }
+
+  const ClassName = {
+    SHOW       : 'show',
+    COLLAPSE   : 'collapse',
+    COLLAPSING : 'collapsing',
+    COLLAPSED  : 'collapsed'
+  }
+
+  const Dimension = {
+    WIDTH  : 'width',
+    HEIGHT : 'height'
+  }
+
+  const Selector = {
+    ACTIVES     : '.show, .collapsing',
+    DATA_TOGGLE : '[data-toggle="collapse"]'
+  }
+
+  /**
+   * ------------------------------------------------------------------------
+   * Class Definition
+   * ------------------------------------------------------------------------
+   */
+
+  class Collapse {
+    constructor(element, config) {
+      this._isTransitioning = false
+      this._element         = element
+      this._config          = this._getConfig(config)
+      this._triggerArray    = $.makeArray($(
+        `[data-toggle="collapse"][href="#${element.id}"],` +
+        `[data-toggle="collapse"][data-target="#${element.id}"]`
+      ))
+      const tabToggles = $(Selector.DATA_TOGGLE)
+      for (let i = 0; i < tabToggles.length; i++) {
+        const elem = tabToggles[i]
+        const selector = Util.getSelectorFromElement(elem)
+        if (selector !== null && $(selector).filter(element).length > 0) {
+          this._selector = selector
+          this._triggerArray.push(elem)
+        }
+      }
+
+      this._parent = this._config.parent ? this._getParent() : null
+
+      if (!this._config.parent) {
+        this._addAriaAndCollapsedClass(this._element, this._triggerArray)
+      }
+
+      if (this._config.toggle) {
+        this.toggle()
+      }
+    }
+
+    // Getters
+
+    static get VERSION() {
+      return VERSION
+    }
+
+    static get Default() {
+      return Default
+    }
+
+    // Public
+
+    toggle() {
+      if ($(this._element).hasClass(ClassName.SHOW)) {
+        this.hide()
+      } else {
+        this.show()
+      }
+    }
+
+    show() {
+      if (this._isTransitioning ||
+        $(this._element).hasClass(ClassName.SHOW)) {
+        return
+      }
+
+      let actives
+      let activesData
+
+      if (this._parent) {
+        actives = $.makeArray(
+          $(this._parent)
+            .find(Selector.ACTIVES)
+            .filter(`[data-parent="${this._config.parent}"]`)
+        )
+        if (actives.length === 0) {
+          actives = null
+        }
+      }
+
+      if (actives) {
+        activesData = $(actives).not(this._selector).data(DATA_KEY)
+        if (activesData && activesData._isTransitioning) {
+          return
+        }
+      }
+
+      const startEvent = $.Event(Event.SHOW)
+      $(this._element).trigger(startEvent)
+      if (startEvent.isDefaultPrevented()) {
+        return
+      }
+
+      if (actives) {
+        Collapse._jQueryInterface.call($(actives).not(this._selector), 'hide')
+        if (!activesData) {
+          $(actives).data(DATA_KEY, null)
+        }
+      }
+
+      const dimension = this._getDimension()
+
+      $(this._element)
+        .removeClass(ClassName.COLLAPSE)
+        .addClass(ClassName.COLLAPSING)
+
+      this._element.style[dimension] = 0
+
+      if (this._triggerArray.length > 0) {
+        $(this._triggerArray)
+          .removeClass(ClassName.COLLAPSED)
+          .attr('aria-expanded', true)
+      }
+
+      this.setTransitioning(true)
+
+      const complete = () => {
+        $(this._element)
+          .removeClass(ClassName.COLLAPSING)
+          .addClass(ClassName.COLLAPSE)
+          .addClass(ClassName.SHOW)
+
+        this._element.style[dimension] = ''
+
+        this.setTransitioning(false)
+
+        $(this._element).trigger(Event.SHOWN)
+      }
+
+      if (!Util.supportsTransitionEnd()) {
+        complete()
+        return
+      }
+
+      const capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1)
+      const scrollSize = `scroll${capitalizedDimension}`
+
+      $(this._element)
+        .one(Util.TRANSITION_END, complete)
+        .emulateTransitionEnd(TRANSITION_DURATION)
+
+      this._element.style[dimension] = `${this._element[scrollSize]}px`
+    }
+
+    hide() {
+      if (this._isTransitioning ||
+        !$(this._element).hasClass(ClassName.SHOW)) {
+        return
+      }
+
+      const startEvent = $.Event(Event.HIDE)
+      $(this._element).trigger(startEvent)
+      if (startEvent.isDefaultPrevented()) {
+        return
+      }
+
+      const dimension = this._getDimension()
+
+      this._element.style[dimension] = `${this._element.getBoundingClientRect()[dimension]}px`
+
+      Util.reflow(this._element)
+
+      $(this._element)
+        .addClass(ClassName.COLLAPSING)
+        .removeClass(ClassName.COLLAPSE)
+        .removeClass(ClassName.SHOW)
+
+      if (this._triggerArray.length > 0) {
+        for (let i = 0; i < this._triggerArray.length; i++) {
+          const trigger = this._triggerArray[i]
+          const selector = Util.getSelectorFromElement(trigger)
+          if (selector !== null) {
+            const $elem = $(selector)
+            if (!$elem.hasClass(ClassName.SHOW)) {
+              $(trigger).addClass(ClassName.COLLAPSED)
+                .attr('aria-expanded', false)
+            }
+          }
+        }
+      }
+
+      this.setTransitioning(true)
+
+      const complete = () => {
+        this.setTransitioning(false)
+        $(this._element)
+          .removeClass(ClassName.COLLAPSING)
+          .addClass(ClassName.COLLAPSE)
+          .trigger(Event.HIDDEN)
+      }
+
+      this._element.style[dimension] = ''
+
+      if (!Util.supportsTransitionEnd()) {
+        complete()
+        return
+      }
+
+      $(this._element)
+        .one(Util.TRANSITION_END, complete)
+        .emulateTransitionEnd(TRANSITION_DURATION)
+    }
+
+    setTransitioning(isTransitioning) {
+      this._isTransitioning = isTransitioning
+    }
+
+    dispose() {
+      $.removeData(this._element, DATA_KEY)
+
+      this._config          = null
+      this._parent          = null
+      this._element         = null
+      this._triggerArray    = null
+      this._isTransitioning = null
+    }
+
+    // Private
+
+    _getConfig(config) {
+      config = {
+        ...Default,
+        ...config
+      }
+      config.toggle = Boolean(config.toggle) // Coerce string values
+      Util.typeCheckConfig(NAME, config, DefaultType)
+      return config
+    }
+
+    _getDimension() {
+      const hasWidth = $(this._element).hasClass(Dimension.WIDTH)
+      return hasWidth ? Dimension.WIDTH : Dimension.HEIGHT
+    }
+
+    _getParent() {
+      let parent = null
+      if (Util.isElement(this._config.parent)) {
+        parent = this._config.parent
+
+        // It's a jQuery object
+        if (typeof this._config.parent.jquery !== 'undefined') {
+          parent = this._config.parent[0]
+        }
+      } else {
+        parent = $(this._config.parent)[0]
+      }
+
+      const selector =
+        `[data-toggle="collapse"][data-parent="${this._config.parent}"]`
+
+      $(parent).find(selector).each((i, element) => {
+        this._addAriaAndCollapsedClass(
+          Collapse._getTargetFromElement(element),
+          [element]
+        )
+      })
+
+      return parent
+    }
+
+    _addAriaAndCollapsedClass(element, triggerArray) {
+      if (element) {
+        const isOpen = $(element).hasClass(ClassName.SHOW)
+
+        if (triggerArray.length > 0) {
+          $(triggerArray)
+            .toggleClass(ClassName.COLLAPSED, !isOpen)
+            .attr('aria-expanded', isOpen)
+        }
+      }
+    }
+
+    // Static
+
+    static _getTargetFromElement(element) {
+      const selector = Util.getSelectorFromElement(element)
+      return selector ? $(selector)[0] : null
+    }
+
+    static _jQueryInterface(config) {
+      return this.each(function () {
+        const $this   = $(this)
+        let data      = $this.data(DATA_KEY)
+        const _config = {
+          ...Default,
+          ...$this.data(),
+          ...typeof config === 'object' && config
+        }
+
+        if (!data && _config.toggle && /show|hide/.test(config)) {
+          _config.toggle = false
+        }
+
+        if (!data) {
+          data = new Collapse(this, _config)
+          $this.data(DATA_KEY, data)
+        }
+
+        if (typeof config === 'string') {
+          if (typeof data[config] === 'undefined') {
+            throw new TypeError(`No method named "${config}"`)
+          }
+          data[config]()
+        }
+      })
+    }
+  }
+
+  /**
+   * ------------------------------------------------------------------------
+   * Data Api implementation
+   * ------------------------------------------------------------------------
+   */
+
+  $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
+    // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
+    if (event.currentTarget.tagName === 'A') {
+      event.preventDefault()
+    }
+
+    const $trigger = $(this)
+    const selector = Util.getSelectorFromElement(this)
+    $(selector).each(function () {
+      const $target = $(this)
+      const data    = $target.data(DATA_KEY)
+      const config  = data ? 'toggle' : $trigger.data()
+      Collapse._jQueryInterface.call($target, config)
+    })
+  })
+
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
+
+  $.fn[NAME] = Collapse._jQueryInterface
+  $.fn[NAME].Constructor = Collapse
+  $.fn[NAME].noConflict = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT
+    return Collapse._jQueryInterface
+  }
+
+  return Collapse
+})($)
+
+export default Collapse

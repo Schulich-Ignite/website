@@ -1,1 +1,175 @@
-import $ from"jquery";const Button=(t=>{const e="button",s="bs.button",n=t.fn[e],a="active",i='[data-toggle^="button"]',o=".btn";class l{constructor(t){this._element=t}static get VERSION(){return"4.0.0"}toggle(){let e=!0,s=!0;const n=t(this._element).closest('[data-toggle="buttons"]')[0];if(n){const i=t(this._element).find("input")[0];if(i){if("radio"===i.type)if(i.checked&&t(this._element).hasClass(a))e=!1;else{const e=t(n).find(".active")[0];e&&t(e).removeClass(a)}if(e){if(i.hasAttribute("disabled")||n.hasAttribute("disabled")||i.classList.contains("disabled")||n.classList.contains("disabled"))return;i.checked=!t(this._element).hasClass(a),t(i).trigger("change")}i.focus(),s=!1}}s&&this._element.setAttribute("aria-pressed",!t(this._element).hasClass(a)),e&&t(this._element).toggleClass(a)}dispose(){t.removeData(this._element,s),this._element=null}static _jQueryInterface(e){return this.each((function(){let n=t(this).data(s);n||(n=new l(this),t(this).data(s,n)),"toggle"===e&&n[e]()}))}}return t(document).on("click.bs.button.data-api",i,(e=>{e.preventDefault();let s=e.target;t(s).hasClass("btn")||(s=t(s).closest(o)),l._jQueryInterface.call(t(s),"toggle")})).on("focus.bs.button.data-api blur.bs.button.data-api",i,(e=>{const s=t(e.target).closest(o)[0];t(s).toggleClass("focus",/^focus(in)?$/.test(e.type))})),t.fn[e]=l._jQueryInterface,t.fn[e].Constructor=l,t.fn[e].noConflict=function(){return t.fn[e]=n,l._jQueryInterface},l})($);export default Button;
+import $ from 'jquery'
+
+/**
+ * --------------------------------------------------------------------------
+ * Bootstrap (v4.0.0): button.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * --------------------------------------------------------------------------
+ */
+
+const Button = (($) => {
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
+
+  const NAME                = 'button'
+  const VERSION             = '4.0.0'
+  const DATA_KEY            = 'bs.button'
+  const EVENT_KEY           = `.${DATA_KEY}`
+  const DATA_API_KEY        = '.data-api'
+  const JQUERY_NO_CONFLICT  = $.fn[NAME]
+
+  const ClassName = {
+    ACTIVE : 'active',
+    BUTTON : 'btn',
+    FOCUS  : 'focus'
+  }
+
+  const Selector = {
+    DATA_TOGGLE_CARROT : '[data-toggle^="button"]',
+    DATA_TOGGLE        : '[data-toggle="buttons"]',
+    INPUT              : 'input',
+    ACTIVE             : '.active',
+    BUTTON             : '.btn'
+  }
+
+  const Event = {
+    CLICK_DATA_API      : `click${EVENT_KEY}${DATA_API_KEY}`,
+    FOCUS_BLUR_DATA_API : `focus${EVENT_KEY}${DATA_API_KEY} ` +
+                            `blur${EVENT_KEY}${DATA_API_KEY}`
+  }
+
+  /**
+   * ------------------------------------------------------------------------
+   * Class Definition
+   * ------------------------------------------------------------------------
+   */
+
+  class Button {
+    constructor(element) {
+      this._element = element
+    }
+
+    // Getters
+
+    static get VERSION() {
+      return VERSION
+    }
+
+    // Public
+
+    toggle() {
+      let triggerChangeEvent = true
+      let addAriaPressed = true
+      const rootElement = $(this._element).closest(
+        Selector.DATA_TOGGLE
+      )[0]
+
+      if (rootElement) {
+        const input = $(this._element).find(Selector.INPUT)[0]
+
+        if (input) {
+          if (input.type === 'radio') {
+            if (input.checked &&
+              $(this._element).hasClass(ClassName.ACTIVE)) {
+              triggerChangeEvent = false
+            } else {
+              const activeElement = $(rootElement).find(Selector.ACTIVE)[0]
+
+              if (activeElement) {
+                $(activeElement).removeClass(ClassName.ACTIVE)
+              }
+            }
+          }
+
+          if (triggerChangeEvent) {
+            if (input.hasAttribute('disabled') ||
+              rootElement.hasAttribute('disabled') ||
+              input.classList.contains('disabled') ||
+              rootElement.classList.contains('disabled')) {
+              return
+            }
+            input.checked = !$(this._element).hasClass(ClassName.ACTIVE)
+            $(input).trigger('change')
+          }
+
+          input.focus()
+          addAriaPressed = false
+        }
+      }
+
+      if (addAriaPressed) {
+        this._element.setAttribute('aria-pressed',
+          !$(this._element).hasClass(ClassName.ACTIVE))
+      }
+
+      if (triggerChangeEvent) {
+        $(this._element).toggleClass(ClassName.ACTIVE)
+      }
+    }
+
+    dispose() {
+      $.removeData(this._element, DATA_KEY)
+      this._element = null
+    }
+
+    // Static
+
+    static _jQueryInterface(config) {
+      return this.each(function () {
+        let data = $(this).data(DATA_KEY)
+
+        if (!data) {
+          data = new Button(this)
+          $(this).data(DATA_KEY, data)
+        }
+
+        if (config === 'toggle') {
+          data[config]()
+        }
+      })
+    }
+  }
+
+  /**
+   * ------------------------------------------------------------------------
+   * Data Api implementation
+   * ------------------------------------------------------------------------
+   */
+
+  $(document)
+    .on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
+      event.preventDefault()
+
+      let button = event.target
+
+      if (!$(button).hasClass(ClassName.BUTTON)) {
+        button = $(button).closest(Selector.BUTTON)
+      }
+
+      Button._jQueryInterface.call($(button), 'toggle')
+    })
+    .on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
+      const button = $(event.target).closest(Selector.BUTTON)[0]
+      $(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type))
+    })
+
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
+
+  $.fn[NAME] = Button._jQueryInterface
+  $.fn[NAME].Constructor = Button
+  $.fn[NAME].noConflict = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT
+    return Button._jQueryInterface
+  }
+
+  return Button
+})($)
+
+export default Button
