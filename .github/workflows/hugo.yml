@@ -14,6 +14,31 @@ jobs:
         uses: actions/checkout@master
         with:
           submodules: true
+
+      - name: Compress Images
+        id: calibre
+        uses: calibreapp/image-actions@master
+        with:
+          githubToken: ${{ secrets.PERSONAL_TOKEN }}
+          compressOnly: true
+
+      - name: Create New Pull Request If images were compressed
+        if: steps.calibre.outputs.markdown != ''
+        uses: peter-evans/create-pull-request@master
+        with:
+          title: Compressed Images Nightly
+          branch-suffix: timestamp
+          commit-message: Compressed Images
+          body: ${{ steps.calibre.outputs.markdown }}
+          
+      - name: minisauras
+        uses: TeamTigers/minisauras@v2.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        id: dir
+        with:
+          directory: 'static/' ## minify all files under static directory
+  
       - name: Publish Site
         uses: chabad360/hugo-gh-pages@master
         with:
