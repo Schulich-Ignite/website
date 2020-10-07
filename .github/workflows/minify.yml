@@ -14,8 +14,8 @@ jobs:
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
 
-      - name: Auto Minify
-        uses: nizarmah/auto-minify@master
+      - name: Minify Action
+        uses: anthonyftwang/minify-action@v1
 
       - name: Auto committing minified files
         uses: stefanzweifel/git-auto-commit-action@v4
