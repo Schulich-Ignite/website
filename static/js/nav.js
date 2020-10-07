@@ -1,15 +1,1 @@
-// Add event listeners for the nav bar on mobile
-document.addEventListener('DOMContentLoaded', () => {
-  const navBurgers = Array.from(document.querySelectorAll('.navbar-burger'));
-
-  if (navBurgers.length > 0) {
-    navBurgers.forEach(el => {
-      el.addEventListener('click', () => {
-        const target = document.getElementById(el.dataset.target);
-
-        el.classList.toggle('is-active');
-        target.classList.toggle('is-active');
-      });
-    });
-  }
-});
+document.addEventListener("DOMContentLoaded",()=>{const e=Array.from(document.querySelectorAll(".navbar-burger"));e.length>0&&e.forEach(e=>{e.addEventListener("click",()=>{const t=document.getElementById(e.dataset.target);e.classList.toggle("is-active"),t.classList.toggle("is-active")})})});
