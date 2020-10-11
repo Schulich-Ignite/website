@@ -1,9 +1,8 @@
 name: Minify JS and CSS on pages branch
 
 on:
-  push:
-    branches:
-      - gh-pages
+  watch:
+    types: [started]
 
 jobs:
   build-deploy:
