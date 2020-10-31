@@ -8,10 +8,36 @@
                     <h2 class="title">Meet our Team</h2>
                 </div>
             </div>
+
             <div class="row">
-                {{ range where .Data.Pages ".Params.highlight" "==" true}}
-                <div class="col-md-4 spaced-col">
+                {{ range where .Data.Pages ".Params.team" "==" "exec"}}
+                <div class="col-md-4 mb-4 spaced-col">
                     <div class="card highlight-card">
+                        <div class="embed-responsive embed-responsive-1by1">
+                            <img class="card-img-top embed-responsive-item" src="{{ .Params.image | absURL }}">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ .Params.name }}</h5>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    {{ .Params.role }}
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Junior Executive Team</h3>
+                </div>
+            </div>
+            <div class="row">
+                {{ range where .Data.Pages ".Params.team" "==" "jr exec"}}
+                <div class="col-md-4 mb-4 spaced-col md-5">
+                    <div class="card highlight-card light">
                         <div class="embed-responsive embed-responsive-1by1">
                             <img class="card-img-top embed-responsive-item" src="{{ .Params.image | absURL }}">
                         </div>
@@ -38,8 +64,8 @@
                 </div>
             </div>
             <div class="row">
-                {{ range where .Data.Pages ".Params.highlight" "!=" true}}
-                <div class="col-md-3 col-sm-4 col-6 spaced-col">
+                {{ range where .Data.Pages ".Params.team" "==" "none"}}
+                <div class="col-md-3 col-sm-4 col-6 spaced-col md-5">
                     <div class="card no-background">
                         <div class="embed-responsive embed-responsive-1by1">
                             <img class="card-img-top embed-responsive-item" src="{{ .Params.image | absURL }}">

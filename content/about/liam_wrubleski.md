@@ -1,7 +1,7 @@
 ---
 name: "Liam"
 role: "Lecture Lead"
-highlight: false
+team: "none"
 image: "/img/gallery/liam_profile.png"
 ---
 

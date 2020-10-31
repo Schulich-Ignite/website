@@ -1,7 +1,7 @@
 ---
 name: "Emily Knight"
-role: "Junior President"
-highlight: true
+role: "Junior President / Lecture Lead"
+team: "jr exec"
 image: "/img/gallery/emily_knight.png"
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: "Mohanad Ibrahiem"
 role: "VP Communications"
-highlight: true
+team: "exec"
 image: "/img/gallery/Mohanad_Ibrahiem.png"
 ---
 

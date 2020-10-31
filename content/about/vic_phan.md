@@ -1,7 +1,7 @@
 ---
 name: "Vic Phan"
 role: "VP Finance"
-highlight: true
+team: "exec"
 image: "/img/gallery/vic_phan.png"
 ---
 

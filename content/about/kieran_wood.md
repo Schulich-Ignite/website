@@ -1,7 +1,7 @@
 ---
 name: "Kieran Wood"
 role: "Website Management"
-highlight: false
+team: "none"
 image: "/img/gallery/kieran-wood.jpg"
 ---
 

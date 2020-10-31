@@ -1,7 +1,7 @@
 ---
 name: "Anmol Ahuja"
 role: "President"
-highlight: true
+team: "exec"
 image: "/img/gallery/anmol_ahuja_Portrait.jpg"
 ---
 

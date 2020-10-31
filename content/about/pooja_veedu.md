@@ -1,7 +1,7 @@
 ---
 name: "Pooja Veedu"
 role: "Junior VP Communications"
-highlight: true
+team: "jr exec"
 image: "/img/gallery/pooja_veedu.png"
 ---
 
