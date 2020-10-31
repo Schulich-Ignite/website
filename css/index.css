@@ -8989,6 +8989,9 @@ h3 {
   background-color: var(--success-transparent);
   padding: 30px 30px 10px 30px;
 }
+.card.highlight-card.light {
+  background-color: var(--secondary-transparent);
+}
 .card.highlight-card .card-body {
   padding-left: 0px;
   padding-right: 0px;
