@@ -13,9 +13,6 @@
       <li class="nav-item">
         <a class="nav-link" href="/sessions">Sessions</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ .Site.Params.ignitePoints }}">Ignite Points</a>
-      </li>
       {{ $news := (where .Site.Pages.ByDate "Type" "news") }}
       {{ $numOfNews := len $news }}
       {{ if gt $numOfNews 1}}

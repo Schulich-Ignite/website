@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row pb-2">
 {{ range (where .Site.Pages.ByDate "Type" "sessions").Reverse }}
     {{ if .Params.ready }}
     <div class="col-lg-4 spaced-col">
@@ -9,14 +9,17 @@
             <div class="card-body">
                 <h5 class="card-title">{{ .Params.title }}</h5>
                 <p class="card-text">
-                    <time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
+                    <!-- <time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time> -->
                 </p>
-                <p class="card-text">{{ .Summary }}...
+                <p class="card-text">
+                {{ if .Summary }}
+                    {{ .Summary }}...
                     <a href="{{ ref . .File }}">Read more</a>
+                {{ end }}
                 </p>
                 <p class="card-text">
                 {{ if  (.Params.slides) }}
-                    <a href="{{ .Params.slides }}" class="btn btn-primary">Download the slides</a>
+                    <a href="{{ .Params.slides }}" class="btn btn-primary">View the slides</a>
                 {{ end }}
                 </p>
             </div>
@@ -25,3 +28,12 @@
     {{ end }}
 {{ end }}
 </div>
+
+{{ if .Params.ignitePoints }}
+<div class="row pt-4 pb-1">
+    <h4>Have any questions about ignite points?</h4>
+</div>
+<div class="row">
+    <a href="{{ .Params.ignitePoints }}" class="btn btn-primary" target="_blank">View the spreadsheet</a>
+</div>
+{{ end }}
