@@ -5,16 +5,14 @@ date: 2020-07-08T18:30:00-06:00
 slides: "/slides/2020/winter/session_6.pptx"
 ready: True
 ---
- 
- ### Part 1
 
-Functions are good I swer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae volutpat velit. Vivamus elementum ultricies leo vitae consectetur. Vestibulum sed dignissim risus, quis convallis arcu. Maecenas vehicula, quam quis aliquam viverra, ex dolor cursus felis, nec fringilla lacus mi tempor quam. Integer ac orci feugiat, sodales lorem laoreet, rutrum tortor. Suspendisse scelerisque rutrum cursus. Maecenas convallis facilisis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce lobortis arcu sit amet elementum ultrices. Pellentesque cursus efficitur libero, id cursus ante tempus sed.
+In this session we will look at functions. Functions allow us to organize our code, and make it easier to read and understand.
 
-### Part 2
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae volutpat velit. Vivamus elementum ultricies leo vitae consectetur. Vestibulum sed dignissim risus, quis convallis arcu. Maecenas vehicula, quam quis aliquam viverra, ex dolor cursus felis, nec fringilla lacus mi tempor quam. Integer ac orci feugiat, sodales lorem laoreet, rutrum tortor. Suspendisse scelerisque rutrum cursus. Maecenas convallis facilisis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce lobortis arcu sit amet elementum ultrices. Pellentesque cursus efficitur libero, id cursus ante tempus sed.
+### What are functions
+Functions are just a way to make code repeatable. It's sort of like being able to tell python to copy-paste existing code we've written in multiple places. They are incredibly useful for making our code more readable, and easier for other people to understand.
 
-### Part 3
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae volutpat velit. Vivamus elementum ultricies leo vitae consectetur. Vestibulum sed dignissim risus, quis convallis arcu. Maecenas vehicula, quam quis aliquam viverra, ex dolor cursus felis, nec fringilla lacus mi tempor quam. Integer ac orci feugiat, sodales lorem laoreet, rutrum tortor. Suspendisse scelerisque rutrum cursus. Maecenas convallis facilisis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce lobortis arcu sit amet elementum ultrices. Pellentesque cursus efficitur libero, id cursus ante tempus sed.
+### You already have used functions
+Throughout the course we have been using functions a lot. Every time we have been using ```fill_rect()```, or ```size()``` or any other piece of code with the parenthesis, we have been using functions.
 
-### Part 4
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae volutpat velit. Vivamus elementum ultricies leo vitae consectetur. Vestibulum sed dignissim risus, quis convallis arcu. Maecenas vehicula, quam quis aliquam viverra, ex dolor cursus felis, nec fringilla lacus mi tempor quam. Integer ac orci feugiat, sodales lorem laoreet, rutrum tortor. Suspendisse scelerisque rutrum cursus. Maecenas convallis facilisis bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce lobortis arcu sit amet elementum ultrices. Pellentesque cursus efficitur libero, id cursus ante tempus sed.
+### Creating our own functions
+We have also been creating our own functions this whole time. When we've been using ```def setup()``` and ```def draw()```. So let's look at how this works with more detail.......
