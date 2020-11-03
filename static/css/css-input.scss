@@ -16,6 +16,14 @@ html {
     scroll-behavior: smooth;
 }
 
+nav {
+    font-size: 1.1em;
+
+    .navbar-brand {
+        font-size: 1.3em;
+    }  
+}
+
 body {
 	background: #ffffff;
     margin: 0;
@@ -54,6 +62,7 @@ body {
         }
     }
 
+
 	h1 {
 		font-family: var(--header-font);
 		font-size: 7em;
@@ -74,26 +83,34 @@ body {
         font-size: 3em ;
     }
 
+    
+    .dropdown-menu {
+        min-width: 92%;
+        text-align: center;
+        background-color:var(--secondary)
+    }
+
     .btn {
         font-size: 2em;
         font-family: var(--secondary-font);    
         margin-top: 50px;
         color: white;
-        width: 100%;
+        min-width: 100%;
 
         &.btn-secondary {
             color: var(--primary)
         }
     }
-
     
     @media (max-width: 992px) { 
-        h1 { 
-            font-size: 6.5em;
+        min-height: 700px;
+
+        .dropdown-menu {
+            min-width: 96%;
         }
 
         .container {
-            margin-top: -13vw;
+            margin-top: -15vw;
         }
 
         .logo-name {
@@ -116,10 +133,10 @@ body {
     }
     
     @media (max-width: 768px) {
-        h1 { 
+        h1 {
             font-size: 14vw;
         }
-        
+
         .logo-name {
             text-align: center;
             padding-left: 0;
@@ -220,16 +237,6 @@ body {
         padding-top: 40px;
         font-size: 1.5em;
         color: var(--primary);
-    }
-
-    
-    @media (max-width: 992px) {
-        .mainheader {
-            font-size: 2.3em;
-        }
-        .subheader {
-            font-size: 1.2em;
-        }
     }
 }
 

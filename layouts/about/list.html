@@ -25,7 +25,7 @@
                 <div class="col-md-4 mb-4 spaced-col">
                     <div class="card highlight-card">
                         <div class="embed-responsive embed-responsive-1by1">
-                            <img class="card-img-top embed-responsive-item" src="{{ .Params.image | absURL }}">
+                            <img class="card-img-top embed-responsive-item" title="{{ .Params.name }} - {{ .Params.role }}" src="{{ .Params.image | absURL }}">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ .Params.name }}</h5>
@@ -50,7 +50,7 @@
                 <div class="col-md-4 mb-4 spaced-col md-5">
                     <div class="card highlight-card light">
                         <div class="embed-responsive embed-responsive-1by1">
-                            <img class="card-img-top embed-responsive-item" src="{{ .Params.image | absURL }}">
+                            <img class="card-img-top embed-responsive-item" title="{{ .Params.name }} - {{ .Params.role }}" src="{{ .Params.image | absURL }}">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ .Params.name }}</h5>
@@ -78,8 +78,8 @@
                 {{ range where .Data.Pages ".Params.team" "==" "none"}}
                 <div class="col-md-3 col-sm-4 col-6 spaced-col md-5">
                     <div class="card no-background">
-                        <div class="embed-responsive embed-responsive-1by1">
-                            <img class="card-img-top embed-responsive-item" src="{{ .Params.image | absURL }}">
+                        <div class="embed-responsive embed-responsive-1by1" >
+                            <img class="card-img-top embed-responsive-item" title="{{ .Params.name }} - {{ .Params.role }}" src="{{ .Params.image | absURL }}">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ .Params.name }}</h5>
