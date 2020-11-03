@@ -8633,7 +8633,7 @@ body {
   --bg: var(--dark);
   --color: var(--secondary);
   background: var(--dark);
-  height: 60vh;
+  height: 65vh;
   min-height: 600px;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -8684,7 +8684,7 @@ body {
     font-size: 6.5em;
   }
   .pretty-header .container {
-    margin-top: -12vw;
+    margin-top: -13vw;
   }
   .pretty-header .logo-name .break {
     display: block;
