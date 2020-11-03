@@ -13,9 +13,6 @@
       <li class="nav-item">
         <a class="nav-link" href="/sessions">Sessions</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ .Site.Params.ignitePoints }}">Ignite Points</a>
-      </li>
       {{ $news := (where .Site.Pages.ByDate "Type" "news") }}
       {{ $numOfNews := len $news }}
       {{ if gt $numOfNews 1}}
@@ -48,6 +45,21 @@
           </a>
         </div>
       </li>
+      {{ else }}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Important links
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ .Site.Params.ignitePoints }}" target="_blank">
+              Ignite Points spreadsheet
+            </a>
+            <a class="dropdown-item" href="{{ .Site.Params.sparkDocs }}" target="_blank">
+              Spark documentation
+            </a>
+          </div>
+        </li>
       {{end}}
       <li class="nav-item">
         <a class="nav-link" href="/contact">Contact</a>
