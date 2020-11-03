@@ -8619,6 +8619,13 @@ html {
   scroll-behavior: smooth;
 }
 
+nav {
+  font-size: 1.1em;
+}
+nav .navbar-brand {
+  font-size: 1.3em;
+}
+
 body {
   background: #ffffff;
   margin: 0;
@@ -8669,22 +8676,30 @@ body {
   font-family: var(--secondary-font);
   font-size: 3em;
 }
+.pretty-header .dropdown-menu {
+  min-width: 92%;
+  text-align: center;
+  background-color: var(--secondary);
+}
 .pretty-header .btn {
   font-size: 2em;
   font-family: var(--secondary-font);
   margin-top: 50px;
   color: white;
-  width: 100%;
+  min-width: 100%;
 }
 .pretty-header .btn.btn-secondary {
   color: var(--primary);
 }
 @media (max-width: 992px) {
-  .pretty-header h1 {
-    font-size: 6.5em;
+  .pretty-header {
+    min-height: 700px;
+  }
+  .pretty-header .dropdown-menu {
+    min-width: 96%;
   }
   .pretty-header .container {
-    margin-top: -13vw;
+    margin-top: -15vw;
   }
   .pretty-header .logo-name .break {
     display: block;
@@ -8785,14 +8800,6 @@ body {
   padding-top: 40px;
   font-size: 1.5em;
   color: var(--primary);
-}
-@media (max-width: 992px) {
-  .diagonal-header .mainheader {
-    font-size: 2.3em;
-  }
-  .diagonal-header .subheader {
-    font-size: 1.2em;
-  }
 }
 
 .section {
