@@ -2,7 +2,7 @@
 name: "Maheen Hossain"
 role: "Junior VP Logistics"
 team: "jr exec"
-image: "/img/gallery/generic.png"
+image: "/img/gallery/maheen.png"
 ---
 
 description
