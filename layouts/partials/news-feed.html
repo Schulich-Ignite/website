@@ -1,5 +1,5 @@
 <div class="row">
-{{ range (where .Site.Pages.ByDate "Type" "news").Reverse}}
+{{ range (where .Site.Pages.ByDate "Type" "news").Reverse }}
     <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
     {{ if  (.Params.title) }}
     <div class="card  mb-5" >
@@ -15,7 +15,7 @@
                 <div class="card-body">
                     <h3 class="card-title">{{ .Params.title }}</h3>
                     <p class="card-text"><small class="text-muted">
-                            <time>{{ .Params.date.Format "Monday, 01/02/2006 15:04 MST" }}</time>
+                            <time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
                         </small></p>
                     <p class="card-text">
                         {{ .Summary }}...
