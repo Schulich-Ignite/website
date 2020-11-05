@@ -1,0 +1,9 @@
+---
+title: "Introduction to Python"
+number: 1
+date: 2020-10-17T00:00:00-00:00
+slides: "https://docs.google.com/presentation/d/1ru_3UVmvgfu5FsuI5kJYGPqSw1F3Cn_TplyuX3XRtjs/edit?usp=sharing"
+ready: True
+---
+
+In this session we will give an intro to the coding platform we use and the basics of python. These basics will be the fundamental building blocks of all of our code!
