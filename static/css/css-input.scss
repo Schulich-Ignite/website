@@ -19,10 +19,6 @@ html {
 nav {
     height: 100%;
     font-size: 1.1em;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
 
     .navbar-brand .brand-name {
         font-size: 1.3em;
@@ -97,7 +93,7 @@ body {
     .dropdown-menu {
         min-width: 92%;
         text-align: center;
-        background-color:var(--secondary)
+        font-size: 1.2em;
     }
 
     .btn {
