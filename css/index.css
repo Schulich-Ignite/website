@@ -8950,8 +8950,21 @@ h3 {
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 30%, 100% 0%);
   clip-path: polygon(0 0, 0 100%, 100% 30%, 100% 0%);
 }
+.card.with-header .card-body {
+  display: flex;
+  flex-direction: column;
+}
+.card.with-header .card-text {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
 .card.with-header .card-text:last-of-type {
+  margin-top: auto;
   text-align: center;
+}
+.card.with-header .card-text:last-of-type .iconify {
+  font-size: 52px;
+  padding-left: 5px;
 }
 .card.with-header .card-img-top {
   margin-top: -80px;
