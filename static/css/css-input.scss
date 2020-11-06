@@ -17,11 +17,21 @@ html {
 }
 
 nav {
+    height: 100%;
     font-size: 1.1em;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
 
-    .navbar-brand {
+    .navbar-brand .brand-name {
         font-size: 1.3em;
+        padding-left: 10px;
     }  
+
+    .nav-link {
+        padding-top: 0px;
+    }
 }
 
 body {
