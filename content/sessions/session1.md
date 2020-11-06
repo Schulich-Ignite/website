@@ -3,6 +3,7 @@ title: "Introduction to Python"
 number: 1
 date: 2020-10-17T00:00:00-00:00
 slides: "https://docs.google.com/presentation/d/1ru_3UVmvgfu5FsuI5kJYGPqSw1F3Cn_TplyuX3XRtjs/edit?usp=sharing"
+recording: "https://www.youtube.com/watch?v=k4tLEQQELTg&t=2161s&ab_channel=SchulichIgnite"
 ready: True
 ---
 
