@@ -34,8 +34,12 @@
                                 <small class="text-muted">
                                     {{ .Params.role }}
                                 </small>
+                                <hr>
                             </p>
-                            <p class="icons">
+                            <div class="card-text d-none d-xl-block">
+                                {{ .Content }}
+                            </div>
+                            <p class="card-text icons">
                                 {{ if .Params.linkedin }}
                                 <a href="{{ .Params.linkedin }}" target="_blank">
                                     <span class="iconify" data-icon="ant-design:linkedin-filled" data-inline="false"></span>
@@ -47,10 +51,6 @@
                                 </a>
                                 {{ end }}
                             </p>
-                            <hr>
-                            <div class="card-text d-none d-xl-block">
-                                {{ .Content }}
-                            </div>
                         </div>
                     </div>
                 </div>
