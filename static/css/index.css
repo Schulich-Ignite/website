@@ -9086,4 +9086,9 @@ h3 {
   font-size: 1.5em;
 }
 
+.btn {
+  font-family: var(--header-font);
+  font-size: 1.3em;
+}
+
 /*# sourceMappingURL=index.css.map */
