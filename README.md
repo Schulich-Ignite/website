@@ -112,7 +112,7 @@ linkedin: "URL to LinkedIn"
 description of the team member goes here
 ```
 
-The `team` field controls which area the member will appear in: if `"exec"`, they are on the executive team; if `"jr exec"`, they are on the junior executive team; if `"none"`, they will be listed under "Other Contributors." The email and LinkedIn fields are optional.
+The `team` field controls which area the member will appear in: if `"exec"`, they are on the executive team; if `"jr exec"`, they are on the junior executive team; if `"none"`, they will be listed under "Other Contributors." The email and LinkedIn fields are optional regardless of team; however, if team is `"none"`, only LinkedIn applies - email is not supported when team is `"none"`.
 
 ### Sponsors
 
