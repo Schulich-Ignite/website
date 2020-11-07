@@ -20,20 +20,37 @@
                     <h3>Executive Team</h3>
                 </div>
             </div>
-            <div class="row">
+            <div class="row our-webcoderskull">
                 {{ range where .Data.Pages ".Params.team" "==" "exec"}}
-                <div class="col-md-4 mb-4 spaced-col">
+                <div class="col-md-4 mb-4 spaced-col md-5">
                     <div class="card highlight-card">
                         <div class="embed-responsive embed-responsive-1by1">
-                            <img class="card-img-top embed-responsive-item" title="{{ .Params.name }} - {{ .Params.role }}" src="{{ .Params.image | absURL }}">
+                            <img class="card-img-top embed-responsive-item" title="{{ .Params.name }}"
+                                src="{{ .Params.image | absURL }}">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ .Params.name }}</h5>
-                            <p class="card-text">
+                            <p class="card-text no-margin">
                                 <small class="text-muted">
                                     {{ .Params.role }}
                                 </small>
                             </p>
+                            <p class="icons">
+                                {{ if .Params.linkedin }}
+                                <a href="{{ .Params.linkedin }}" target="_blank">
+                                    <span class="iconify" data-icon="ant-design:linkedin-filled" data-inline="false"></span>
+                                </a>
+                                {{ end }}
+                                {{ if .Params.email }}
+                                <a href="mailto: {{ .Params.email }}">
+                                    <span class="iconify" data-icon="clarity:email-solid" data-inline="false"></span>
+                                </a>
+                                {{ end }}
+                            </p>
+                            <hr>
+                            <div class="card-text d-none d-xl-block">
+                                {{ .Content }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -50,14 +67,27 @@
                 <div class="col-md-4 mb-4 spaced-col md-5">
                     <div class="card highlight-card light">
                         <div class="embed-responsive embed-responsive-1by1">
-                            <img class="card-img-top embed-responsive-item" title="{{ .Params.name }} - {{ .Params.role }}" src="{{ .Params.image | absURL }}">
+                            <img class="card-img-top embed-responsive-item" title="{{ .Params.name }}" src="{{ .Params.image | absURL }}">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ .Params.name }}</h5>
-                            <p class="card-text">
+                            <p class="card-text no-margin">
                                 <small class="text-muted">
                                     {{ .Params.role }}
                                 </small>
+                            </p>
+                            <hr>
+                            <p class="icons">
+                                {{ if .Params.linkedin }}
+                                <a href="{{ .Params.linkedin }}" target="_blank">
+                                    <span class="iconify" data-icon="ant-design:linkedin-filled" data-inline="false"></span>
+                                </a>
+                                {{ end }}
+                                {{ if .Params.email }}
+                                <a href="mailto: {{ .Params.email }}">
+                                    <span class="iconify" data-icon="clarity:email-solid" data-inline="false"></span>
+                                </a>
+                                {{ end }}
                             </p>
                         </div>
                     </div>
@@ -79,7 +109,13 @@
                 <div class="col-md-3 col-sm-4 col-6 spaced-col md-5">
                     <div class="card no-background">
                         <div class="embed-responsive embed-responsive-1by1" >
-                            <img class="card-img-top embed-responsive-item" title="{{ .Params.name }} - {{ .Params.role }}" src="{{ .Params.image | absURL }}">
+                            {{ if .Params.linkedin }}
+                            <a href="{{ .Params.linkedin }}" target="_blank">
+                                <img class="card-img-top embed-responsive-item" title="{{ .Params.name }}" src="{{ .Params.image | absURL }}">
+                            </a>
+                            {{ else }}
+                                <img class="card-img-top embed-responsive-item" title="{{ .Params.name }}" src="{{ .Params.image | absURL }}">
+                            {{ end }}
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ .Params.name }}</h5>
