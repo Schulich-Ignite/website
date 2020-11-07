@@ -76,7 +76,8 @@ The sessions view pulls any sessions that exist. The content can be found in ```
 title: "Name of what the topic is"
 number: 0
 date: 2020-07-08T18:30:00-06:00
-slides: "path/to/slides"
+slides: "Google Slides link"
+recording: "YouTube link to recording of lecture"
 ready: false
 ---
  
@@ -85,7 +86,7 @@ Any additional overview content you want to mention
 
 The `ready` variable is used to specify when a session is ready for the public (published & draft were reserved). When false it will not show up in the feed, when true they will - however, the session will only appear once the current date exceeds the `date` parameter. This allows for early, automatic publishing.
 
-If you don't specify slides the download slides options will disapear.
+Both the slides link and the recording link are optional.
 
 ### Gallery
 
