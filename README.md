@@ -83,7 +83,7 @@ ready: false
 Any additional overview content you want to mention
 ```
 
-The `ready` variable is used to specify when a session is ready for the public (published & draft were reserved). When false it will not show up in the feed, when true they will. 
+The `ready` variable is used to specify when a session is ready for the public (published & draft were reserved). When false it will not show up in the feed, when true they will - however, the session will only appear once the current date exceeds the `date` parameter. This allows for early, automatic publishing.
 
 If you don't specify slides the download slides options will disapear.
 
@@ -94,7 +94,7 @@ Any images under the folder `static/img/gallery` will be displayed on the galler
 ### About
 
 Everything that has to do with this page is under `content/about`.  
-The title and subtitle can be changed in the `_index.md` file. The markdown content of this file will be used for the 'about' paragraph.
+The title and subtitle can be changed in the `_index.md` file. The markdown content of this file will be used for the 'About the Team' paragraph.
 
 Every file (excluding `_index.md`) inside the this folder will have team member card created for it. To add/edit team members, either add a new file here, or edit one. The format for the file is as follows:
 
@@ -102,7 +102,7 @@ Every file (excluding `_index.md`) inside the this folder will have team member 
 ---
 name: "Team member name"
 role: "Team member role"
-team: "exec /or/ jr exec /or/ none"
+team: "exec" or "jr exec" or "none"
 image: "/img/path-to-image.png"
 email: "testemail@ucalgary.ca"
 linkedin: "URL to LinkedIn"
