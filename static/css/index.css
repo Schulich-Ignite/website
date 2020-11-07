@@ -8698,13 +8698,13 @@ body {
 }
 @media (max-width: 992px) {
   .pretty-header {
-    min-height: 700px;
+    min-height: 800px;
   }
   .pretty-header .dropdown-menu {
     min-width: 96%;
   }
   .pretty-header .container {
-    margin-top: -15vw;
+    margin-top: -175px;
   }
   .pretty-header .logo-name .break {
     display: block;
@@ -8719,19 +8719,22 @@ body {
     font-size: 2.5em;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .pretty-header h1 {
-    font-size: 14vw;
+    font-size: 18vw;
+  }
+  .pretty-header .container {
+    margin-top: -125px;
   }
   .pretty-header .logo-name {
     text-align: center;
     padding-left: 0;
   }
   .pretty-header .dates {
-    font-size: 5vw;
+    font-size: 7vw;
   }
   .pretty-header .btn {
-    font-size: 4vw;
+    font-size: 6vw;
     width: 65%;
   }
   .pretty-header .btn:last-of-type {
@@ -8841,6 +8844,15 @@ body {
   padding-bottom: 100px;
 }
 
+h5 {
+  font-size: 1.25em;
+}
+@media (max-width: 992px) {
+  h5 {
+    font-size: 1em;
+  }
+}
+
 .diagonal-section {
   height: 50vh;
   display: -ms-flexbox;
@@ -8848,9 +8860,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.diagonal-section h5 {
-  font-size: 1.25em;
 }
 .diagonal-section .iconify {
   width: 100%;
