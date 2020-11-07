@@ -9020,13 +9020,13 @@ h3 {
 .card.highlight-card hr {
   border: 1px solid var(--primary);
   width: 75px;
+  margin-bottom: 5px;
 }
 .card.highlight-card.light {
   border: 2px solid var(--success-transparent);
 }
 .card.highlight-card.light hr {
   border: 1px solid var(--success);
-  margin-bottom: 5px;
 }
 .card.highlight-card.light a {
   color: var(--success);
@@ -9034,12 +9034,17 @@ h3 {
 .card.highlight-card .card-body {
   padding-left: 0px;
   padding-right: 0px;
+  display: flex;
+  flex-direction: column;
 }
 .card.highlight-card .card-title {
   font-size: 2em;
 }
 .card.highlight-card .card-text.no-margin {
   margin-bottom: 0px;
+}
+.card.highlight-card .card-text:last-of-type {
+  margin-top: auto;
 }
 .card.highlight-card .icons {
   font-size: 32px;
