@@ -8617,6 +8617,7 @@ h3 {
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 nav {
@@ -8786,7 +8787,7 @@ body {
   position: relative;
   height: 100%;
   background-color: var(--primary);
-  -webkit-clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 0);
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0%, 100% 0);
   clip-path: polygon(0 0, 0 100%, 100% 0%, 100% 0);
   color: var(--secondary);
   padding-left: 30px;
@@ -8794,6 +8795,12 @@ body {
   text-decoration: var(--secondary) wavy underline;
   text-underline-offset: 20px;
   text-decoration-thickness: 3px;
+}
+@media (max-width: 768px) {
+  .diagonal-header .mainheader {
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 40%, 100% 0%);
+    clip-path: polygon(0 0, 0 100%, 100% 40%, 100% 0%);
+  }
 }
 .diagonal-header .subheader {
   position: relative;
@@ -9075,7 +9082,7 @@ h3 {
   border-bottom: 1px solid var(--primary-transparent);
 }
 .expandable-card .btn {
-  width: 100%;
+  max-width: 100%;
 }
 .expandable-card .btn[data-toggle=collapse] .arrow-expand {
   display: none;
@@ -9090,11 +9097,9 @@ h3 {
   display: none;
 }
 .expandable-card .btn .btn-title {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: space-between;
   color: var(--primary);
+  white-space: normal;
+  word-wrap: break-word;
 }
 .expandable-card .btn .btn-title .iconify {
   font-size: 1.5em;

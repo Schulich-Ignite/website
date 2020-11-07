@@ -14,7 +14,11 @@ $theme-colors: (
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; //horizontal
 }
+
+
+
 
 nav {
     height: 100%;
@@ -220,7 +224,7 @@ body {
         position: relative;
         height: 100%;
         background-color: var(--primary);
-        -webkit-clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 0);
+        -webkit-clip-path: polygon(0 0, 0 100%, 100% 0%, 100% 0);
         clip-path: polygon(0 0, 0 100%, 100% 0%, 100% 0);
 
         color: var(--secondary);
@@ -231,6 +235,10 @@ body {
         text-underline-offset: 20px;
         text-decoration-thickness: 3px;
 
+        @media (max-width: 768px) {
+            -webkit-clip-path: polygon(0 0, 0 100%, 100% 40%, 100% 0%);
+            clip-path: polygon(0 0, 0 100%, 100% 40%, 100% 0%);
+        }
     }
 
     .subheader {
@@ -582,7 +590,7 @@ h3 {
     }
 
     .btn {
-        width: 100%; 
+        max-width: 100%;
 
         &[data-toggle="collapse"] {
             .arrow-expand {
@@ -605,11 +613,10 @@ h3 {
         }
 
         .btn-title {
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            justify-content: space-between;
             color: var(--primary);
+            
+            white-space: normal;
+            word-wrap: break-word;
 
             .iconify {
                 font-size: 1.5em;
