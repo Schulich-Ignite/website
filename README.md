@@ -102,11 +102,16 @@ Every file (excluding `_index.md`) inside the this folder will have team member 
 ---
 name: "Team member name"
 role: "Team member role"
+team: "exec /or/ jr exec /or/ none"
 image: "/img/path-to-image.png"
----
+email: "testemail@ucalgary.ca"
+linkedin: "URL to LinkedIn"
+\---
 
 description of the team member goes here
 ```
+
+The `team` field controls which area the member will appear in: if `"exec"`, they are on the executive team; if `"jr exec"`, they are on the junior executive team; if `"none"`, they will be listed under "Other Contributors." The email and LinkedIn fields are optional.
 
 ### Sponsors
 
