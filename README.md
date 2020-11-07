@@ -106,7 +106,7 @@ team: "exec /or/ jr exec /or/ none"
 image: "/img/path-to-image.png"
 email: "testemail@ucalgary.ca"
 linkedin: "URL to LinkedIn"
-\---
+---
 
 description of the team member goes here
 ```
