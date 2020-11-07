@@ -1,7 +1,7 @@
 <div class="row image-container">
     {{ range where .Site.Pages.ByDate "Type" "sponsors" }}
     {{ if  (.Params.name) }}
-        <img src="{{ .Params.image }}" alt="{{ .Params.name }}">
+        <img src="{{ .Params.image }}" alt="{{ .Params.name }}" >
     {{ end }}
 {{ end }}
 </div>

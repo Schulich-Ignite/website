@@ -14,10 +14,10 @@
                 <p class="card-text">{{ .Content }} </p>
                 <p class="card-text">
                 {{ if  (.Params.slides) }}
-                    <a href="{{ .Params.slides }}" class="btn btn-primary" target="_blank">View the slides</a>
+                    <a href="{{ .Params.slides }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View the slides</a>
                 {{ end }}
                 {{ if  (.Params.recording) }}
-                <a href="{{ .Params.recording }}" target="_blank">
+                <a href="{{ .Params.recording }}" target="_blank" rel="noopener noreferrer">
                     <span class="iconify is-large" data-icon="ant-design:play-circle-filled" data-inline="false"></span>
                 </a>
                 {{ end }}

@@ -6,9 +6,9 @@
         <div class="row ">
             <div class="col-md-4">
                     {{ if  .Params.image }}
-                        <img class="card-img-top med-image" src="{{ .Params.image }}">
+                        <img class="card-img-top med-image" src="{{ .Params.image }}" alt="{{ .Params.title }}">
                     {{ else }}
-                        <img class="card-img-top med-image" src='{{ "/img/logos/ignite.svg" }}'>
+                        <img class="card-img-top med-image" src='{{ "/img/logos/ignite.svg" }}' alt="{{ .Params.title }}">
                     {{ end }}
             </div>
             <div class="col-md-8">             

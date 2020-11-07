@@ -7,7 +7,7 @@
         {{ range (readDir "static/img/gallery/") }}
             {{ $path := printf "img/gallery/%s" .Name }}
             <div class="gallery-item">
-                <img src="{{ $path }}" />
+                <img src="{{ $path }}" alt="{{ .Params.title }}"/>
             </div>
         {{ end }}
     </div>

@@ -11,9 +11,9 @@
                 </div>
                 
                 {{ if  .Params.image }}
-                    <img class="card-img-top large-image" src="{{ .Params.image }}">
+                    <img class="card-img-top large-image" src="{{ .Params.image }}" alt="{{ .Params.title }}">
                 {{ else }}
-                    <img class="card-img-top large-image" src='{{ "/img/logos/ignite.svg" }}'>
+                    <img class="card-img-top large-image" src='{{ "/img/logos/ignite.svg" }}' alt="{{ .Params.title }}">
                 {{ end }}
 
                 <div class="card-footer dates">
