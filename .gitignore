@@ -15,4 +15,7 @@ hugo.exe
 hugo.darwin
 hugo.linux
 
+# Ignore vendored version of bootstrap used to build CSS
+/static/css/bootstrap-4.0.0
+
 # End of https://www.toptal.com/developers/gitignore/api/hugo
