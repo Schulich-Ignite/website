@@ -9105,4 +9105,44 @@ h3 {
   font-size: 1.3em;
 }
 
+#sect_404 {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+#sect_404 .is-large {
+  font-size: 20em;
+}
+#sect_404 h1 {
+  color: var(--primary);
+  font-family: var(--header-font);
+  font-size: 4em;
+  text-transform: uppercase;
+  text-decoration: var(--primary-transparent) wavy underline;
+  text-underline-offset: 20px;
+  text-decoration-thickness: 3px;
+  padding-bottom: 40px;
+}
+#sect_404 a {
+  text-decoration: none;
+  font-size: 2.25em;
+}
+#sect_404 a .iconify {
+  font-size: 1.5em;
+  margin-left: -5px;
+}
+#sect_404 h5 {
+  font-size: 1.75em;
+  margin-bottom: 40px;
+  margin-top: 15px;
+}
+@media (max-width: 992px) {
+  #sect_404 {
+    text-align: center;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */
