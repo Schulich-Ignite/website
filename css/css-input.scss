@@ -109,14 +109,14 @@ body {
     }
     
     @media (max-width: 992px) { 
-        min-height: 700px;
+        min-height: 800px;
 
         .dropdown-menu {
             min-width: 96%;
         }
 
         .container {
-            margin-top: -15vw;
+            margin-top: -175px;
         }
 
         .logo-name {
@@ -138,10 +138,15 @@ body {
         }
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         h1 {
-            font-size: 14vw;
+            font-size: 18vw;
         }
+
+        .container {
+            margin-top: -125px;
+        }
+
 
         .logo-name {
             text-align: center;
@@ -149,11 +154,11 @@ body {
         }
 
         .dates {
-            font-size: 5vw;
+            font-size: 7vw;
         }
 
         .btn {
-            font-size: 4vw;
+            font-size: 6vw;
             width: 65%;
 
             &:last-of-type {
@@ -293,6 +298,14 @@ body {
 }
 
 
+h5 {
+    font-size: 1.25em;
+    @media (max-width: 992px) {
+        font-size: 1em;
+    }
+}
+
+
 .diagonal-section {
     height: 50vh;
     display: -ms-flexbox;
@@ -300,10 +313,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    h5 {
-        font-size: 1.25em;
-    }
     
     .iconify {
         width: 100%;
