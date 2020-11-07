@@ -9051,4 +9051,39 @@ h3 {
   background-color: white;
 }
 
+.expandable-card {
+  background-color: white;
+  border: 1px solid var(--secondary);
+  border-bottom: 1px solid var(--primary-transparent);
+}
+.expandable-card .card-header {
+  background-color: var(--secondary);
+  border-bottom: 1px solid var(--primary-transparent);
+}
+.expandable-card .btn {
+  width: 100%;
+}
+.expandable-card .btn[data-toggle=collapse] .arrow-expand {
+  display: none;
+}
+.expandable-card .btn[data-toggle=collapse] .arrow-less {
+  display: inline-block;
+}
+.expandable-card .btn[data-toggle=collapse].collapsed .arrow-expand {
+  display: inline-block;
+}
+.expandable-card .btn[data-toggle=collapse].collapsed .arrow-less {
+  display: none;
+}
+.expandable-card .btn .btn-title {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  color: var(--primary);
+}
+.expandable-card .btn .btn-title .iconify {
+  font-size: 1.5em;
+}
+
 /*# sourceMappingURL=index.css.map */
