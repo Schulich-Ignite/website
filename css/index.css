@@ -9082,7 +9082,7 @@ h3 {
   border-bottom: 1px solid var(--primary-transparent);
 }
 .expandable-card .btn {
-  max-width: 100%;
+  width: 100%;
 }
 .expandable-card .btn[data-toggle=collapse] .arrow-expand {
   display: none;
@@ -9097,12 +9097,18 @@ h3 {
   display: none;
 }
 .expandable-card .btn .btn-title {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
   color: var(--primary);
+}
+.expandable-card .btn .btn-title .btn-title-text {
   white-space: normal;
   word-wrap: break-word;
 }
 .expandable-card .btn .btn-title .iconify {
-  font-size: 1.5em;
+  font-size: 42px;
 }
 
 .btn {
