@@ -590,7 +590,7 @@ h3 {
     }
 
     .btn {
-        max-width: 100%;
+        width: 100%;
 
         &[data-toggle="collapse"] {
             .arrow-expand {
@@ -613,13 +613,19 @@ h3 {
         }
 
         .btn-title {
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            justify-content: space-between;
             color: var(--primary);
             
-            white-space: normal;
-            word-wrap: break-word;
+            .btn-title-text {
+                white-space: normal;
+                word-wrap: break-word;
+            }
 
             .iconify {
-                font-size: 1.5em;
+                font-size: 42px;
             }
          
         }
