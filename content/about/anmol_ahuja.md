@@ -7,4 +7,4 @@ email: "anmol.ahuja1@ucalgary.ca"
 linkedin: "http://www.linkedin.com/in/anmol-ahuja1"
 ---
 
-My name is Anmol Ahuja and I am the President at Schulich Ignite. I am responsible for managing the club, but most importantly, being a mentor. I am in my third year of electrical engineering, and I love playing badminton in my free time!
+My name is Anmol Ahuja and I am the President at Schulich Ignite. I am responsible for managing the club, but most importantly, being a mentor. I am in my third year of electrical engineering, and I love playing badminton in my free time and I am a powerlifting athlete!
