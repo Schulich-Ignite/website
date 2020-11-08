@@ -41,7 +41,7 @@
                             </div>
                             <p class="card-text icons">
                                 {{ if .Params.linkedin }}
-                                <a href="{{ .Params.linkedin }}" target="_blank">
+                                <a href="{{ .Params.linkedin }}" target="_blank" rel="noopener noreferrer">
                                     <span class="iconify" data-icon="ant-design:linkedin-filled" data-inline="false"></span>
                                 </a>
                                 {{ end }}
@@ -79,7 +79,7 @@
                             <hr>
                             <p class="icons">
                                 {{ if .Params.linkedin }}
-                                <a href="{{ .Params.linkedin }}" target="_blank">
+                                <a href="{{ .Params.linkedin }}" target="_blank" rel="noopener noreferrer">
                                     <span class="iconify" data-icon="ant-design:linkedin-filled" data-inline="false"></span>
                                 </a>
                                 {{ end }}
@@ -110,7 +110,7 @@
                     <div class="card no-background">
                         <div class="embed-responsive embed-responsive-1by1" >
                             {{ if .Params.linkedin }}
-                            <a href="{{ .Params.linkedin }}" target="_blank">
+                            <a href="{{ .Params.linkedin }}" target="_blank" rel="noopener noreferrer">
                                 <img class="card-img-top embed-responsive-item" title="{{ .Params.name }}" src="{{ .Params.image | absURL }}">
                             </a>
                             {{ else }}
