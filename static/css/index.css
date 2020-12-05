@@ -8680,7 +8680,10 @@ body {
 .pretty-header .dates {
   color: white;
   font-family: var(--secondary-font);
-  font-size: 3em;
+  font-size: 2.75em;
+}
+.pretty-header .dates.upcoming {
+  font-size: 2em;
 }
 .pretty-header .dropdown-menu {
   min-width: 92%;
@@ -8883,7 +8886,6 @@ h5 {
 }
 .diagonal-section:first-child {
   margin-top: 0px;
-  background-color: green;
 }
 .diagonal-section .right-align {
   text-align: right;
