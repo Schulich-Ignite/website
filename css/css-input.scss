@@ -90,7 +90,11 @@ body {
     .dates {
         color: white;
         font-family: var(--secondary-font); 
-        font-size: 3em ;
+        font-size: 2.75em ;
+
+        &.upcoming {
+            font-size: 2em;
+        }
     }
 
     
@@ -340,7 +344,6 @@ h5 {
 
     &:first-child {
         margin-top: 0px;
-        background-color:green;
     }
 
     .right-align {
