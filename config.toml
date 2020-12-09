@@ -17,8 +17,8 @@ relativeURLs = true
     current_startDate = 2020-10-17
     current_endDate   = 2020-12-08
     upcoming = "Winter 2021"
-    upcoming_startDate = 2021-01-01
-    upcoming_endDate   = 2021-01-01
+    upcoming_startDate = 2021-02-07
+    upcoming_endDate   = 2021-04-04
     [params.links]
         youtube = "https://www.youtube.com/channel/UC7tNvdbu952HOUl_4nK7iww"
         instagram = "https://www.instagram.com/schulichignite"
