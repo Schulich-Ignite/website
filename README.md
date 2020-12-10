@@ -17,15 +17,23 @@ Here is a list of the current site variables:
 - instagram: The schulich ignite instagram link
 - facebook: the link to the schulich ignite facebook page
 - youtube: The link to the official Schulich ignite YouTube Channel
-- linkedin: The link to the Schulich ignite LinkedIn Company
+- linkedin: The link to the Schulich iPygnite LinkedIn Company
 - discord: The link to join the discord server
 - tiktok: The link to the Schulich Ignite TikTok account
 - signup: Set to true when signups are available
-- startDate: The start of the first workshop
-- endDate: The end of the last workshop
+- recruiting: Set to true when recruiting for the upcoming semester while current sessions are still running
+- current_startDate: The start of the first workshop for the current semester
+- current_endDate: The end of the last workshop for the current semester
+- upcoming_startDate: The start of the upcoming first workshop
+- upcoming_endDate: The end of the upcoming last workshop
 - summaryLength: The number of characters to include in the summary for news, sessions, etc.
 - mentorSignUp: The link to the mentor application form
 - menteeSignUp: The link to the mentee singup form
+- menteeInterested: The link to the spreadsheet for students to fill out if they are interested in the upcoming session but signup not available yet
+- ignitePoints: The link to the Ignite Points spreadsheet
+- sparkDocs: The link to the Spark documentation
+- submitBugBusters: The link to the submit form for Bug Busters exercises/projects
+- submitPythonicLava: The link to the submit form for Pythonic Lava exercises/projects
 
 ### Homepage
 
