@@ -133,6 +133,11 @@
       <li class="nav-item">
         <a class="nav-link" href="/contact">Contact</a>
       </li>
+      {{ if .Site.Params.recruiting }}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ .Site.Params.menteeInterested }}" target="_blank" >Interested in the upcoming session?</a>
+      </li>
+      {{ end }}
     </ul>
   </div>
 </nav>

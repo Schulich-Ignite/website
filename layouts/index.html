@@ -9,31 +9,31 @@
         <div class="row">
             <div class="col-lg-12 dates">
                 <span class="long-dates">
-                    {{ .Site.Params.current }}: 
                     {{ .Site.Params.current_startDate.Format "January 2, 2006" }} —
                     {{ .Site.Params.current_endDate.Format "January 2, 2006" }}
                 </span>
                 <span class="short-dates">
-                    {{ .Site.Params.current }}:
                     {{ .Site.Params.current_startDate.Format "01/02/06" }} —
                     {{ .Site.Params.current_endDate.Format "01/02/06" }}
                 </span>
             </div>
         </div>
+        {{ if .Site.Params.recruiting }}
         <div class="row">
             <div class="col-lg-12 dates upcoming">
                 <span class="long-dates">
-                    {{ .Site.Params.upcoming }}:
+                    Upcoming:
                     {{ .Site.Params.upcoming_startDate.Format "January 2, 2006" }} —
                     {{ .Site.Params.upcoming_endDate.Format "January 2, 2006" }}
                 </span>
                 <span class="short-dates">
-                    {{ .Site.Params.upcoming }}:
+                    Upcoming:
                     {{ .Site.Params.upcoming_startDate.Format "01/02/06" }} —
                     {{ .Site.Params.upcoming_endDate.Format "01/02/06" }}
                 </span>
             </div>
         </div>
+        {{ end }}
         {{ if .Site.Params.signup }}
         <div class="row">
             <div class="col-lg-4 col-md-6">

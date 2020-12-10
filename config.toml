@@ -7,16 +7,16 @@ relativeURLs = true
 [params]
     email = "info@schulichignite.com"
     signup = false
+    recruiting = true
     mentorSignUp = "http://docs.google.com/forms/d/e/1FAIpQLScfUYoFgFsdN5uJShpq0CjxmuU9MEdXpjf2w9QXxxc9sdYztQ/viewform?usp=sf_link"
     menteeSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSe4fThK2EJ76m5MPLg99AMpNCjl6y5xPYeYbzXxwEu-RKA5Vg/viewform"
+    menteeInterested = "https://docs.google.com/spreadsheets/d/1uiFAiXU5QUICCtgFWbdnWanDEx8VFaDsyLiDx-HVSkA/edit?usp=sharing"
     ignitePoints = "https://docs.google.com/spreadsheets/d/1iyzEQ-rgPnUfVVIvJK2HBrGn6l6HatGrT6i3GLoxdUM/edit?usp=sharing"
     sparkDocs    = "https://spark.schulichignite.com/"
     submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLSdZR34VwCzT0OXWggC9OoGtjNd_EJH-qqa2oguWvy6oL2w0BQ/viewform"
     submitPythonicLava = "https://docs.google.com/forms/d/e/1FAIpQLSeQJ2hzXyIgfWkYnCNeHfg9uvvsJyZCT5Wv3qFTq5EuoJgS9w/viewform"
-    current = "Fall 2020"
     current_startDate = 2020-10-17
     current_endDate   = 2020-12-08
-    upcoming = "Winter 2021"
     upcoming_startDate = 2021-02-07
     upcoming_endDate   = 2021-04-04
     [params.links]
