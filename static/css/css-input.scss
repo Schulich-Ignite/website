@@ -223,7 +223,6 @@ body {
     height: 120px;
     width: 100%;
     font-family: var(--header-font);
-
     .mainheader {
         position: relative;
         height: 100%;
@@ -317,7 +316,6 @@ h5 {
     }
 }
 
-
 .diagonal-section {
     height: 50vh;
     display: -ms-flexbox;
@@ -332,6 +330,7 @@ h5 {
     }
 
     &:nth-child(even) {
+
         height: 60vh;
         background-color: var(--success-transparent);
         -webkit-clip-path: polygon(0 0, 0 85%, 100% 100%, 100% 15%);
@@ -363,13 +362,17 @@ h5 {
         min-height: 400px;
 
         &:nth-child(even) {
-            height: 50vh;
+            height: 600px;
         }
 
         .iconify {
             display: none;
         }
     }
+}
+
+#intro-video {
+    height: 80vh;
 }
 
 

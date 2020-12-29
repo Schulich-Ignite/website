@@ -8903,11 +8903,15 @@ h5 {
     min-height: 400px;
   }
   .diagonal-section:nth-child(even) {
-    height: 50vh;
+    height: 600px;
   }
   .diagonal-section .iconify {
     display: none;
   }
+}
+
+#intro-video {
+  height: 80vh;
 }
 
 .image-container {

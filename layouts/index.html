@@ -81,18 +81,15 @@
     </div>
 </section>
 
-<section id="mission" class="section diagonal-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8  col-sm-12">             
-                <h2>Our Mission</h2>
-                <h5>{{ .Params.mission }}</h5>
-            </div>
-            <div class="col-lg-4 col-sm-0">
-                <span class="iconify" data-icon="emojione:clipboard" data-inline="false"></span>
-            </div>
-        </div>
-    </div>
+<section id="intro-video" class="section diagonal-section">
+    <video id="my-video" class="video-js vjs-theme-sea vjs-matrix" data-setup='{"poster": "img\video-preview.jpg", "fluid": true, "aspectRatio": "16:9"}'  controls preload="auto">
+        <source src="video\Ignite.mp4" type="video/mp4" />
+        <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+    </video>
 </section>
 
 <section class="section diagonal-section" id="sponsors">
