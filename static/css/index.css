@@ -8620,6 +8620,19 @@ html {
   overflow-x: hidden;
 }
 
+.no-scroll {
+  overflow-y: hidden;
+}
+
+#schedule ul li {
+  padding-bottom: 15px;
+  padding-left: 7px;
+}
+#schedule ul li::marker {
+  color: var(--primary);
+  content: "➤";
+}
+
 nav {
   height: 100%;
   font-size: 1.1em;
@@ -9160,6 +9173,24 @@ h3 {
   #sect_404 {
     text-align: center;
   }
+}
+
+.modal-dialog {
+  max-width: 800px;
+  margin: 30px auto;
+}
+.modal-dialog .modal-body {
+  padding: 0px;
+}
+.modal-dialog .close {
+  position: absolute;
+  right: -30px;
+  top: 0;
+  z-index: 999;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #fff;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=index.css.map */

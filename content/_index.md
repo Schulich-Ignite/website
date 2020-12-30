@@ -3,3 +3,9 @@ tagline: "Schulich Ignite is a club at the University of Calgary that aims to ig
 "
 mission: "Our mission is to inspire the next generation of programmers and make learning to code fun and accessible for all students."
 ---
+
+* **Past session:** October 17th — December 8th, 2020
+
+* **Upcoming session:** February 7th, 2021 — April 4th, 2021
+  - If you are interested in joining us for our upcoming session in Winter 2021, [fill out the following Google Sheets form](https://docs.google.com/spreadsheets/d/1uiFAiXU5QUICCtgFWbdnWanDEx8VFaDsyLiDx-HVSkA/edit?usp=sharing) and you will be notified when we have more information.
+  - We will soon be recruiting for mentors as well, so stay tuned!

@@ -18,22 +18,6 @@
                 </span>
             </div>
         </div>
-        {{ if .Site.Params.recruiting }}
-        <div class="row">
-            <div class="col-lg-12 dates upcoming">
-                <span class="long-dates">
-                    Upcoming:
-                    {{ .Site.Params.upcoming_startDate.Format "January 2, 2006" }} —
-                    {{ .Site.Params.upcoming_endDate.Format "January 2, 2006" }}
-                </span>
-                <span class="short-dates">
-                    Upcoming:
-                    {{ .Site.Params.upcoming_startDate.Format "01/02/06" }} —
-                    {{ .Site.Params.upcoming_endDate.Format "01/02/06" }}
-                </span>
-            </div>
-        </div>
-        {{ end }}
         {{ if .Site.Params.signup }}
         <div class="row">
             <div class="col-lg-4 col-md-6">
@@ -82,24 +66,67 @@
 </section>
 
 <section id="intro-video" class="section diagonal-section">
-    <video id="my-video" class="video-js vjs-theme-sea vjs-matrix" data-setup='{"poster": "img\video-preview.jpg", "fluid": true, "aspectRatio": "16:9"}'  controls preload="auto">
+    <!-- <video id="my-video" class="video-js vjs-theme-sea vjs-matrix" data-setup='{"poster": "img\video-preview.jpg", "fluid": true, "aspectRatio": "16:9"}'  controls preload="auto">
         <source src="video\Ignite.mp4" type="video/mp4" />
         <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a
             web browser that
             <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
         </p>
-    </video>
+    </video> -->
+
+    <a href="#myModal" data-toggle="modal" data-target="#myModal">
+        <img src="img\video-preview.png" style="width: 100%; height: auto">
+    </a>
 </section>
 
-<section class="section diagonal-section" id="sponsors">
+<section class="section diagonal-section" id="schedule">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <h2>Our Sponsors</h2>
+            <div class="col-lg-8 col-sm-12 left-align">
+                <h2>Want to Join?</h2>
+                <h5>
+                    {{ .Content }}
+                    <!-- <dl>
+                        <dt>Current sessions: {{ .Site.Params.current_startDate.Format "January 2, 2006" }} —
+                        {{ .Site.Params.current_endDate.Format "January 2, 2006" }} </dt>
+                        <dd>- Sign up: </dd>
+                        <dt>Upcoming sessions: {{ .Site.Params.upcoming_startDate.Format "January 2, 2006" }} —
+                        {{ .Site.Params.upcoming_endDate.Format "January 2, 2006" }}</dt>
+                        <dd>- white cold drink</dd>
+                    </dl> -->
+                </h5>
+            </div>
+            <div class="col-lg-4 col-sm-0">
+                <span class="iconify" data-icon="emojione:memo" data-inline="false"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section " id="sponsors">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" style="text-align: center;">
+                <h3>Special Thanks to Our Sponsors</h3>
             </div>
         </div>
         {{ partial "sponsor-feed.html" .}}
     </div>
 </section>
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <div id="infoVideoPlayer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {{ end }}
