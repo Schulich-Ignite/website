@@ -1,6 +1,6 @@
 ---
 name: "Emily Knight"
-role: "Junior President / Lecture Lead"
+role: "Junior President"
 team: "jr exec"
 image: "/img/gallery/emily_knight.png"
 email: "emily.knight2@ucalgary.ca"
