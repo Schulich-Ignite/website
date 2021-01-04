@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Ignite Flare") }}
+
+    <section class="section single-item">
+        <div class="container">
+            <div class="row">
+                {{ range (where .Site.Pages.ByDate "Type" "flare") }}
+                    {{ partial "sessions-feed.html" .}}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    
+{{ end }}

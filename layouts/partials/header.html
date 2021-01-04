@@ -73,7 +73,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="/sessions">Sessions</a>
+        <!-- <a class="nav-link" href="/sessions">Sessions</a> -->
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  Sessions
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/beginner">Ignite Beginner</a>
+                  <a class="dropdown-item" href="/flare">Ignite Flare</a>
+                </div>
+              </li>
       </li>
       {{ if .Site.Params.signup }}
       <li class="nav-item dropdown">

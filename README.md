@@ -72,9 +72,9 @@ The image field is optional, you can specify an image to display for the news st
 
 Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and the T splits the date from the time.
 
-### Sessions
+### Beginner / Flare
 
-The sessions view pulls any sessions that exist. The content can be found in ```content/sessions```. The format for a session is:
+The beginner and flare session views pull any sessions that exist. The content can be found in ```content/beginner``` and ```content/flare``` depending on the targetted session. The format for a session, regardless of beginner or flare, is:
 
 ```markdown
 ---
