@@ -6,9 +6,9 @@ relativeURLs = true
 
 [params]
     email = "info@schulichignite.com"
-    signup = false
+    signup = true
     mentorSignUp = "http://docs.google.com/forms/d/e/1FAIpQLScfUYoFgFsdN5uJShpq0CjxmuU9MEdXpjf2w9QXxxc9sdYztQ/viewform?usp=sf_link"
-    menteeSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSe4fThK2EJ76m5MPLg99AMpNCjl6y5xPYeYbzXxwEu-RKA5Vg/viewform"
+    menteeSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSe4cVntIe7ntBuxYRBoGuZZ4S9wbtvib0_9xQBifzBvG4qeFQ/viewform?usp=sf_link"
     recruitVideo = "https://youtu.be/L3TXTqKXAxY"
     ignitePoints = "https://docs.google.com/spreadsheets/d/1iyzEQ-rgPnUfVVIvJK2HBrGn6l6HatGrT6i3GLoxdUM/edit?usp=sharing"
     sparkDocs    = "https://spark.schulichignite.com/"
