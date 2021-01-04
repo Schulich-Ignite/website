@@ -17,6 +17,7 @@ Here is a list of the current site variables:
 - instagram: The schulich ignite instagram link
 - facebook: the link to the schulich ignite facebook page
 - youtube: The link to the official Schulich ignite YouTube Channel
+- recruitVideo: The link to the recruitment video
 - linkedin: The link to the Schulich iPygnite LinkedIn Company
 - discord: The link to join the discord server
 - tiktok: The link to the Schulich Ignite TikTok account

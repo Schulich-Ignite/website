@@ -66,15 +66,6 @@
 </section>
 
 <section id="intro-video" class="section diagonal-section">
-    <!-- <video id="my-video" class="video-js vjs-theme-sea vjs-matrix" data-setup='{"poster": "img\video-preview.jpg", "fluid": true, "aspectRatio": "16:9"}'  controls preload="auto">
-        <source src="video\Ignite.mp4" type="video/mp4" />
-        <p class="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a
-            web browser that
-            <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-        </p>
-    </video> -->
-
     <a href="#myModal" data-toggle="modal" data-target="#myModal">
         <img src="img\video-preview.png" style="width: 100%; height: auto">
     </a>
@@ -87,14 +78,6 @@
                 <h2>Want to Join?</h2>
                 <h5>
                     {{ .Content }}
-                    <!-- <dl>
-                        <dt>Current sessions: {{ .Site.Params.current_startDate.Format "January 2, 2006" }} —
-                        {{ .Site.Params.current_endDate.Format "January 2, 2006" }} </dt>
-                        <dd>- Sign up: </dd>
-                        <dt>Upcoming sessions: {{ .Site.Params.upcoming_startDate.Format "January 2, 2006" }} —
-                        {{ .Site.Params.upcoming_endDate.Format "January 2, 2006" }}</dt>
-                        <dd>- white cold drink</dd>
-                    </dl> -->
                 </h5>
             </div>
             <div class="col-lg-4 col-sm-0">
@@ -123,6 +106,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <div class="embed-responsive embed-responsive-16by9">
+                    <div id="videoLink" style="display: none">{{ .Site.Params.recruitVideo }}</div>
                     <div id="infoVideoPlayer"></div>
                 </div>
             </div>
