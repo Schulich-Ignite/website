@@ -12,8 +12,8 @@ relativeURLs = true
     recruitVideo = "https://youtu.be/L3TXTqKXAxY"
     ignitePoints = "https://docs.google.com/spreadsheets/d/1iyzEQ-rgPnUfVVIvJK2HBrGn6l6HatGrT6i3GLoxdUM/edit?usp=sharing"
     sparkDocs    = "https://spark.schulichignite.com/"
-    submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLSdZR34VwCzT0OXWggC9OoGtjNd_EJH-qqa2oguWvy6oL2w0BQ/viewform"
-    submitPythonicLava = "https://docs.google.com/forms/d/e/1FAIpQLSeQJ2hzXyIgfWkYnCNeHfg9uvvsJyZCT5Wv3qFTq5EuoJgS9w/viewform"
+    submitBugBusters   = "https://forms.gle/pSuNHy4hcyBTg9oG7"
+    submitPythonicLava = "https://forms.gle/6S73zw5jCEUgFUyx5"
     current_startDate = 2021-02-07
     current_endDate   = 2021-04-04
     [params.links]
