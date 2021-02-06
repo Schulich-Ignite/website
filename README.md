@@ -178,7 +178,6 @@ Login details can be found in the usual place ;).
 #### Index/Home
 
 In  ```content/_index.md```, the tagline controls the content below the "Who are we?" title on the front page. 
-The misison statement is pulled in to the About page - refer there.
 The main content of ```content/_index.md``` is displayed under the "Want to Join?" title on the front page.
 
 #### Sessions
