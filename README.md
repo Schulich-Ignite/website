@@ -34,7 +34,7 @@ Here is a list of the current site variables:
 
 ### Homepage
 
-The entirety of this page is hardcoded and pulls in feeds of other content types. The only exception is the wording found below the first header in the page. This can be customized in ```content/_index.md```.
+All of the content on the front page can be customized in ```content/_index.md```.
 
 ### Events
 
@@ -177,7 +177,9 @@ Login details can be found in the usual place ;).
 
 #### Index/Home
 
-The entirety of this page is hardcoded and pulls in feeds of other content types. The only exception is the wording found below the first header in the page. This can be customized in ```content/_index.md```.
+In  ```content/_index.md```, the tagline controls the content below the "Who are we?" title on the front page. 
+The misison statement is pulled in to the About page - refer there.
+The main content of ```content/_index.md``` is displayed under the "Want to Join?" title on the front page.
 
 #### Sessions
 
