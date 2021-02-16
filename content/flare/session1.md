@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Python"
+title: "Introduction to Python and Pygame"
 number: 1
 date: 2021-02-08T00:00:00-06:00
 slides: "https://docs.google.com/presentation/d/13IZ33Z_mb4abppEoUjIQUVC2FcxJj0Hc6ex-NPITxUo/edit#slide=id.g8d84a60dfe_0_0"
