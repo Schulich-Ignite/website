@@ -1,7 +1,7 @@
 ---
 name: "Ajay Arumugan"
 role: "Co-Junior VP Events"
-team: "none"
+team: "jr exec"
 image: "/img/gallery/ajay_arumugan.jpg"
 ---
 
