@@ -1,7 +1,7 @@
 ---
 name: "Tony Vo"
 role: "Junior VP Finance"
-team: "none"
+team: "jr exec"
 image: "/img/gallery/tony_vo.jpg"
 ---
 
