@@ -8,4 +8,4 @@ Our beginner sessions covered lists and loops this week while our advanced sessi
 
 The team is always looking for ways to improve sessions, so we have recently added a segment to our workshops that showcases the interesting applications of programming in the tech industry today! Check out this story about DECODR that we presented this week!
 
-<img width="552" alt="Screen Shot 2021-03-07 at 2 58 21 PM" src="https://user-images.githubusercontent.com/60020431/110256335-92656b80-7f55-11eb-95e9-339bf9a58abb.png">
+![alt text](https://user-images.githubusercontent.com/60020431/110256335-92656b80-7f55-11eb-95e9-339bf9a58abb.png "Story about DECODR")
