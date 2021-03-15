@@ -3,6 +3,7 @@ title: "Loops and User Input"
 number: 5
 date: 2021-03-10T00:00:00-06:00
 slides: "https://docs.google.com/presentation/d/1s36JxnOEjDcjHavMbQHOqcyOPme5S2w1Z37GfkkvKvc/edit?usp=sharing"
+recording: "https://youtu.be/WZAC-ARPVSE"
 ready: True
 ---
 
