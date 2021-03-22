@@ -1,9 +1,9 @@
 ---
-title: "Collisions, and Images"
+title: "Best Practices, and Level Design"
 number: 7
 date: 2021-03-22T00:00:00-06:00
-slides: "https://docs.google.com/presentation/d/1bZtKJCuuvmKme18LrVSTqcRB9oAn8gNbmc_PT4DxJGI/edit?usp=sharing"
+slides: "https://docs.google.com/presentation/d/1hnAAa7-rPpyJynEUunFuatQ3sNm_I8CypxzZvQjBSqk/edit?usp=sharing"
 ready: True
 ---
 
-In this session we will cover techniques for managing collisions within your game, and how to include images
+In this session, we willl cover good coding practice, level design and adding bullets to our game.
