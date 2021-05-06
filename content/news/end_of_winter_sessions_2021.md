@@ -14,4 +14,4 @@ Finally, thank you to all the mentors who volunteered time out of their hectic s
 
 And that’s a wrap! The Schulich Ignite team is proud to say that our Winter 2021 sessions were a success! We hope to see you at our next one!
 
-![alt text](https://user-images.githubusercontent.com/60020431/117220867-561f8180-adc5-11eb-9968-7d4e70289a22.png "GALA Picture")
+<img width="531" alt="Screen Shot 2021-05-05 at 8 49 38 PM" src="https://user-images.githubusercontent.com/60020431/117235150-69414a00-ade3-11eb-9761-09227dec36bf.png">
