@@ -3,7 +3,7 @@
     {{ range (where .Site.Pages.ByDate "Type" "events").Reverse }}
     <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
         {{ if  (.Params.title) }}
-        <div class="col-lg-6 spaced-col">
+        <div class="col-lg-6 spaced-col mb-4">
             <a href="{{ ref . .File }}">
             <div class="card with-header with-footer">
                 <div class="card-header">

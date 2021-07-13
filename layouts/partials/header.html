@@ -125,6 +125,10 @@
         </div>
       </li>
       {{end}}
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="/info">Why Code?</a>
+      </li> -->
+
       {{ $news := (where .Site.Pages.ByDate "Type" "news") }}
       {{ $numOfNews := len $news }}
       {{ if gt $numOfNews 1 }}
