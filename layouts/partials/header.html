@@ -128,13 +128,13 @@
       <!-- <li class="nav-item">
         <a class="nav-link" href="/info">Why Code?</a>
       </li> -->
-      <!-- {{ $news := (where .Site.Pages.ByDate "Type" "news") }}
+      {{ $news := (where .Site.Pages.ByDate "Type" "news") }}
       {{ $numOfNews := len $news }}
-      {{ if gt $numOfNews 1 }} -->
+      {{ if gt $numOfNews 1 }}
         <li class="nav-item">
           <a class="nav-link" href="/news">News</a>
         </li>
-      <!-- {{ end }} -->
+      {{ end }}
       {{ $events := (where .Site.Pages.ByDate "Type" "events") }}
       {{ $numOfEvents := len $events }}
       {{ if gt $numOfEvents 1}}
