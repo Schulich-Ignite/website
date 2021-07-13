@@ -1,8 +1,5 @@
 ---
-title: "Why Code?"
+title: "Info"
 type: "info"
 ---
-
-
-
 yeet
