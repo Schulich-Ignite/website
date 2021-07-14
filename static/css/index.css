@@ -8678,6 +8678,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+.pretty-header .iconify {
+  width: 100%;
+  font-size: 12em;
+  color: white;
+}
 .pretty-header h1 {
   font-family: var(--header-font);
   font-size: 7em;
@@ -8689,6 +8694,39 @@ body {
   -webkit-text-fill-color: var(--bg);
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: var(--color);
+}
+.pretty-header .message {
+  color: white;
+  font-family: var(--secondary-font);
+  font-size: 3em;
+}
+.pretty-header .message.sub {
+  color: var(--primary);
+  position: relative;
+  max-width: 30em;
+  margin-top: 20px;
+  background-color: var(--secondary);
+  padding: 1.125em 1.5em;
+  font-size: 1.5em;
+  border-radius: 1rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+}
+.pretty-header .message.sub a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+.pretty-header .message.sub:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 100%;
+  left: 3em;
+  border: 1.5rem solid transparent;
+  border-top: none;
+  border-bottom-color: var(--secondary);
+  filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
 }
 .pretty-header .dates {
   color: white;
@@ -8709,6 +8747,7 @@ body {
   margin-top: 50px;
   color: white;
   min-width: 100%;
+  white-space: normal;
 }
 .pretty-header .btn.btn-secondary {
   color: var(--primary);
@@ -9133,6 +9172,18 @@ h3 {
 .btn {
   font-family: var(--header-font);
   font-size: 1.3em;
+}
+
+a:focus.btn {
+  border: none;
+}
+a:focus.btn.btn-secondary {
+  color: var(--primary);
+  background-color: var(--secondary);
+}
+a:focus.btn.btn-primary {
+  color: var(--secondary);
+  background-color: var(--primary);
 }
 
 #sect_404 {

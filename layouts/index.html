@@ -6,19 +6,20 @@
                 <h1> <span>Schulich</span><span class="break"></span><span>Ignite</span></h1>
             </div>
         </div>
+        {{ if eq "recruiting" .Site.Params.status}}
         <div class="row">
-            <div class="col-lg-12 dates">
-                <span class="long-dates">
-                    {{ .Site.Params.current_startDate.Format "January 2, 2006" }} —
-                    {{ .Site.Params.current_endDate.Format "January 2, 2006" }}
-                </span>
-                <span class="short-dates">
-                    {{ .Site.Params.current_startDate.Format "01/02/06" }} —
-                    {{ .Site.Params.current_endDate.Format "01/02/06" }}
-                </span>
+            <div class="message col-lg-12">
+                Learn how to code for free!
             </div>
         </div>
-        {{ if .Site.Params.signup }}
+        <div class="row">
+            <div class="message sub col-lg-9">
+                We don't have any workshops right now, but you can <a href="{{ .Site.Params.emailListSignup }}" target="_blank"
+                    rel="noopener noreferrer">SIGNUP TO OUR MAILING LIST</a> for any future updates.
+            </div>
+        </div>
+        {{ else if eq "signup" .Site.Params.status}}
+        {{ partial "session-dates.html" .}}
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <a class="btn btn-secondary" href="{{ .Site.Params.menteeSignup }}" target="_blank" rel="noopener noreferrer">Signup to LEARN</a>
@@ -28,6 +29,7 @@
             </div>
         </div>
         {{ else }}
+        {{ partial "session-dates.html" .}}
         <div class="row">
             <div class="col-xl-3 col-md-6 col-xs-12">
                 <a class="btn btn-secondary" href="{{ .Site.Params.ignitePoints }}" target="_blank" rel="noopener noreferrer">IGNITE Points</a>
