@@ -28,8 +28,10 @@ Here is a list of the current site variables:
 - current_startDate: The start of the first workshop for the current semester
 - current_endDate: The end of the last workshop for the current semester
 - summaryLength: The number of characters to include in the summary for news, sessions, etc.
+- emailListSignup: The link to the mailing list form
 - mentorSignUp: The link to the mentor application form
 - menteeSignUp: The link to the mentee singup form
+- recruitVideo: The link to the recruitment video on the home page
 - ignitePoints: The link to the Ignite Points spreadsheet
 - sparkDocs: The link to the Spark documentation
 - submitBugBusters: The link to the submit form for Bug Busters exercises/projects
