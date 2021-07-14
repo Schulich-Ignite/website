@@ -6,7 +6,10 @@ relativeURLs = true
 
 [params]
     email = "info@schulichignite.com"
-    signup = false
+    status = "recruiting"
+    # status = "signup" 
+    # status = "live"
+    emailListSignup = "https://forms.gle/ZJoDAbcTf1M3NBxYA"
     mentorSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSf2RlY8X_2R1mxsRTQSAbarf5vXf37lE7LXpyeQqpb2PxC-NQ/viewform?usp=sf_link"
     menteeSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSe4cVntIe7ntBuxYRBoGuZZ4S9wbtvib0_9xQBifzBvG4qeFQ/viewform?usp=sf_link"
     recruitVideo = "https://youtu.be/L3TXTqKXAxY"

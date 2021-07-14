@@ -21,7 +21,10 @@ Here is a list of the current site variables:
 - linkedin: The link to the Schulich iPygnite LinkedIn Company
 - discord: The link to join the discord server
 - tiktok: The link to the Schulich Ignite TikTok account
-- signup: Set to true when signups are available
+- status: This controls what to display on the header on the front page - it has 3 possible values: 
+    - ```status = "recruiting"``` for when there are no current dates but you have a mailing list
+    - ```status = "signup"``` for when there are active sign up links
+    - ```status = "live"``` for when the workshops are currently active (this is the default value)
 - current_startDate: The start of the first workshop for the current semester
 - current_endDate: The end of the last workshop for the current semester
 - summaryLength: The number of characters to include in the summary for news, sessions, etc.
