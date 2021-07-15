@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  schedule:
+    # Run every tuesday at 6:15pm for indigeSTEAM
+    - cron:  '15 17,0 * * 2'
 
 jobs:
   build-deploy:
