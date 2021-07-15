@@ -8,7 +8,7 @@
     - [Homepage](#homepage)
     - [Events](#events)
     - [News](#news)
-    - [Beginner / Flare](#beginner--flare)
+    - [Beginner / Flare / IndigeSteam](#beginner--flare--indigesteam)
     - [Gallery](#gallery)
     - [About](#about)
     - [Sponsors](#sponsors)
@@ -102,9 +102,9 @@ The image field is optional, you can specify an image to display for the news st
 
 Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and the T splits the date from the time.
 
-### Beginner / Flare
+### Beginner / Flare / IndigeSteam
 
-The beginner and flare session views pull any sessions that exist. The content can be found in ```content/beginner``` and ```content/flare``` depending on the targetted session. The format for a session, regardless of beginner or flare, is:
+The beginner, flare and indigesteam session views pull any sessions that exist. The content can be found in ```content/beginner```, ```content/flare```, and ```content/indigesteam``` depending on the targetted session. The format for a session, regardless of beginner, indigesteam or flare, is:
 
 ```markdown
 ---
