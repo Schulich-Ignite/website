@@ -7,4 +7,4 @@ recording: ""
 ready: True
 ---
 
- In this session, we will get set up on our coding platform, take a look at what programming is, and begin writing our first lines of code! We will learn how to draw shapes, use variables, and add some interactivity to our program.
+In this session, we will get set up on our coding platform, take a look at what programming is, and begin writing our first lines of code! We will learn how to draw shapes, use variables, and add some interactivity to our program.

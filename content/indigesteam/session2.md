@@ -1,7 +1,7 @@
 ---
 title: "Variables and If-Statements"
 number: 2
-date: 2021-07-14T00:00:00-06:00
+date: 2021-07-13T00:00:00-06:00
 slides: "https://docs.google.com/presentation/d/1ujQMtFtJrf7AuU96bqsyk_cj1OoxgfP1GTqFy7Nq9iA/edit?usp=sharing"
 recording: ""
 ready: True
