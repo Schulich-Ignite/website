@@ -1,5 +1,30 @@
 # Schulich Ignite Website
 
+
+## Table of contents
+- [How to add/edit content](#how-to-addedit-content)
+    - [Dates & Times](#dates--times)
+    - [Site Variables](#site-variables)
+    - [Homepage](#homepage)
+    - [Events](#events)
+    - [News](#news)
+    - [Beginner / Flare](#beginner--flare)
+    - [Gallery](#gallery)
+    - [About](#about)
+    - [Sponsors](#sponsors)
+    - [Contact](#contact)
+    - [FAQ's](#faqs)
+- [Development guide](#development-guide)
+    - [Infastructure](#infastructure)
+    - [Running locally](#running-locally)
+    - [Per-page breakdown](#per-page-breakdown)
+    - [Index/Home](#indexhome)
+    - [Sessions](#sessions)
+    - [Events](#events-1)
+    - [News](#news-1)
+    - [Contact](#contact-1)
+    - [FAQ's](#faqs-1)
+
 ## How to add/edit content
 
 ### Dates & Times
