@@ -128,10 +128,10 @@
           </a>
         </div>
       </li>
-      <!-- {{end}}
-      <li class="nav-item">
+      {{end}}
+      <!-- <li class="nav-item">
         <a class="nav-link" href="/why-code">Why code?</a>
-      </li> -->
+      </li>  -->
       {{ $blog:= (where .Site.Pages.ByDate "Type" "blog") }}
       {{ $numOfBlog := len $blog }}
       {{ if gt $numOfBlog 1 }}
