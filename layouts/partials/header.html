@@ -104,7 +104,7 @@
       </li>
       {{ else if eq "recruiting" .Site.Params.status}}
           <li class="nav-item">
-            <a class="nav-link" href="{{ .Site.Params.emailListSignup }}">Mailing list</a>
+            <a class="nav-link" href="{{ .Site.Params.emailListSignup }}" target="_blank" rel="noopener noreferrer">Mailing list</a>
           </li>
       {{ else }}
       <li class="nav-item dropdown">
@@ -128,9 +128,9 @@
           </a>
         </div>
       </li>
-      {{end}}
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/info">Why Code?</a>
+      <!-- {{end}}
+      <li class="nav-item">
+        <a class="nav-link" href="/why-code">Why code?</a>
       </li> -->
       {{ $blog:= (where .Site.Pages.ByDate "Type" "blog") }}
       {{ $numOfBlog := len $blog }}

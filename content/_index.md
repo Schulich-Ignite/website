@@ -1,5 +1,7 @@
 ---
-
+numStudents: 1000
+percentParticipants: 80
+percentMentees: 90
 ---
 We offer the following two workshops to accomodate students at all experience levels:
 

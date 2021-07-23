@@ -8,6 +8,15 @@
                         {{ .Params.mission }}
                     </div>
                 </div>
+                
+                {{ with .GetPage "promoting-diversity-in-tech.md" }}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3>{{ .Params.title }}</h3>
+                        {{ .Content }}
+                    </div>
+                </div>
+                {{ end }}
             </div>
         </section>
 
