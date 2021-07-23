@@ -6,8 +6,7 @@
     - [Dates & Times](#dates--times)
     - [Site Variables](#site-variables)
     - [Homepage](#homepage)
-    - [Events](#events)
-    - [News](#news)
+    - [Blog](#blog)
     - [Beginner / Flare / IndigeSteam](#beginner--flare--indigesteam)
     - [Gallery](#gallery)
     - [About](#about)
@@ -20,7 +19,6 @@
     - [Per-page breakdown](#per-page-breakdown)
     - [Index/Home](#indexhome)
     - [Sessions](#sessions)
-    - [Events](#events-1)
     - [News](#news-1)
     - [Contact](#contact-1)
     - [FAQ's](#faqs-1)
@@ -52,7 +50,7 @@ Here is a list of the current site variables:
     - ```status = "live"``` for when the workshops are currently active (this is the default value)
 - current_startDate: The start of the first workshop for the current semester
 - current_endDate: The end of the last workshop for the current semester
-- summaryLength: The number of characters to include in the summary for news, sessions, etc.
+- summaryLength: The number of characters to include in the summary for blog posts, sessions, etc.
 - emailListSignup: The link to the mailing list form
 - mentorSignUp: The link to the mentor application form
 - menteeSignUp: The link to the mentee singup form
@@ -66,39 +64,21 @@ Here is a list of the current site variables:
 
 All of the content on the front page can be customized in ```content/_index.md```.
 
-### Events
+### Blog
 
-New events can be added in ```content/events``` and any existing events can be edited at ```content/events```. The format is:
+New blog posts can be added in ```content/blog``` and existing blog posts can be edited at ```content/blog```. The format is:
 
 ```markdown
 ---
-title: "This is the event title"
+title: "This is the blog post title"
 date: 2020-07-08T15:04:38-07:00
 image: "/img/ignite-logo.svg"
 ---
 
-Enter event description here note the first 20 words will be used in the feed. So make sure to use them wisely, or else your content will be cut off and no one will be able to read it.
+Enter blog post here, note the first 20 words will be used in the feed. So make sure to use them wisely, or else your content will be cut off and no one will be able to read it.
 ```
 
-The image field is optional, you can specify an image to display for the event. If you choose not to then just delete the image metadata, and by default the ignite logo will appear for that event.
-
-Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and the T splits the date from the time.
-
-### News
-
-New news can be added in ```content/news``` and any existing news can be edited at ```content/news```. The format is:
-
-```markdown
----
-title: "This is the news article title"
-date: 2020-07-08T15:04:38-07:00
-image: "/img/ignite-logo.svg"
----
-
-Enter news article here, note the first 20 words will be used in the feed. So make sure to use them wisely, or else your content will be cut off and no one will be able to read it.
-```
-
-The image field is optional, you can specify an image to display for the news story. If you choose not to then just delete the image metadata, and by default the ignite logo will appear for that article.
+The image field is optional, you can specify an image to display for the news story. If you choose not to then just delete the image metadata, and by default the ignite logo will appear for that blog post.
 
 Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and the T splits the date from the time.
 
@@ -217,19 +197,12 @@ The content for sessions can be found in ```content/sessions```. There are a num
 2. The list layout; This is a dedicated page that shows **ALL** sessions. It is what shows up on ```schulichignite.com/sessions``` and the layout can be found in ```layouts/sessions/list.html```.
 3. The Feed; This is the feed that pulls in the sessions lists. It can be found in various places on the site and is typically invoked in a template using ```{{ partial "sessions-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/sessions-feed.html```.
 
-#### Events
+#### Blog
 
-The content for events can be found in ```content/events```. There are a number of layouts for the events system:
-1. The single layout; This is what shows up when you navigate to an individual event (```schulichignite.com/events/<event name>```), and can be found in ```layouts/events/single.html```
-2. The list layout; This is a dedicated page that shows **ALL** events. It is what shows up on ```schulichignite.com/events``` and the layout can be found in ```layouts/events/list.html```.
-3. The Feed; This is the feed that pulls in the events lists. It can be found in various places on the site and is typically invoked in a template using ```{{ partial "event-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/event-feed.html```.
-
-#### News
-
-The content for events can be found in ```content/news```. There are a number of layouts for the news system:
-1. The single layout; This is what shows up when you navigate to an individual event (```schulichignite.com/news/<news article name>```), and can be found in ```layouts/news/single.html```
-2. The list layout; This is a dedicated page that shows **ALL** news articles. It is what shows up on ```schulichignite.com/news``` and the layout can be found in ```layouts/news/list.html```.
-3. The Feed; This is the feed that pulls in the news articles into a lists. It can be found in various places on the site and is typically invoked in a template using ```{{ partial "news-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/news-feed.html```.
+The content for the blog can be found in ```content/blog```. There are a number of layouts for the blog system:
+1. The single layout; This is what shows up when you navigate to an individual post (```schulichignite.com/blog/<blog post name>```), and can be found in ```layouts/blog/single.html```
+2. The list layout; This is a dedicated page that shows **ALL** blog posts. It is what shows up on ```schulichignite.com/blog``` and the layout can be found in ```layouts/blog/list.html```.
+3. The Feed; This is the feed that pulls in the news articles into a lists. It can be found in various places on the site and is typically invoked in a template using ```{{ partial "blog-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/blog-feed.html```.
 
 #### Contact
 

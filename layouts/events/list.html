@@ -1,9 +1,0 @@
-{{ define "main" }}
-{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Events") }}
-
-<section class="section single-item" id="events">
-    <div class="container">
-        {{ partial "event-feed.html" .}}
-    </div>
-</section>
-{{ end }}
