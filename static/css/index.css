@@ -8937,7 +8937,7 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 0px 50px 0px;
+  padding: 70px 0px 70px 0px;
 }
 .diagonal-section .iconify {
   width: 100%;
@@ -8981,6 +8981,10 @@ h5 {
   .diagonal-section {
     padding: 30px 0px 40px 0px;
   }
+  .diagonal-section:nth-child(even) {
+    -webkit-clip-path: polygon(0 0, 0 80%, 100% 100%, 100% 20%);
+    clip-path: polygon(0 0, 0 100%, 100% 80%, 100% 20%);
+  }
   .diagonal-section .stats {
     padding-top: 0px;
   }
@@ -9012,8 +9016,9 @@ h5 {
 }
 @media (max-width: 767px) {
   #intro-video {
-    height: 500px;
-    margin: 50px 0px 50px 0px;
+    transform: scale(1.75, 1.75);
+    height: 300px;
+    margin: 100px 0px 100px 0px;
   }
 }
 
