@@ -82,22 +82,25 @@
 <section class="section diagonal-section" id="schedule">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-sm-12 left-align">
-                <h2>Workshop Options</h2>
-                {{ .Content }}
-            </div>
             <div class="col-lg-4 d-lg-block d-md-none">
-                <span class="iconify" data-icon="emojione:memo" data-inline="false"></span>
+                <span class="iconify" data-icon="fxemoji:lightbulb" data-inline="false"></span>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+                <h3>Why code?</h3>
+                {{ .Content }}
             </div>
         </div>
     </div>
 </section>
 
+<div class="row">
+</div>
+
 <section class="section " id="sponsors">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h3>Special Thanks to Our Sponsors</h3>
+                <h2>Special Thanks to Our Sponsors</h2>
             </div>
         </div>
         {{ partial "sponsor-feed.html" .}}

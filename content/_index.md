@@ -3,10 +3,10 @@ numStudents: 1000
 percentParticipants: 80
 percentMentees: 90
 ---
-We offer the following two workshops to accomodate students at all experience levels:
-
-* **Ignite BEGINNER:** 
-  - Whether you are brand new to programming or have a little bit of experience, this is the workshop for you!
-
-* **Ignite FLARE:** 
-  - If you already have quite a bit of experience with programming or if you have already completed **Ignite BEGINNER**, then this is the workshop for you!
+Coding helps you develop many valuable skills!
+* **Problem solving:**
+  Programming teaches you how to efficiently break down complex tasks into smaller and more manageable operations.
+* **Persistence:**
+  Although it’s super fun, coding can have its challenges sometimes! Every programmer faces obstacles in perfecting their code but overcoming these challenges gives you a keen eye for detail and builds your grit.
+* **Communication:**
+  Lots of coding projects require large teams to bring them to life. Working in a group setting will help you develop your interpersonal and communication skills.
