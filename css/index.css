@@ -8922,15 +8922,6 @@ body {
   padding-bottom: 100px;
 }
 
-h5 {
-  font-size: 1.1em;
-}
-@media (max-width: 991px) {
-  h5 {
-    font-size: 1em;
-  }
-}
-
 .diagonal-section {
   display: -ms-flexbox;
   display: -webkit-flex;
