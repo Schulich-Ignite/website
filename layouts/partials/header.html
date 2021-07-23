@@ -75,19 +75,19 @@
       <li class="nav-item">
         <!-- <a class="nav-link" href="/sessions">Sessions</a> -->
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">
-                  Sessions
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/beginner">Ignite Beginner</a>
-                  <a class="dropdown-item" href="/flare">Ignite Flare</a>
-                  <a class="dropdown-item" href="/indigesteam">IndigeSTEAM</a>
-                </div>
-              </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Sessions
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/beginner">Ignite Beginner</a>
+          <a class="dropdown-item" href="/flare">Ignite Flare</a>
+          <a class="dropdown-item" href="/indigesteam">IndigeSTEAM</a>
+        </div>
       </li>
-      {{ if .Site.Params.signup }}
+      </li>
+      {{ if eq "signup" .Site.Params.status}}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
@@ -102,6 +102,10 @@
           </a>
         </div>
       </li>
+      {{ else if eq "recruiting" .Site.Params.status}}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ .Site.Params.emailListSignup }}">Mailing list</a>
+          </li>
       {{ else }}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
