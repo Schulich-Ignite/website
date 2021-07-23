@@ -8937,10 +8937,10 @@ body {
   font-size: 20em;
 }
 .diagonal-section:nth-child(even) {
-  height: 60vh;
   background-color: var(--success-transparent);
   -webkit-clip-path: polygon(0 0, 0 85%, 100% 100%, 100% 15%);
   clip-path: polygon(0 0, 0 100%, 100% 85%, 100% 15%);
+  margin-bottom: -30px;
 }
 .diagonal-section:first-child {
   margin-top: 0px;
@@ -9008,7 +9008,7 @@ body {
 @media (max-width: 767px) {
   #intro-video {
     height: 320px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     background-size: 200%;
   }
 }
@@ -9050,10 +9050,12 @@ h2 {
   font-family: var(--header-font);
   font-size: 2em;
   text-transform: uppercase;
+  display: inline-block;
   text-decoration: var(--primary-transparent) wavy underline;
-  text-underline-offset: 20px;
   text-decoration-thickness: 3px;
   padding-bottom: 40px;
+  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+  text-underline-offset: 20px;
 }
 
 h3 {
@@ -9279,6 +9281,15 @@ a:focus.btn.btn-primary {
   #sect_404 {
     text-align: center;
   }
+}
+
+.wiggly-hr {
+  width: 100%;
+  display: block;
+  text-align: center;
+  text-decoration: var(--primary-transparent) wavy underline;
+  text-underline-offset: 20px;
+  text-decoration-thickness: 3px;
 }
 
 .modal-dialog {
