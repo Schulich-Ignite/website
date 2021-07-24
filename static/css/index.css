@@ -9283,10 +9283,16 @@ a:focus.btn.btn-primary {
   }
 }
 
-.wiggly-hr {
+.wiggly-line {
   width: 100%;
-  display: block;
-  text-align: center;
+  height: 50px;
+}
+.wiggly-line:before {
+  content: attr(data-text);
+  position: relative;
+  font-size: 4em;
+  top: -100px;
+  color: transparent;
   text-decoration: var(--primary-transparent) wavy underline;
   text-underline-offset: 20px;
   text-decoration-thickness: 3px;

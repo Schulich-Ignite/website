@@ -14,38 +14,44 @@
         </div>
         <div class="row">
             <div class="message sub col-lg-9">
-                We don't have any workshops right now, but you can <a href="{{ .Site.Params.emailListSignup }}" target="_blank"
-                    rel="noopener noreferrer">SIGN UP TO OUR MAILING LIST</a> for any future updates.
+                We don't have any workshops right now, but you can <a href="{{ .Site.Params.emailListSignup }}"
+                    target="_blank" rel="noopener noreferrer">SIGN UP TO OUR MAILING LIST</a> for any future updates.
             </div>
         </div>
         {{ else if eq "signup" .Site.Params.status}}
         {{ partial "session-dates.html" .}}
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <a class="btn btn-secondary" href="{{ .Site.Params.menteeSignup }}" target="_blank" rel="noopener noreferrer">Signup to LEARN</a>
+                <a class="btn btn-secondary" href="{{ .Site.Params.menteeSignup }}" target="_blank"
+                    rel="noopener noreferrer">Signup to LEARN</a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a class="btn btn-secondary" href="{{ .Site.Params.mentorSignUp }}" target="_blank" rel="noopener noreferrer">Signup to TEACH</a>
+                <a class="btn btn-secondary" href="{{ .Site.Params.mentorSignUp }}" target="_blank"
+                    rel="noopener noreferrer">Signup to TEACH</a>
             </div>
         </div>
         {{ else }}
         {{ partial "session-dates.html" .}}
         <div class="row">
             <div class="col-xl-3 col-md-6 col-xs-12">
-                <a class="btn btn-secondary" href="{{ .Site.Params.ignitePoints }}" target="_blank" rel="noopener noreferrer">IGNITE Points</a>
+                <a class="btn btn-secondary" href="{{ .Site.Params.ignitePoints }}" target="_blank"
+                    rel="noopener noreferrer">IGNITE Points</a>
             </div>
             <div class="col-xl-3 col-md-6 col-xs-12">
-                <a class="btn btn-secondary" href="{{ .Site.Params.sparkDocs }}" target="_blank" rel="noopener noreferrer">About SPARK</a>
+                <a class="btn btn-secondary" href="{{ .Site.Params.sparkDocs }}" target="_blank"
+                    rel="noopener noreferrer">About SPARK</a>
             </div>
             <div class="col-xl-4 col-md-12 col-xs-12 dropdow">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Submit Exercises
                 </a>
-            
+
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="{{ .Site.Params.submitBugBusters }}" target="_blank" rel="noopener noreferrer">Bug Busters</a>
-                    <a class="dropdown-item" href="{{ .Site.Params.submitPythonicLava }}" target="_blank" rel="noopener noreferrer">Pythonic Lava</a>
+                    <a class="dropdown-item" href="{{ .Site.Params.submitBugBusters }}" target="_blank"
+                        rel="noopener noreferrer">Bug Busters</a>
+                    <a class="dropdown-item" href="{{ .Site.Params.submitPythonicLava }}" target="_blank"
+                        rel="noopener noreferrer">Pythonic Lava</a>
                 </div>
             </div>
         </div>
@@ -53,7 +59,7 @@
     </div>
 </section>
 
-<section id="content" class="section diagonal-section" >
+<section id="content" class="section diagonal-section">
     <div class="container">
         <div class="row">
             <div class="stats col-lg-4 col-md-4">
@@ -81,29 +87,47 @@
 
 <section class="section diagonal-section" id="schedule">
     <div class="container">
+        {{ with .Site.GetPage "Section" "home" }}
+        {{ with .GetPage "why-code-1.md" }}
         <div class="row">
             <div class="col-lg-4 d-lg-block d-md-none">
                 <span class="iconify" data-icon="fxemoji:lightbulb" data-inline="false"></span>
             </div>
             <div class="col-lg-8 col-sm-12">
-                <h3>Why code?</h3>
+                <h2>{{ .Params.title }}</h2>
                 {{ .Content }}
             </div>
         </div>
+        {{ end }}
+        <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <h3>Market Growth</h3>
+                            The growth for software development jobs is estimated to be 9-21%, indicating that programmers will continue to be
+                            in high demand.
+                        </div>
+
+            <div class="col-lg-4 col-md-4">
+                    <h3>Financial Potential</h3>
+                    The average starting salary for software engineers in Canada ranges from $60,000 to over $100,000 a year.
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h3>Endless Possibilities</h3>
+                    Programming jobs are available in almost every industry. This includes health care, agriculture, business, education,
+                    automotives and more.
+                </div>
+        </div>
+        {{ end }}
     </div>
 </section>
 
-<div class="row">
-</div>
 
 <section class="section " id="sponsors">
     <div class="container">
+        <div class="wiggly-line" data-text="wavy line"></div>
         <div class="row">
-            <div class="col-lg-12">
-                <h2>Special Thanks to Our Sponsors</h2>
-            </div>
+            {{ partial "sponsor-feed.html" .}}
         </div>
-        {{ partial "sponsor-feed.html" .}}
+    </div>
 </section>
 
 <div id="myModal" class="modal fade">
