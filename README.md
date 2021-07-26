@@ -173,7 +173,7 @@ Any images under the folder `static/img/gallery` will be displayed on the galler
 ### About
 
 Everything that has to do with this page is under `content/about`.  
-The title and subtitle can be changed in the `_index.md` file. The markdown content of this file will be used for the 'About the Team' paragraph.
+The contents of this page can be changed in the `_index.md` file. The markdown content of this file will be used for the text that appears before the team members are listed.
 
 Every file (excluding `_index.md`) inside the this folder will have team member card created for it. To add/edit team members, either add a new file here, or edit one. The format for the file is as follows:
 
