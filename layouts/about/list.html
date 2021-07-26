@@ -1,33 +1,7 @@
 {{ define "main" }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" "About Us") }}
-        <section class="section single-item " id="mission">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="title">Our Mission</h2>
-                        {{ .Params.mission }}
-                    </div>
-                </div>
-                
-                {{ with .GetPage "promoting-diversity-in-tech.md" }}
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h3>{{ .Params.title }}</h3>
-                        {{ .Content }}
-                    </div>
-                </div>
-                {{ end }}
-            </div>
-        </section>
-
-    <section class="section single-item " id="team">
+    <section class="section" id="team">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="title">{{ .Params.title }}</h2>
-                </div>
-            </div>
-
             <div class="row">
                 <div class="col-lg-12">
                     {{ .Content }}

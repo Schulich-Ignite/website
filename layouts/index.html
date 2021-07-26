@@ -59,7 +59,7 @@
     </div>
 </section>
 
-<section id="content" class="section diagonal-section">
+<section id="content" class="section centered-columns">
     <div class="container" id="section1">
         {{ partial "survey-stats.html" .}}
     </div>
@@ -71,20 +71,19 @@
     </section>
 {{ end }}
 
-<section class="section diagonal-section" id="section3">
+<section class="section icon-left" id="section3">
     <div class="container">
-    {{ partial "why-code.html" .}}
+        {{ partial "why-code.html" .}}
     </div>
 </section>
 
-<section class="section mb-4" id="section4">
+<section class="section" id="section4">
     <div class="container">
-        {{ partial "market-stats.html" .}}
+    {{ partial "market-stats.html" .}}
     </div>
 </section>
 
-
-<section class="section " id="sponsors">
+<section class="section" id="sponsors">
     <div class="container">
         <div class="row">
             <div class="wiggly-line" data-text="wavy line"></div>

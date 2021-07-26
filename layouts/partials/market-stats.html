@@ -1,7 +1,5 @@
 {{ with .Site.GetPage "Section" "home" }}
     {{ with .GetPage "market-stats.md" }}
-    <div class="row">
         {{ .Content }}
-    </div>
     {{ end }}
 {{ end }}
