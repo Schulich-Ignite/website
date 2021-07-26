@@ -1,0 +1,14 @@
+{{ with .Site.GetPage "Section" "home" }}
+    {{ with .GetPage "survey-stats.md" }}
+    <div class="row">
+        {{ range .Params.columns }}
+        <div class="stats col-lg-4 col-md-4">
+            <span class="iconify" data-icon={{ .icon | safeURL }} data-inline="false"></span>
+            <h4>{{ .title }}</h4>
+            {{ .description }}
+        </div>
+        {{ end }}"
+    </div>
+    {{ .Content }}
+    {{ end }}
+{{ end }}

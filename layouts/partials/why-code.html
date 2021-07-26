@@ -1,0 +1,13 @@
+{{ with .Site.GetPage "Section" "home" }}
+    {{ with .GetPage "why-code.md" }}
+    <div class="row">
+        <div class="col-lg-4 d-lg-block d-md-none">
+            <span class="iconify" data-icon={{ .Params.icon | safeURL }} data-inline="false"></span>
+        </div>
+        <div class="col-lg-8 col-sm-12">
+            <h2>{{ .Params.title }}</h2>
+            {{ .Content }}
+        </div>
+    </div>
+    {{ end }}
+{{ end }}

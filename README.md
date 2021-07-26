@@ -40,7 +40,6 @@ Here is a list of the current site variables:
 - instagram: The schulich ignite instagram link
 - facebook: the link to the schulich ignite facebook page
 - youtube: The link to the official Schulich ignite YouTube Channel
-- recruitVideo: The link to the recruitment video
 - linkedin: The link to the Schulich iPygnite LinkedIn Company
 - discord: The link to join the discord server
 - tiktok: The link to the Schulich Ignite TikTok account
@@ -62,7 +61,71 @@ Here is a list of the current site variables:
 
 ### Homepage
 
-All of the content on the front page can be customized in ```content/_index.md```.
+The homepage is organized in to five main sections which can be controlled as follows:
+1. **Section 1 -** Survey Stats\
+    To edit the contents, you must edit the ```content/home/survey-stats.md``` which has the following format:
+    ```markdown
+    ---
+    columns:
+        - icon: "wemoji:man-student" # Example Iconify Icon: Displays a male student
+          title: "title of column 1" 
+          description: "description of column 1" 
+        - icon: "icon-2" 
+          title: "title of column 2" 
+          description: "description of column 2"  ... etc ...
+    ---
+    
+    This content is not displayed.
+    ```
+    
+    - For each column, you need to provide:
+        - an icon name from **iconify** (for example, ```twemoji:man-student``` displays a male student),
+        - the title (which will be bolded),
+        - and the description (which will be displayed below the title). 
+    - Currently designed to best display **three** columns, although more are supported - each row will contain three columns.
+    
+2. **Section 2 -** Recruitment video\
+    You can change the YouTube video that is linked by changing the ```recruitVideo``` parameter in ```content/_index.md```.
+    
+3. **Section 3 -** Why Code?\
+    To edit the content, you must edit the ```content/home/why-code.md``` which has the following format:
+    ```markdown
+    ---
+    title: "Title of Section"
+    icon: "fxemoji:lightbulb" # Example Iconify Icon: Displays a lightbulb
+    ---
+    
+    Enter content here, which will be displayed below the title and to the right of the icon.
+    ```
+
+4. **Section 4 -** Market Stats\
+    To edit this content, you must edit the ```content/home/market-stats.md``` which has the following format:
+    ```markdown
+    ---
+        # no parameters
+    ---
+    
+    {{< row >}}
+      {{%column%}}
+    
+      ### Title of Column 1
+      Contents of column 1.
+    
+      {{%/column%}}
+      {{%column%}}
+    
+      ### Title of Column 2
+      Contents of column 2.
+    
+      {{%/column%}}
+      ... etc ...
+    {{< /row >}}
+    ```
+    
+    - Note that you must control the columns using the syntax provided above. 
+    - Currently designed to best display **three** columns, although more are supported - each row will contain three columns.
+    
+5. **Section 5 -** Refer to [Sponsors](#sponsors).
 
 ### Blog
 
@@ -131,7 +194,7 @@ The `team` field controls which area the member will appear in: if `"exec"`, the
 
 ### Sponsors
 
-Eveerything that has to do with this page is under `content/sponsors`.  
+Everything that has to do with this page is under `content/sponsors`.  
 The title and sub-title can be changed in the `_index.md` file.  
 
 Every file (excluding `_index.md`) inside the this folder will have card created for it. To add/edit sponsors, either add a new file here, or edit one. The format for the file is as follows:
@@ -187,8 +250,13 @@ Login details can be found in the usual place ;).
 
 #### Index/Home
 
-In  ```content/_index.md```, the tagline controls the content below the "Who are we?" title on the front page. 
-The main content of ```content/_index.md``` is displayed under the "Want to Join?" title on the front page.
+The homepage is organized in to five main sections which can be controlled from ```content/_index.md``` as follows:
+1. Section 1 pulls from```layouts/partials/survey-stats.html```.
+2. Section 2 links to the recruitment video
+    - You can change the YouTube video that is linked by changing the ```recruitVideo``` parameter in ```content/_index.md```.
+3. Section 3 pulls from```layouts/partials/why-code.html```.
+4. Section 4 pulls from```layouts/partials/market-stats.html```.
+5. Section 5 pulls from ```layouts/partials/sponsor-feed.html```
 
 #### Sessions
 

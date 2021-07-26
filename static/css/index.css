@@ -9050,7 +9050,6 @@ h2 {
   font-family: var(--header-font);
   font-size: 2em;
   text-transform: uppercase;
-  display: inline-block;
   text-decoration: var(--primary-transparent) wavy underline;
   text-decoration-thickness: 3px;
   padding-bottom: 40px;
@@ -9285,7 +9284,7 @@ a:focus.btn.btn-primary {
 
 .wiggly-line {
   width: 100%;
-  height: 50px;
+  height: 40px;
 }
 .wiggly-line:before {
   content: attr(data-text);
@@ -9296,6 +9295,16 @@ a:focus.btn.btn-primary {
   text-decoration: var(--primary-transparent) wavy underline;
   text-underline-offset: 20px;
   text-decoration-thickness: 3px;
+}
+@media (max-width: 991px) {
+  .wiggly-line {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 761px) {
+  .wiggly-line {
+    margin-top: 30px;
+  }
 }
 
 .modal-dialog {

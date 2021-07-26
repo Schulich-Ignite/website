@@ -1,7 +1,6 @@
 ---
 title: "Why Code?"
-stats: [["Market Growth",
-        "The growth for software development jobs is estimated to be **9-21%**, indicating that programmers will continue to be in high demand."]]
+icon: "fxemoji:lightbulb"
 ---
 Coding helps you develop many valuable skills!
 * **Problem solving:**
