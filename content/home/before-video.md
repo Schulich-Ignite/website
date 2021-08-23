@@ -2,7 +2,7 @@
 
 ---
 
-{{< row >}}
+{{< row-centered >}}
   {{%3-column%}}
 
   {{< icon >}}twemoji:man-student{{</ icon>}}
@@ -24,4 +24,4 @@
   enjoy connecting with their mentors and respect their ability to teach. 
 
   {{%/3-column%}}
-{{< /row >}}
+{{< /row-centered >}}

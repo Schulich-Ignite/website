@@ -2,7 +2,7 @@
 
 ---
 
-{{< row >}}
+{{< row-centered >}}
   {{%3-column%}}
 
   Young adults who face an opportunity gap but have a mentor are 
@@ -24,4 +24,4 @@
   more likely to major in it. 
 
   {{%/3-column%}}
-{{< /row >}}
+{{< /row-centered >}}
