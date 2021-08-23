@@ -15,6 +15,8 @@ title: "Our Mission"
   {{%/2-column-text%}}
 {{< /row >}}
 
+<br>
+
 {{< row >}}
   {{%2-column-text%}}
 
