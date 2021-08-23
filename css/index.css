@@ -8917,34 +8917,32 @@ body {
   object-fit: cover;
   vertical-align: middle;
 }
-.section.centered-columns {
+.section .container .row.centered-columns {
   text-align: center;
 }
-.section.centered-columns h4 {
+.section .container .row.centered-columns h4 {
   padding: 20px 0px 10px 0px;
   font-family: var(--header-font);
   font-size: 1.8em;
   text-transform: uppercase;
   color: var(--primary);
 }
-.section.centered-columns h5 {
+.section .container .row.centered-columns h5 {
   color: var(--primary);
   margin: 0px;
   font-family: var(--header-font);
   font-size: 1.8em;
 }
-.section.centered-columns p {
+.section .container .row.centered-columns p {
   margin: 0px;
 }
 
 .col-lg-4.big-icon {
   text-align: center;
-  padding: 0px 30px 0px 30px;
 }
 .col-lg-4.big-icon .iconify {
+  height: 325px;
   width: auto;
-  height: 101%;
-  max-height: 400px;
 }
 .col-lg-4 .iconify {
   font-size: 16em;
