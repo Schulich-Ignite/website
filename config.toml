@@ -25,3 +25,6 @@ relativeURLs = true
         linkedin = "https://linkedin.com/company/schulich-ignite/"
         discord = "https://discord.gg/F3Qjqqj"
         tiktok  = "https://vm.tiktok.com/ZSHPbWU3/"
+
+[markup.goldmark.renderer]
+    unsafe= true

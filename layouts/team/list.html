@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "About Us") }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Params.title ) }}
     <section class="section" id="team">
         <div class="container">
             <div class="row">

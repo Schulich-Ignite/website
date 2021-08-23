@@ -61,7 +61,11 @@
 
 <section id="content" class="section centered-columns">
     <div class="container" id="section1">
-        {{ partial "survey-stats.html" .}}
+        {{ with .Site.GetPage "Section" "home" }}
+            {{ with .GetPage "before-video.md" }}
+                {{ .Content }}
+            {{ end }}
+        {{ end }}
     </div>
 </section>
 
@@ -71,15 +75,13 @@
     </section>
 {{ end }}
 
-<section class="section icon-left" id="section3">
+<section class="section" id="section3">
     <div class="container">
-        {{ partial "why-code.html" .}}
-    </div>
-</section>
-
-<section class="section" id="section4">
-    <div class="container">
-    {{ partial "market-stats.html" .}}
+        {{ with .Site.GetPage "Section" "home" }}
+            {{ with .GetPage "after-video.md" }}
+                {{ .Content }}
+            {{ end }}
+        {{ end }}
     </div>
 </section>
 

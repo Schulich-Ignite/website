@@ -8920,20 +8920,6 @@ body {
 .section.centered-columns {
   text-align: center;
 }
-.section.centered-columns .iconify {
-  text-align: center;
-  font-size: 16em;
-}
-@media (max-width: 991px) {
-  .section.centered-columns .iconify {
-    font-size: 20vw;
-  }
-}
-@media (max-width: 767px) {
-  .section.centered-columns .iconify {
-    display: none;
-  }
-}
 .section.centered-columns h4 {
   padding: 20px 0px 10px 0px;
   font-family: var(--header-font);
@@ -8941,12 +8927,35 @@ body {
   text-transform: uppercase;
   color: var(--primary);
 }
-.section.icon-left .iconify {
-  width: 100%;
-  font-size: 20em;
+.section.centered-columns h5 {
+  color: var(--primary);
+  margin: 0px;
+  font-family: var(--header-font);
+  font-size: 1.8em;
+}
+.section.centered-columns p {
+  margin: 0px;
+}
+
+.col-lg-4.big-icon {
+  text-align: center;
+  padding: 0px 30px 0px 30px;
+}
+.col-lg-4.big-icon .iconify {
+  width: auto;
+  height: 101%;
+  max-height: 400px;
+}
+.col-lg-4 .iconify {
+  font-size: 16em;
+}
+@media (max-width: 991px) {
+  .col-lg-4 .iconify {
+    font-size: 20vw;
+  }
 }
 @media (max-width: 767px) {
-  .section.icon-left .iconify {
+  .col-lg-4 .iconify {
     display: none;
   }
 }

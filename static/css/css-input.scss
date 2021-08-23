@@ -380,19 +380,6 @@ body {
     
     &.centered-columns {
         text-align: center;
-        
-        .iconify {
-            text-align: center;
-            font-size: 16em;
-
-            @media (max-width: 991px) {
-                font-size: 20vw;
-            }
-
-            @media (max-width: 767px) {
-                display:none;
-            }
-        }
 
         h4 {
             padding: 20px 0px 10px 0px;
@@ -401,20 +388,45 @@ body {
             text-transform: uppercase;
             color: var(--primary);
         }
-    }
 
-    &.icon-left {
-        .iconify {
-            width: 100%;
-            font-size: 20em;
+        h5 {
+            color: var(--primary);
+            margin: 0px;
+            font-family: var(--header-font);
+            font-size: 1.8em;
+        }
 
-            @media (max-width: 767px) {
-                display:none;
-            }
+        p {
+            margin: 0px;
         }
     }
 }
 
+
+.col-lg-4 {
+    &.big-icon {
+        text-align: center;
+        padding: 0px 30px 0px 30px;
+   
+        .iconify {
+            width: auto;
+            height: 101%;
+            max-height: 400px;
+        }
+    }
+
+    .iconify {
+        font-size: 16em;
+
+        @media (max-width: 991px) {
+            font-size: 20vw;
+        }
+
+        @media (max-width: 767px) {
+            display:none;
+        }
+    }
+}
 
 .diagonal-section {
     height: 725px;
