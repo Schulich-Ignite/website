@@ -9,7 +9,8 @@
     - [Blog](#blog)
     - [Beginner / Flare / IndigeSteam](#beginner--flare--indigesteam)
     - [Gallery](#gallery)
-    - [About](#about)
+    - [Mission](#mission)
+    - [Team](#team)
     - [Sponsors](#sponsors)
     - [Contact](#contact)
     - [FAQ's](#faqs)
@@ -61,21 +62,36 @@ Here is a list of the current site variables:
 
 ### Homepage
 
-The homepage is organized in to five main sections which can be controlled as follows:
-1. **Section 1 -** Survey Stats\
-    To edit the contents, you must edit the ```content/home/survey-stats.md``` which has the following format:
+The homepage is organized in to four main sections which can be controlled as follows:
+1. **Section 1 -** Before Video\
+    To edit the contents, you must edit the ```content/home/before-video.md``` which has the following format:
     ```markdown
     ---
-    columns:
-        - icon: "wemoji:man-student" # Example Iconify Icon: Displays a male student
-          title: "title of column 1" 
-          description: "description of column 1" 
-        - icon: "icon-2" 
-          title: "title of column 2" 
-          description: "description of column 2"  ... etc ...
+        # no parameters
     ---
-    
-    This content is not displayed.
+    {{< row >}}
+      {{%3-column%}}
+
+      {{< icon >}}icon for column 1{{</ icon>}}
+      #### title of column 1
+      info for column 1
+
+      {{%/3-column%}}
+      {{%3-column%}}
+
+      {{< icon >}}icon for column 2{{</ icon>}}
+      #### title of column 2
+      info for column 2
+
+      {{%/3-column%}}
+      {{%3-column%}}
+
+      {{< icon >}}icon for column 3{{</ icon>}}
+      #### title of column 3
+      info for column 3
+
+      {{%/3-column%}}
+    {{< /row >}}
     ```
     
     - For each column, you need to provide:
@@ -83,49 +99,53 @@ The homepage is organized in to five main sections which can be controlled as fo
         - the title (which will be bolded),
         - and the description (which will be displayed below the title). 
     - Currently designed to best display **three** columns, although more are supported - each row will contain three columns.
+    - Note that you must control the columns using the syntax provided above. 
+        - This formatting is controlled via the files in ```layouts/shortcodes```
     
 2. **Section 2 -** Recruitment video\
     You can change the YouTube video that is linked by changing the ```recruitVideo``` parameter in ```content/_index.md```.
     
-3. **Section 3 -** Why Code?\
-    To edit the content, you must edit the ```content/home/why-code.md``` which has the following format:
-    ```markdown
-    ---
-    title: "Title of Section"
-    icon: "fxemoji:lightbulb" # Example Iconify Icon: Displays a lightbulb
-    ---
-    
-    Enter content here, which will be displayed below the title and to the right of the icon.
-    ```
-
-4. **Section 4 -** Market Stats\
-    To edit this content, you must edit the ```content/home/market-stats.md``` which has the following format:
+3. **Section 3 -** After Video\
+    To edit the content, you must edit the ```content/home/after-video.md``` which has the following format:
     ```markdown
     ---
         # no parameters
     ---
-    
     {{< row >}}
-      {{%column%}}
-    
-      ### Title of Column 1
-      Contents of column 1.
-    
-      {{%/column%}}
-      {{%column%}}
-    
-      ### Title of Column 2
-      Contents of column 2.
-    
-      {{%/column%}}
-      ... etc ...
+      {{%2-column-icon%}} icon to display to the left {{%/2-column-icon%}}
+      {{%2-column-text%}}
+      Text to display to the right of the icon
+      {{%/2-column-text%}}
     {{< /row >}}
+
+    <br>
+
+    {{< row >}}
+      {{%3-column%}}
+
+      ### Title of column 1
+      Content of column 1
+
+      {{%/3-column%}}
+      {{%3-column%}}
+
+      ### Title of column 2
+      Content of column 2
+
+      {{%/3-column%}}
+      {{%3-column%}}
+
+      ### Title of column 3
+      Content of column 3
+
+      {{%/3-column%}}
+    {{< /row >}}
+    
     ```
-    
     - Note that you must control the columns using the syntax provided above. 
-    - Currently designed to best display **three** columns, although more are supported - each row will contain three columns.
+        - This formatting is controlled via the files in ```layouts/shortcodes```
     
-5. **Section 5 -** Refer to [Sponsors](#sponsors).
+4. **Section 4 -** Refer to [Sponsors](#sponsors).
 
 ### Blog
 
@@ -170,9 +190,14 @@ Both the slides link and the recording link are optional.
 
 Any images under the folder `static/img/gallery` will be displayed on the gallery page.
 
-### About
+### Mission
 
-Everything that has to do with this page is under `content/about`.  
+Everything that has to do with this page is under `content/mission`.  
+The contents of this page can be changed in the `_index.md` file. 
+
+### Team
+
+Everything that has to do with this page is under `content/team`.  
 The contents of this page can be changed in the `_index.md` file. The markdown content of this file will be used for the text that appears before the team members are listed.
 
 Every file (excluding `_index.md`) inside the this folder will have team member card created for it. To add/edit team members, either add a new file here, or edit one. The format for the file is as follows:
@@ -250,13 +275,14 @@ Login details can be found in the usual place ;).
 
 #### Index/Home
 
-The homepage is organized in to five main sections which can be controlled from ```content/_index.md``` as follows:
-1. Section 1 pulls from```layouts/partials/survey-stats.html```.
+The homepage is organized in to four main sections which can be controlled from ```content/_index.md``` as follows:
+1. Section 1 currently uses the content from ```content/home/after-video.md```.
+    - Note that this content is formatted using shortcodes from ```layouts/shortcodes/``` to control the columns and rows.
 2. Section 2 links to the recruitment video
     - You can change the YouTube video that is linked by changing the ```recruitVideo``` parameter in ```content/_index.md```.
-3. Section 3 pulls from```layouts/partials/why-code.html```.
-4. Section 4 pulls from```layouts/partials/market-stats.html```.
-5. Section 5 pulls from ```layouts/partials/sponsor-feed.html```
+3. Section 3 currently uses the content from ```content/home/before-video.md```.
+    - Note that this content is formatted using shortcodes from ```layouts/shortcodes/``` to control the columns and rows.
+4. Section 4 pulls from ```layouts/partials/sponsor-feed.html```
 
 #### Sessions
 
