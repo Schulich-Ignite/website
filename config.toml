@@ -16,8 +16,8 @@ relativeURLs = true
     sparkDocs    = "https://spark.schulichignite.com/"
     submitBugBusters   = "https://forms.gle/pSuNHy4hcyBTg9oG7"
     submitPythonicLava = "https://forms.gle/6S73zw5jCEUgFUyx5"
-    current_startDate = 2021-10-10
-    current_endDate   = 2021-12-04
+    current_startDate = 2021-10-10T14:15:59-06:00
+    current_endDate   = 2021-12-04T14:15:59-06:00
     [params.links]
         youtube = "https://www.youtube.com/channel/UC7tNvdbu952HOUl_4nK7iww"
         instagram = "https://www.instagram.com/schulichignite"
