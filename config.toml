@@ -7,8 +7,8 @@ relativeURLs = true
 [params]
     email = "info@schulichignite.com"
     # status = "recruiting"
-    status = "signup" 
-    # status = "live"
+    # status = "signup" 
+    status = "live"
     emailListSignup = "https://forms.gle/ZJoDAbcTf1M3NBxYA"
     mentorSignUp = "https://forms.gle/BZpCv6qNUzqzENMr8"
     menteeSignUp = "https://forms.gle/jESiwY7vVkmcgVh76"
