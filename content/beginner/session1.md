@@ -2,8 +2,8 @@
 title: "Introduction to Python"
 number: 1
 date: 2021-02-09T00:00:00-06:00
-slides: "https://docs.google.com/presentation/d/1axNZR1OkfhppNixUpbHry7JFxqiUHbOgB2FYR-RQzr4/edit?usp=sharing"
-recording: "https://youtu.be/V3JyoGh455Q"
+slides: "https://docs.google.com/presentation/d/1qx28AkAfGMIwRevqFdAAoaGHpPzISCjQWSkS96GFx0E/edit?usp=sharing"
+recording: ""
 ready: True
 ---
 

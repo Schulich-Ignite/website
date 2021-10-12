@@ -12,10 +12,10 @@ relativeURLs = true
     emailListSignup = "https://forms.gle/ZJoDAbcTf1M3NBxYA"
     mentorSignUp = "https://forms.gle/BZpCv6qNUzqzENMr8"
     menteeSignUp = "https://forms.gle/jESiwY7vVkmcgVh76"
-    ignitePoints = "https://docs.google.com/spreadsheets/d/1jGEZZdHFjRzz-0btYQwd5MKphaB5llk79NSGg5BLhzA/edit?usp=sharing"
+    ignitePoints = "https://docs.google.com/spreadsheets/d/1EDdLpevjuRy7TUfnWM1RS-PIh1a3GaQs2Nf7ttVh4jU/edit?usp=sharing"
     sparkDocs    = "https://spark.schulichignite.com/"
-    submitBugBusters   = "https://forms.gle/pSuNHy4hcyBTg9oG7"
-    submitPythonicLava = "https://forms.gle/6S73zw5jCEUgFUyx5"
+    submitBugBusters   = "https://forms.gle/3v5Xj16GBZjXWGe6A"
+    submitPythonicLava = "https://forms.gle/qgY9QWtSXRoaf5ny7"
     current_startDate = 2021-10-10T14:15:59-06:00
     current_endDate   = 2021-12-04T14:15:59-06:00
     [params.links]
