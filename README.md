@@ -1,7 +1,7 @@
 # Schulich Ignite Website
 
-
 ## Table of contents
+
 - [How to add/edit content](#how-to-addedit-content)
     - [Dates & Times](#dates--times)
     - [Site Variables](#site-variables)
@@ -18,11 +18,12 @@
     - [Infastructure](#infastructure)
     - [Running locally](#running-locally)
     - [Per-page breakdown](#per-page-breakdown)
-    - [Index/Home](#indexhome)
-    - [Sessions](#sessions)
-    - [News](#news-1)
-    - [Contact](#contact-1)
-    - [FAQ's](#faqs-1)
+      - [Index/Home](#indexhome)
+      - [Sessions](#sessions)
+      - [Blog](#blog-1)
+      - [Contact](#contact-1)
+      - [Building on a Schedule](#building-on-a-schedule)
+      - [FAQ's](#faqs-1)
 
 ## How to add/edit content
 
@@ -71,25 +72,25 @@ The homepage is organized in to four main sections which can be controlled as fo
     ---
     {{< row >}}
       {{%3-column%}}
-
+    
       {{< icon >}}icon for column 1{{</ icon>}}
       #### title of column 1
       info for column 1
-
+    
       {{%/3-column%}}
       {{%3-column%}}
-
+    
       {{< icon >}}icon for column 2{{</ icon>}}
       #### title of column 2
       info for column 2
-
+    
       {{%/3-column%}}
       {{%3-column%}}
-
+    
       {{< icon >}}icon for column 3{{</ icon>}}
       #### title of column 3
       info for column 3
-
+    
       {{%/3-column%}}
     {{< /row >}}
     ```
@@ -117,27 +118,27 @@ The homepage is organized in to four main sections which can be controlled as fo
       Text to display to the right of the icon
       {{%/2-column-text%}}
     {{< /row >}}
-
+    
     <br>
-
+    
     {{< row >}}
       {{%3-column%}}
-
+    
       ### Title of column 1
       Content of column 1
-
+    
       {{%/3-column%}}
       {{%3-column%}}
-
+    
       ### Title of column 2
       Content of column 2
-
+    
       {{%/3-column%}}
       {{%3-column%}}
-
+    
       ### Title of column 3
       Content of column 3
-
+    
       {{%/3-column%}}
     {{< /row >}}
     
@@ -304,8 +305,28 @@ The page pulls from the ```/layouts/contact/single.html``` file for templating. 
 
 The primary exception are the FAQ's, see below for details.
 
+#### Building on a Schedule
+
+Currently (Oct 16th 2021) the site is set to automatically rebuild every Monday and Wednesday at 5:15pm (`15 17 * * 1,3`) as specified by the `cron` parameter in the `.github/workflows/hugo.yml` file:
+
+```yml
+name: Publish Site
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    # Run At 05:15 PM, only on Monday and Wednesday
+    - cron:  '15 17 * * 1,3'
+
+jobs:
+	... # More stuff here
+```
+
+ If you need to change this timing I would recommend using [https://crontab.cronhub.io/](https://crontab.cronhub.io/) to change the specification. This is done for when content is pre-built, since only content with a date parameter set to today or earlier will show up in the sessions tab.
+
 #### FAQ's
 
 The content can be found in ```content/faq```, and the display on the contact page is driven through the partial found in ```/layouts/partials/faq.html```. Put simply the html just iterates over pages with the type faq and pulls the question and Content fields into the partial template.
-
 
