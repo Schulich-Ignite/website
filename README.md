@@ -307,7 +307,7 @@ The primary exception are the FAQ's, see below for details.
 
 #### Building on a Schedule
 
-Currently (Oct 16th 2021) the site is set to automatically rebuild every Monday and Wednesday at 5:15pm (`15 17 * * 1,3`) as specified by the `cron` parameter in the `.github/workflows/hugo.yml` file:
+Currently (Oct 21st 2021) the site is set to automatically rebuild every Monday and Wednesday at 5:00pm (`15 17 * * 1,3`) as specified by the `cron` parameter in the `.github/workflows/hugo.yml` file:
 
 ```yml
 name: Publish Site
@@ -317,14 +317,23 @@ on:
     branches:
       - master
   schedule:
-    # Run At 05:15 PM, only on Monday and Wednesday
-    - cron:  '15 17 * * 1,3'
+    # Run At 05:00 PM, only on Monday and Wednesday
+    - cron:  '0 17 * * 1,3'
 
 jobs:
 	... # More stuff here
 ```
 
- If you need to change this timing I would recommend using [https://crontab.cronhub.io/](https://crontab.cronhub.io/) to change the specification. This is done for when content is pre-built, since only content with a date parameter set to today or earlier will show up in the sessions tab.
+If you need to change this timing I would recommend using [https://crontab.cronhub.io/](https://crontab.cronhub.io/) to change the specification. This is done for when content is pre-built, since only content with a date parameter set to today or earlier will show up in the sessions tab.
+
+##### How it works
+
+The contab above just tells github pages when to run the CI/CD to rebuild the site. The actual magic comes from hugo itself. Specifically the fact that with our current config sessions only show up when 2 conditions are met:
+
+1. The `Ready` flag is set to `True`
+2. The datetime stamp provided in the `Date` parameter is less than the current datetime (in other words it's already happened)
+
+This is true of any contetn in `/content/beginner/*.md` and `/content/flare/*.md`. So since they're all set to midnight the day they are being presented (currently how it's setup) it means that  5pm on the same day is higher, and therefore the media will show up when the cronjob runs and rebuilds the site.
 
 #### FAQ's
 
