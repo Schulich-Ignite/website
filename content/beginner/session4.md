@@ -3,7 +3,7 @@ title: "Lists and an Introduction to Loops"
 number: 4
 date: 2021-11-03T00:00:00-06:00
 slides: "https://docs.google.com/presentation/d/1SaeoJIbWpeTVdOsXaF4HqGzOLsC7g7lgXH-OyovVh5c/edit?usp=sharing"
-recording: ""
+recording: "https://youtu.be/5FompCrMZ2U"
 ready: True
 ---
 
