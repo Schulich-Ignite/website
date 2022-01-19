@@ -1,8 +1,8 @@
 ---
 title: "Introduction to Methods and Events"
 number: 3
-date: 2021-11-01T00:00:00-06:00
-slides: "https://docs.google.com/presentation/d/1MUYtO0-bfJNhUTy5pkKiNwn7xSwTokqiuAMNONJeuKk/edit?usp=sharing"
+date: 2022-03-07T00:00:00-05:00
+slides: "https://docs.google.com/presentation/d/1rIMyBqDjmX3zo4v-WDReRNV0-TuBZsNCFo1cGcQ7XJk/edit?usp=sharing"
 recording: ""
 ready: True
 ---

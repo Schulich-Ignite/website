@@ -1,8 +1,8 @@
 ---
 title: "Problem Solving, Enemies, And Starting Your Game"
 number: 6
-date: 2021-11-22T00:00:00-06:00
-slides: "https://docs.google.com/presentation/d/1YNsoRRgh_hrD-Upw5Z175YhwjbWGEVqqgbt4CKfskr4/edit?usp=sharing"
+date: 2022-03-28T00:00:00-05:00
+slides: "https://docs.google.com/presentation/d/1w6HprlXmOPeL3jFXeHHxCxHKW6BLFPYhlPwmtnC5CfY/edit?usp=sharing"
 recording: ""
 ready: True
 ---

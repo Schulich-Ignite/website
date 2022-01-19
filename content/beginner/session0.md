@@ -1,9 +1,9 @@
 ---
 title: "Introduction to Schulich Ignite"
 number: 0
-date: 2021-10-10T00:00:00-06:00
-slides: "https://docs.google.com/presentation/d/15kFRmj5VAPnuAe_DCvD8Fr8KkOPiY6iaicDpg_LNlD0/edit?usp=sharing"
-recording: "https://youtu.be/P_sMn0rpPsg"
+date: 2022-02-17T00:00:00-05:00
+slides: "https://docs.google.com/presentation/d/13q7Jfkk_VIY21y6YsBloTB7nGaa9FgQwyuG9R6RqWHc/edit?usp=sharing"
+recording: ""
 ready: True
 ---
 

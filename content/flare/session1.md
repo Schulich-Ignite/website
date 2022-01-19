@@ -1,8 +1,8 @@
 ---
 title: "Introduction to Python and Pygame"
 number: 1
-date: 2021-10-18T00:00:00-06:00
-slides: "https://docs.google.com/presentation/d/1lYN6p1HUT6SN5u8l4UiM4vic3Be_TS_-JY7nOHxNmCM/edit?usp=sharing"
+date: 2022-02-21T00:00:00-05:00
+slides: "https://docs.google.com/presentation/d/10ji1emCJoJ_nbaBDaNFStZFiXkbygCu6GlYRGzhoGuE/edit?usp=sharing"
 recording: ""
 ready: True
 ---

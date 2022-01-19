@@ -1,9 +1,9 @@
 ---
 title: "Operators and Making Objects Move"
 number: 2
-date: 2021-10-20T00:00:00-06:00
-slides: "https://docs.google.com/presentation/d/1YuKAs04CHh8CMLg4E3F0CVM8PAbX3VNI0I-_w62iVms/edit?usp=sharing"
-recording: "https://www.youtube.com/watch?v=_2obTd5sZmg"
+date: 2022-03-03T00:00:00-05:00
+slides: "https://docs.google.com/presentation/d/1wL7FlSWnx0qAZ-wORYxmysCP1TGuVK5Y8OHWnOBky_E/edit?usp=sharing"
+recording: ""
 ready: True
 ---
 
