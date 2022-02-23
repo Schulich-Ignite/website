@@ -4,9 +4,8 @@ on:
   push:
     branches:
       - master
-      - main
   schedule:
-    # Run At 05:00 PM, only on Monday and Wednesday
+    # Run At 05:05 PM, only on Monday and Wednesday
     - cron:  '5 17 * * 1,3'
 
 jobs:
