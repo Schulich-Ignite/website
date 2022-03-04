@@ -3,7 +3,7 @@ title: "If-Statements and Logical Operators"
 number: 3
 date: 2022-03-10T00:00:00-00:00
 slides: "https://docs.google.com/presentation/d/1oDNpk43k9fQxTyMAWbStN17TEIaq4lR_EieYd3ri_cM/edit?usp=sharing"
-recording: ""
+recording: "https://www.youtube.com/watch?v=Ykq4uVSSyvA"
 ready: True
 ---
 
