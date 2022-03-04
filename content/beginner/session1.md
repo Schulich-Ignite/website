@@ -3,7 +3,7 @@ title: "Introduction to Python"
 number: 1
 date: 2022-02-24T00:00:00-00:00
 slides: "https://docs.google.com/presentation/d/1ygrltigUVSl6PxExGEOk5_erBCSWNH4dho-fLbIewrg/edit?usp=sharing"
-recording: ""
+recording: "https://youtu.be/f5hDYESEJPc"
 ready: True
 ---
 
