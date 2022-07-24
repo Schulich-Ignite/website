@@ -1,8 +1,8 @@
 ---
 title: "Lists and an Introduction to Loops"
 number: 4
-date: 2022-03-09T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1Ckp4-l_Xa06cMV3gfCh4ApNvhQSutRTiwJWRoMtMFMk/edit?usp=sharing"
+date: 2022-07-28T00:00:00-00:00
+slides: "https://docs.google.com/presentation/d/16UIy3Euz3QMFIcWlnjZU6kaiJ8iatPCVrURqfhQyPZY/edit?usp=sharing"
 recording: ""
 ready: True
 ---
