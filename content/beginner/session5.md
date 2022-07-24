@@ -2,7 +2,7 @@
 title: "Loops and User Input"
 number: 5
 date: 2022-08-01T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1LBUuZobc9hgoL0bssNqTIi5Mbbv1CV1fShDcNc2juDk/edit?usp=sharing"
+slides: "https://docs.google.com/presentation/d/1Ri0cVsiBD7sajsTRnDvM1uL1WM4P3IyZ/edit?usp=sharing&ouid=106840728369228614665&rtpof=true&sd=true"
 recording: ""
 ready: True
 ---

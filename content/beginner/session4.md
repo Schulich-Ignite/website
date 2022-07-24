@@ -2,8 +2,7 @@
 title: "Lists and an Introduction to Loops"
 number: 4
 date: 2022-07-28T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/16UIy3Euz3QMFIcWlnjZU6kaiJ8iatPCVrURqfhQyPZY/edit?usp=sharing"
-recording: ""
+slides: "https://docs.google.com/presentation/d/1KPkGPs0h112ukMqMg6TEY3RKYI4if5Y6/edit?usp=sharing&ouid=106840728369228614665&rtpof=true&sd=true"
 ready: True
 ---
 
