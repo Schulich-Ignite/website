@@ -31,6 +31,18 @@
   <link href="https://unpkg.com/@videojs/themes@1/dist/sea/index.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/index.css" />
   <!-- This website design is inspired by https://codingcoach.io/ -->
+  <style>@media only screen and (max-width: 768px) {
+    .singup-button{
+      font-size: 4vw;
+    }
+    .pretty-header {
+    min-height: 900px;}
+  }
+  @media (max-width: 350px){
+  .pretty-header {
+    min-height: 200px;}
+  }
+</style>
 </head>
 
 {{ partial "header.html" . }}

@@ -22,12 +22,16 @@
         {{ partial "session-dates.html" .}}
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <a class="btn btn-secondary" href="{{ .Site.Params.menteeSignup }}" target="_blank"
+                <a class="btn btn-secondary singup-button" href="{{ .Site.Params.menteeSignup }}" target="_blank"
                     rel="noopener noreferrer">Signup to LEARN</a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a class="btn btn-secondary" href="{{ .Site.Params.mentorSignUp }}" target="_blank"
+                <a class="btn btn-secondary singup-button" href="{{ .Site.Params.mentorSignUp }}" target="_blank"
                     rel="noopener noreferrer">Signup to TEACH</a>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <a class="btn btn-secondary singup-button" href="{{ .Site.Params.webMenteeSignUp }}" target="_blank"
+                    rel="noopener noreferrer">Signup to LEARN Web Development</a>
             </div>
         </div>
         {{ else }}

@@ -12,6 +12,7 @@ relativeURLs = true
     emailListSignup = "https://forms.gle/ZJoDAbcTf1M3NBxYA"
     mentorSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSfCw4Mj9tIjL8-12SQraDsLpdpjJfphnS-hTwNysVgop7sDTA/viewform"
     menteeSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSfIZoyM7slznzXFfyvlsnSPrNvTG9tlRcuPRKMZORESMskKoQ/viewform"
+    webMenteeSignUp = "https://forms.gle/GMxN7pmh8ZnyTBdv9"
     ignitePoints = "https://docs.google.com/spreadsheets/d/1uCUz4_6qkJ6vtX8XUw-jqogvKdvsWLYxcLBDyhXPgsU/edit?usp=sharing"
     sparkDocs    = "https://spark.schulichignite.com/"
     submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLSdeGQSHpMttpr3rpjpVQHdf8N5qSUrOy5GfNNswXXxKIfUFcw/viewform"
