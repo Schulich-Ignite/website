@@ -7,4 +7,4 @@ email: "jeongah.lee@ucalgary.ca"
 linkedin: "https://www.linkedin.com/in/anna-lee-2061b0210/"
 ---
 
-Hello! My name is Anna Lee and I am the VP Finance for Schulich Ignite. I am in my third year of Software Engineering with a minor in Biomedical Engineering. In addition to being a mentor, I am responsible for managing the club’s finances, finding and working with stakeholders to support the club, and purchasing food and supplies for the club. Fun fact about me: outside of school, I love learning about history.
+Hello! I’m Jannine and I’m the VP of Communications at Schulich Ignite.  I am responsible for managing the club’s media platforms, facilitating communication between mentors and mentees as well as conducting overall outreach initiatives to grow the club’s membership. I am currently in my third year of software engineering. In my free time, I like to read and crochet!
