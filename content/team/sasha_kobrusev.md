@@ -2,7 +2,7 @@
 name: "Sasha Kobrusev"
 role: "VP Logistics"
 team: "exec"
-image: "/img/gallery/sasha_kobrusev.png"
+image: "/img/gallery/sasha_kobrusev.jpg"
 email: "kobrusevsasha318@gmail.com"
 linkedin: "https://www.linkedin.com/in/sasha-kobrusev-56a75a219/"
 ---
