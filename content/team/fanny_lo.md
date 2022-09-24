@@ -7,4 +7,4 @@ email: "fanny.lo@ucalgary.ca"
 linkedin: "https://www.linkedin.com/in/fanny-lo-585a91192/"
 ---
 
-My name is Fanny Lo and I am the VP of Content Development at Ignite. I am responsible for overseeing the development of any tools our students use, as well as all the lecture content and exercises for our students. I am currently in my second year of Software Engineering. In my free time, I love to play and watch soccer, and watch movies!
+Hi! My name is Fanny and I am the VP of content development. I am in charge of managing the content created for sessions and collaborations, and any relevant technologies used by Schulich Ignite. I am currently in my third year of software engineering with a minor in biomedical engineering. A fun fact about me is that I am a fanatic on all things fountain pen and ink! Feel free to reach out if you have any questions about Ignite, or if you just want to geek out on pens!
