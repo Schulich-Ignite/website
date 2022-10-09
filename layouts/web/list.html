@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Web Dev") }}
+
+    <section class="section single-item">
+        <div class="container">
+            <div class="row">
+                {{ range (where .Site.Pages.ByDate "Type" "web") }}
+                    {{ partial "sessions-feed.html" .}}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    
+{{ end }}

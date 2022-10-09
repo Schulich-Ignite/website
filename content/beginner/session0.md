@@ -1,10 +1,10 @@
 ---
 title: "Introduction to Schulich Ignite"
 number: 0
-date: 2022-07-14T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1lgqFQYz0wx3JI_QVGPS9mI-AcRgdrPkL/edit?usp=sharing&ouid=110952545234622930027&rtpof=true&sd=true"
+date: 2022-10-09T00:00:00-00:00
+slides: "https://docs.google.com/presentation/d/12yHDnDyBhG_KhXCtKFoI0z1Sb---k0Ve-X5Hb9pYfYQ/edit?usp=sharing"
 ready: True
-recording: "https://www.youtube.com/watch?v=CLirjLoL4gI"
+recording: ""
 ---
 
 In this session we will give an intro to the coding platform we use and Schulich Ignite!

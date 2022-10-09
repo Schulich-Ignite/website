@@ -1,8 +1,8 @@
 ---
 title: "Review"
 number: 8
-date: 2022-08-11T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1GwnlY1nz0lVsTXP2XF1llqQ_jmkG1sz1/edit?usp=sharing&ouid=106840728369228614665&rtpof=true&sd=true"
+date: 2022-12-01T00:00:00-00:00
+slides: "https://docs.google.com/presentation/d/1xH9il0pkp1Hb_elK3gJm_aBvIOz6ik_QRYpP4ZFchbk/edit?usp=sharing"
 ready: True
 ---
 

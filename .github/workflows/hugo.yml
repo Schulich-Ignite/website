@@ -5,8 +5,8 @@ on:
     branches:
       - master
   schedule:
-    # Run At 05:00am on Monday and Thursday
-    - cron:  '0 5 * * 1,4'
+    # Run At 02:00 on Monday, Thursday, and Friday
+    - cron:  '0 2 * * 1,4,5'
 
 jobs:
   build-deploy:
