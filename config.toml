@@ -15,7 +15,7 @@ relativeURLs = true
     webMenteeSignUp = "https://forms.gle/GMxN7pmh8ZnyTBdv9"
     ignitePoints = "https://docs.google.com/spreadsheets/d/1uCUz4_6qkJ6vtX8XUw-jqogvKdvsWLYxcLBDyhXPgsU/edit?usp=sharing"
     sparkDocs    = "https://spark.schulichignite.com/"
-    submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLSdeGQSHpMttpr3rpjpVQHdf8N5qSUrOy5GfNNswXXxKIfUFcw/viewform"
+    submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLSfy8VfD5mPXmtoKwtQcDvKDVz32aePRdtnvM8HS5PkhjFRvxQ/viewform?usp=sf_link"
     submitPythonicLava = "https://forms.gle/1BSY6H9CcuAPejUR8"
     current_startDate = 2022-10-10T14:15:59-06:00
     current_endDate   = 2022-12-03T14:15:59-06:00
