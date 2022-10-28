@@ -1,10 +1,10 @@
 ---
-title: "Vendoring resources"
+title: "Boostrap & Javascript"
 number: 3
 date: 2022-10-28T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1SLcJwooRfeAPyqo3wCGcLJIkQyG2ZdCzI3-3kJEWyvM/edit?usp=sharing"
+slides: "https://docs.google.com/presentation/d/1tSxtWYPm9lxsX1k3s7kfmR3uciSA-iD21rLpOY0Zi0E/edit?usp=sharing"
 ready: True
 recording: ""
 ---
 
-In this session we will look at how to get resources for our site, and how to use templates to make sites quickly! 
+This session will cover using advanced CSS, and CSS frameworks as well as introducing javascript

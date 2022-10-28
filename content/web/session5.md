@@ -1,10 +1,10 @@
 ---
-title: "Static Site Generators"
+title: "Advanced JavaScript (Using libraries)"
 number: 5
 date: 2022-11-11T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/11wsO5GInwXgOYPZpMVZZcEoyw6hejeBGTJDzuDC6uys/edit?usp=sharing"
+slides: "https://docs.google.com/presentation/d/1yJsuSJqDy4bKW2JAeeewxk3_-V74yy6GbY9unA9NDgQ/edit?usp=sharing"
 ready: True
 recording: ""
 ---
 
-We will look at using static site generators and templating systems to create sites that are easier to maintain
+In this session we will look at using javascript libraries as well as using more advanced javascript techniques

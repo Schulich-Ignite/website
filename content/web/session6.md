@@ -1,10 +1,10 @@
 ---
-title: "Deploying Sites & CI/CD"
+title: "Static Site Generators"
 number: 6
 date: 2022-11-18T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1E0M7G5Ukue1cqFQ3SvwbuNGYzey7WnlY_dEnDqFQRCM/edit?usp=sharing"
+slides: "https://docs.google.com/presentation/d/11wsO5GInwXgOYPZpMVZZcEoyw6hejeBGTJDzuDC6uys/edit?usp=sharing"
 ready: True
 recording: ""
 ---
 
-We will look at how to deploy sites and the basics of CI/CD (automation)systems
+We will look at using static site generators and templating systems to create sites that are easier to maintain
