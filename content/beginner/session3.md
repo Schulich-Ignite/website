@@ -1,7 +1,7 @@
 ---
 title: "If-Statements and Logical Operators"
 number: 3
-date: 2022-10-27T00:00:00-00:00
+date: 2023-03-09T00:00:00-00:00
 slides: "https://docs.google.com/presentation/d/1Ba21evNXX8-g8gMkmb9fswbqGonjifS7r8typ6gdgIg/edit?usp=sharing"
 ready: True
 ---

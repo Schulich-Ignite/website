@@ -1,7 +1,7 @@
 ---
 title: "Functions"
 number: 6
-date: 2022-11-17T00:00:00-00:00
+date: 2023-03-30T00:00:00-00:00
 slides: "https://docs.google.com/presentation/d/1UwptiLm4lZ0Sv6w1DlIf3IvRz03igQuGfuAdGJc7QsQ/edit?usp=sharing"
 ready: True
 ---

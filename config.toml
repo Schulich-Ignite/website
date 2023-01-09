@@ -6,19 +6,18 @@ relativeURLs = true
 
 [params]
     email = "info@schulichignite.com"
-    status = "recruiting"
-    #status = "signup" 
+    #status = "recruiting"
+    status = "signup" 
     #status = "live"
     emailListSignup = "https://forms.gle/ZJoDAbcTf1M3NBxYA"
-    mentorSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSfCw4Mj9tIjL8-12SQraDsLpdpjJfphnS-hTwNysVgop7sDTA/viewform"
-    menteeSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSfIZoyM7slznzXFfyvlsnSPrNvTG9tlRcuPRKMZORESMskKoQ/viewform"
-    webMenteeSignUp = "https://forms.gle/GMxN7pmh8ZnyTBdv9"
+    mentorSignUp = "https://forms.gle/QoKJ6i8QAMkXeJ1N7"
+    menteeSignUp = "https://forms.gle/NmNLqfUAagydy9uj9"
     ignitePoints = "https://docs.google.com/spreadsheets/d/1uCUz4_6qkJ6vtX8XUw-jqogvKdvsWLYxcLBDyhXPgsU/edit?usp=sharing"
     sparkDocs    = "https://spark.schulichignite.com/"
     submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLSfy8VfD5mPXmtoKwtQcDvKDVz32aePRdtnvM8HS5PkhjFRvxQ/viewform?usp=sf_link"
     submitPythonicLava = "https://forms.gle/1BSY6H9CcuAPejUR8"
-    current_startDate = 2022-10-10T14:15:59-06:00
-    current_endDate   = 2022-12-03T14:15:59-06:00
+    current_startDate = 2022-02-14T14:15:59-06:00
+    current_endDate   = 2022-08-08T14:15:59-06:00
     [params.links]
         youtube = "https://www.youtube.com/channel/UC7tNvdbu952HOUl_4nK7iww"
         instagram = "https://www.instagram.com/schulichignite"
