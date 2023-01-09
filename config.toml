@@ -16,8 +16,8 @@ relativeURLs = true
     sparkDocs    = "https://spark.schulichignite.com/"
     submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLSfy8VfD5mPXmtoKwtQcDvKDVz32aePRdtnvM8HS5PkhjFRvxQ/viewform?usp=sf_link"
     submitPythonicLava = "https://forms.gle/1BSY6H9CcuAPejUR8"
-    current_startDate = 2022-02-14T14:15:59-06:00
-    current_endDate   = 2022-08-08T14:15:59-06:00
+    current_startDate = 2023-02-14T14:15:59-06:00
+    current_endDate   = 2023-04-08T14:15:59-06:00
     [params.links]
         youtube = "https://www.youtube.com/channel/UC7tNvdbu952HOUl_4nK7iww"
         instagram = "https://www.instagram.com/schulichignite"
