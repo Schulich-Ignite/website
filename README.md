@@ -272,6 +272,16 @@ Login details can be found in the usual place ;).
 2. Make any changes
 3. Run ```hugo serve -D``` and then navigate to [http://localhost:1313/](http://localhost:1313/)
 
+#### Running netlify locally
+
+There is a built in integration with netlify CMS for editing blog posts. To set it up and use it:
+
+1. [Download & install Hugo](https://gohugo.io/getting-started/installing/)
+2. [Download and install nodeJS/NPM]
+3. Open a terminal in the root folder (where `config.toml` is) the netlify proxy `npx netlify-cms-proxy-server`
+4. Open another terminal in the root folder (where `config.toml` is) and run `hugo serve`
+5. Head to http://localhost:1313/admin (or whatever port the terminal with `hugo serve` running says) in your browser
+
 ### Per-page breakdown
 
 #### Index/Home
