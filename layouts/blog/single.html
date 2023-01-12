@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ .Params.title }}</h2>
                     <p class="card-text">
-                        <time>{{ .Params.date.Format "Monday, 01/02/2006 15:04 MST" }}</time>
+                        <time>{{ .Params.date.Format "Monday, Jan 2, 2006" }}</time>
                     </p>
                     <em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
                     <p class="card-text"> {{ .Content }} </p>

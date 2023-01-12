@@ -299,7 +299,7 @@ The homepage is organized in to four main sections which can be controlled from 
 
 The content for sessions can be found in ```content/sessions```. There are a number of layouts for the sessions system:
 1. The single layout; This is what shows up when you navigate to an individual session (```schulichignite.com/sessions/<esession name>```), and can be found in ```layouts/session/single.html```
-2. The list layout; This is a dedicated page that shows **ALL** sessions. It is what shows up on ```schulichignite.com/sessions``` and the layout can be found in ```layouts/sessions/list.html```.
+2. The list layout; This is a dedicated page that shows **ALL** sessions. It is what shows up on ```schulichignite.com/sessions``` and the layout can be found in ```layouts/sessions/list.html```. The description for each session is pulled from `/content/<session>/_index.md` where `<session>` is the session name (i.e. flare)
 3. The Feed; This is the feed that pulls in the sessions lists. It can be found in various places on the site and is typically invoked in a template using ```{{ partial "sessions-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/sessions-feed.html```.
 
 #### Blog
