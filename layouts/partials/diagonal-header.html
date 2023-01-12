@@ -9,7 +9,8 @@
     {{ if  (.context.Params.date) }}
     <div class="subheader dates d-none d-sm-block">
         <span class="long-dates">
-            {{ .context.Params.date.Format "Monday, 01/02/2006" }}
+
+            {{ .context.Params.date.Format "Monday, Jan 2, 2006" }}
         </span>
         <span class="short-dates">
             {{ .context.Params.date.Format "01/02/06" }}

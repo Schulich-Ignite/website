@@ -1,6 +1,35 @@
 {{ define "main" }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Ignite Flare") }}
+<div class="container">
+    <div class="row">
+        <div class="column-md-12">
+            {{with .Site.GetPage "/flare/_index.md "}}
+            {{.Content}}
+            {{end}}
+            <h2>How do I sign up?</h2>
+            {{ if eq "signup" .Site.Params.status }}
+                <p>We are currently looking for mentors and mentees. You can signup at the links below which will also have all the details about the times and dates the sessions will run.</p>
 
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.menteeSignup }}" target="_blank"
+                            rel="noopener noreferrer">Signup to LEARN</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.mentorSignUp }}" target="_blank"
+                            rel="noopener noreferrer">Signup to TEACH</a>
+                    </div>
+                </div>
+                
+
+            {{ else }}
+
+            <p>We are not currently looking for mentors and mentees. You can signup for our newsletter with <a href="https://forms.gle/ZJoDAbcTf1M3NBxYA" target="_blank">this link</a> to be notified when the next set of sessions are available</p>
+
+            {{ end}}
+        </div>
+    </div>
+</div>
     <section class="section single-item">
         <div class="container">
             <div class="row">
