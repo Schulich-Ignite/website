@@ -17,7 +17,10 @@
                         <h3 class="card-title">{{ .Params.title }}</h3>
                         <p class="card-text"><small class="text-muted">
                                 <time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
-                            </small></p>
+                                {{if .Params.tags }}
+                                <p style="margin-top:-20px;"><em>Tags:</em>{{ range $tag := .Params.tags }} {{ $tag }}{{end}}</p>
+                                {{ end }}</p>
+                            </small>
                         <p class="card-text">
                             {{ .Summary }}...
                             <a href="{{ ref . .File }}">Read more</a>

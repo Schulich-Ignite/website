@@ -198,6 +198,7 @@ pre {
   margin-bottom: 1rem;
   overflow: auto;
   -ms-overflow-style: scrollbar;
+  padding:1em;
 }
 
 figure {
@@ -9056,6 +9057,99 @@ h3 {
   text-transform: uppercase;
   padding-top: 30px;
   padding-bottom: 0px;
+}
+
+h1.card-title {
+  color: var(--primary);
+  font-family: var(--header-font);
+  font-size: 2.4em !important;
+  text-transform: uppercase;
+  text-decoration: var(--primary-transparent) wavy underline;
+  text-decoration-thickness: 3px;
+  padding-bottom: 40px;
+  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+  text-underline-offset: 20px;
+  padding-top: 30px;
+}
+
+#author-information img{
+  border-radius: 50%;
+  display: inline;
+  margin-right:1rem;
+}
+
+#author-information h6{
+  display:inline-block; 
+  vertical-align: top;
+  margin-top:-.5rem;
+  width: 80%;
+}
+#author-information{
+  display:inline; 
+  vertical-align: top;
+}
+
+h4, h5, h6, th{
+  color: var(--primary);
+  font-family: var(--header-font);
+  padding-top: 15px;
+}
+
+#article-info h6{
+  font-size:1.3em;
+}
+
+tbody, td{
+  border-bottom: .01px solid black;
+}
+
+thead > tr{
+  text-decoration: var(--primary-transparent) wavy underline
+}
+
+tr:nth-child(even) {
+  background-color: #fffbea;
+}
+
+th,td{
+  padding: 0.4rem;
+}
+
+table{
+  margin: 2em 0;
+}
+
+#article-info .card-text{
+  margin-bottom: 0;
+  font-size:1.1em;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+#article-info .card-text i{
+  padding-right: .3rem;
+  
+
+}
+
+#author-icons i{
+  color: var(--primary) !important;
+  font-size: 1.75em;
+  display:inline; 
+}
+
+#TableOfContents ul{
+  list-style: none;
+  padding-left: 1rem;
+}
+
+#TableOfContents ul li ul{
+  list-style: inside;
+  padding-left: 1rem;
+}
+
+#TableOfContents ul li ul li ::marker{
+  margin-right:.1rem;
 }
 
 .card {

@@ -10,16 +10,70 @@
                 <img class="card-img-top large-image" src="{{ .Params.image }}">
                 {{ end }}
                 <div class="card-body">
-                    <h2 class="card-title">{{ .Params.title }}</h2>
-                    <p class="card-text">
-                        <time>{{ .Params.date.Format "Monday, Jan 2, 2006" }}</time>
-                    </p>
-                    <em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
+                        <h1 class="card-title">{{ .Params.title }}</h1>
+                            
+                            <div id="article-info" class="card"> 
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                            <h3>Article Information</h3>
+                                        <p class="card-text">
+                                            <i class="bi bi-calendar2-week-fill"></i> <time>{{ .Params.date.Format "Monday, Jan 2, 2006" }}</time>
+                                        </p>
+                                        <p class="card-text">
+                                        {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
+                                        <i class="bi bi-stopwatch-fill"></i><em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
+                                        {{ end }}
+                                        </p>
+                                        {{ if .Params.author }}
+                                            <h4>Author information</h4>
+                                            <div id="author-information">
+                                                {{if not .Params.author.image }}
+                                                <img width="100rem" src="https://api.dicebear.com/5.0/identicon/svg?seed={{ .Params.author.name }}" alt="">
+                                                {{ else }}
+                                                <img width="100rem" src="{{.Params.author.image}}" alt="">
+                                                {{end}}
+                                                <h6 class="card-title">Author: <br>{{ .Params.author.name }}
+                                                    <div id="author-icons">
+                                                        {{ if .Params.author.email }}
+                                                        <a href="mailto:{{.Params.author.email }}" ><i class="bi bi-envelope-fill"></i></a>
+                                                        {{ end }}
+                                                        {{ if .Params.author.github }}
+                                                        <a href="https://github.com/{{.Params.author.github }}" target="_blank"><i class="bi bi-github"></i></a>
+                                                        {{ end }}
+                                                        {{ if .Params.author.linkedin }}
+                                                        <a href="https://linkedin.com/in/{{.Params.author.linkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                                        {{ end }}
+                                                        {{ if .Params.author.website }}
+                                                        <a href="{{ .Params.author.website }}" target="_blank"><i class="bi bi-globe"></i></a>
+                                                        {{ end }}
+                                                    </div>
+                                                </h6>
+                                                
+                                            </div>
+                                            
+                                        {{ end }}
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                            <h3>Table of Contents</h3>
+                                            {{ .TableOfContents}}
+                                        </div>
+                                        
+                                    </div>
+
+                                </div>
+                        </div>
+                    <hr>
                     <p class="card-text"> {{ .Content }} </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+<script>
+    hljs.addPlugin(new CopyButtonPlugin());
+    hljs.highlightAll();
+  </script>
 {{end}}
