@@ -2,33 +2,32 @@
 title: How to cheat at CSS
 subtitle: Making design easier
 date: 2023-01-11T12:30:00-06:00
+modified_date: ""
+image: /img/blog/hal-gatewood-tzc3vjpck-q-unsplash.jpg
 author:
-    name: Kieran Wood
-    email: kieran@canadiancoding.ca
-    linkedin: kieran-wood
-    github: descent098
+  name: Kieran Wood
+  email: kieran@canadiancoding.ca
+  linkedin: kieran-wood
+  github: descent098
 tags:
- - scorch
- - web
- - css
+  - scorch
+  - web
+  - css
 ---
-
 CSS is the language of design on the web. It's used to control how everything looks. The styling of this text, how the article metadata above this looks, everything. It's what helps define your webpages, and make them look nice... It's also hard to do well
 
 ## Traditional Approach
 
 The traditional aproach you might take is to start from scratch, and begin building your CSS incrementally. You start with the outline of some HTML, setup some of the basics, and then start getting specific. We cover how to do this in the [ignite scorch](https://schulichignite.com/scorch/) course. The problem is that this way takes a long time, and a lot of code (as of writing the CSS on this page is ~9300 lines). There's also a ton of design and technical things to worry about, like:
 
-- Mobile responsiveness
-- Typography
-- Accessibility
-- Colour theory
-- Whitespacing
-- etc.
-
+* Mobile responsiveness
+* Typography
+* Accessibility
+* Colour theory
+* Whitespacing
+* etc.
 
 Not only that, but you can run into the [blank canvas problem](https://www.themodernnomad.com/blank-canvas-paralysis/) a lot while designing from scratch. Don't get me wrong, it's something every developer **should** know how to do, but not something you should **have** to do all the time. For the rest of this article, we're going to talk about tools that will help you to build sites faster, more reliably, and with less headaches!
-
 
 ## CSS Frameworks
 
@@ -100,7 +99,6 @@ There are two other CSS frameworks that do the bare minimum to help you get star
 #### Miligram
 
 [Miligram](https://milligram.io/) is a 2kb, it handles the same sort of stuff as skeleton, but includes a few extra bells and whistles (like [quotes](https://milligram.io/blockquotes.html)). It's a great starting point for a design.
-
 
 ### Extensions
 
@@ -204,56 +202,151 @@ Will then expand the nested styles into this css:
 
 ### Utility Classes
 
+Utility classes is a newer approach. Essentially it's the same CSS you know, but it uses classes to do everything instead of inline CSS. This gives the advantage of being able to see exactly what's happening to an element, while keeping it shorter than regular CSS. Additionally it allows for abstractions, like giving you text sizes in `title`, `main`, `accent` instead of every size under the sun, or colours in terms of `green`, `green-dark`, `green-light` etc. Essentially similar to boilerplate CSS it just tries to let you take the reigns while making things easier.
+
+There is a downside to using these though...
+
+Because they aren't component based there can often be **very long** class names. It's a joke in the community that Utility libraries are just [inline styles](https://github.com/tailwindlabs/discuss/issues/3). There are interesting arguments for [why they are more than that](https://frontstuff.io/no-utility-classes-arent-the-same-as-inline-styles), but either way let's dive into some examples and you can decide for yourself.
+
 #### Tailwind
 
-- [TailwindUI](https://tailwindui.com/) 
-- [DaisyUI](https://daisyui.com/) 
+[Tailwind](https://tailwindcss.com/) is by far the most popular, and most controversial of utility class systems. It uses classes to allow you to change individual settings (margin, padding etc.), but also gives you things like the [typography plugin](https://tailwindcss.com/blog/tailwindcss-typography-v0-5) that make designing text-heavy sites much easier. They have a [playground](https://play.tailwindcss.com/), which will let you mess around with tailwind without having to set it up!
+
+Here is an example of a banner with 2 buttons on it:
+
+![tailwind banner example](/img/blog/chrome_qrawy7bmpa.png)
+
+```html
+<div class="bg-gray-50">
+  <div class="mx-auto max-w-7xl py-12 px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
+    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+      <span class="block">Ready to dive in?</span>
+      <span class="block text-indigo-600">Start your free trial today.</span>
+    </h2>
+    <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+      <div class="inline-flex rounded-md shadow">
+        <a href="#" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700">Get started</a>
+      </div>
+      <div class="ml-3 inline-flex rounded-md shadow">
+        <a href="#" class="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-50">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+As you can see, some of the lines get hard to read. For example the link tag has 13 classes! But arguably it's also more clear what is effecting it since the classes are inline. 
+
+##### TailwindUI
+
+[TailwindUI](https://tailwindui.com/) is a component library built by the tailwind team. It [isn't cheap](https://tailwindui.com/all-access), but it is built well, and comes with a ton of great tailwind template sites as well! The example banner above comes straight from tailwind UI!
+
+##### DaisyUI
+
+[DaisyUI](https://daisyui.com/) is a free alternative tailwind based component library!
+
+#### TurretCSS
+
+[Turret CSS](https://turretcss.com/) is another utility class system that is designed to help you build elements quickly. It uses a bit of a different syntax. The approach is:
+
+```html
+<element class="[element] [element-modifier] [element-style]"></element>
+```
+
+So, for example:
+
+```html
+<button class="button button-border button-primary"></button>
+```
 
 ### React
 
-what is react?
+[React](https://reactjs.org/) is a component-based UI framework. This means it has it's own code that runs inside [nodeJS](https://nodejs.org/en/). Instead of having the seperation of HTML/CSS/JS, react takes over all 3 (mostly). It uses javascript (or [typescript](https://www.typescriptlang.org/)), or optionally a language called [JSX](https://reactjs.org/docs/introducing-jsx.html). This means it can encapsulate all of the state, and look of a component all in one class!
 
-what is a react UI library
+Here is an example of a react component that is using JSX to create a timer that goes up by 1 each second:
+
+```jsx
+class Timer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { seconds: 0 };
+  }
+
+  tick() {
+    this.setState(state => ({
+      seconds: state.seconds + 1
+    }));
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    return (
+      <div>
+        Seconds: {this.state.seconds}
+      </div>
+    );
+  }
+}
+
+root.render(<Timer />);
+```
+
+Because of it's extensibility react cen be used to put together entire applications! Like bootstrap or other CSS frameworks you can create libraries of components that can be reused (in fact [bootstrap is available in react](https://react-bootstrap.github.io/getting-started/introduction#examples)!
+
+#### Mantine UI
+
+[Mantine UI](https://mantine.dev/) is a component library built for react that is completely free and comes with 100+ components! It works with other frameworks outside of react as well.
 
 #### Material UI
 
-- [Material UI](https://mui.com/)
-
-
-#### Mantine UI
-- [Mantine UI](https://mantine.dev/)
+[Material UI](https://mui.com/) is a component library for react that includes a ton of components for building websites using react. The [core](https://mui.com/core/) is free, and you can [pay for extras](https://mui.com/pricing/).
 
 #### React alternatives
 
 There are a few alternatives to react you can check out like:
 
-- [Svelte](https://svelte.dev/) (and [svelte kit](https://kit.svelte.dev/))
-- [Solid JS](https://www.solidjs.com/)
-- [Vue.js](https://vuejs.org/)
-- [Angular](https://angular.io/)
-- [Mithril JS](https://mithril.js.org/)
+* [Svelte](https://svelte.dev/) (and [svelte kit](https://kit.svelte.dev/))
+* [Solid JS](https://www.solidjs.com/)
+* [Vue.js](https://vuejs.org/)
+* [Angular](https://angular.io/)
+* [Mithril JS](https://mithril.js.org/)
 
 ## CSS Generators
 
+CSS Generators are just tools that will help you generate CSS. There are a ton of CSS properties that are hard to remember the syntax for, like [borders](https://developer.mozilla.org/en-US/docs/Web/CSS/border), or [shadows](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow), or [animations](https://developer.mozilla.org/en-US/docs/Web/CSS/animation). These sites will help you generate some common hard to remember CSS:
 
-- https://webcode.tools/generators/css
-- [CSS Gradient Generator](https://cssgradient.io/)
-- [Grainy CSS Gradients](https://grainy-gradients.vercel.app/) (from https://css-tricks.com/grainy-gradients/)
+* https://webcode.tools/generators/css
+* [CSS Gradient Generator](https://cssgradient.io/)
+* [CSS Animations](https://animista.net/)
 
 ### Design Trends
 
-- [Glassmorphism](https://ui.glass/generator/) ([alternate](https://css.glass/))
-- [Neumorphism](https://neumorphic.design/)
+There are often design trends in the world that people want you to build a site around. Sometimes it's hard to remember *exactly* how to implement them all. Here are a few sites that have generators for some common design trends:
+
+* [Glassmorphism](https://ui.glass/generator/) ([alternate](https://css.glass/))
+* [Neumorphism](https://neumorphic.design/)
+* [Material](https://m3.material.io/theme-builder) ([Alternative](https://materialtheme.arcsine.dev/))
+* [Grainy CSS Gradients](https://grainy-gradients.vercel.app/) (from https://css-tricks.com/grainy-gradients/)
 
 ### Backgrounds
-- https://coolbackgrounds.io/
-- https://vincentgarreau.com/particles.js
-- https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/
-- https://doodad.dev/pattern-generator/
-- https://codepen.io/goodkatz/pen/LYPGxQz
-- https://www.app.websitebackgroundmaker.com/get-started
-- https://heropatterns.com/
-- https://app.haikei.app/
-- https://superdesigner.co/tools/backgrounds?type=peak
-- https://www.magicpattern.design/tools/css-backgrounds
-- https://bgjar.com/
+
+Finally, sometimes it's hard to pick a nice background. Whethere it's a [hero](https://www.optimizely.com/optimization-glossary/hero-image/), or just an element that needs a bit of flair. These sites will help you generate great backgrounds:
+
+* https://coolbackgrounds.io/
+* https://vincentgarreau.com/particles.js
+* https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/
+* https://doodad.dev/pattern-generator/
+* https://codepen.io/goodkatz/pen/LYPGxQz
+* https://www.app.websitebackgroundmaker.com/get-started
+* https://heropatterns.com/
+* https://app.haikei.app/
+* https://superdesigner.co/tools/backgrounds?type=peak
+* https://www.magicpattern.design/tools/css-backgrounds
+* https://bgjar.com/

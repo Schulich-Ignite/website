@@ -2,14 +2,16 @@
 title: Taking your HTML elements further
 subtitle: Using attributes more effectively
 date: 2023-01-11T12:30:00-06:00
+modified_date: ""
+image: /img/blog/ferenc-almasi-eypcldxhvb0-unsplash.jpg
 author:
-    name: Kieran Wood
-    email: kieran@canadiancoding.ca
-    linkedin: kieran-wood
-    github: descent098
+  name: Kieran Wood
+  email: kieran@canadiancoding.ca
+  linkedin: kieran-wood
+  github: descent098
 tags:
- - scorch
- - web
+  - scorch
+  - web
 ---
 
 ## What is an attribute
