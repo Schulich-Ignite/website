@@ -157,14 +157,31 @@ New blog posts can be added in ```content/blog``` and existing blog posts can be
 title: "This is the blog post title"
 date: 2020-07-08T15:04:38-07:00
 image: "/img/ignite-logo.svg"
+excludeTOC: False
+author:
+    name: Kieran Wood
+    email: kieran@canadiancoding.ca
+    linkedin: kieran-wood
+    github: descent098
+tags:
+ - scorch
+ - web
+ - css
 ---
 
 Enter blog post here, note the first 20 words will be used in the feed. So make sure to use them wisely, or else your content will be cut off and no one will be able to read it.
 ```
 
-The image field is optional, you can specify an image to display for the news story. If you choose not to then just delete the image metadata, and by default the ignite logo will appear for that blog post.
+#### Fields
+- Image: The image field is optional, you can specify an image to display for the news story. If you choose not to then just delete the image metadata, and by default the ignite logo will appear for that blog post.
+- Date: Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and the T splits the date from the time.
+- Author: the author object is optional, but if you do include it then a name is required!
+    - linkedin: On your profile on linkedin the URL is `https://linkedin.com/in/<name>`, provide just the name here. For example https://www.linkedin.com/in/kieran-wood/ would just be `kieran-wood`
+    - github: **just the username**, so if your URL is github.com/descent098 only use the `descent098`
+- Tags: Optional, is a list of tags
+- excludeTOC: A variable on whether to include the table of contents or not, set to true on short posts that don't have headings in the markdown content
 
-Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and the T splits the date from the time.
+
 
 ### Beginner / Flare / IndigeSteam
 
