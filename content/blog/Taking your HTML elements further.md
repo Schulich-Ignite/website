@@ -9,6 +9,7 @@ author:
   email: kieran@canadiancoding.ca
   linkedin: kieran-wood
   github: descent098
+  website: https://kieranwood.ca
 tags:
   - scorch
   - web
