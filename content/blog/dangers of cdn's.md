@@ -1,15 +1,11 @@
 ---
 title: The Dangers of CDN's
 subtitle: When to use them, and how to avoid issues
-date: 2023-01-11T12:30:00-06:00
+date: 2023-01-30T00:00:00-06:00
 modified_date: ""
 image: /img/blog/nasa-1lfi7wkgwz4-unsplash.jpg
-author:
-  name: Kieran Wood
-  email: kieran@canadiancoding.ca
-  linkedin: kieran-wood
-  github: descent098
-  website: https://kieranwood.ca
+authors: 
+- Kieran Wood
 tags:
   - scorch
   - web

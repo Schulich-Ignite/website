@@ -1,0 +1,44 @@
+{{ define "main"}}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Params.name) }}
+<section class="section">
+<div class="container">
+    <div class="row">
+        <div class="card no-background">
+
+        {{if not .Params.avatar }}
+        <img width="70%" style="border-radius:50%" src="https://api.dicebear.com/5.0/identicon/svg?seed={{ .Params.name }}" alt="">
+        {{ else }}
+        <img width="70%" style="border-radius:50%" src="{{.Params.avatar}}" alt="">
+        {{end}}
+
+<h2>Bio</h2>
+{{ .Content }}
+
+<div id="author-icons">
+    {{ if .Params.email }}
+    <a href="mailto:{{.Params.email }}" ><i class="bi bi-envelope-fill"></i></a>
+    {{ end }}
+    {{ if .Params.github }}
+    <a href="https://github.com/{{.Params.github }}" target="_blank"><i class="bi bi-github"></i></a>
+    {{ end }}
+    {{ if .Params.linkedin }}
+    <a href="https://linkedin.com/in/{{.Params.linkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>
+    {{ end }}
+    {{ if .Params.website }}
+    <a href="{{ .Params.website }}" target="_blank"><i class="bi bi-globe"></i></a>
+    {{ end }}
+</div>
+
+
+<h2>Posts</h2>
+<ul>
+{{ range .Data.Pages }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+{{ end }}
+</ul>
+    </div>
+    </div>
+</div>
+</section>
+<div style="padding:3em;"></div>
+{{end}}

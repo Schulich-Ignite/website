@@ -1,15 +1,10 @@
 ---
 title: How to cheat at CSS
 subtitle: Making design easier
-date: 2023-01-11T12:30:00-06:00
+date: 2023-02-20T00:00:00-06:00
 modified_date: ""
 image: /img/blog/hal-gatewood-tzc3vjpck-q-unsplash.jpg
-author:
-  name: Kieran Wood
-  email: kieran@canadiancoding.ca
-  linkedin: kieran-wood
-  github: descent098
-  website: https://kieranwood.ca
+authors: [Kieran Wood]
 tags:
   - scorch
   - web

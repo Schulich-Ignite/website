@@ -158,11 +158,8 @@ title: "This is the blog post title"
 date: 2020-07-08T15:04:38-07:00
 image: "/img/ignite-logo.svg"
 excludeTOC: False
-author:
-    name: Kieran Wood
-    email: kieran@canadiancoding.ca
-    linkedin: kieran-wood
-    github: descent098
+authors: [Kieran Wood]
+video: "https://youtube.com/watch"
 tags:
  - scorch
  - web
@@ -175,10 +172,9 @@ Enter blog post here, note the first 20 words will be used in the feed. So make 
 #### Fields
 - Image: The image field is optional, you can specify an image to display for the news story. If you choose not to then just delete the image metadata, and by default the ignite logo will appear for that blog post.
 - Date: Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and the T splits the date from the time.
-- Author: the author object is optional, but if you do include it then a name is required!
-    - linkedin: On your profile on linkedin the URL is `https://linkedin.com/in/<name>`, provide just the name here. For example https://www.linkedin.com/in/kieran-wood/ would just be `kieran-wood`
-    - github: **just the username**, so if your URL is github.com/descent098 only use the `descent098`
+- Authors: a list of the authors for the content (see `/content/authors` for list of names), the value put here will be [urlized](https://gohugo.io/functions/urlize/)
 - Tags: Optional, is a list of tags
+- video: Optional, A link to a youtube video for the post
 - excludeTOC: A variable on whether to include the table of contents or not, set to true on short posts that don't have headings in the markdown content
 
 
@@ -325,6 +321,54 @@ The content for the blog can be found in ```content/blog```. There are a number 
 1. The single layout; This is what shows up when you navigate to an individual post (```schulichignite.com/blog/<blog post name>```), and can be found in ```layouts/blog/single.html```
 2. The list layout; This is a dedicated page that shows **ALL** blog posts. It is what shows up on ```schulichignite.com/blog``` and the layout can be found in ```layouts/blog/list.html```.
 3. The Feed; This is the feed that pulls in the news articles into a lists. It can be found in various places on the site and is typically invoked in a template using ```{{ partial "blog-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/blog-feed.html```.
+
+##### Blog authors & tags
+
+For the blog there are [taxonomies](https://gohugo.io/content-management/taxonomies) setup for authors and tags. 
+
+Authors need to be added to `/content/authors/<author_name>/_index.md` where `index.md` is a file with the information about the author. The file has the following fields (only name is required):
+
+```yaml
+name: Kieran Wood
+email: kieran@canadiancoding.ca     
+linkedin: kieran-wood # Just the username (i.e. https://linkedin.in/kieran-wood would be entered here as kieran-wood)
+github: descent098 # Just the username (i.e. https://github.com/descent098 would be entered here as descent098)
+website: https://kieranwood.ca # The full URL to their website
+avatar: /img/blog/avatars/kieran.jpg
+```
+
+
+Can be accessed with:
+
+```html
+
+{{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize "Kieran Wood")) }}
+    Author: <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">{{ .Params.name }}</a>
+{{end}}
+```
+
+You can find the templates for Authors in `/layouts/authors`, there are 2 used:
+
+1. `list.html`: An overview of a **specific author**, and their content
+2. `terms.html`: An overview of **all authors**
+
+
+
+Tags have no "content", they are generated as they are added to blog posts automatically. You can find the templates for them in `/layouts/tags`, there are 2 used:
+
+1. `list.html`: An overview of a **specific tag**, and it's content
+2. `terms.html`: An overview of **all tags**
+
+Can be accessed with:
+
+```html
+{{- range .Params.tags }}
+    {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
+            <a href="{{ .Permalink }}">{{ .Params.Title }}</a>,
+    {{ end }}
+{{ end }}
+```
+
 
 #### Contact
 

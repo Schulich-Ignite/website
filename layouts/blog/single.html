@@ -22,6 +22,17 @@
                                         {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
                                         <i class="bi bi-stopwatch-fill"></i><em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
                                         {{ end }}
+                                        {{if .Params.tags }}
+                                        <br>
+                                        <em><i class="bi bi-tags-fill"></i></em>
+                                            
+                                            {{- range .Params.tags }}
+                                                {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
+                                                        <a href="{{ .Permalink }}">{{ .Params.Title }}</a>,
+
+                                                {{ end }}
+                                            {{ end }}</p>
+                                        {{ end }}
                                         {{ if not .Params.excludeTOC }}
                                         <h3>Table of Contents</h3>
                                             {{ .TableOfContents}}
@@ -34,33 +45,37 @@
                                             
 
 
-                                            {{ if .Params.author }}
+                                            {{ if .Params.authors }}
+
+                                            {{- range .Params.authors }}
+                                            {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
                                             <h4>Author information</h4>
                                             <div id="author-information">
-                                                {{if not .Params.author.image }}
-                                                <img width="100rem" src="https://api.dicebear.com/5.0/identicon/svg?seed={{ .Params.author.name }}" alt="">
+                                                {{if not .Params.avatar }}
+                                                <img width="100rem" src="https://api.dicebear.com/5.0/identicon/svg?seed={{ .Params.name }}" alt="">
                                                 {{ else }}
-                                                <img width="100rem" src="{{.Params.author.image}}" alt="">
+                                                <img width="100rem" src="{{.Params.avatar}}" alt="">
                                                 {{end}}
-                                                <h6 class="card-title">Author: <br>{{ .Params.author.name }}</h6>
+                                                <h6 class="card-title">Author: <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer"><br>{{ .Params.name }}</a></h6>
                                                     <div id="author-icons">
-                                                        {{ if .Params.author.email }}
-                                                        <a href="mailto:{{.Params.author.email }}" ><i class="bi bi-envelope-fill"></i></a>
+                                                        {{ if .Params.email }}
+                                                        <a href="mailto:{{.Params.email }}" ><i class="bi bi-envelope-fill"></i></a>
                                                         {{ end }}
-                                                        {{ if .Params.author.github }}
-                                                        <a href="https://github.com/{{.Params.author.github }}" target="_blank"><i class="bi bi-github"></i></a>
+                                                        {{ if .Params.github }}
+                                                        <a href="https://github.com/{{.Params.github }}" target="_blank"><i class="bi bi-github"></i></a>
                                                         {{ end }}
-                                                        {{ if .Params.author.linkedin }}
-                                                        <a href="https://linkedin.com/in/{{.Params.author.linkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                                        {{ if .Params.linkedin }}
+                                                        <a href="https://linkedin.com/in/{{.Params.linkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>
                                                         {{ end }}
-                                                        {{ if .Params.author.website }}
-                                                        <a href="{{ .Params.author.website }}" target="_blank"><i class="bi bi-globe"></i></a>
+                                                        {{ if .Params.website }}
+                                                        <a href="{{ .Params.website }}" target="_blank"><i class="bi bi-globe"></i></a>
                                                         {{ end }}
                                                     </div>
                                                 
                                                 
                                             </div>
-                                            
+                                            {{ end }}
+                                            {{ end }}
                                         {{ end }}
                                         </div>
                                         

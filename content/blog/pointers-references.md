@@ -1,10 +1,10 @@
 ---
 title: Pointers and References in C++
 subtitle: A quick understanding of memory
-date: 2023-01-14T03:39:18.876Z
+date: 2023-06-23T00:00:00-06:00
 modified_date: ""
-author:
-  name: Cole Pawliw
+authors:
+- Cole Pawliw
 tags:
   - C
   - C++

@@ -9089,6 +9089,23 @@ h1.card-title {
   vertical-align: top;
 }
 
+.author-information img{
+  border-radius: 50%;
+  display: inline;
+  margin-right:1rem;
+}
+
+.author-information h6{
+  display:inline-block; 
+  vertical-align: top;
+  margin-top:-.5rem;
+  width: 80%;
+}
+.author-information{
+  display:inline; 
+  vertical-align: top;
+}
+
 h4, h5, h6, th{
   color: var(--primary);
   font-family: var(--header-font);
@@ -9187,6 +9204,12 @@ table{
 }
 
 #author-icons i{
+  color: var(--primary) !important;
+  font-size: 1.75em;
+  display:inline; 
+}
+
+.author-icons i{
   color: var(--primary) !important;
   font-size: 1.75em;
   display:inline; 

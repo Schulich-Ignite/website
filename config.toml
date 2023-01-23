@@ -28,3 +28,7 @@ relativeURLs = true
 
 [markup.goldmark.renderer]
     unsafe= true
+
+[taxonomies]
+  author = "authors"
+  tag = "tags"

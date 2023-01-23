@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Authors") }}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            {{ range .Data.Pages }}
+            <div class="card col-md-10 my-2 py-1">
+                    <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer"><h4>{{ .Params.name }}</h4></a>
+                                <div class="author-information">
+                                    <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
+                                    {{if not .Params.avatar }}
+                                    <img width="100rem" src="https://api.dicebear.com/5.0/identicon/svg?seed={{ .Params.name }}" alt="">
+                                    {{ else }}
+                                    <img width="100rem" src="{{.Params.avatar}}" alt="">
+                                    {{end}}
+                                    </a>
+                                        <div class="author-icons">
+                                            {{ if .Params.email }}
+                                            <a href="mailto:{{.Params.email }}" ><i class="bi bi-envelope-fill"></i></a>
+                                            {{ end }}
+                                            {{ if .Params.github }}
+                                            <a href="https://github.com/{{.Params.github }}" target="_blank"><i class="bi bi-github"></i></a>
+                                            {{ end }}
+                                            {{ if .Params.linkedin }}
+                                            <a href="https://linkedin.com/in/{{.Params.linkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                            {{ end }}
+                                            {{ if .Params.website }}
+                                            <a href="{{ .Params.website }}" target="_blank"><i class="bi bi-globe"></i></a>
+                                            {{ end }}
+                                        </div>
+                                    {{.Content}}
+                            </div>
+                        </div>
+                        {{ end }}
+
+            </div>
+        </div>
+    </div>
+</section>
+{{end}}
