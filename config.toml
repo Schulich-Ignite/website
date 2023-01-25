@@ -32,3 +32,8 @@ relativeURLs = true
 [taxonomies]
   author = "authors"
   tag = "tags"
+
+[sitemap]
+  changefreq = 'monthly'
+  filename = 'sitemap.xml'
+  priority = 0.5
