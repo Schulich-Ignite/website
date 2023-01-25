@@ -1,6 +1,6 @@
 ---
 title: "Fall 2020 Gala"
-date: 2020-12-10T18:00:00-20:00
+date: 2020-12-10T00:00:00-06:00
 image: "/img/gallery/Fall_2020_Gala.jpg"
 excludeTOC: True
 ---

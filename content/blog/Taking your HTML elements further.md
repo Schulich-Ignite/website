@@ -4,12 +4,7 @@ subtitle: Using attributes more effectively
 date: 2023-06-20T00:00:00-06:00
 modified_date: ""
 image: /img/blog/ferenc-almasi-eypcldxhvb0-unsplash.jpg
-author:
-  name: Kieran Wood
-  email: kieran@canadiancoding.ca
-  linkedin: kieran-wood
-  github: descent098
-  website: https://kieranwood.ca
+authors: [Kieran Wood]
 tags:
   - scorch
   - web

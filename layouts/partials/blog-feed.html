@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <h3 class="card-title">{{ .Params.title }}</h3>
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <small class="text-primary">
                                     <i class="bi bi-calendar2-week-fill pr-1"></i><time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
                                     {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
@@ -55,7 +55,7 @@
                                     {{end}}</p>
                                 </small>
                             </div>
-                            <div class="col-md-5"></div>
+                            <div class="col-md-4"></div>
                         </div>
                         <p class="card-text">
                             {{ .Summary }}...
