@@ -9046,6 +9046,12 @@ h2 {
   text-underline-offset: 20px;
   padding-top: 30px;
 }
+
+@media (max-width: 575px){
+  h2 {
+    line-height: 2 !important;
+  }
+}
 h2:first-of-type {
   padding-top: 0px;
 }
@@ -9071,6 +9077,7 @@ h1.card-title {
   text-underline-offset: 20px;
   padding-top: 30px;
 }
+/*Blog Styles*/
 
 #author-information img{
   border-radius: 50%;
@@ -9105,6 +9112,41 @@ h1.card-title {
   display:inline; 
   vertical-align: top;
 }
+
+.taxonomy-list{
+  list-style: none;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.taxonomy-list li{
+  display: inline;
+  padding:.3em;
+  margin:.5em;
+  border-radius:15%;
+  background-color: var(--secondary);
+}
+
+.share-icons{
+  padding:1em;
+  
+}
+
+.share-icons i,
+.share-icons svg{
+  margin:0 .1em;
+  
+}
+
+.share-icons i{
+  font-size: 3em;
+}
+
+.share-icons svg{
+  margin-top: -15px;
+}
+
+
 
 h4, h5, h6, th{
   color: var(--primary);

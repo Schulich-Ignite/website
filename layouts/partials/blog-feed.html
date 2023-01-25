@@ -18,15 +18,35 @@
                         <p class="card-text"><small class="text-muted">
                                 <time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
                                 {{if .Params.tags }}
-                                <p style="margin-top:-20px;"><em>Tags:</em>
+                                <p style="margin-top:-20px;"><em><i class="bi bi-tags-fill" style="color:var(--primary)"></i></em>
                                     
                                     {{- range .Params.tags }}
                                         {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
                                                 <a href="{{ .Permalink }}">{{ .Params.Title }}</a>,
 
                                         {{ end }}
-                                    {{ end }}</p>
+                                    {{ end }}
+                                    <br>
+                                        {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
+                                        <p style="margin-top:-20px">
+                                        
+                                        <i class="bi bi-stopwatch-fill" style="color:var(--primary)"></i><em style="color:var(--primary)">~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
+                                    </p>
+                                    {{ end }}
+
+                                    
+                                </p>
+                                
                                 {{ end }}</p>
+                                {{if .Params.authors }}
+                                <p style="margin-top:-20px;"><em>Author:</em>
+                                    
+                                    {{- range .Params.authors }}
+                                        {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+                                                <a href="{{ .Permalink }}">{{ .Params.name }}</a> 
+                                        {{ end }}
+                                    {{ end }}</p>
+                                {{end}}</p>
                             </small>
                         <p class="card-text">
                             {{ .Summary }}...
