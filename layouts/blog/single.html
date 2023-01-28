@@ -6,7 +6,32 @@
     {{ if .Params.image }}
         <img class="card-img-top large-image blog-hero-image" src="{{ .Params.image }}">
     {{ end }}
-    <div class="container">
+
+    {{ if .Params.video}}
+    <a href="#play-blog-video" data-toggle="modal" data-target="#play-blog-video" style="z-index:100">
+    <section class="section blog-video">
+    </section>
+    </a>
+    <div id="play-blog-video" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div id="videoLink" style="display: none">https://youtu.be/{{.Params.video}}</div>
+                        <div id="infoVideoPlayer"></div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{end}}
+    
+
+    <div class="container" >
         <div class="row">
             <div class="card no-background">
                 <div class="card-body">
@@ -135,4 +160,5 @@
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true }, '.language-mermaid');
   </script>
+  <script src="/js/youtube-api.js"></script>
 {{end}}

@@ -21,39 +21,62 @@
                 <div class="card">
                     <div class="row">
                         <div class="col-md-4 col-xs-4">
+                            <a href="{{ .Permalink }}">
                                 {{ if  .Params.image }}
                                     <img class="card-img-top med-image" src="{{ .Params.image }}" alt="{{ .Params.title }}">
                                 {{ else }}
                                     <img class="card-img-top med-image" src='{{ "/img/logos/ignite.svg" }}' alt="{{ .Params.title }}">
                                 {{ end }}
+                            </a>
                         </div>
                         <div class="col-md-8">             
                             <div class="card-body">
-                                <h3 class="card-title">{{ .Params.title }}</h3>
-                                <p class="card-text"><small class="text-muted">
-                                        <time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
-                                        {{if .Params.tags }}
-                                        <p style="margin-top:-20px;"><em>Tags:</em>
-                                            
-                                            {{- range .Params.tags }}
-                                                {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
-                                                        <a href="{{ .Permalink }}">{{ .Params.Title }}</a>,
+                                <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Params.title }}</a></h3>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <small class="text-primary">
+                                            <i class="bi bi-calendar2-week-fill pr-1"></i><time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
+                                            {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
+                                            <p>
+                                                <i class="bi bi-stopwatch-fill"></i><em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
+                                            </p>
+                                            {{ end }}
         
+                                        </small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small class="text-primary">
+                                            {{if .Params.tags }}
+                                            <p><em><i class="bi bi-tags-fill"></i></em>
+                                                
+                                                {{- range .Params.tags }}
+                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
+                                                            <a href="{{ .Permalink }}">{{ .Params.Title }}</a>,
+            
+                                                    {{ end }}
                                                 {{ end }}
-                                            {{ end }}</p>
-                                        {{ end }}</p>
-                                        {{if .Params.authors }}
-                                        <p style="margin-top:-20px;"><em>Author:</em>
+                                                    
+            
+                                                
+                                            </p>
                                             
-                                            {{- range .Params.authors }}
-                                                {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-                                                        <a href="{{ .Permalink }}">{{ .Params.name }}</a> 
-                                                {{ end }}
                                             {{ end }}</p>
-                                        {{end}}</p>
-                                    </small>
+                                            {{if .Params.authors }}
+                                            <p style="margin-top:-15px;"><em>Author:</em>
+                                                
+                                                {{- range .Params.authors }}
+                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+                                                            <a href="{{ .Permalink }}">{{ .Params.name }}</a> 
+                                                    {{ end }}
+                                                {{ end }}</p>
+                                            {{end}}</p>
+                                        </small>
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                </div>
                                 <p class="card-text">
-                                    {{ .Summary }}...
+                                    
+                                    <a style="color:var(--text)" href="{{ .Permalink }}">{{ .Summary }}...</a>
                                     <a href="{{ ref . .File }}">Read more</a>
                                 </p>
                             </div>

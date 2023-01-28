@@ -6,15 +6,21 @@
         <div class="card">
             <div class="row">
                 <div class="col-md-4 col-xs-4">
+                    <a href="{{ .Permalink }}">
                         {{ if  .Params.image }}
                             <img class="card-img-top med-image" src="{{ .Params.image }}" alt="{{ .Params.title }}">
                         {{ else }}
                             <img class="card-img-top med-image" src='{{ "/img/logos/ignite.svg" }}' alt="{{ .Params.title }}">
                         {{ end }}
+                    </a>
                 </div>
                 <div class="col-md-8">             
                     <div class="card-body">
-                        <h3 class="card-title">{{ .Params.title }}</h3>
+                        <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Params.title }}</a> 
+                            {{ if .Params.video }}
+                                <a href="https://youtu.be/{{.Params.video}}" target="_blank" style="font-size: 1.1em;padding-left:.6em;"><i class="bi bi-play-circle-fill"></i></a>
+                            {{end}}
+                        </h3>
                         <div class="row">
                             <div class="col-md-4">
                                 <small class="text-primary">
@@ -55,10 +61,11 @@
                                     {{end}}</p>
                                 </small>
                             </div>
-                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                            </div>
                         </div>
                         <p class="card-text">
-                            {{ .Summary }}...
+                            <a style="color:var(--text)" href="{{ .Permalink }}">{{ .Summary }}...</a>
                             <a href="{{ ref . .File }}">Read more</a>
                         </p>
                     </div>

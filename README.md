@@ -159,7 +159,7 @@ date: 2020-07-08T15:04:38-07:00
 image: "/img/ignite-logo.svg"
 excludeTOC: False
 authors: [Kieran Wood]
-video: "https://youtube.com/watch"
+video: XoQvbDROucQ
 tags:
  - scorch
  - web
@@ -174,7 +174,7 @@ Enter blog post here, note the first 20 words will be used in the feed. So make 
 - Date: Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and the T splits the date from the time.
 - Authors: a list of the authors for the content (see `/content/authors` for list of names), the value put here will be [urlized](https://gohugo.io/functions/urlize/)
 - Tags: Optional, is a list of tags
-- video: Optional, A link to a youtube video for the post
+- video: Optional, A youtube video id(for example https://www.youtube.com/watch?v=XoQvbDROucQ would be everything after `watch?v=` or `XoQvbDROucQ` in this case)
 - excludeTOC: A variable on whether to include the table of contents or not, set to true on short posts that don't have headings in the markdown content
 
 
