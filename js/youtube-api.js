@@ -11,6 +11,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 function onYouTubeIframeAPIReady() {
     let videoURLDiv = document.getElementById('videoLink');
+    if (videoURLDiv){
     let videuURL = videoURLDiv.innerHTML;
     let videoID = videuURL.split('/')[3];
     player = new YT.Player('infoVideoPlayer', {
@@ -20,7 +21,7 @@ function onYouTubeIframeAPIReady() {
         events: {
             'onStateChange': onPlayerStateChange
         }
-    });
+    });}
 }
 
 // 5. The API calls this function when the player's state changes.
@@ -35,22 +36,8 @@ function onPlayerStateChange(event) {
 }
 
 
-$(document).ready(function () {
-    /* Get iframe src attribute value i.e. YouTube video url
-    and store it in a variable */
-    var url = $("#infoVideo").attr('src');
-    // var myPlayer = videojs('infoVideo');
-
-    /* Assign empty url value to the iframe src attribute when
-    modal hide, which stop the video playing */
-    $("#myModal").on('hide.bs.modal', function () {
-        $('html').removeClass("no-scroll");
-        player.pauseVideo();
-    });
-
-    /* Assign the initially stored url back to the iframe src
-    attribute when modal is displayed again */
-    $("#myModal").on('show.bs.modal', function () {
-        $('html').addClass("no-scroll");
-    });
+document.addEventListener("DOMContentLoaded", function (){
+    if (window.location.hash == "#play-blog-video"){
+        document.getElementById("play-blog-video").classList.add("show")
+    }
 });
