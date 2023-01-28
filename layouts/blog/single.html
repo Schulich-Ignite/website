@@ -36,7 +36,7 @@
             <div class="card no-background">
                 <div class="card-body">
                         <h1 class="card-title">{{ .Params.title }}</h1>  <a class="btn btn-secondary my-2" href="/blog">&larr; Go back to blog</a>
-                            {{ if le (sub (.Params.Date.Year) (now.Year)) 3}}
+                            {{ if and (le (sub (.Params.Date.Year) (now.Year)) 3) (not .Params.excludeTOC)}}
                                 <h5 class="text-warning text-uppercase">Please be warned this article is older than 3 years, details may have changed</h5>
                             {{end}}
                             <div id="article-info" class="card"> 
@@ -163,5 +163,7 @@
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true }, '.language-mermaid');
   </script>
+  {{ if .Params.video}}
   <script src="/js/youtube-api.js"></script>
+  {{end}}
 {{end}}
