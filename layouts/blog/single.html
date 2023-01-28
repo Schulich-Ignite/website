@@ -36,6 +36,9 @@
             <div class="card no-background">
                 <div class="card-body">
                         <h1 class="card-title">{{ .Params.title }}</h1>  <a class="btn btn-secondary my-2" href="/blog">&larr; Go back to blog</a>
+                            {{ if le (sub (.Params.Date.Year) (now.Year)) 3}}
+                                <h5 class="text-warning text-uppercase">Please be warned this article is older than 3 years, details may have changed</h5>
+                            {{end}}
                             <div id="article-info" class="card"> 
                                 <div class="row">
                                     <div class="col-md-6">
