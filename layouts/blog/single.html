@@ -3,23 +3,165 @@
 {{ define "main" }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Blog") }}
 <section class="section">
-    <div class="container">
+    {{ if .Params.image }}
+        <img class="card-img-top large-image blog-hero-image" src="{{ .Params.image }}">
+    {{ end }}
+
+    {{ if .Params.video}}
+    <a href="#play-blog-video" data-toggle="modal" data-target="#play-blog-video" style="z-index:100">
+    <section class="section blog-video">
+    </section>
+    </a>
+    <div id="play-blog-video" class="modal fade">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div id="videoLink" style="display: none">https://youtu.be/{{.Params.video}}</div>
+                        <div id="infoVideoPlayer"></div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{end}}
+    
+
+    <div class="container" >
         <div class="row">
             <div class="card no-background">
-                {{ if .Params.image }}
-                <img class="card-img-top large-image" src="{{ .Params.image }}">
-                {{ end }}
                 <div class="card-body">
-                    <h2 class="card-title">{{ .Params.title }}</h2>
-                    <p class="card-text">
-                        <time>{{ .Params.date.Format "Monday, Jan 2, 2006" }}</time>
-                    </p>
-                    <em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
+                        <h1 class="card-title">{{ .Params.title }}</h1>  <a class="btn btn-secondary my-2" href="/blog">&larr; Go back to blog</a>
+                            {{ if le (sub (.Params.Date.Year) (now.Year)) 3}}
+                                <h5 class="text-warning text-uppercase">Please be warned this article is older than 3 years, details may have changed</h5>
+                            {{end}}
+                            <div id="article-info" class="card"> 
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                        {{ if not .Params.excludeTOC }}
+                                        <h3>Table of Contents</h3>
+                                            {{ .TableOfContents}}
+                                        {{else }}
+                                        <p class="card-text">
+                                            <i class="bi bi-calendar2-week-fill"></i> <time>{{ .Params.date.Format "Monday, Jan 2, 2006" }}</time>
+                                        </p>
+                                        <p class="card-text">
+                                            {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
+                                            <i class="bi bi-stopwatch-fill"></i><em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
+                                            {{ end }}
+                                            {{if .Params.tags }}
+                                            <br>
+                                            <em><i class="bi bi-tags-fill"></i></em>
+                                                
+                                                {{- range .Params.tags }}
+                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
+                                                            <a href="{{ .Permalink }}">{{ .Params.Title }}</a>,
+    
+                                                    {{ end }}
+                                                {{ end }}</p>
+                                            {{ end }}
+                                        {{end}}
+                                        </p>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                            
+
+                                            {{ if not .Params.excludeTOC }}
+                                            <p class="card-text">
+                                            <i class="bi bi-calendar2-week-fill"></i> <time>{{ .Params.date.Format "Monday, Jan 2, 2006" }}</time>
+                                            </p>
+                                            <p class="card-text">
+                                            {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
+                                            <i class="bi bi-stopwatch-fill"></i><em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
+                                            {{ end }}
+                                            {{if .Params.tags }}
+                                            <br>
+                                            <em><i class="bi bi-tags-fill"></i></em>
+                                                
+                                                {{- range .Params.tags }}
+                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
+                                                            <a href="{{ .Permalink }}">{{ .Params.Title }}</a>,
+    
+                                                    {{ end }}
+                                                {{ end }}</p>
+                                            {{ end }}
+                                        {{end}}
+
+
+                                            {{ if .Params.authors }}
+
+                                            {{- range .Params.authors }}
+                                            {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+                                            <h4>Author information</h4>
+                                            <div id="author-information">
+                                                <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
+                                                {{if not .Params.avatar }}
+                                                <img width="100rem" src="https://api.dicebear.com/5.0/identicon/svg?seed={{ .Params.name }}" alt="">
+                                                {{ else }}
+                                                <img width="100rem" src="{{.Params.avatar}}" alt="">
+                                                {{end}}
+                                                </a>
+                                                <h6 class="card-title"><a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer"><br>{{ .Params.name }}</a></h6>
+                                                    <div id="author-icons">
+                                                        {{ if .Params.email }}
+                                                        <a href="mailto:{{.Params.email }}" ><i class="bi bi-envelope-fill"></i></a>
+                                                        {{ end }}
+                                                        {{ if .Params.github }}
+                                                        <a href="https://github.com/{{.Params.github }}" target="_blank"><i class="bi bi-github"></i></a>
+                                                        {{ end }}
+                                                        {{ if .Params.linkedin }}
+                                                        <a href="https://linkedin.com/in/{{.Params.linkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                                        {{ end }}
+                                                        {{ if .Params.website }}
+                                                        <a href="{{ .Params.website }}" target="_blank"><i class="bi bi-globe"></i></a>
+                                                        {{ end }}
+                                                    </div>
+                                                    <div class="text-primary" style="max-width:40ch;">
+                                                    {{  .Content }}
+                                                    </div>
+                                                
+                                                
+                                            </div>
+                                            {{ end }}
+                                            {{ end }}
+                                        {{ end }}
+                                        </div>
+                                        
+                                    </div>
+
+                                </div>
+                        </div>
+                    <hr>
                     <p class="card-text"> {{ .Content }} </p>
+
+                    <div class="card text-center">
+                        <div class="share-icons">
+                            <h2>Share the article</h2>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20post%20from%20schulich%20ignite%3A%0A{{ .Permalink }}" target="_blank"><i class="bi bi-twitter"></i></a>
+                        </div>
+                        <a href="/blog/index.xml" target="_blank" class="p-3">or subscribe to the blog with RSS <i class="bi bi-rss-fill"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+<script>
+    hljs.addPlugin(new CopyButtonPlugin());
+    hljs.highlightAll();
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true }, '.language-mermaid');
+  </script>
+  <script src="/js/youtube-api.js"></script>
 {{end}}

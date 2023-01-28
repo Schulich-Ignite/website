@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Tags") }}
+<section class="section">
+    <div class="container">
+        <div class="row">
+          <h2>Click on a tag below to see all associated posts</h2>
+          <ul class="taxonomy-list">
+            {{ range .Data.Pages }}
+            <li>
+              <a href="{{.RelPermalink}}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+    </div>
+</section>
+{{ end}}

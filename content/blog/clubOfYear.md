@@ -1,6 +1,7 @@
 ---
 title: "Club of the Year!"
-date: 2021-05-05T17:09:00-06:00
+date: 2021-05-05T00:00:00-06:00
+excludeTOC: True
 ---
 Schulich Ignite is excited to announce that we have received the 2020-2021 SU Club of the Year Award! Thank you to the Student’s Union for the recognition, we are honoured to be the recipients of the award this year.
 

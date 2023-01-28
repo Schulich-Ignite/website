@@ -2,7 +2,7 @@
 title: "Winter 2021 Gala"
 date: 2021-05-05T17:30:00-06:00
 image: https://user-images.githubusercontent.com/60020431/117226257-79502e00-add1-11eb-8758-34ce2e9df8d3.png
-
+excludeTOC: True
 ---
 Last weekend, Schulich Ignite celebrated the end of our Winter 2021 sessions with a Gala Event!
 
