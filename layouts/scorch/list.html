@@ -5,6 +5,24 @@
         <div class="column-md-12">
             {{with .Site.GetPage "/scorch/_index.md "}}
             {{.Content}}
+            <h3>Here's what you can expect to build!</h3>
+
+            <div class="row text-center">
+                <div class="col">
+                    <img class="img-fluid" src="/img/sessions/scorch-1.gif" alt="" srcset="">
+                    <p>Mobile responsive sites!</p>
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="/img/sessions/scorch-2.gif" alt="" srcset="">
+                    <p>Interactive sites with filtering and ability to add content</p>
+
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="/img/sessions/scorch-3.gif" alt="" srcset="">
+                    <p>Sites that call other databases!</p>
+                    
+                </div>
+            </div>
             {{end}}
             <h2>How do I sign up?</h2>
             {{ if eq "signup" .Site.Params.status }}

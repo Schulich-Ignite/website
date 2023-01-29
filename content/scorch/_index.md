@@ -13,6 +13,13 @@ By the end of the course you will:
 
 We achieve this a bit differently, by having mentees work on exercises inspired by real world requirements. Right from session 1 you will be buiding webpages, by session 2 fully mobile responsive sites, and by the end you will have the knowledge to design, build, deploy, and secure those websites!
 
+Along with just how to do the basics, we teach you other principles in building websites like:
+
+- Basic **design principles**
+- **Security** and privacy practices
+- How to pick **alternatives** to what we suggest
+- Suggestions for **where to go to dive deeper** into the topics
+
 ## Anything else I should know?
 
 We also have an end of session gala where we have industry speakers come in and do presentations. We also give mentee's a chance to show off their projects (if they want to).
