@@ -37,10 +37,10 @@
                                 <small class="text-primary">
                                     {{if .Params.tags }}
                                     <p><em><i class="bi bi-tags-fill"></i></em>
-                                        
-                                        {{- range .Params.tags }}
+                                        {{ $tagLength := (len .Params.tags)}}
+                                        {{- range $index, $currentTag := .Params.tags }}
                                             {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
-                                                    <a href="{{ .Permalink }}">{{ .Params.Title }}</a>,
+                                                    <a href="{{ .Permalink }}">{{ .Params.Title }}</a>{{ if and (gt $tagLength 1) (lt $index (sub $tagLength 1))}},{{end}}
     
                                             {{ end }}
                                         {{ end }}
@@ -51,12 +51,14 @@
                                     
                                     {{ end }}</p>
                                     {{if .Params.authors }}
-                                    <p style="margin-top:-15px;"><em>Author:</em>
-                                        
-                                        {{- range .Params.authors }}
+                                    <p style="margin-top:-15px;"><em>Author(s):</em>
+                                        {{ $authorLength := (len .Params.authors)}}
+                                        {{- range $index, $currentAuthor := .Params.authors }}
+                                            
                                             {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-                                                    <a href="{{ .Permalink }}">{{ .Params.name }}</a> 
-                                            {{ end }}
+                                                    {{/* The code afer .Params.name adds a ',' if there is more than 1 author and its not the last author in the list */}}
+                                                    <a href="{{ .Permalink }}">{{ .Params.name }}{{ if and (gt $authorLength 1) (lt $index (sub $authorLength 1))}},{{end}}</a>
+                                            {{ end}}
                                         {{ end }}</p>
                                     {{end}}</p>
                                 </small>
