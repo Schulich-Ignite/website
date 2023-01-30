@@ -9048,7 +9048,7 @@ h2 {
 }
 
 @media (max-width: 575px){
-  h2 {
+  h1, h2 {
     line-height: 2 !important;
   }
 }
@@ -9166,6 +9166,20 @@ h4, h5, h6, th{
   position: relative;
   object-fit: cover;
 }
+
+.hljs-ln-numbers {
+  padding-right:8px !important;
+}
+
+.hljs-ln tr{
+  background-color:transparent !important;
+}
+
+td .hljs-copy-wrapper .language-undefined{
+  overflow-x: hidden;
+  min-width:30px;
+}
+
 @media screen and (min-width: 345px) {
   .blog-hero-image{
     max-height:80vh;
@@ -9215,6 +9229,13 @@ h4, h5, h6, th{
 .play-blog-video{
   z-index:999;
 }
+
+@media (min-width: 900px){
+  .blog-text{
+    font-size: 120%;
+  }
+}
+
 
 .blog-video{
   height: 725px;
