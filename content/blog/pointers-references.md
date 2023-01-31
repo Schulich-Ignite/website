@@ -1,13 +1,15 @@
 ---
 title: Pointers and References in C++
 subtitle: A quick understanding of memory
-date: 2023-06-23T00:00:00-06:00
+date: 2023-02-06T00:00:00-06:00
 modified_date: ""
+image: /img/blog/pointers.webp
 authors:
 - Cole Pawliw
 tags:
   - C
   - C++
+  - low-level programming
 ---
 In many high level coding languages, The idea of a pointer either doesn't exist, or is hidden from the programmer's use. This is not the case in languages such as C and C++. However, before we can begin to understand pointers, we must first know how memory works when running a program.
 
@@ -28,7 +30,7 @@ The variable now known as "x" would be given an address, and any time x is calle
 
 Another thing to note, each variable type has its own size. For example, an int will typically be 4 bytes (or 32 bits). When the program assigns x its address in memory, it also notes that this address is for a value of type int, and will then reserve the 4 bytes after that address to only be used by that int.
 
-Other examples of variables are:
+Other examples of variable types are:
 
 - char (1 byte)
 - float (4 bytes)

@@ -8,6 +8,7 @@ authors: [Kieran Wood]
 tags:
   - scorch
   - web
+  - html
 ---
 
 ## What is an attribute

@@ -3,6 +3,9 @@ title: "Winter 2021 Gala"
 date: 2021-05-05T17:30:00-06:00
 image: https://user-images.githubusercontent.com/60020431/117226257-79502e00-add1-11eb-8758-34ce2e9df8d3.png
 excludeTOC: True
+tags:
+  - events
+  - updates
 ---
 Last weekend, Schulich Ignite celebrated the end of our Winter 2021 sessions with a Gala Event!
 
@@ -14,4 +17,4 @@ We would also like to thank Dr. Mohammad Moshirpour for his continued support of
 
 Finally, thank you to all the mentors who volunteered time out of their hectic schedules to connect with younger students and make their experience in the program memorable. Schulich Ignite would not be what it is without you.
 
-And that’s a wrap! The Schulich Ignite team is proud to say that our Winter 2021 sessions were a success! We hope to see you at our next one!
+And that's a wrap! The Schulich Ignite team is proud to say that our Winter 2021 sessions were a success! We hope to see you at our next one!

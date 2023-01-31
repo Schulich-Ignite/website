@@ -177,7 +177,34 @@ Enter blog post here, note the first 20 words will be used in the feed. So make 
 - video: Optional, A youtube video id(for example https://www.youtube.com/watch?v=XoQvbDROucQ would be everything after `watch?v=` or `XoQvbDROucQ` in this case)
 - excludeTOC: A variable on whether to include the table of contents or not, set to true on short posts that don't have headings in the markdown content
 
+#### Note about diagrams
 
+To use diagrams in blog posts you must use [mermaid](https://mermaid.js.org/#/) to do this you would use something like
+
+```html
+<pre class="mermaid">
+graph TD
+    A[fa:fa-user User] -->|1. Request file| B(https://ignite-cdn.com/file.js)
+    B --> C[fa:fa-user User]
+    C -->|2. Browser takes the TEXT, but doesn't RUN the code| D{hashing algorithm}
+    D -->|Output hash matches integrity| E[fa:fa-user User: runs code]
+    D -->|Output hash doesn't match| F[fa:fa-user User: retry or throw error]
+</pre>
+```
+
+which results in:
+
+```mermaid
+graph TD
+    A[fa:fa-user User] -->|1. Request file| B(https://ignite-cdn.com/file.js)
+    B --> C[fa:fa-user User]
+    C -->|2. Browser takes the TEXT, but doesn't RUN the code| D{hashing algorithm}
+    D -->|Output hash matches integrity| E[fa:fa-user User: runs code]
+    D -->|Output hash doesn't match| F[fa:fa-user User: retry or throw error]
+```
+(if you can't see the graph head [here](https://mermaid.live/edit#pako:eNp1kc1OwzAQhF9l5QsgNangmAMSbcoRpNJKSKQHE29i09oO67VQ1fTdcRL1wo8Plq2Z_TRjn0TtFYpCtCQ7DZuycpDWw1sji0ZmMSDBNm07yLL7_jaHNX5GDAyNOWAPi2vN3IViPjetM4xZrVxeezsf5Pwj3Ey4xTANy1_QSV2O7LscFuS_Bo3lHgOwRtisXjczeI8MymNwVwzr7dOoDLF7KE9aBm1cC_LQejKs7XmCliP0OXKXhgcTWMm1TlzjGNtkPfaw-pmoAIoujPDdf5xLkpHXw-MfDGQ6gk9FdGoESORpJ2bCIllpVHrt0wCvRCpisRJFOipJ-0pU7px8sVOScaUMexIFU8SZkJH9y9HVl_vkKY1MH2dFCnAIeP4Gh6ObgA))
+
+Inline in your markdown (you cannot use standard code fences)
 
 ### Beginner / Flare / IndigeSteam
 
