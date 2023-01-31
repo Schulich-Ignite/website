@@ -1,4 +1,13 @@
+{{/* Metadata*/}}
+{{define "desc"}} {{ .Params.title }}; {{.Summary}} {{end}}
+{{define "og-title"}} {{ .Params.title }} | Schulich Ignite Blog {{end}}
+{{define "title"}}{{ .Params.title }} | Schulich Ignite{{end}}
+{{define "og-desc"}} {{ .Params.title }}; {{.Summary}} {{end}}
+{{define "og-url"}} {{.Permalink}} {{end}}
+{{define "og-img"}}{{ if .Params.image }}{{ .Params.image}}{{ else }}/img/opengraph_logo-min.jpg{{end}} {{end}}
 
+
+{{/*End of Metadata*/}}
 
 {{ define "main" }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Blog") }}
@@ -35,7 +44,9 @@
         <div class="row">
             <div class="card no-background">
                 <div class="card-body">
-                        <h1 class="card-title">{{ .Params.title }}</h1>  <a class="btn btn-secondary my-2" href="/blog">&larr; Go back to blog</a>
+                        <h1 class="card-title">{{ .Params.title }}</h1>  
+                        <h3 style="font-size:1em;color:#787878;">{{ .Params.subtitle }}</h3>  
+                        <a class="btn btn-secondary my-2" href="/blog">&larr; Go back to blog</a>
                             {{ if and (le (sub (.Params.Date.Year) (now.Year)) -3) (not .Params.excludeTOC)}}
                                 <h5 class="text-warning text-uppercase">Please be warned this article is older than 3 years, details may have changed</h5>
                             {{end}}
@@ -49,6 +60,9 @@
                                         {{else }}
                                         <p class="card-text">
                                             <i class="bi bi-calendar2-week-fill"></i> <time>{{ .Params.date.Format "Monday, Jan 2, 2006" }}</time>
+                                            {{ if .Params.modified_date }}
+                                            Modified <time>{{ .Params.modified_date.Format "Monday, Jan 2, 2006" }}</time>
+                                            {{end}}
                                         </p>
                                         <p class="card-text">
                                             {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
@@ -58,12 +72,15 @@
                                             <br>
                                             <em><i class="bi bi-tags-fill"></i></em>
                                                 
-                                                {{- range .Params.tags }}
-                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
-                                                            <a href="{{ .Permalink }}">{{ .Params.Title }}</a>,
-    
-                                                    {{ end }}
-                                                {{ end }}</p>
+                                            {{- range $index, $currentTag := .Params.tags }}
+                                            {{ $tagLength := (len .Params.tags)}}
+
+                                                {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
+                                                        <a href="{{ .Permalink }}">{{ .Params.Title }}</a>{{ if and (gt $tagLength 1) (lt $index (sub $tagLength 1))}},{{end}}
+        
+                                                {{ end }}
+                                            {{ end }}
+                                        </p>
                                             {{ end }}
                                         {{end}}
                                         </p>
@@ -96,11 +113,19 @@
 
 
                                             {{ if .Params.authors }}
-
-                                            {{- range .Params.authors }}
-                                            {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-                                            <h4>Author information</h4>
+                                            <h4>Author(s) information</h4>
                                             <div id="author-information">
+
+                                            {{ $authorLength := (len .Params.authors)}}
+                                            {{- range $index, $currentAuthor := .Params.authors }}
+                                                {{ if  gt $authorLength 1 }}
+                                            {{ if eq $index 0}}
+                                            <div class="row">
+                                            {{ end }}
+                                                <div class="col">
+                                                {{end }}
+                                            {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+                                                
                                                 <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
                                                 {{if not .Params.avatar }}
                                                 <img width="100rem" src="https://api.dicebear.com/5.0/identicon/svg?seed={{ .Params.name }}" alt="">
@@ -124,22 +149,35 @@
                                                         {{ end }}
                                                     </div>
                                                     <div class="text-primary" style="max-width:40ch;">
+                                                        
                                                     {{  .Content }}
                                                     </div>
+                                                {{ if  gt $authorLength 1 }}
+                                                </div>
+                                                    {{ if eq $index (sub $authorLength 1) }}
+                                                    </div>
+                                                    {{end}}
+                                                {{end }}
                                                 
-                                                
-                                            </div>
                                             {{ end }}
+
                                             {{ end }}
-                                        {{ end }}
                                         </div>
+                                        </div>
+
+                                        {{ end }}
                                         
                                     </div>
 
                                 </div>
                         </div>
                     <hr>
-                    <p class="card-text"> {{ .Content }} </p>
+                    <div class="card-text blog-text"> 
+                        
+                        {{ .Content }} 
+
+
+                    </div>
 
                     <div class="card text-center">
                         <div class="share-icons">

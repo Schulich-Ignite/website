@@ -2,19 +2,24 @@
 title: The Dangers of CDN's
 subtitle: When to use them, and how to avoid issues
 date: 2023-01-30T00:00:00-06:00
-modified_date: ""
+modified_date: 2023-01-30T00:00:00-06:00
 image: /img/blog/nasa-1lfi7wkgwz4-unsplash.jpg
 authors: 
 - Kieran Wood
 tags:
   - scorch
   - web
-  - css
+  - html
+  - js
+  - networking
+  - security
 ---
+
+CDN's are used a lot in web development to make things faster, and easier. But with everything there are pros and cons. We're going to look at CDN's and some of the risks associated with them!
 
 ## What is a CDN?
 
-A CDN (content delivery network) is a server that allows you to serve resources over the internet quickly.
+A CDN (content delivery network) is a server that allows you to serve resources over the internet quickly. Unlike regular servers with applications that actually process information CDN's are there to make sending **static** (stuff that doesn't change) content as quick as possible. This is because they don't have to do any calculations, so there's no slowdown from other things running, and because everything is static they can aggressively [cache content](https://aws.amazon.com/caching/).
 
 They are used for many things including:
 
@@ -28,7 +33,7 @@ One of their main uses is to distribute code for websites.
 
 ## Using CDN's for Javascript
 
-Javascript (JS) has many packages available. There are several ways to load these packages, and if you are interested in more details be sure to check out our scorch sessions. The important one for this article is that you can include a HTTP based "source". Essentially a javascript file is loaded from a CDN on the user's browser. 
+Javascript (JS) has many packages available. There are several ways to load these packages, and if you are interested in more details be sure to check out our [scorch sessions](/scorch). The important one for this article is that you can include a HTTP based "source". Essentially a javascript file is loaded from a CDN on the user's browser. 
 
 There are several advantages to this approach including:
 
@@ -52,17 +57,24 @@ Then the HTML from https://schulichignite.com might have something like this:
 
 Well, if we put on our hacking black fedora's and trench-coats there is a clear way for someone malicious to inject code into this. All they have to do is convince your computer (or any of the computers your computer connects to), that whatever malicious code they want to run is at the URL. 
 
-There are more involved methods of doing this like stealing peoples passwords and uploading malicious code, or hacking into a server etc. The method isn't important, the point is that when we ask https://ignite-cdn.com/file.js for the file we have no way to make sure we are getting what we want.
+There are more involved methods of doing this like stealing peoples passwords and uploading malicious code, or hacking into a server etc. The method isn't important, the point is that when we ask https://ignite-cdn.com/file.js for the file we have **no way to make sure we are getting what we want**.
 
-These attacks are often called CDN-poisioning or cache-poisioning. It feeds off a problem of authority. I can't trust ignite-cdn.com and the only validation I can get that the code is correct is from ignite-cdn.com. Sort of like asking a theif if they took something, and just hoping they tell the truth. So the question as developers is how do we provide something to authenticate the file that works in HTML?
+These attacks are often called [CDN-poisioning or cache-poisioning](https://developers.cloudflare.com/cache/best-practices/avoid-web-poisoning/). It feeds off a problem of authority. I can't trust ignite-cdn.com and the only validation I can get that the code is correct is from ignite-cdn.com. Sort of like asking a theif if they took something, and just hoping they tell the truth. So the question as developers is how do we provide something to authenticate the file that works in HTML?
 
 ## A solution
 
-This problem has come up before, especially on the early days of the internet. So people began using hashes to quickly allow people to verify the data they got is correct. 
+This problem has come up before, especially on the early days of the internet. We need a way to essentially ask something to authenticate the content without having to run it. Since our files are just plain text we essentially need something that checks if the text is correct.
+
+But if we were to do that by just comparing the text to a lookup, then there's a few problems:
+
+1. Why even use a CDN if the HTML already includes the content
+2. For long files we have to compare letter-by-letter which is slow
+
+So how did people solve this problem? They began using hashes to quickly allow people to verify the data they got is correct. 
 
 ### What is hashing?
 
-A hash is basically a string of numbers and characters. Essentially what happens is you take some sort of input (like the text of a file), put it through a hashing algorithm (a function that creates hashes like sha-1) and then you get a hash as an output. In the HTML spec this is called an integrity hash (or [subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) if you want to be fancy).
+A hash is basically a string of numbers and characters. Essentially what happens is you take some sort of input (like the text of a file), put it through a hashing algorithm (a function that creates hashes like sha-1) and then you get a hash (string of numbers & characters) as an output. These hash systems are incredibly fast, and allow you to compare files much faster than character by character. In the HTML spec this comparison to a hash on a javascript file is called an integrity hash (or [subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) if you want to be fancy).
 
 <pre class="mermaid">
 graph TD
@@ -124,19 +136,23 @@ There are a few other issues with the solution suggested, and CDN's in general:
 
 - If the user loses connection when the resource loads it doesn't work
 
-Essentially you have no control over a CDN. You essentially have introduced a potential for bugs with no easy way to fix them quickly.
+Essentially you have no control over a CDN. You have basically introduced a potential for bugs with no easy way to fix them quickly. This is **usually** fine because most people are already relying on servers from other companies (sometimes the same one's as their CDN's), but if you need guarentee's you might want to look into other solutions.
 
 ## When to use CDN's for JS
 
-There are however good times to use CDN's:
+There are however a ton of good times to use CDN's:
 
 - If you're building a quick/throwaway project where security isn't super important
 
 - If you know your user will always have a connection
 
+- If you're using it for files that don't have important information in them (i.e. public photos)
+
 - If your site is hosted with a CDN provider. For example if your site is hosted with cloudflare, then there's 1 point of network failure anyways.
 
-- If you need the performance they bring, and are willing to take the correct precautions
+- If you're willing to use integrity hashes and other checks to ensure users are getting the right files
+
+- If you need the performance they bring, and are willing to take the correct precautions (Like [Netflix's crazy CDN's](https://www.theverge.com/22787426/netflix-cdn-open-connect))
 
 ## Conclusion
 
