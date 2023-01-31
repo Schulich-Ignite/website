@@ -10,4 +10,4 @@ Right from the start you will be able to see your progress! We make sure we star
 
 ## Anything else I should know?
 
-We also have an end of session gala where we have industry speakers come in and do presentations. We also give mentee's a chance to show off their projects (if they want to).
+We also have an end of session gala where we have industry speakers come in and do presentations. We give mentees a chance to show off their projects (if they want to) as well!
