@@ -1,8 +1,8 @@
 ---
 title: "Problem Solving, Enemies, And Starting Your Game"
 number: 6
-date: 2023-03-28T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1LrWBo2QmN4YtYbMg72-rcFttDACVutSJ6wD2s1GEvm8/edit?usp=sharing"
+date: 2023-03-21T00:00:00-00:00
+slides: "https://docs.google.com/presentation/d/1w1Wl-MNWhDfzAkqLlTN9r7Ci-w15ninSxsL2L3iDSBc/edit?usp=share_link"
 recording: ""
 ready: True
 ---

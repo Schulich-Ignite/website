@@ -1,9 +1,9 @@
 ---
 title: "Introduction to Classes and Objects"
 number: 2
-date: 2023-02-28T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/19LbYowQoUQTkabmtpJ3dLa9iYJHKcHmuRWCUIsKa35Q/edit?usp=sharing"
-recording: "https://www.youtube.com/watch?v=MuyCnxG5XqY"
+date: 2023-02-21T00:00:00-00:00
+slides: "https://docs.google.com/presentation/d/1ulQhulHG-8e6eOqMfaPCg9VyZRRiCKzFaSfdPJMe2oI/edit?usp=sharing"
+recording: ""
 ready: True
 ---
 
