@@ -2,7 +2,7 @@
 title: "Review"
 number: 8
 date: 2023-04-13T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1xH9il0pkp1Hb_elK3gJm_aBvIOz6ik_QRYpP4ZFchbk/edit?usp=sharing"
+slides: "https://docs.google.com/presentation/d/1TvydxebSnUwk6liMWuLHnm3TsgolWmgCraZbnU2TbWs/edit?usp=sharing"
 ready: True
 ---
 

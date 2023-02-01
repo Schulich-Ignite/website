@@ -2,7 +2,7 @@
 title: "Functions"
 number: 6
 date: 2023-03-30T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1UwptiLm4lZ0Sv6w1DlIf3IvRz03igQuGfuAdGJc7QsQ/edit?usp=sharing"
+slides: "https://docs.google.com/presentation/d/16l1mpBZBcTib_LSFmveptj3jNI1sEyC8YxqyNcqUyts/edit?usp=sharing"
 ready: True
 ---
 

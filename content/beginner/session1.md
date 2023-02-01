@@ -2,7 +2,7 @@
 title: "Introduction to Python"
 number: 1
 date: 2023-02-23T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1myzjlYm6PHDAb5HZGdIKiKIrKHp-pzLUvKwlllp9i_o/edit?usp=sharing"
+slides: "https://docs.google.com/presentation/d/1BA1dj4BM_3ycLB81Il7CtbHLD5kJKhlNg6y9Ollyxd4/edit?usp=sharing"
 ready: True
 recording: "https://www.youtube.com/watch?v=fZ0w4DwDUNk"
 ---
