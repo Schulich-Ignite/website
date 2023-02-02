@@ -2,7 +2,7 @@
 title: "Markup languages, templating & SSG's"
 number: 4
 date: 2023-03-08T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1SLcJwooRfeAPyqo3wCGcLJIkQyG2ZdCzI3-3kJEWyvM/edit?usp=sharing"
+slides: "https://docs.google.com/presentation/d/11wsO5GInwXgOYPZpMVZZcEoyw6hejeBGTJDzuDC6uys/edit?usp=share_link"
 ready: True
 recording: ""
 ---
