@@ -9,13 +9,14 @@ authors:
 tags:
   - C
   - C++
+  - Python
   - low-level programming
 ---
 In many high level coding languages, The idea of a pointer either doesn't exist, or is hidden from the programmer's use. This is not the case in languages such as C and C++. However, before we can begin to understand pointers, we must first know how memory works when running a program.
 
 When writing code in a language such as python, you may not have ever considered what is happening behind the scenes with your variables throughout the program. When you run a program, a certain amount of memory is allocated to that application for it to store and use its own information.
 
-Now that the program has a section of memory to use, as it starts running it will assign different things their own location in that memory. Each of these locations is called an "address" and it is how programs keep track of their variables as well as many other things. Each address is the location of 1 byte of memory, which can store 256 possible values. When a variable is given a value, that value is then stored in memory at the address indicated by that variable.
+Now that the program has a section of memory to use, as it starts running it will assign different things their own location in that memory. Each of these locations is called an "address" and it is how programs keep track of its variables as well as many other things. Each address is the location of 1 byte of memory (8 1's and 0's in [binary](https://www.techtarget.com/whatis/definition/binary#:~:text=files%20in%20computing.-,Binary%20explained,-The%20binary%20numbering)), which can store 256 possible values. When a variable is given a value, that value is then stored in memory at the address indicated by that variable.
 
 For example, given the following code:
 
@@ -37,7 +38,25 @@ Other examples of variable types are:
 - double (8 bytes)
 - bool (1 byte)
 
-Now that we have a basic understanding of memory, we can start learning about pointers.
+This all exists in python as well, but it's just more hidden:
+
+```python
+x = 5
+type(x) # Returns <class 'int'>
+hex(id(x)) # Returns 0x2bef5e00170
+```
+
+The `id()` function will give you the address of the object in memory ([hex()](https://www.programiz.com/python-programming/methods/built-in/hex) converts the value to [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal)), and the `type()` function tells you the type of an object. By default user-created classes will print this info on instances
+
+```python
+class Animal:
+  def __init__(self, name):
+    self.name = name
+
+print(Animal("monkey")) # Prints <__main__.Animal object at 0x000002BEF5FEBD00>
+```
+
+Now that we have a basic understanding of memory and addresses, we can start learning about pointers.
 
 ## Pointers
 
