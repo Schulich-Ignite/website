@@ -1,8 +1,8 @@
 ---
 title: "If-Statements and Logical Operators"
 number: 3
-date: 2023-03-09T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/1Ba21evNXX8-g8gMkmb9fswbqGonjifS7r8typ6gdgIg/edit?usp=sharing"
+date: 2023-03-02T00:00:00-00:00
+slides: "https://docs.google.com/presentation/d/1xEzdYLQO7e1YMqqkrJsvSwQFUx7fkG11AijoeZ63248/edit?usp=sharing"
 ready: True
 ---
 
