@@ -198,7 +198,27 @@ pre {
   margin-bottom: 1rem;
   overflow: auto;
   -ms-overflow-style: scrollbar;
-  padding:1em;
+
+}
+
+code table{
+  margin:0 .2em;
+}
+
+pre code.hljs{
+  padding:.8em !important;
+}
+
+pre code.hljs .hljs-ln-line{
+  border:none;
+  padding:.1em;
+}
+
+pre code.hljs tr{
+  border:none;
+}
+pre code.hljs tbody{
+  border:none;
 }
 
 figure {
