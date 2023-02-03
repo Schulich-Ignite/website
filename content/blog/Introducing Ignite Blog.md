@@ -102,3 +102,9 @@ Search engines need a way to find your site. They have lots of methods now to lo
 Last but not least if we're going to get people to share our content we want to make sure the previews look good. [opengraph](https://ogp.me/) is a protocol that let's you define how your pages look when you share them!
 
 This includes what image pops up, the title, the description etc.
+
+### Time warnings
+
+Time goes on. Unfortunately this means that sometimes your information goes out of date. It would be possible to check every year on every article to make sure they're up to date, however...
+
+When writing any system you should **never trust a user to do what can be automated**. So, to be responsible in our content development a warning will appear on articles older than 3 years, regardless of when it was last modified. This ensures that people are warned regardless of if it's been updated to check the information!
