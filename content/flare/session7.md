@@ -1,8 +1,8 @@
 ---
 title: "Best Practices, and Level Design"
 number: 7
-date: 2023-04-04T00:00:00-00:00
-slides: "https://docs.google.com/presentation/d/196sqEik8mVDJtRZmTeprJjolC07LlounR0j4yhHrflg/edit?usp=sharing"
+date: 2023-03-28T00:00:00-00:00
+slides: "https://docs.google.com/presentation/d/10ZFVBxoU_VzJSXJ7Bq2HrnMu6VCshQGb8sO_kFSk-hw/edit?usp=share_link"
 recording: ""
 ready: True
 ---
