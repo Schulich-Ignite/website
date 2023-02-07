@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
+  {{block "json-ltd" . }}{{end}} {{/* See here for details: https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data*/}}
   <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
