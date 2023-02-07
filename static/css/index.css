@@ -2313,7 +2313,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-secondary {
-  color: #212529;
+  color: var(--primary);
   background-color: #ffde59;
   border-color: #ffde59;
 }
@@ -9008,7 +9008,7 @@ body {
 }
 
 #intro-video {
-  background-image: url("../img/video-preview.png");
+  background-image: url("../img/video-preview.jpg");
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -9616,4 +9616,16 @@ a:focus.btn.btn-primary {
   font-weight: normal;
   color: #fff;
   opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .singup-button{
+    font-size: 4vw;
+  }
+  .pretty-header {
+  min-height: 900px;}
+}
+@media (max-width: 350px){
+.pretty-header {
+  min-height: 200px;}
 }
