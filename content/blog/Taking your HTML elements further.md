@@ -1,7 +1,7 @@
 ---
 title: Taking your HTML elements further
 subtitle: Using attributes more effectively
-date: 2023-06-20T00:00:00-06:00
+date: 2023-02-01T00:00:00-06:00
 modified_date: ""
 image: /img/blog/ferenc-almasi-eypcldxhvb0-unsplash.jpg
 authors: [Kieran Wood]
@@ -10,6 +10,9 @@ tags:
   - web
   - html
 ---
+When you begin learning about HTML, CSS and Javascript there is a belief many people hold that HTML is pretty useless. It can't process information, and without CSS it looks awful. It seems like a necessary evil in order to get to the "important parts" of web development.
+
+There is however a lot that HTML can do, and a lot that people don't know about. In this article we will look at what can be done with just HTML, and a few tricks that help you to leverage HTML to help with your CSS and Javascript. Specifically we will look at HTML attributes.
 
 ## What is an attribute
 
@@ -250,7 +253,7 @@ Sometimes you want to put some extra data in your HTML. For example you might wa
 
 Then in javascript you can check with `getAttribute()` if `lang` exists, good to go... right?
 
-The web is constantly evolving, so using regular attributes can cause problems. What if `lang` down the road is used to specify the **human language** an element's content is in, or used to dynamically allow you to run code in the browser etc. In any of these cases you will need to update your HTML. So there was a syntax added to the HTML specification to allow you to add in these data-storing attributes.
+The web is constantly evolving, so using regular attributes can cause problems. What if `lang` down the road is used to specify the **human language** an element's content is in, or used to dynamically allow you to run code in the browser etc ([spoiler that's what it does](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang)). In any of these cases you will need to update your HTML. So there was a syntax added to the HTML specification to allow you to add in these data-storing attributes.
 
 What you do is add `data` to the beginning of the attribute. So for our example we would use:
 
@@ -273,6 +276,65 @@ post.dataset.lang
 
 We now never have to worry about collisions with the official specifications, and can get the same functionality!
 
+
+### Element targeting
+
+You can target elements in CSS and JS by their attributes. There are tons of interesting use cases for this.
+
+For example if you wanted to use a [data attribute](#data-values) to say if the theme should be dark or light on the html tag:
+
+CSS
+```css
+html{ /*Light theme*/
+    background: white;
+    color: black;
+}
+html[data-theme="dark"]{ /*Dark theme*/
+    background:black;
+    color:white;
+}
+html[data-theme="light"]{ /*Light theme*/
+    background: white;
+    color: black;
+}
+```
+You could then set that data attribute when a button is hit:
+
+```html
+<html>
+    <body>
+        <button onclick="changeTheme()">Change theme</button>
+    </body>
+    <script>
+        function changeTheme(){
+            theme = document.getElementsByTagName("html")[0].dataset.theme
+
+            if (theme || theme=="light"){
+                // Change to dark
+                document.getElementsByTagName("html")[0].dataset.theme = "dark"
+            } else{
+                document.getElementsByTagName("html")[0].dataset.theme = "light"
+            }
+        }
+    </script>
+</html>
+```
+
+So when the button is clicked, when either of these two options are present
+
+```html
+<html></html>
+<!-- or -->
+<html data-theme="light"></html>
+```
+
+is changed to
+
+```html
+<html data-theme="dark"></html>
+```
+
+and vice-versa from `data-theme="dark"` to `data-theme="light"`. You can configure this in a ton of ways, there is an [MDN article](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) with more details (like partial strings)!
 
 ### Form attributes
 
@@ -307,35 +369,122 @@ You could use this for all sorts of stuff, like letting people try out a HTML te
 
 <div contenteditable>
 This entire written portion (not the code snippets) of the article has <code>contenteditable</code> enabled, so feel free to modify and test it out!
+</div>
 
+## Bonus Tricks
 
-<h5> Bonus</h5>
+There are a ton of interesting things you can do with the attributs we've talked about. Here are a few.
 
-One other cool thing you can do with this is combine it with a style</code> tag inside a <code>body</code> that is set to <code>display:block</code>:
+<div contenteditable>
+<h4>Dynamic styles</h4>
+
+We don't often think about it, but a <code>style</code> tag is just an HTML element. This includes it's own <code>innerHTML</code> , <code>attributes</code>  etc. Armed with this knowledge, what happens if you change it's content on the fly using contenteditable? Well, the CSS would change on the fly as well.
+
+To do this there's a few things we need to do differently:
+<ol>
+<li>Put the style tag inside a <code>body</code> instead of <code>head</code> (the head content is always invisible, this allows us to make it visible)</li>
+<li>Set the style tag (ironically with a style attribute) to <code>display:block</code> (it's <code>display:none</code> by default). You can also do this in css with <code>body style{display:block}</code></li>
+</ol>
+
 </div>
 
 ```html
 <body>
-    <h1>Change the CSS!</h1>
-    <style contenteditable style="display:block;">
-        h1{
-            font-size: 2em;
-        }
+    <h1 contenteditable>Change the CSS!</h1>
+    <style contenteditable 
+    style=" display:block;
+            background:#333;
+            color:#f0f0f0;
+            padding:2em;
+            white-space:pre; /*Respect tabs/spaces */
+            border-radius:1em;">
 
-        body > style{
-            background: #333;
-            color: #f0f0f0;
-            padding: 2em;
-            white-space: pre; /*respect tabs and newlines*/
+        h1{
+            font-size:5em;
+        }
+        h2{
+            font-size:3em;
         }
     </style>
-    <h2>Edit the section below!</h2>
-    <div>
+    <h2 contenteditable>See the results in the section below!</h2>
+    <div contenteditable>
         <h2>My name is Kieran</h2>
         <p> My hobbies are:</p>
         <ul>
-            <li>Enter hobbies here</li>
+            <li>Skiing</li>
+            <li>Diving</li>
+            <li>Photography</li>
         </ul>
     </div>
 </body>
 ```
+
+Here is what it looks like (hold shift if you press enter while changing the CSS):
+
+<iframe  style="width:100%; min-height:90vh; border-radius: 1em;" srcdoc="<body><h1 contenteditable>Change the CSS!</h1><style contenteditable style='display:block;background:#333;color:#f0f0f0;padding:2em;white-space:pre;/*Respect tabs/spaces */border-radius:1em;'>h1{
+    font-size:5em;
+}
+h2{font-size:3em;}</style><h2 contenteditable>See the results in the section below!</h2><div contenteditable><h2>My name is Kieran</h2><p>My hobbies are:</p><ul><li>Skiing</li><li>Diving</li><li>Photography</li></ul></div></body>"></iframe>
+
+<h4>Page preview</h4>
+
+There is an HTML element called `iframe`, an iframe sets up a brand new HTML document inside your current HTML document, and loads content inside. You can use this to load other people's pages inside your own (like youtube videos). For example with this code:
+
+```html
+<iframe src="https://schulichignite.com" style="width:100%;height:60vh"></iframe>
+```
+
+You get:
+
+<iframe src="https://schulichignite.com" style="width:100%;height:60vh"></iframe>
+
+Combining this with something like `onInput` (run a function everytime an input on the element happens), we can basically have an `iframe` where the `src` can be filled by a `textarea` and update every time the text inside updates!
+
+To do this we will use the `src` attribute available on `iframe`'s (for it to work you need to start with `data:text/html`, it runs a mini browser, so you need a [mime type]()).
+
+Here is the code:
+
+```html
+<style>
+    #code,
+    #preview-code{
+        display:inline-block;
+        width:50%; 
+        height:300px;
+    }
+</style>
+
+<!-- Takes input and runs updateIframe() everytime input is provided-->
+<textarea id="code" onInput="updateIframe()"><h1>Hello World</h1></textarea>
+
+<iframe id="preview-code" src="data:text/html,<h1>Hello World</h1>"></iframe>
+
+<script>
+    function updateIframe(){
+        // Locate iframe, and collect text
+        iframe = document.getElementById("preview-code")
+        codeText = document.getElementById("code").value
+
+        // Encodes your HTML as a URL (required for iframes)
+        sanitizedCodeText = encodeURIComponent(codeText)
+
+        // Override src attribute with new content
+        iframe.src = 'data:text/html,' + sanitizedCodeText
+    }
+</script>
+```
+
+and below is a demo of it working in action:
+
+<textarea id="code" onInput="updateIframe()" style="display:inline-block;width:50%; height:300px;"><h1>Hello World</h1></textarea>
+
+<iframe id="preview-code" src="data:text/html,<h1>Hello World</h1>" style="display:inline-block;width:49%; height:300px"></iframe>
+
+<script>
+    function updateIframe(){
+        
+        document.getElementById("preview-code").src = 'data:text/html,' + encodeURIComponent(document.getElementById("code").value)
+    }
+</script>
+
+This is **mostly** fine in small cases like this, but be aware there are security risks with dynamically generating `iframe` content like this. To avoid most problems do not allow users to save and re-load content this way.
