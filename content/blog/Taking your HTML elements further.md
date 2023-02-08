@@ -1,7 +1,7 @@
 ---
 title: Taking your HTML elements further
 subtitle: Using attributes more effectively
-date: 2023-02-01T00:00:00-06:00
+date: 2023-02-13T00:00:00-06:00
 modified_date: ""
 image: /img/blog/ferenc-almasi-eypcldxhvb0-unsplash.jpg
 authors: [Kieran Wood]
