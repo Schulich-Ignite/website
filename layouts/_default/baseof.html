@@ -5,12 +5,12 @@
   <meta charset="utf-8" />
   {{block "json-ltd" . }}{{end}} {{/* See here for details: https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data*/}}
   <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
-  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="{{absURL "img/favicon.ico" }}" type="image/x-icon">
+  <link rel="icon" href="{{absURL "/img/favicon.ico"}}" type="image/x-icon">
   <meta property="og:title" content="{{ block "og-title" . }} Schulich Ignite {{ end }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ block "og-url" .}}http://schulichignite.com{{end}}" />
-  <meta property="og:image" content="{{ block "og-img" .}}/img/opengraph_logo-min.jpg{{end}}"/>
+  <meta property="og:image" content="{{ block "og-img" .}}{{ .Site.BaseURL}}/img/opengraph_logo-min.jpg{{end}}"/>
   <meta name="Description" content="{{ block "desc" .}}Schulich Ignite is an 8 week program where you learn to program. These weekly sessions are a fun way to learn the fundamentals of coding with lots of hands-on experience. 
   You are partnered with a mentor who can help you out with your learning experience (and give you general advice as a university student as well). Sessions run for 1 hour and 30 minutes, and you can choose to attend either the Wednesday evening sessions or the Saturday morning session.
   No prior coding experience necessary! {{end}}">
@@ -24,7 +24,7 @@
   
   <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
   <link href="https://unpkg.com/@videojs/themes@1/dist/sea/index.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/index.css" /> <!-- Bootstrap Styles -->
+  <link rel="stylesheet" href="{{absURL "css/index.css" }}" /> <!-- Bootstrap Styles -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
   {{ block "extra-css" .}} {{ end }}

@@ -9629,3 +9629,6 @@ a:focus.btn.btn-primary {
 .pretty-header {
   min-height: 200px;}
 }
+.dropdown-toggle{
+  cursor: pointer;
+}
