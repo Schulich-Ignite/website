@@ -47,6 +47,20 @@
                 <p>We are not currently looking for mentors and mentees. You can signup for our newsletter with <a href="https://forms.gle/ZJoDAbcTf1M3NBxYA" target="_blank">this link</a> to be notified when the next set of sessions are available</p>
 
                 {{ end}}
+
+                {{ if eq "live" .Site.Params.status}}
+                <h2>Looking to submit an exercise?</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.submitBugBusters }}" target="_blank"
+                            rel="noopener noreferrer">Submit Bug Buster Exercise</a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.submitPythonicLava }}" target="_blank"
+                            rel="noopener noreferrer">Submit Pythonic Lava Exercise</a>
+                    </div>
+                </div>
+                {{ end }}
             </div>
         </div>
     </div>

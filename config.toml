@@ -7,8 +7,8 @@ relativeURLs = true
 [params]
     email = "info@schulichignite.com"
     #status = "recruiting"
-    status = "signup" 
-    #status = "live"
+    #status = "signup" 
+    status = "live"
     emailListSignup = "https://forms.gle/ZJoDAbcTf1M3NBxYA"
     mentorSignUp = "https://forms.gle/QoKJ6i8QAMkXeJ1N7"
     menteeSignUp = "https://forms.gle/NmNLqfUAagydy9uj9"
@@ -16,6 +16,7 @@ relativeURLs = true
     sparkDocs    = "https://spark.schulichignite.com/"
     submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLSfy8VfD5mPXmtoKwtQcDvKDVz32aePRdtnvM8HS5PkhjFRvxQ/viewform?usp=sf_link"
     submitPythonicLava = "https://forms.gle/1BSY6H9CcuAPejUR8"
+    submitScorch = "https://docs.google.com/forms/d/e/1FAIpQLSf1F_z_UR6lNSnDxw9zy5ddqMjUjHOzhHXsmIY9EOEY5_vBaQ/viewform?usp=share_link" 
     current_startDate = 2023-02-14T14:15:59-06:00
     current_endDate   = 2023-04-08T14:15:59-06:00
     [params.links]
