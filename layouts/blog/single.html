@@ -1,4 +1,5 @@
 {{/* Metadata*/}}
+
 {{define "desc"}} {{ .Params.title }}; {{.Summary}} {{end}}
 {{define "og-title"}} {{ .Params.title }} | Schulich Ignite Blog {{end}}
 {{define "title"}}{{ .Params.title }} | Schulich Ignite{{end}}
@@ -6,8 +7,96 @@
 {{define "og-url"}} {{.Permalink}} {{end}}
 {{define "og-img"}}{{ if .Params.image }}{{ .Params.image}}{{ else }}/img/opengraph_logo-min.jpg{{end}} {{end}}
 
+{{define "json-ltd" }}
+
+    {{ if in .Params.tags "events"  }}
+    <!-- Events schema -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "{{ .Params.title }}",
+        "startDate": "{{ .Params.date.Format "2006-11-07" }}",
+        "endDate": "{{ .Params.date.Format "2006-11-07" }}",
+        "about": "{{ .Content }}",
+        {{ if .Params.image }}
+        "image": "{{ .Params.image }}"
+        {{ end }}
+        }
+    </script>
+
+    {{ else if in .Params.tags "news" }}
+    <!-- News schema -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "publisher":{
+        "@type":"Organization",
+        "name":"Schulich Ignite",
+        "logo":"https://schulichignite.com/img/logos/ignite.svg"
+    },
+    "headline": "{{ .Params.title }}",
+    "datePublished": "{{ .Params.date.Format "2006-11-07" }}",
+    "articleBody": "{{ .Content }}",
+    {{ if .Params.image }}
+    "image": "{{ .Params.image }}"
+    {{ end }}
+    }
+    </script>
+
+    {{else}}
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "author": "Shulich Ignite",
+        "name": "{{ .Params.title }}",
+        "dateCreated": "{{ .Params.date.Format "2006-11-07" }}",
+        "text": "{{ .Summary }}",
+        {{ if .Params.image }}
+        "image": "{{ .Params.image }}"
+        {{ end }}
+        }
+    </script>
+    {{ end }}
+
+
+
+{{end}}
+
 
 {{/*End of Metadata*/}}
+
+{{/* Start of extra files */}}
+
+{{define "extra-css"}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css" integrity="sha512-mtXspRdOWHCYp+f4c7CkWGYPPRAhq9X+xCvJMUBVAb6pqA4U8pxhT3RWT3LP3bKbiolYL2CkL1bSKZZO4eeTew==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"/>
+{{end}}
+
+{{ define "extra-js" }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" integrity="sha512-bgHRAiTjGrzHzLyKOnpFvaEpGzJet3z4tZnXGjpsCcqOnAH6VGUx9frc5bcIhKTVLEiCO6vEhNAgx5jtLUYrfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script>
+    hljs.addPlugin(new CopyButtonPlugin());
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+</script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true }, '.language-mermaid');
+</script>
+{{ if .Params.video}}
+  <script src="/js/youtube-api.js"></script>
+{{end}}
+{{ end }}
+
+
+
+{{/*End of extra files*/}}
+
 
 {{ define "main" }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Blog") }}
@@ -195,17 +284,4 @@
         </div>
     </div>
 </section>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<script>
-    hljs.addPlugin(new CopyButtonPlugin());
-    hljs.highlightAll();
-    hljs.initLineNumbersOnLoad();
-  </script>
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true }, '.language-mermaid');
-  </script>
-  {{ if .Params.video}}
-  <script src="/js/youtube-api.js"></script>
-  {{end}}
 {{end}}
