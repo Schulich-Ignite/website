@@ -5,6 +5,12 @@
 {{define "og-desc"}}Ignite Beginner is an 8 week course, split up into 1.5 hour sessions once a week. The aim of the course is to give people an easy to understand introduction to the python programming language. Python is one of the most popular programming languages largely because of how easy it is to get into. We have also refined our sessions over the years to make them as welcoming as possible, while providing all the important information!{{end}}
 {{/*End of Metadata*/}}
 
+{{define "extra-js"}}
+<!-- lightbox stuff below  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bs5-lightbox/1.8.3/index.bundle.min.js" integrity="sha512-wOwwlvSeaATXscQHfDsAUnt3cBBvrKkyf7lI+k/88X6x/fxtc678fTdKRNcxZxtRdpzYFiIqqW5uIRUiPlZJlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{{end}}
+
 {{ define "main" }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Ignite Beginner") }}
 
