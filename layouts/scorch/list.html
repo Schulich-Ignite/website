@@ -79,7 +79,7 @@
     <section class="section single-item">
         <div class="container">
             <div class="row">
-                {{ range (where .Site.Pages.ByDate "Type" "web") }}
+                {{ range (where .Site.Pages.ByDate "Type" "scorch") }}
                     {{ partial "sessions-feed.html" .}}
                 {{ end }}
             </div>
