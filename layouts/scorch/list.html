@@ -5,6 +5,12 @@
 {{define "og-desc"}}Ignite Scorch is an 8 week introduction to web development course, split up into 1.5 hour sessions once a week. The aim of the course is to give people a chance to explore web development, and learn the skills they need to get websites up and running. Since this is a more advanced course you will need to know the programming fundamentals taught in ignite beginner & ignite flare, but no prior web development experience is required.{{end}}
 {{/*End of Metadata*/}}
 
+{{define "extra-js"}}
+<!-- lightbox stuff below  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bs5-lightbox/1.8.3/index.bundle.min.js" integrity="sha512-wOwwlvSeaATXscQHfDsAUnt3cBBvrKkyf7lI+k/88X6x/fxtc678fTdKRNcxZxtRdpzYFiIqqW5uIRUiPlZJlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{{end}}
+
 {{ define "main" }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Scorch") }}
 <div class="container">
@@ -16,16 +22,22 @@
 
             <div class="row text-center">
                 <div class="col">
-                    <img class="img-fluid" src="/img/sessions/scorch-1.gif" alt="" srcset="">
+                    <a href="/img/sessions/scorch-1.gif" data-toggle="lightbox">
+                        <img class="img-fluid rounded" src="/img/sessions/scorch-1.gif" alt="" srcset="">
+                    </a>
                     <p>Mobile responsive sites!</p>
                 </div>
                 <div class="col">
-                    <img class="img-fluid" src="/img/sessions/scorch-2.gif" alt="" srcset="">
+                    <a href="/img/sessions/scorch-2.gif" data-toggle="lightbox">
+                        <img class="img-fluid rounded" src="/img/sessions/scorch-2.gif" alt="" srcset="">
+                    </a>
                     <p>Interactive sites with filtering and ability to add content</p>
 
                 </div>
                 <div class="col">
-                    <img class="img-fluid" src="/img/sessions/scorch-3.gif" alt="" srcset="">
+                    <a href="/img/sessions/scorch-3.gif" data-toggle="lightbox">
+                        <img class="img-fluid rounded" src="/img/sessions/scorch-3.gif" alt="" srcset="">
+                    </a>
                     <p>Sites that call other databases!</p>
                     
                 </div>
