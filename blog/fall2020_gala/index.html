@@ -23,5 +23,18 @@ Last, but not least, we want to say thank you to all of our mentors! We truly ap
 <script src=//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js></script>
 <script>hljs.addPlugin(new CopyButtonPlugin),hljs.highlightAll(),hljs.initLineNumbersOnLoad()</script><script type=module>
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true }, '.language-mermaid');
+    
+    let mermaidConfig = {
+    startOnLoad: true,
+    "theme": "base",
+        "themeVariables": {
+            "primaryColor": "#ffde59",
+            "primaryTextColor": "#d14b3b",
+            "primaryBorderColor": "#7C0000",
+            "lineColor": "#F8B229",
+            "secondaryColor": "#fff",
+            "tertiaryColor": "#d14b3b"
+        }
+    }
+    mermaid.initialize(mermaidConfig, '.language-mermaid');
 </script></html>
