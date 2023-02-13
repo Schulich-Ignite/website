@@ -9,6 +9,8 @@ tags:
   - scorch
   - web
   - html
+  - ui-ux
+  - frontend
 ---
 When you begin learning about HTML, CSS and Javascript there is a belief many people hold that HTML is pretty useless. It can't process information, and without CSS it looks awful. It seems like a necessary evil in order to get to the "important parts" of web development.
 

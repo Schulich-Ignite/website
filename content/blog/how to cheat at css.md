@@ -10,13 +10,13 @@ tags:
   - web
   - css
   - design
+  - ui-ux
+  - frontend
 ---
 
-## Introduction
+CSS is the language of design on the web. It's used to control how everything looks. The styling of this text, how the article metadata (tags, authors etc) above this looks, everything. It's what helps define your webpages, and make them look nice... It's also hard to do well
 
-CSS is the language of design on the web. It's used to control how everything looks. The styling of this text, how the article metadata above this looks, everything. It's what helps define your webpages, and make them look nice... It's also hard to do well
-
-There's a ton of things to keep in mind:
+There's a ton of things to keep in mind while using CSS:
 
 - Design principles
   - Typography
@@ -110,21 +110,57 @@ Additionally there are full featured VIDE's (Visual Integrated Development Envir
 
 #### Primer
 
-[Primer CSS](https://primer.style/css/) is made by the github team, and it's what they use at github to style their components. As such it has lots of cool components that are useful if you're building tools around code!
+[Primer CSS](https://primer.style/css/) is made by the github team, and it's what they use at github to style their components. As such it has lots of cool components that are useful if you're building applications or tools around code!
+
+These include:
+
+- [Avatar stacks](https://primer.style/css/components/avatar-stack)
+- [Select menus](https://primer.style/css/components/select-menu)
+- [Loaders](https://primer.style/css/components/loaders)
+- [Toasts](https://primer.style/css/components/toasts)
+- [Timelines](https://primer.style/css/components/timeline)
+- And [many more](https://primer.style/css/components)
+
+
+On top of that it has:
+
+- [Dark theme built in](https://primer.style/css/support/theming)
+- [Built in CSS deprecation](https://primer.style/css/tools/deprecations)
+- [Animations](https://primer.style/css/utilities/animations)
+- [Mobile breakpoints](https://primer.style/css/support/breakpoints)
+- And tons of other features
 
 #### Picnic CSS
 
-[Picnic CSS](https://picnicss.com/) is another smaller library that gives you a few of the basics, and a decent grid system. The selection of components is admittedly a bit... odd. But if you need what it supports then it's a great option!
+[Picnic CSS](https://picnicss.com/) is another smaller library that gives you a few of the basics, and a decent grid system. The selection of components is admittedly a bit... odd (why is there a [drop image](https://picnicss.com/documentation#dropimage), but no [accordion](https://www.w3schools.com/howto/howto_js_accordion.asp)?). 
+
+It's quite a bit smaller than others in this list (7kb total vs 25kb for [bootstrap](#bootstrap)), making it great for smaller apps where you need the features it offers. If you only need what it supports then it's a great option!
 
 #### Spectre
 
 [Spectre](https://picturepan2.github.io/spectre) is a framework that has a few advantages over bootstrap:
 
--  It is smaller
+-  It is smaller (10kb vs 25kb for something like bootstrap)
 -  faster to load
 -  Includes components not found in bootstrap for more app-interfaces (like [chips](https://picturepan2.github.io/spectre/components/chips.html),[empty states](https://picturepan2.github.io/spectre/components/empty.html), and [steps](https://picturepan2.github.io/spectre/components/steps.html))
 
-But the most interesting is some of the stuff they're doing in their [experiemental section](https://picturepan2.github.io/spectre/experimentals)
+
+On top of this much of the HTML itself is simpler than the equivalent in bootstrap ([accordions](https://picturepan2.github.io/spectre/components/accordions.html) for example ). But the most interesting is some of the stuff they're doing in their [experiemental section](https://picturepan2.github.io/spectre/experimentals) such as:
+
+- [Calendars](https://picturepan2.github.io/spectre/experimentals/calendars.html)
+- [Timelines](https://picturepan2.github.io/spectre/experimentals/timelines.html)
+- [Comparisson sliders](https://picturepan2.github.io/spectre/experimentals/comparison.html)
+
+And [more](https://picturepan2.github.io/spectre/experimentals)!
+
+#### Cons of Component based
+
+While component based systems seem great, there are a few general downsides to go with the upsides:
+
+- You are often committed to someone elses design philosophy
+- If you change components radically it's a lot of work to move to new versions
+- The CSS is often **way** more than you need, and wastes resources and time loading
+- Lot's of things are very *magic* and can make it hard to debug
 
 ### Semantic CSS
 
@@ -171,6 +207,13 @@ Here are some alternatives
 |Sakura | Has a [bookmarklet](https://oxal.org/projects/sakura/#:~:text=If%20so%2C%20enable,projects/sakura/bookmark), and is super simple to use | https://oxal.org/projects/sakura/ |
 |awsm.css | semantic CSS + a few themes to let you spice things up a bit | https://igoradamenko.github.io/awsm.css/ | 
 
+#### Cons of Semantic CSS
+
+While nice and simple there are a few potential issues with semantic CSS:
+
+- It usually only handles the bear minimum, but even then many tags are unstyled
+- While many support themeing, a lot of them require [scss](#sassscss) to do it which adds complexity
+- Many of them have dark themes, but they are seperate stylesheets instead of just [data variables](https://schulichignite.com/blog/taking-your-html-elements-further/#data-values), which wastes resources to load
 
 ### Boilerplate
 
@@ -184,6 +227,7 @@ Boilerplate CSS frameworks do the bare minimum to help you get started, and that
 |Vanilla CSS | A great place to start from, include [noraform](https://normform.netlify.app/) for even nicer forms| https://vanillacss.com/ |
 |Bare CSS | Will set defaults that will automatically turn off when you put classes on your elements. Making it a great starting place to build itteratively | http://barecss.com/ | 
 
+Compared to semantic CSS these are often even less feature filled (and therefore also smaller), and require you to build **anything** more complicated than the essentials yourself.
 
 ### Extensions
 
@@ -285,6 +329,14 @@ Will then expand the nested styles into this css:
 
 [Less](https://lesscss.org/) is not compiled, instead you can just include the javascript file in the same page as your less files. It's very similar in advantages to SCSS, but beter in cases where you can't compile ahead of time. It also allows you to modify your configurations per-page, since the configuration is done in javascript. The exact same example as the SCSS example will work in Less as well.
 
+#### Cons of extensions
+
+While they can be useful, extensions bring their own problems:
+
+- You & anyone working with you will need to install them and have them setup to work on a project
+- Each has it's own opinions and skills aren't always transferrable
+- Often the difference for smaller projects is dozens of lines of code and not really worth it
+
 ### Utility Classes
 
 Utility classes is a newer approach. Essentially it's the same CSS you know, but it uses classes to do everything instead of inline CSS. This gives the advantage of being able to see exactly what's happening to an element, while keeping it shorter than regular CSS. Additionally it allows for abstractions, like giving you text sizes in `title`, `main`, `accent` instead of every size under the sun, or colours in terms of `green`, `green-dark`, `green-light` etc. Essentially similar to boilerplate CSS it just tries to let you take the reigns while making things easier.
@@ -365,9 +417,20 @@ So, for example with a button that has the primary colour (blue by default):
 <button class="button button-border button-primary"></button>
 ```
 
+It's designed to make utility classes more "semantic", so when you're reading the names they map onto something that is obvious and offer an easy way to modify from there.
+
+#### Cons of Utility classes
+
+I mentioned a few before, but here are the main potential cons of utility classes:
+
+- If you are building "[components](#component-based)" you end up repeating yourself **constantly**
+- Complicated designs often require [incredibly long (71 in this case!)](https://www.aleksandrhovhannisyan.com/blog/why-i-dont-like-tailwind-css/#:~:text=That%E2%80%99s%2071%20class%20names%20just%20to%20style%20a%20checkbox.) class names that make it hard to read
+- You typically have to setup the system that builds your utility classes
+- You have to learn the semantics of the particular utility class system you're using, whereas CSS is universal
+
 ## React
 
-[React](https://reactjs.org/) is a component-based UI framework. This means it has it's own code that runs inside [nodeJS](https://nodejs.org/en/). Instead of having the seperation of HTML/CSS/JS, react takes over all 3 (mostly). It uses javascript (or [typescript](https://www.typescriptlang.org/)), or optionally a language called [JSX](https://reactjs.org/docs/introducing-jsx.html). This means it can encapsulate all of the state, and look of a component all in one class!
+[React](https://reactjs.org/) is a component-based UI framework. This means it has it's own code that (often) runs inside [nodeJS](https://nodejs.org/en/). Instead of having the seperation of HTML/CSS/JS, react takes over all 3 (mostly). It uses javascript (or [typescript](https://www.typescriptlang.org/)), or optionally a language called [JSX](https://reactjs.org/docs/introducing-jsx.html). This means it can encapsulate all of the state, and look of a component all in one class!
 
 Here is an example of a react component that is using JSX to create a timer that goes up by 1 each second:
 
@@ -404,7 +467,7 @@ class Timer extends React.Component {
 root.render(<Timer />);
 ```
 
-Because of it's extensibility react cen be used to put together entire applications! Like bootstrap or other CSS frameworks you can create libraries of components that can be reused (in fact [bootstrap is available in react](https://react-bootstrap.github.io/getting-started/introduction#examples)!
+Because of it's extensibility react can be used to put together entire applications! In fact the larger your application the better react tends to scale because everything is in one place. This was actually why it was created by [meta](https://www.meta.com/ca/) in the first place. Like bootstrap or other CSS frameworks you can create libraries of components that can be reused (in fact [bootstrap is available in react](https://react-bootstrap.github.io/getting-started/introduction#examples)!
 
 ### Mantine UI
 
@@ -434,6 +497,17 @@ There are a few alternatives to react you can check out like:
 * [Vue.js](https://vuejs.org/)
 * [Angular](https://angular.io/)
 * [Mithril JS](https://mithril.js.org/)
+
+### Cons of react
+
+While having everything in one spot is great, there can be a few cons with react:
+
+- **Everything** is in javascript/jsx (CSS, JS, HTML), so there's no [seperation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
+- React uses lots of abstractions, so when you learn it you will often learn the abstractions and what it's actually doing is "magic" under the hood
+- Often times people make react do **a lot**, it's common to find codebases with react and 10-12 other libraries that are integrated with react that you have to learn before you can start working
+- React can create weird problems, that then require layers of tools to solve ([bundling/code-splitting](https://reactjs.org/docs/code-splitting.html#:~:text=Bundling,an%20entire%20app%20at%20once.), [complex state management](https://beta.reactjs.org/reference/react/useEffect), installing "magic" packages to "avoid complexity", etc. )
+- **Some** react projects require a server, **some** don't. It's always safer to assume you will need a server and the complexity and maintenance that comes along with that (if it's a plain static site probably better to look elsewhere)
+- React has changed **a lot** over the years, and as it has changed it will **often** break old projects or completely shift design philosophies that make your code out of date
 
 ## CSS Generators
 
