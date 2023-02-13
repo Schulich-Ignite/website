@@ -9134,17 +9134,21 @@ h1.card-title {
 }
 
 .taxonomy-list{
-  list-style: none;
   font-size: x-large;
   font-weight: bold;
+  gap:1em;
 }
 
-.taxonomy-list li{
+.taxonomy-list a{
   display: inline;
-  padding:.3em;
-  margin:.5em;
-  border-radius:15%;
+  padding:.1em;
+  border-radius:1em;
   background-color: var(--secondary);
+}
+
+.taxonomy-list a:hover{
+  font-size: 1.1em;
+  text-decoration: none;
 }
 
 .share-icons{
