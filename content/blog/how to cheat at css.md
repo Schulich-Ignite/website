@@ -1,7 +1,7 @@
 ---
 title: How to cheat at CSS
 subtitle: Making design easier
-date: 2023-02-20T00:00:00-06:00
+date: 2023-02-20T00:00:01-06:00
 modified_date: ""
 image: /img/blog/hal-gatewood-tzc3vjpck-q-unsplash.jpg
 authors: [Kieran Wood]
