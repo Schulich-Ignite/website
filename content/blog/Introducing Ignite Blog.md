@@ -3,7 +3,7 @@ title: Updates to the Schulich ignite blog
 subtitle: Introducing the new Blog and Showcase
 date: 2023-01-30T00:00:00-06:00
 modified_date: ""
-image: /img/blog/writing.webp
+image: /img/blog/writing.jpg
 authors: 
 - Cole Pawliw
 - Kieran Wood
