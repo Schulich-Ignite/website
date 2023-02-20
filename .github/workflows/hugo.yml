@@ -19,6 +19,17 @@ jobs:
         with:
           submodules: true
 
+      - name: Setup Node
+        uses: actions/setup-node@v3
+      # Install PurgeCSS required packages
+      - run: npm install
+
+      - name: Publish Site
+        uses: chabad360/hugo-gh-pages@master
+        with:
+          githubToken: ${{ secrets.PERSONAL_TOKEN }}
+          cname: schulichignite.com
+
       - name: Compress Images
         id: calibre
         uses: calibreapp/image-actions@main
@@ -34,9 +45,3 @@ jobs:
           branch-suffix: timestamp
           commit-message: Compressed Images
           body: ${{ steps.calibre.outputs.markdown }}
-  
-      - name: Publish Site
-        uses: chabad360/hugo-gh-pages@master
-        with:
-          githubToken: ${{ secrets.PERSONAL_TOKEN }}
-          cname: schulichignite.com
