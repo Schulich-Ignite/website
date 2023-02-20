@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Schulich Ignite"
 summaryLength = 20
 relativeURLs = true
+assetDir ="static"
 
 [params]
     email = "info@schulichignite.com"
@@ -39,3 +40,6 @@ relativeURLs = true
   changefreq = 'monthly'
   filename = 'sitemap.xml'
   priority = 0.5
+
+[build]
+  writeStats = true
