@@ -28,6 +28,9 @@ relativeURLs = true
         discord = "https://discord.gg/F3Qjqqj"
         tiktok  = "https://vm.tiktok.com/ZSHPbWU3/"
 
+[markup.goldmark.tableOfContents]
+endLevel = 4 # End on H4's
+
 [markup.goldmark.extensions]
 footnote = true
 
