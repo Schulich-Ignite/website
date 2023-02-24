@@ -6,7 +6,7 @@ on:
       - master
   schedule:
     # Runs on UTC (7 hours ahead)
-    # Run At 02:00am MST on Tuesday, Wednesday, and Thursday
+    # Run At 02:00am MST on Monday, Tuesday, Wednesday, and Thursday
     - cron:  '0 9 * * 1,2,3,4'
 
 jobs:
