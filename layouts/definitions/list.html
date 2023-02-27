@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Definitions") }}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            {{ range .Data.Pages  }}
+                <div class="col-md-4">
+                    <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer"><h4>{{ .Params.name }}</h4></a>
+                </div>
+            {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{end}}

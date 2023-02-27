@@ -104,6 +104,55 @@
 {{ if .Params.video}}
   <script src="/js/youtube-api.js"></script>
 {{end}}
+
+<script defer>
+    /* This script loads all of the popovers for definitions
+
+    General approach is to find all terms we have definitions for
+    then split the content (non-heading content) into paragraphs and
+    one by one replace them in the original innerHTML. This approach
+    is relatively slow, but it works ¯\_(ツ)_/¯
+    */
+    words = {   // Collects all the words from the definitions section
+    {{ range (where .Site.Pages.ByDate "Type" "definitions").Reverse }}
+        {{ if .Params.name}}
+            "{{.Params.name }}":["{{.Permalink}}","{{.Summary}}"],
+        {{end}}
+        {{ if .Params.accronym}}
+            "{{.Params.accronym}}":["{{.Permalink}}","{{.Summary}}"],
+        {{end}}
+        {{ if .Params.aka}}
+            {{/*AKA values are a list, so they need to be split*/}}
+            {{$currentPermalink := .Permalink}}
+            {{$currentSummary := .Summary}}
+            {{range $index, $word := .Params.aka }}
+                "{{$word}}":["{{$currentPermalink}}","{{$currentSummary}}"],
+            {{end}}
+        {{end}}
+    {{end}}
+
+    }
+
+    articleContent = document.getElementById("article-content").innerHTML
+    // Match all paragraph, OL, and UL tags
+    contentSections = articleContent.match(/<p>(.*?)<\/p>|<ul>(.*?)<\/ul>|<ol>(.*?)<\/ol>/g)
+    
+    // Parse through all p,ol,ul content and replace known words with popover
+    contentSections.forEach(section=>{
+        for (word in words){
+            searchMask = ` ${word} |^${word} |${word}$| ${word}$`;
+            regEx = new RegExp(searchMask, "igm"); //Create regex object, and ignore case
+            newval = `${section}`.replace(regEx, ` <a href="${words[word][0]}" target="_blank" data-toggle="tooltip" data-placement="top" title="${words[word][1]}">${word}</a> `)
+            document.getElementById("article-content").innerHTML = document.getElementById("article-content").innerHTML.replace(section, newval)
+        }
+    })
+
+
+    // Activate tooltips
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 {{ end }}
 
 
@@ -276,7 +325,7 @@
                         </div>
                         </div>
                     <hr>
-                    <div class="card-text blog-text"> 
+                    <div id="article-content" class="card-text blog-text"> 
                         
                         {{ .Content }} 
 
