@@ -9128,6 +9128,9 @@ h1.card-title {
   margin-top:-.5rem;
   width: 80%;
 }
+.blog-text img{
+  max-width:100%;
+}
 .author-information{
   display:inline; 
   vertical-align: top;
