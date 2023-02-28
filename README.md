@@ -396,6 +396,36 @@ Can be accessed with:
 {{ end }}
 ```
 
+#### Definitions
+
+The definitions can be found in `/content/definitions` and the layouts in `/layouts/definitions`, and in the `/blog/single.html` it will parse all of these and highlight them with [bootstrap tooltips](https://getbootstrap.com/docs/5.2/components/tooltips/). 
+
+Definitions have the following fields
+
+```md
+---
+name: name # Term name
+accronym: n # If the term has an accronym version include it here
+aka: # Alternative names that you want to be highlighted
+- list
+- lists
+- array
+- arrays
+- maps
+last_modified: 2021-02-26T00:00:00-06:00 # When the definition was last modified
+tags: # Tags associated with the definition
+- beginner
+- data-structures
+---
+markdown content here
+```
+
+*Fields*
+- name; Term name/fullname
+- accronym; If the term has an accronym version include it here (i.e. HTML for hyper-text markup language)
+- aka; List of alternative names that you want to be highlighted
+- last_modified; When the definition was last modified
+- tags; Tags associated with the definition
 
 #### Contact
 

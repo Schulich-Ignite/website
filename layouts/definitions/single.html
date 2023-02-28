@@ -1,18 +1,112 @@
+{{define "desc"}} {{ .Params.name }}; {{.Summary}} {{end}}
+{{define "og-title"}} {{ .Params.name }}| Definitions | Schulich Ignite {{end}}
+{{define "title"}}{{ .Params.name }} | Definitions | Schulich Ignite {{end}}
+{{define "og-desc"}} {{ .Params.name }}; {{.Summary}} {{end}}
+{{define "og-url"}} {{.Permalink}} {{end}}
+{{define "og-img"}}{{ if .Params.image }}{{ .Params.image}}{{ else }}/img/opengraph_logo-min.jpg{{end}} {{end}}
+
+{{define "json-ltd" }}
+    <!-- Events schema -->
+    <script type="application/ld+json">
+        <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "{{ .Params.title }}",
+            "author": [{
+                "@type":"Organization",
+                "name": "Shulich Ignite",
+                "url": https://schulichignite.com
+            }],
+            "dateCreated": "{{ .Params.date.Format "2006-11-07" }}",
+            "text": "{{ .Summary }}",
+            {{ if .Params.image }}
+            "image": "{{ .Params.image }}"
+            {{ end }}
+            }
+        </script>
+{{end}}
+
+{{define "extra-css"}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css" integrity="sha512-mtXspRdOWHCYp+f4c7CkWGYPPRAhq9X+xCvJMUBVAb6pqA4U8pxhT3RWT3LP3bKbiolYL2CkL1bSKZZO4eeTew==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"/>
+{{end}}
+
+{{ define "extra-js" }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" integrity="sha512-bgHRAiTjGrzHzLyKOnpFvaEpGzJet3z4tZnXGjpsCcqOnAH6VGUx9frc5bcIhKTVLEiCO6vEhNAgx5jtLUYrfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script>
+    hljs.addPlugin(new CopyButtonPlugin());
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+</script>
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+    
+    let mermaidConfig = {
+    startOnLoad: true,
+    "theme": "base",
+        "themeVariables": {
+            "primaryColor": "#ffde59",
+            "primaryTextColor": "#d14b3b",
+            "primaryBorderColor": "#7C0000",
+            "lineColor": "#F8B229",
+            "secondaryColor": "#fff",
+            "tertiaryColor": "#d14b3b"
+        }
+    }
+    mermaid.initialize(mermaidConfig, '.language-mermaid');
+</script>
+{{end}}
+
 {{ define "main" }}
 
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Params.name) }}
 <nav aria-label="breadcrumb" class="mt-4 p-2" style="max-width:40%">
     <ol class="breadcrumb" style="background-color:transparent;">
-        
             <li class="breadcrumb-item text-primary" aria-current="page"><a href="/definitions">Definitions</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{.Params.name}}</li>
     </ol>
 </nav>
 <div class="card p-5 mb-5">
     <div id="definition-section">
-        {{ if .Params.accronym}}
-        <h2>{{.Params.accronym}} ({{.Params.name}})</h2>
-        {{end}}
+        <div class="row">
+            <div class="col-md-4">
+            {{ if .Params.accronym}}
+            <h2 style="line-height:2">{{.Params.accronym}} ({{.Params.name}})</h2>
+            {{else}}
+            <h2 style="line-height:2">{{.Params.name}}</h2>
+            {{end}}
+            </div>
+            <div class="col-md-8" style="background-color:#ffffffe1;border-radius:1em;">
+                <div class="row">
+                    {{if .Params.aka}}
+                    <div class="col">
+                        <h4>Also Known as/Same as</h4>
+                        <ul>
+                        {{range $index, $word := .Params.aka}}
+                            <li>{{$word}}</li>
+                        {{end}}
+                        </ul>
+                    </div>
+                    {{end}}
+                    {{if .Params.tags}}
+                    <div class="col">
+                        <h4>Tags</h4>
+                        <ul>
+                            {{range .Params.tags}}
+                                {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
+                                <li><a href="{{ .Permalink }}">{{ .Params.Title }}</a></li>
+                                {{ end }}
+                            {{end}}
+                        </ul>
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+        <hr/>
         <p class="card-text">
             {{.Content}}
         </p>

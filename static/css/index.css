@@ -9654,6 +9654,8 @@ a[data-toggle="tooltip"]{
 }
 
 #definition-section{
-  max-width:150ch;
+  max-width:120ch;
+  min-width:75%;
   margin: 0 auto;
+  min-height:50vh;
 }
