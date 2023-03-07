@@ -9649,6 +9649,23 @@ a[data-toggle="tooltip"]{
   padding:1em;
 }
 
+.tooltip-inner ul{
+  list-style-type: none !important;
+  margin:0;
+  padding: 0;
+}
+
+.tooltip-inner ul li{
+  list-style-type: none !important;
+  text-decoration: underline;
+  text-align: center;
+  padding: 0;
+}
+
+#difficulty-tooltip{
+  text-decoration: underline;
+}
+
 .bs-tooltip-top{
   opacity:1 !important;
 }

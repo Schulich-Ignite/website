@@ -147,7 +147,6 @@
         }
     })
 
-
     // Activate tooltips
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
@@ -234,7 +233,10 @@
                                         </p>
                                             {{ end }}
                                         {{end}}
+                                        
+                                        
                                         </p>
+
                                     </div>
                                     </div>
                                     <div class="col-md-6">
@@ -257,10 +259,15 @@
                                                 {{- range $index, $currentTag := .Params.tags }}
                                                     {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
                                                             <a href="{{ .Permalink }}">{{ .Params.Title }}</a>{{ if and (gt $tagLength 1) (lt $index (sub $tagLength 1))}},{{end}}
-    
                                                     {{ end }}
                                                 {{ end }}</p>
                                             {{ end }}
+                                            {{ if .Params.difficulty }}
+                                                <p class="text-primary">Difficulty:
+                                                {{ partial "difficulty-popup.html" .}}
+                                                </p>
+                                            {{end}}
+                                            
                                         {{end}}
 
 

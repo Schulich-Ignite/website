@@ -40,6 +40,7 @@ footnote = true
 [taxonomies]
   author = "authors"
   tag = "tags"
+  difficulty = "difficulty"
 
 [sitemap]
   changefreq = 'monthly'

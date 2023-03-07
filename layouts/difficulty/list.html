@@ -1,0 +1,33 @@
+{{ define "main"}}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Params.name) }}
+
+<nav aria-label="breadcrumb" class="mt-4 p-2" style="max-width:40%">
+    <ol class="breadcrumb" style="background-color:transparent;">
+        <li class="breadcrumb-item" aria-current="page">Difficulty</li>
+        <li class="breadcrumb-item active" aria-current="page">{{.Params.name}}</li>
+    </ol>
+</nav>
+<section class="section">
+<div class="container">
+    <div class="row">
+        <div class="card p-5 mb-5 col-md-12 text-center">
+            <h2>{{.Params.name}}</h2>
+            <p class="card-text">
+                {{ .Content }}
+            </p>
+            <h3 class="col-md-12">Concepts you should know</h3>
+                {{- range $index, $currentDef := .Params.definitions }}                                         
+                    {{- with $.Site.GetPage (printf "definitions/%s" (urlize $currentDef)) }}
+                        <div>
+                            <h4><a href="{{.Permalink}}" target="_blank" rel="noopener noreferrer">{{.Params.name}}</a></h4>
+                            <p>{{.Summary}}</p>
+                        </div>
+                    {{end}}
+                {{end}}
+        </div>
+    <h2 class="text-center">Posts</h2>
+    </div>
+{{partial "blog-feed.html" .}}
+</section>
+
+{{end}}
