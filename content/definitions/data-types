@@ -1,0 +1,33 @@
+
+
+
+## Booleans
+
+### Truthyness
+
+- Some languages "like python" will make things true/false based on conditions (empty lists, emtpy strings etc.)
+
+## Numbers
+
+
+### Integers
+
+### Floats
+
+
+### Lengths
+
+- doubles
+- longs
+- i32
+- etc.
+
+## Text
+
+### String
+
+### Char
+
+### Byte-arrays
+
+
