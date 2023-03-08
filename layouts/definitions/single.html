@@ -103,6 +103,18 @@
                         </ul>
                     </div>
                     {{end}}
+                    {{if .Params.prerequisites}}
+                    <div class="col">
+                        <h4>Prerequisites</h4>
+                        <ul>
+                            {{range .Params.prerequisites}}
+                                {{- with $.Site.GetPage "taxonomyTerm" (printf "definitions/%s" (urlize .)) }}
+                                <li><a href="{{ .Permalink }}">{{ .Params.name }}</a></li>
+                                {{ end }}
+                            {{end}}
+                        </ul>
+                    </div>
+                    {{end}}
                 </div>
             </div>
         </div>

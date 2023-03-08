@@ -4,10 +4,11 @@
 <section class="section">
     <div class="container">
         <div class="row">
-            {{ range .Data.Pages  }}
-                <div class="col-md-4">
-                    <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer"><h4>{{ .Params.name }}</h4></a>
-                </div>
+            {{ range sort .Data.Pages ".Params.name" }}
+            <a class="card col-md-10 my-2 py-1" href="{{.Permalink}}" target="_blank" rel="noopener noreferrer">
+                <h3>{{.Params.name}}</h3>
+                <p>{{.Summary}}</p>
+            </a>
             {{ end }}
             </div>
         </div>
