@@ -129,8 +129,18 @@ dd {
   margin-left: 0;
 }
 
+blockquote::before{
+  content:'"';
+  font-size:1.5em;
+}
 blockquote {
   margin: 0 0 1rem;
+  background: var(--secondary-transparent);
+  padding:.5em;
+}
+blockquote::after{
+  content:'"';
+  font-size:1.5em;
 }
 
 dfn {
@@ -9099,6 +9109,10 @@ h1.card-title {
 }
 /*Blog Styles*/
 
+#blog img[src="../img/logos/ignite.svg"] {
+  max-height:200px !important;
+}
+
 #author-information img{
   border-radius: 50%;
   display: inline;
@@ -9134,6 +9148,18 @@ h1.card-title {
 .author-information{
   display:inline; 
   vertical-align: top;
+}
+
+.blog-image{
+  height:100% !important; 
+  object-fit:cover !important;
+}
+
+.blog-subtitle{
+  color: #732c26;
+  font-size:60% !important;
+  line-height: 1;
+  margin-top: -2%;
 }
 
 .taxonomy-list{
