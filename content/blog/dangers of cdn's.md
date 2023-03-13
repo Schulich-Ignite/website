@@ -4,6 +4,7 @@ subtitle: When to use them, and how to avoid issues
 date: 2023-01-30T00:00:00-06:00
 modified_date: 2023-01-30T00:00:00-06:00
 image: /img/blog/nasa-1lfi7wkgwz4-unsplash.jpg
+video: XfEYE-J2vcE
 authors: 
 - Kieran Wood
 tags:
