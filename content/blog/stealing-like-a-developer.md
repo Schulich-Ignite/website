@@ -6,9 +6,8 @@ date: 2023-03-13T00:00:00-06:00
 modified_date: 2023-03-13T00:00:00-06:00
 image: /img/blog/stealing.jpg
 authors: 
-
-- Kieran Wood
-  tags:
+  - Kieran Wood
+tags:
   - scorch
   - web
   - legal
