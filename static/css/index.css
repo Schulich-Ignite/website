@@ -129,8 +129,18 @@ dd {
   margin-left: 0;
 }
 
+blockquote::before{
+  content:'"';
+  font-size:1.5em;
+}
 blockquote {
   margin: 0 0 1rem;
+  background: var(--secondary-transparent);
+  padding:.5em;
+}
+blockquote::after{
+  content:'"';
+  font-size:1.5em;
 }
 
 dfn {
@@ -9098,6 +9108,10 @@ h1.card-title {
   padding-top: 30px;
 }
 /*Blog Styles*/
+
+#blog img[src="../img/logos/ignite.svg"] {
+  max-height:200px !important;
+}
 
 #author-information img{
   border-radius: 50%;
