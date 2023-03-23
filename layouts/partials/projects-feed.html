@@ -1,0 +1,36 @@
+
+{{ range (where .Site.Pages.ByDate "Type" "projects").Reverse }}
+    <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
+    {{ if  (.Params.title) }}
+    <div class="col-12 mb-5">
+        <div class="card">
+            <div class="row">
+                <div class="col-md-4 col-xs-4">
+                    <a href="{{ .Permalink }}">
+                        <img class="card-img-top med-image blog-image" src="{{ .Params.image }}" alt="{{ .Params.title }}">
+                    </a>
+                </div>
+                <div class="col-md-8">             
+                    <div class="card-body">
+                        <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Params.title }}
+                            {{ if .Params.video }}
+                        </a> <a href="https://youtu.be/{{.Params.video}}" target="_blank" style="font-size: 1.1em;padding-left:.6em;"><i class="bi bi-play-circle-fill"></i></a>
+                            {{end}}
+                            {{ if .Params.subtitle }}
+                            <h5 class="blog-subtitle">{{ .Params.subtitle }}</h5>
+                            {{end}}
+                        </a> 
+                        </h3>
+                        
+                        <p class="card-text">
+                            <a style="color:var(--text)" href="{{ .Permalink }}">{{ .Summary }}...</a>
+                            <a href="{{ ref . .File }}">Read more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+{{ end }}
+
