@@ -109,6 +109,8 @@ End Sub
 
 At this point, you should know what VBA is and how to start programming inside the Microsoft application of your choice. Additionally, you should have some basic knowledge of creating buttons to run the macros more cleanly. VBA syntax will be covered in the next post.
 
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/vba-syntax">See Next Post</a>
+
 ## References
 
 [^1]: Microsoft Corporation, "Getting started with VBA in Office", 06/08/2022, https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office
