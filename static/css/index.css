@@ -9665,3 +9665,29 @@ a:focus.btn.btn-primary {
 .dropdown-toggle{
   cursor: pointer;
 }
+
+/* Styles for projects-feed cards */
+
+.projects-overlay {
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(0, 0, 0, .5);
+  color: white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  /* transition effect*/
+  transition: opacity .2s, visibility .2s;
+}
+
+#img-wrap:hover .projects-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+h3.card-project-title {
+  color: white;
+  text-align: center;
+}
