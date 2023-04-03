@@ -10,6 +10,8 @@ tags:
     - optimization
     - web
     - scorch
+    - theory
+    - terminology
 ---
 Nostalgia can be very powerful, looking back at the world can make people feel warm and fuzzy inside. However, one thing people are not nostalgic of is how long computers used to take to do things. People want fast computers. No one misses browsers taking minutes to start, or computers taking 10's of minutes to boot. As computers have become more important in people's lives programmers have been chasing ways to make things faster.
 
