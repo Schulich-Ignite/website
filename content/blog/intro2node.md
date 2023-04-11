@@ -4,12 +4,7 @@ subtitle: What is Node.js?
 date: 2023-04-10T00:00:00-06:00
 modified_date: ""
 image: /img/blog/nodejs/header-from-pexels.jpg
-author:
-  name: Spencer Fietz
-  email: spenny.codes@gmail.com
-  linkedin: spencer-fietz-001018237
-  github: Appologetic
-  website: 
+authors: [Spencer Fietz]
 tags:
   - scorch
   - web
