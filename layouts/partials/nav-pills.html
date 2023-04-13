@@ -1,13 +1,44 @@
-<ul class="nav nav-pills" style="justify-content: right; margin-right: 100px;">
-  <li class="nav-item">
+<!-- 
+<ul class="nav nav-pills mr-5 justify-content-end" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
     <a class="nav-link active" aria-current="page" href="#">Beginner</a>
+    <button class="nav-link active" id="pills-beginner-tab" data-bs-toggle="pill" data-bs-target="#pills-beginner" type="button" role="tab" aria-controls="pills-beginner" aria-selected="true">Beginner</button>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" href="#">Flare</a>
+    <button class="nav-link" id="pills-flare-tab" data-bs-toggle="pill" data-bs-target="#pills-flare" type="button" role="tab" aria-controls="pills-flare" aria-selected="false">Flare</button>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" href="#">Scorch</a>
+    <button class="nav-link" id="pills-scorch-tab" data-bs-toggle="pill" data-bs-target="#pills-scorch" type="button" role="tab" aria-controls="pills-scorch" aria-selected="false">Scorch</button>
+
   </li>
 </ul>
 
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-beginner" role="tabpanel" aria-labelledby="pills-beginner-tab">
+      HELLO
+  </div>
+  <div class="tab-pane fade" id="pills-flare" role="tabpanel" aria-labelledby="pills-flare-tab">noooo</div>
+  <div class="tab-pane fade" id="pills-scorch" role="tabpanel" aria-labelledby="pills-scorch-tab">not owkring :(</div>
+</div> -->
 
+
+<!-- Code below is staight from documentation: https://getbootstrap.com/docs/5.0/components/navs-tabs/ -->
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+</div>
