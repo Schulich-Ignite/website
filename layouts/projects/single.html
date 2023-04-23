@@ -1,121 +1,10 @@
-{{/* Metadata*/}}
-
-{{define "desc"}} {{ .Params.title }}; {{.Summary}} {{end}}
-{{define "og-title"}} {{ .Params.title }} | Schulich Ignite Blog {{end}}
-{{define "title"}}{{ .Params.title }} | Schulich Ignite{{end}}
-{{define "og-desc"}} {{ .Params.title }}; {{.Summary}} {{end}}
-{{define "og-url"}} {{.Permalink}} {{end}}
-{{define "og-img"}}{{ if .Params.image }}{{ .Params.image}}{{ else }}/img/opengraph_logo-min.jpg{{end}} {{end}}
-
-{{define "json-ltd" }}
-
-    {{ if in .Params.tags "events"  }}
-    <!-- Events schema -->
-    <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "Event",
-        "name": "{{ .Params.title }}",
-        "startDate": "{{ .Params.date.Format "2006-11-07" }}",
-        "endDate": "{{ .Params.date.Format "2006-11-07" }}",
-        "about": "{{ .Content }}",
-        {{ if .Params.image }}
-        "image": "{{ .Params.image }}"
-        {{ end }}
-        }
-    </script>
-
-    {{ else if in .Params.tags "news" }}
-    <!-- News schema -->
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "publisher":{
-        "@type":"Organization",
-        "name":"Schulich Ignite",
-        "logo":"https://schulichignite.com/img/logos/ignite.svg"
-    },
-    "headline": "{{ .Params.title }}",
-    "datePublished": "{{ .Params.date.Format "2006-11-07" }}",
-    "articleBody": "{{ .Content }}",
-    {{ if .Params.image }}
-    "image": "{{ .Params.image }}"
-    {{ end }}
-    }
-    </script>
-
-    {{else}}
-    <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "author": "Shulich Ignite",
-        "name": "{{ .Params.title }}",
-        "dateCreated": "{{ .Params.date.Format "2006-11-07" }}",
-        "text": "{{ .Summary }}",
-        {{ if .Params.image }}
-        "image": "{{ .Params.image }}"
-        {{ end }}
-        }
-    </script>
-    {{ end }}
-
-
-
-{{end}}
-
-
-{{/*End of Metadata*/}}
-
-{{/* Start of extra files */}}
-
-{{define "extra-css"}}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css" integrity="sha512-mtXspRdOWHCYp+f4c7CkWGYPPRAhq9X+xCvJMUBVAb6pqA4U8pxhT3RWT3LP3bKbiolYL2CkL1bSKZZO4eeTew==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"/>
-{{end}}
-
-{{ define "extra-js" }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" integrity="sha512-bgHRAiTjGrzHzLyKOnpFvaEpGzJet3z4tZnXGjpsCcqOnAH6VGUx9frc5bcIhKTVLEiCO6vEhNAgx5jtLUYrfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<script>
-    hljs.addPlugin(new CopyButtonPlugin());
-    hljs.highlightAll();
-    hljs.initLineNumbersOnLoad();
-</script>
-<script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
-    
-    let mermaidConfig = {
-    startOnLoad: true,
-    "theme": "base",
-        "themeVariables": {
-            "primaryColor": "#ffde59",
-            "primaryTextColor": "#d14b3b",
-            "primaryBorderColor": "#7C0000",
-            "lineColor": "#F8B229",
-            "secondaryColor": "#fff",
-            "tertiaryColor": "#d14b3b"
-        }
-    }
-    mermaid.initialize(mermaidConfig, '.language-mermaid');
-</script>
-{{ if .Params.video}}
-  <script src="/js/youtube-api.js"></script>
-{{end}}
-{{ end }}
-
-
-
-{{/*End of extra files*/}}
-
-
 {{ define "main" }}
-{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Blog") }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Params.title) }}
 <section class="section">
+    <a class="btn btn-secondary my-2" href="/projects">&larr; Go back to Project Showcase</a>
+
     {{ if .Params.image }}
-        <img class="card-img-top large-image blog-hero-image" src="{{ .Params.image }}">
+        <img class="card-img-top" src="{{ .Params.image }}">
     {{ end }}
 
     {{ if .Params.video}}
@@ -147,135 +36,10 @@
             <div class="card no-background">
                 <div class="card-body">
                         <h1 class="card-title">{{ .Params.title }}</h1>  
-                        <h3 style="font-size:1em;color:#787878;">{{ .Params.subtitle }}</h3>  
-                        <a class="btn btn-secondary my-2" href="/blog">&larr; Go back to blog</a>
-                            {{ if and (le (sub (.Params.Date.Year) (now.Year)) -3) (not .Params.excludeTOC)}}
-                                <h5 class="text-warning text-uppercase">Please be warned this article is older than 3 years, details may have changed</h5>
-                            {{end}}
-                            <div id="article-info" class="card"> 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="card-body">
-                                        {{ if not .Params.excludeTOC }}
-                                        <h3>Table of Contents</h3>
-                                            {{ .TableOfContents}}
-                                        {{else }}
-                                        <p class="card-text">
-                                            <i class="bi bi-calendar2-week-fill"></i> <time>{{ .Params.date.Format "Monday, Jan 2, 2006" }}</time>
-                                            {{ if .Params.modified_date }}
-                                            Modified <time>{{ .Params.modified_date.Format "Monday, Jan 2, 2006" }}</time>
-                                            {{end}}
-                                        </p>
-                                        <p class="card-text">
-                                            {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
-                                            <i class="bi bi-stopwatch-fill"></i><em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
-                                            {{ end }}
-                                            {{if .Params.tags }}
-                                            <br>
-                                            <em><i class="bi bi-tags-fill"></i></em>
-                                            {{ $tagLength := len (.Params.tags)}}
-                                                
-                                            {{- range $index, $currentTag := .Params.tags }}
-
-                                                {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
-                                                        <a href="{{ .Permalink }}">{{ .Params.Title }}</a>{{ if and (gt $tagLength 1) (lt $index (sub $tagLength 1))}},{{end}}
-        
-                                                {{ end }}
-                                            {{ end }}
-                                        </p>
-                                            {{ end }}
-                                        {{end}}
-                                        </p>
-                                    </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-body">
-                                            
-
-                                            {{ if not .Params.excludeTOC }}
-                                            <p class="card-text">
-                                            <i class="bi bi-calendar2-week-fill"></i> <time>{{ .Params.date.Format "Monday, Jan 2, 2006" }}</time>
-                                            </p>
-                                            <p class="card-text">
-                                            {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
-                                            <i class="bi bi-stopwatch-fill"></i><em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
-                                            {{ end }}
-                                            {{if .Params.tags }}
-                                            <br>
-                                            <em><i class="bi bi-tags-fill"></i></em>
-                                                {{ $tagLength := (len .Params.tags)}}
-                                                
-                                                {{- range $index, $currentTag := .Params.tags }}
-                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
-                                                            <a href="{{ .Permalink }}">{{ .Params.Title }}</a>{{ if and (gt $tagLength 1) (lt $index (sub $tagLength 1))}},{{end}}
-    
-                                                    {{ end }}
-                                                {{ end }}</p>
-                                            {{ end }}
-                                        {{end}}
-
-
-                                            {{ if .Params.authors }}
-                                            <h4>Author(s) information</h4>
-                                            <div id="author-information">
-
-                                            {{ $authorLength := (len .Params.authors)}}
-                                            {{- range $index, $currentAuthor := .Params.authors }}
-                                                {{ if  gt $authorLength 1 }}
-                                            {{ if eq $index 0}}
-                                            <div class="row">
-                                            {{ end }}
-                                                <div class="col">
-                                                {{end }}
-                                            {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-                                                
-                                                <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
-                                                {{if not .Params.avatar }}
-                                                <img width="100rem" src="https://api.dicebear.com/5.0/identicon/svg?seed={{ .Params.name }}" alt="">
-                                                {{ else }}
-                                                <img width="100rem" src="{{.Params.avatar}}" alt="">
-                                                {{end}}
-                                                </a>
-                                                <h6 class="card-title"><a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer"><br>{{ .Params.name }}</a></h6>
-                                                    <div id="author-icons">
-                                                        {{ if .Params.email }}
-                                                        <a href="mailto:{{.Params.email }}" ><i class="bi bi-envelope-fill"></i></a>
-                                                        {{ end }}
-                                                        {{ if .Params.github }}
-                                                        <a href="https://github.com/{{.Params.github }}" target="_blank"><i class="bi bi-github"></i></a>
-                                                        {{ end }}
-                                                        {{ if .Params.linkedin }}
-                                                        <a href="https://linkedin.com/in/{{.Params.linkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>
-                                                        {{ end }}
-                                                        {{ if .Params.website }}
-                                                        <a href="{{ .Params.website }}" target="_blank"><i class="bi bi-globe"></i></a>
-                                                        {{ end }}
-                                                    </div>
-                                                    <div class="text-primary" style="max-width:40ch;">
-                                                        
-                                                    {{  .Content }}
-                                                    </div>
-                                                {{ if  gt $authorLength 1 }}
-                                                </div>
-                                                    {{ if eq $index (sub $authorLength 1) }}
-                                                    </div>
-                                                    {{end}}
-                                                {{end }}
-                                                
-                                            {{ end }}
-
-                                            {{ end }}
-                                        </div>
-                                        </div>
-
-                                        {{ end }}
-                                        
-                                    </div>
-
-                                </div>
+                        <h3 style="font-size:1em;color:#787878;">Created by: {{ .Params.creators }}</h3>  
+                           
                         </div>
-                        </div>
-                    <hr>
+                    <!-- <hr> -->
                     <div class="card-text blog-text"> 
                         
                         {{ .Content }} 
@@ -283,15 +47,6 @@
 
                     </div>
 
-                    <div class="card text-center">
-                        <div class="share-icons">
-                            <h2>Share the article</h2>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank"><i class="bi bi-facebook"></i></a>
-                            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink }}" target="_blank"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20post%20from%20schulich%20ignite%3A%0A{{ .Permalink }}" target="_blank"><i class="bi bi-twitter"></i></a>
-                        </div>
-                        <a href="/blog/index.xml" target="_blank" class="p-3">or subscribe to the blog with RSS <i class="bi bi-rss-fill"></i></a>
-                    </div>
                 </div>
             </div>
         </div>
