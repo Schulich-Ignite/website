@@ -3,8 +3,7 @@ title: Classes and Objects (C++)
 date: 2023-03-20T00:00:00-06:00
 modified_date: 2023-01-19T00:00:00-06:00
 image: /img/blog/cookie-cutter.jpg
-creators: 
-- Cole Pawliw
+creators: Cole Pawliw
 difficulty: Flare
 ---
 
