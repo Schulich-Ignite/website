@@ -9678,6 +9678,8 @@ a:focus.btn.btn-primary {
   align-items: center;
   flex-direction: column;
 
+  border-radius: calc(0.25rem - 1px);
+
   /* transition effect*/
   transition: opacity .2s, visibility .2s;
 }
