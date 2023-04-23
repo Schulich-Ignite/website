@@ -9698,3 +9698,9 @@ h3.card-project-title {
   width: 100%;
   height: 300px;
 }
+
+.projects-pill {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1em;
+  margin-right: 0.5rem;
+}
