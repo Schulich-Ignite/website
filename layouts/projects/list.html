@@ -1,7 +1,6 @@
 {{ define "main" }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Project Showcase") }}
 
-<!-- {{ partial "nav-pills.html" }} -->
 <ul class="nav mr-5 nav-pills justify-content-end" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active btn projects-pill" id="pills-beginner-tab" data-bs-toggle="pill" data-bs-target="#pills-beginner" type="button" role="tab" aria-controls="pills-beginner" aria-selected="true">Beginner</button>
@@ -20,7 +19,8 @@
         <section class="section" id="projects">
             <div class="container">
                 <div class="row">
-                    {{ partial "projects-feed.html" .}}
+                    {{/* {{ partial "projects-feed.html" (dict "difficulty" "Beginner")}} */}}
+                    {{ partial "projects-feed.html" . }}
                 </div>
             </div>
         </section>
@@ -28,14 +28,6 @@
     <div class="tab-pane fade" id="pills-flare" role="tabpanel" aria-labelledby="pills-flare-tab">noooo</div>
     <div class="tab-pane fade" id="pills-scorch" role="tabpanel" aria-labelledby="pills-scorch-tab">not owkring :(</div>
   </div>
-
-<!-- <section class="section" id="projects">
-    <div class="container">
-        <div class="row">
-            {{ partial "projects-feed.html" .}}
-        </div>
-    </div>
-</section> -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 {{ end }}
