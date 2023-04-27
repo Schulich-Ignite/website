@@ -2,7 +2,7 @@
 title: Making categories simpler
 subtitle: Taxonomies, and how to use them
 date: 2023-04-24T00:00:00-06:00
-modified_date: 2023-04-24T00:00:00-06:00
+modified_date: 2023-04-27T00:00:00-06:00
 image: /img/blog/taxonomies.png
 authors: 
   - Kieran Wood
@@ -22,21 +22,21 @@ The whole reason we categorize things is to make it easy to find things that are
 
 Since we don't want to waste people's time we go back to the question of how to organize things into a system that is useful. Luckily there are some common terms, and ways of managing this complexity. In particular their is **taxonomical structuring/ordering** (this is simpler than it sounds).
 
-## What is a Heirarchy?
+## What is a Hierarchy?
 
-Basically this is just a fancy name for a structure that shows categories that are related in some way to all of the categories beneath them.  For example when talking about a location you might have a hierarchy that looks like this:
+A hierarchy is just a fancy name for a structure that shows categories that are related in some way to all of the categories beneath them.  For example when talking about a location you might have a hierarchy that looks like this:
 
 <pre class="mermaid">
 flowchart TD
     a{Continent} & b{Country} & c{Province} & d{City}
-    a --> b -->c --> d
+    a --contains--> b --contains-->c --contains--> d
 </pre>
 
 Where the overall category is A location from there you have continents, which contain countries, which contain provinces, which contain cities. 
 
 ## What is a taxonomy?
 
-A taxonomy is easiest to think of as a set of categories. They can be structured hierarchically, and allow you to organize your data effectively. You can also use them without the hierarchy, this is handy for simple relationships (like tags in a blog).
+A taxonomy is easiest to think of as a set of categories. They can be structured hierarchically, and allow you to organize your data effectively. They are useful when developing apps because they are [recursively defined](https://realpython.com/python-thinking-recursively/). This is just a fancy way of saying that a taxonomy can contain other taxonomies. This is useful because it means that you can easily gather all the data in a hierarchy from any place above or at the taxonomy you're looking for.
 
 Within a taxonomy you have terms, terms then have: 
 
@@ -44,11 +44,9 @@ Within a taxonomy you have terms, terms then have:
 
 - a child (optional); A term that the current term "belongs to" or "owns" (i.e. A province "owns" a city)
 
-- entries/data/nodes; These are the actual entries for the terms (i.e. Calgary is a city, and therefore a node of the city taxonomy term)
+- entries/data/nodes; These are the actual entries for the terms (i.e. Calgary is a city, and therefore a node of the city taxonomy term). Typically these are references to whatever form the data exists in. For example if there's a class representing a city, then this would be a reference to it (i.e. the term would have a list [or single reference] of objects/class instances of data associated with the term). Some taxonomy systems just make the data part of the terms.
 
-So the taxonomy is the **template/schema** for how the data is structured, and then **terms** are the actual "categories" of the taxonomy, then **nodes** are where data lives. 
-
-Here is what the example from earlier might look like:
+So the taxonomy is the **template/schema** for how the data is structured, and then **terms** are the actual "categories" of the taxonomy, then **nodes** are where data lives. Here is what the example from earlier might look like:
 
 <pre class="mermaid">
 flowchart TD
@@ -59,7 +57,7 @@ flowchart TD
     e <--Belongs to--> i((Calgary))
 </pre>
 
-In **all diagrams** from here on out:
+In all diagrams **from here on out**:
 
 - anything in a **hexagon is a taxonomy**
 
@@ -69,22 +67,32 @@ In **all diagrams** from here on out:
 
 - The arrows are **the relationship**
 
-You can also consider any terms/nodes that are children in a taxonomy to be "owned" by the taxonomy higher than them. You can then have more detailed examples that make it clear who manages who:
+You can also consider any terms/nodes that are children in a taxonomy to be "owned" by the taxonomy higher than them. You can then have more detailed examples that make it clear what taxonomy contains the others:
 
 <pre class="mermaid">
 flowchart TD
-    AA((North America)) & a((Canada)) & b((Alberta)) & c((Calgary))
+    AA{North America} & a{Canada} & b{Alberta} & c((Calgary))
     AA --Is part of--> a
     a --Is part of--> b --Is part of--> c
 </pre>
 
-From this we can see that Alberta and British Columbia are part of Canada. Since they are linked as parent/child relationships we can go from any in either direction. So I can find out which province Calgary is in by checking the parent of that node, and I can check what cities are in British Columbia by checking the children of that node. 
 
-I can then also find any node so long as they have 1 thing in common. So for example because Calgary and Kelowna are both in Canada I can find them from each other by going two parents up and then down two children. For example to find Kelowna from Calgary I can go to Calgary's parent (Alberta), then to it's parent (Canada), then to that nodes child (British Columbia), and then finally to Kelowna:
+From the taxonomy tree below we can see that Alberta and British Columbia are part of Canada. Since they are linked as parent/child relationships we can go from any in either direction. So I can find out which province Calgary is in by checking the parent of that node, and I can check what cities are in British Columbia by checking the children of that node. 
 
 <pre class="mermaid">
 flowchart TD
-    a((Canada)) & b((Alberta)) & c((Calgary)) & d((British Columbia)) & e((Kelowna))
+    AA{North America} & a{Canada} & b{Alberta} & c((Calgary)) & d{British Columbia} & e((Kelowna)) & f((Revelstoke))
+    AA --> a
+    a--> b & d
+    b--> c
+    d --> e & f
+</pre>
+
+I can then also find any node so long as they have 1 term in common. So for example because Calgary and Kelowna are both in Canada (called ancestors) I can find them from each other by going two parents up and then down two children. 
+
+<pre class="mermaid">
+flowchart TD
+    a{Canada} & b{Alberta} & c((Calgary)) & d{British Columbia} & e((Kelowna))
 
     c --parent--> b
     b --parent--> a
@@ -92,11 +100,31 @@ flowchart TD
     a --child--> d
 </pre>
 
+This is the path to find Kelowna from Calgary; I can go to Calgary's parent (Alberta), then to it's parent (Canada), then to that nodes child (British Columbia), and then finally to Kelowna.
+
+### Other ways of organizing taxonomies
+
+You can also use taxonomies without the hierarchy, this is handy for simple relationships (like [tags in a blog](#tags-on-this-blog)), but generally should be avoided since there are better solutions for simpler relationships than taxonomies.
+
+Additionally some taxonomy systems combine nodes & terms. In these systems the data is not a separate thing, and instead the terms themselves will contain information. This is useful in situations like the location information above since as we currently have it we can't store information about anything other than cities. If we instead allowed our taxonomy terms to also store the data then we could have data at every level of the hierarchy.
+
 ## How this works in code
 
 Since this is a bit more complicated of a topic I have created an example [repo](https://github.com/Descent098/taxonomies) with all the code necessary to see how this concept works in practice. 
 
-The examples in this article **will not run** in python. They have been simplified to make it easier to read. Look at the example [repo](https://github.com/Descent098/taxonomies) for a working implementation. A basic layout of a taxonomy system would look like this:
+The examples in this article **will not run** in python. They have been simplified to make it easier to read. Additionally if you have never heard of [type hints](https://docs.python.org/3/library/typing.html), they are used to define what data type each of the variables/attributes should be. For example a string variable called name would look like this:
+
+```python
+name:str
+```
+
+And if the variable can be empty inside a class there is a | and then the other option for the type. So `str | None` would mean the variable could be a string, or a `None` like this:
+
+```python
+name: str|None
+```
+
+Feel free to look at the example [repo](https://github.com/Descent098/taxonomies) for a working implementation. A basic template of a taxonomy system would look like this:
 
 ```python
 class Term: 
@@ -108,9 +136,7 @@ class Node:
   term: Term | list[Term] | None
 ```
 
-The term class represents any sort of taxonomy term, and the Node class represents any sort of node you can think of.  For each of the attributes they can either be lists, single instances, or `None`. The reason for this is that some relationships can overlap, while others should only have 1. A blog post might have multiple categories, but a person wouldn't have multiple parents. Use whichever makes sense
-
-A more concrete example can be found below.
+The term class represents any sort of taxonomy term, and the Node class represents any sort of node you can think of.  For each of the attributes they can either be lists, single instances, or `None`. The reason for this is that some relationships can overlap, while others should only have 1. A blog post might have multiple categories, but a person wouldn't have multiple biological mothers. Use whichever makes sense.
 
 ### Online store
 
@@ -137,7 +163,7 @@ From this we can write functions that will get data we need those functions incl
 
 - `Category.add_child(category:Category)`: A method to add a child to the list of children
 
-- `Category.add_procut(product:Product)`: A method to add a child to the list of products
+- `Category.add_product(product:Product)`: A method to add a child to the list of products
 
 - `Category.get_products()->list[Product]`: Returns a list of all the products associated with a category, and all of it's children
 
@@ -149,7 +175,7 @@ laptops = Category("Laptops", [computers], [apple_laptops, windows_laptops], [la
 laptops.get_products()
 ```
 
-This means with 1 function call we get all the `Product`'s in the `laptops` object, and all the `Product`'s in the `apple_laptops` and `windows_laptops` `Category`'s!
+This means with 1 function call we get all the `Product`'s in the `laptops` object, and all the `Product`'s in the `apple_laptops` and `windows_laptops` `Category`'s! We were able to get every value in the taxonomy in one go!
 
 ## Advantages of taxonomies
 
@@ -186,7 +212,26 @@ flowchart TD
 
 </pre>
 
-### Tags & Authors on this blog
+### Tags on this blog
+
+For the ignite blog we have a tagging system used to categorize our posts. You can see all our tags [here](https://schulichignite.com/tags). In this case the terms are the tags, and the nodes are the pages for the blog posts.
+
+Since there is no hierarchy (no tags nested under other tags), this could be implemented in simpler code:
+
+```python
+class Tag:
+    name: str
+    posts: list[Post] | None
+
+class Post:
+    title: str
+    subtitle: str
+    tags: list[Tag]|None
+    content: str
+    url: str
+```
+
+Since there is only a single layer of tags that lead straight to the content we don't need any of the parent/child relationships. Down the road if we did need them, we just need to add those two fields back into the `Tag` class. Here is an example of what this would look like with 3 articles from the blog ([How to cheat at CSS](https://schulichignite.com/blog/how-to-cheat-at-css/), [The dangers of CDN's](https://schulichignite.com/blog/dangers-of-cdns/), and [Stealing like a developer](https://schulichignite.com/blog/stealing-like-a-developer/)):
 
 <pre class="mermaid">
 flowchart TD
@@ -252,7 +297,33 @@ flowchart TD
 
 In this case since you know you are going to go alphabetically, it's worthwhile to have each person be filed under the first letter of their name within their role. This has a few performance advantages in many cases. For example let's say you had 200 managers, and only 15 start with the letter b. If you know someone is looking for a manager starting with b you have cut out 185 other possible search terms in the worst case.
 
-Now imagine you do this with something like news posts, instead of letters you might add which year something was published to the taxonomy. If you posted 3 stories a day for the last 10 years (10,950 stories), and someone wants a particular story about a crime in 2013 (let's say there were 85 of those), you have cut down the search space from 10,950 to 85 (99.3% reduction).
+Now imagine you do this with something like news posts, instead of letters you might add which year something was published to the taxonomy, then categorize each of the tags under the year. 
+
+<pre class="mermaid">
+flowchart TD
+    AA{{stories}} & a{2013} & b{...} & c{2023} & d{Crime}
+    AA --> a & b & c
+    a -->d & e{tech} & f{finance} & g{...} & h{politics}
+    c -->dd{Crime} & ee{tech} & ff{finance} & gg{...} & hh{politics}
+    d & e & f --> Q((Man robs atm with fork))
+    d & h & e --> A((Voting rigged, or counting is hard))
+    dd & hh & ee & ff --> QQ((...))
+    dd & ee --> AAA((...))
+</pre>
+
+You only have to look at a small portion of the overall taxonomy to find what you want. If you posted 3 articles a day for the last 10 years (10,950 articles), and someone wants a particular articles about a crime in 2013 (let's say there were 85 of those), you have cut down the search space from 10,950 articles to 85 articles (99.3% reduction). In our case we only need the 2013 term, and from that term we only need the crime term:
+
+<pre class="mermaid">
+flowchart TD
+    AA{{stories}} & a{2013} & d{Crime}
+    AA --> a
+    a -->d 
+    d --> Q((Man robs atm with fork))
+    d --> A((Voting rigged, or counting is hard))
+</pre>
+
+This means we can skip every story under 2014-2023, and every story inside 2013 that does not have the crime tag! 
+
 
 ## References
 
