@@ -1,42 +1,58 @@
 {{ define "main" }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Params.title) }}
 <section class="section">
-    <a class="btn btn-secondary my-2" href="/projects">&larr; Go back to Project Showcase</a>
-
     {{ if .Params.image }}
-        <img class="card-img-top" src="{{ .Params.image }}">
+    <div>
+        <a class="btn btn-secondary my-2 ml-5" href="/projects">&larr; Go back to Project Showcase</a>
+    </div>
     {{ end }}
 
-    {{ if .Params.video}}
-    <a href="#play-blog-video" data-toggle="modal" data-target="#play-blog-video" style="z-index:100">
-    <section class="section blog-video">
-    </section>
-    </a>
-    <div id="play-blog-video" class="modal fade">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <div id="videoLink" style="display: none">https://youtu.be/{{.Params.video}}</div>
-                        <div id="infoVideoPlayer"></div>
-                        
+    <div class="container">
+        <img class="single-project-img" src="{{ .Params.image }}">
+
+        {{ if .Params.video }}
+        <a href="#play-blog-video" data-toggle="modal" data-target="#play-blog-video" style="z-index:100">
+        <section class="section blog-video">
+        </section>
+        </a>
+        <div id="play-blog-video" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <div id="videoLink" style="display: none">https://youtu.be/{{.Params.video}}</div>
+                            <div id="infoVideoPlayer"></div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        {{end}}
     </div>
-    {{end}}
-    
 
     <div class="container" >
         <div class="row">
             <div class="card no-background">
                 <div class="card-body">
                         <h1 class="card-title">{{ .Params.title }}</h1>  
-                        <h3 style="font-size:1em;color:#787878;">Created by: {{ .Params.creators }}</h3>  
+                        <h3 style="font-size:1em;color:#787878;">
+                            Created by: 
+                            {{ range $index, $name := .Params.authors }}
+                                {{- "" -}}    
+                                {{ if ne $index 0 }}
+                                    {{- "" -}}{{ "," }}
+                                {{ end }}
+                                {{ $name }}{{- "" -}}
+                            {{ end }}
+                        </h3>  
+
+                        
+
+                        
                            
                         </div>
                     <!-- <hr> -->
