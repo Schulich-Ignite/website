@@ -1,6 +1,6 @@
 ---
-title: Classes and Objects (C++)
-date: 2023-03-20T00:00:00-06:00
+title: Test2
+date: 2023-03-25T00:00:00-06:00
 image: /img/blog/cookie-cutter.jpg
 authors: 
 - Bob the Builder

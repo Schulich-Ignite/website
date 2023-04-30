@@ -1,5 +1,5 @@
 ---
-title: Classes and Objects (C++)
+title: Test1
 date: 2023-03-20T00:00:00-06:00
 image: /img/blog/cookie-cutter.jpg
 authors: 
@@ -8,7 +8,7 @@ tags:
   - c++
   - c
   - low-level
-difficulty: Beginner
+difficulty: Flare
 ---
 
 There are many classes that have been defined in libraries that you might be using and not even realize. Strings, vectors, arraylists, as well as many other variables are all examples of classes.
