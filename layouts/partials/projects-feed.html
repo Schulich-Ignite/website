@@ -1,15 +1,14 @@
-
-{{ range (where .Data.Pages ".Params.difficulty" "==" "Beginner") }}
-    {{ if (.Params.image) }}
+{{ if eq .context.Params.difficulty .difficulty }}
+    {{ if (.context.Params.image) }}
 
     <div class="col-lg-4 spaced-col mb-4">
         <div class="card projects-card">
-            <div id="img-wrap">
-                <a href="{{ .Permalink }}">
-                    <img class="card-img med-image projects-img" src="{{ .Params.image }}" alt="{{.Params.title}} | {{ .Params.image_alt }}">
+            <div class="img-wrap">
+                <a href="{{ .context.Permalink }}">
+                    <img class="card-img med-image projects-img" src="{{ .context.Params.image }}" alt="{{ .context.Params.title }} | {{ .context.Params.image_alt }}">
 
                     <div class="card-img-overlay projects-overlay">
-                        <h3 class="card-project-title">{{ .Params.title }}</h3>
+                        <h3 class="card-project-title">{{ .context.Params.title }}</h3>
                     </div>
                 </a>
             </div>
@@ -17,4 +16,3 @@
     </div>
     {{ end }}
 {{ end }}
-
