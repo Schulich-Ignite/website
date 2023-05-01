@@ -1,14 +1,14 @@
 {{ define "main" }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Params.title) }}
 <section class="section">
-    {{ if .Params.image }}
     <div>
         <a class="btn btn-secondary my-2 ml-5" href="/projects">&larr; Go back to Project Showcase</a>
     </div>
-    {{ end }}
 
     <div class="container">
+        {{ if .Params.image }}
         <img class="single-project-img" src="{{ .Params.image }}">
+        {{ end }}
 
         {{ if .Params.video }}
         <a href="#play-blog-video" data-toggle="modal" data-target="#play-blog-video" style="z-index:100">
@@ -48,16 +48,10 @@
                                 {{ end }}
                                 {{ $name }}{{- "" -}}
                             {{ end }}
-                        </h3>  
-
-                        
+                        </h3>    
                            
-                    <!-- <hr> -->
                     <div class="card-text blog-text"> 
-                        
                         {{ .Content }} 
-
-
                     </div>
 
                 </div>
