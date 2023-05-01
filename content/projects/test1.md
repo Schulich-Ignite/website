@@ -3,12 +3,8 @@ title: Rainbow Road
 date: 2023-03-20T00:00:00-06:00
 image: /img/projects/beginner-1.gif
 image_alt: Rainbow dots appearing following the mouse's path
-authors:
-- xxx
-- nina
 tags: 
 - python
-link: https://trinket.io/python/75b5d19b10
 difficulty: Beginner
 ---
 
