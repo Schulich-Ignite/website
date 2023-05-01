@@ -8,7 +8,7 @@ authors:
 - nina
 tags: 
 - python
-link: www.google.ca 
+link: https://trinket.io/python/75b5d19b10
 difficulty: Beginner
 ---
 
