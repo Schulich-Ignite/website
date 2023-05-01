@@ -38,22 +38,25 @@
         <div class="row">
             <div class="card no-background">
                 <div class="card-body">
-                        <h1 class="card-title">{{ .Params.title }}</h1>  
-                        <h3 style="font-size:1em;color:#787878;">
-                            Created by: 
-                            {{ range $index, $name := .Params.authors }}
-                                {{- "" -}}    
-                                {{ if ne $index 0 }}
-                                    {{- "" -}}{{ "," }}
-                                {{ end }}
-                                {{ $name }}{{- "" -}}
+                    <h1 class="card-title">{{ .Params.title }}</h1>  
+                    <h3 style="font-size:1em;color:#787878;">
+                        Created by: 
+                        {{ range $index, $name := .Params.authors }}
+                            {{- "" -}}    
+                            {{ if ne $index 0 }}
+                                {{- "" -}}{{ "," }}
                             {{ end }}
-                        </h3>    
+                            {{ $name }}{{- "" -}}
+                        {{ end }}
+                    </h3>    
                            
                     <div class="card-text blog-text"> 
                         {{ .Content }} 
                     </div>
 
+                    {{ if .Params.link }}
+                    <a class="btn btn-secondary my-4" href="{{ .Params.link }}" target="_blank" rel="noopener noreferrer">View Project Code</a>
+                    {{ end }}
                 </div>
             </div>
         </div>
