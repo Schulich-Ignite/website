@@ -48,7 +48,8 @@
         <div class="row">
             <div class="card no-background">
                 <div class="card-body">
-                    <h1 class="card-title">{{ .Params.title }}</h1>  
+                    <h1 class="card-title">{{ .Params.title }}</h1> 
+                    {{ if .Params.authors }} 
                     <h3 style="font-size:1em;color:#787878;">
                         Created by: 
                         {{ range $index, $name := .Params.authors }}
@@ -58,7 +59,8 @@
                             {{ end }}
                             {{ $name }}{{- "" -}}
                         {{ end }}
-                    </h3>    
+                    </h3>  
+                    {{ end }}  
                            
                     <div class="card-text blog-text"> 
                         {{ .Content }} 
