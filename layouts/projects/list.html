@@ -22,7 +22,7 @@
           <div class="container">
               <div class="row">
                 {{ range (where (where .Site.Pages.ByDate "Type" "projects").Reverse "Params.difficulty" "Beginner") }}
-                    {{ partial "projects-feed.html" (dict "context" . "difficulty" "Beginner") }}
+                    {{ partial "projects-feed.html" . }}
                 {{ else }}
                     <h3>No projects yet!</h3>                
                 {{ end }}
@@ -35,7 +35,7 @@
       <div class="container">
           <div class="row">
             {{ range (where (where .Site.Pages.ByDate "Type" "projects").Reverse "Params.difficulty" "Flare") }}
-                {{ partial "projects-feed.html" (dict "context" . "difficulty" "Flare") }}
+                {{ partial "projects-feed.html" . }}
             {{ else }}
                 <h3>No projects yet!</h3>
             {{ end }}
@@ -48,7 +48,7 @@
       <div class="container">
           <div class="row">
             {{ range (where (where .Site.Pages.ByDate "Type" "projects").Reverse "Params.difficulty" "Scorch") }}
-                {{ partial "projects-feed.html" (dict "context" . "difficulty" "Scorch") }}
+                {{ partial "projects-feed.html" . }}
             {{ else }}
                 <h3>No projects yet!</h3>
             {{ end }}
