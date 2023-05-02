@@ -22,6 +22,7 @@
       - [Index/Home](#indexhome)
       - [Sessions](#sessions)
       - [Blog](#blog-1)
+      - [Project Showcase](#project-showcase1)
       - [Contact](#contact-1)
       - [Building on a Schedule](#building-on-a-schedule)
       - [FAQ's](#faqs-1)
@@ -428,6 +429,13 @@ Can be accessed with:
     {{ end }}
 {{ end }}
 ```
+
+#### Project Showcase
+
+The content for the project showcase can be found in ```content/projects```. There are a number of layouts for the blog system:
+1. The single layout; This is what shows up when you navigate to an individual post (```schulichignite.com/projects/<project file name>```), and can be found in ```layouts/projects/single.html```
+2. The list layout; This is a dedicated page that shows **ALL** projects under their appropriate difficulty tab. It is what shows up on ```schulichignite.com/projects``` and the layout can be found in ```layouts/projects/list.html```.
+3. The Feed; This is the feed that pulls in the news articles into a lists. It can be used in various places on the site and is typically invoked in a template using ```{{ partial "projects-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/projects-feed.html```.
 
 
 #### Contact
