@@ -7,6 +7,7 @@
     - [Site Variables](#site-variables)
     - [Homepage](#homepage)
     - [Blog](#blog)
+    - [Project Showcase](#project-showcase)
     - [Beginner / Flare / IndigeSteam](#beginner--flare--indigesteam)
     - [Gallery](#gallery)
     - [Mission](#mission)
@@ -205,6 +206,38 @@ graph TD
 (if you can't see the graph head [here](https://mermaid.live/edit#pako:eNp1kc1OwzAQhF9l5QsgNangmAMSbcoRpNJKSKQHE29i09oO67VQ1fTdcRL1wo8Plq2Z_TRjn0TtFYpCtCQ7DZuycpDWw1sji0ZmMSDBNm07yLL7_jaHNX5GDAyNOWAPi2vN3IViPjetM4xZrVxeezsf5Pwj3Ey4xTANy1_QSV2O7LscFuS_Bo3lHgOwRtisXjczeI8MymNwVwzr7dOoDLF7KE9aBm1cC_LQejKs7XmCliP0OXKXhgcTWMm1TlzjGNtkPfaw-pmoAIoujPDdf5xLkpHXw-MfDGQ6gk9FdGoESORpJ2bCIllpVHrt0wCvRCpisRJFOipJ-0pU7px8sVOScaUMexIFU8SZkJH9y9HVl_vkKY1MH2dFCnAIeP4Gh6ObgA))
 
 Inline in your markdown (you cannot use standard code fences)
+
+### Project Showcase
+
+New projects can be added in ```content/projects``` and existing projects can be edited at ```content/projects```. The format is:
+
+```markdown
+---
+title: "This is the project title"
+date: 2020-07-08T15:04:38-07:00
+image: "/img/projects/image-name.png"
+image_alt: Image alt text
+authors:
+- Chantae Ho
+video: XoQvbDROucQ
+tags:
+  - python
+link: https://trinket.io/python/6b57e7810f
+difficulty: Beginner
+---
+
+Enter project post content here.
+```
+
+#### Fields
+- Date: Required. Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and the T splits the date from the time.
+- Image: Required. Specify an image to display for the project. If you do not choose an image, your project will not appear in the /projects/ page. 
+- Image_alt: Optional, but recommended. Alt text for the image, to be read by screen readers. This can be 1-2 sentences long.
+- Authors: Optional, a list of the authors for the content
+- Video: Optional, A youtube video id (for example https://www.youtube.com/watch?v=XoQvbDROucQ would be everything after `watch?v=` or `XoQvbDROucQ` in this case)
+- Tags: Optional, is a list of tags
+- Link: Optional, is a link to the project source code. This link should be publically accessible. The link should the entire url, including the https:// part. 
+- Difficulty: Required. This should be Beginner/Flare/Scorch, depending on the skill level required to complete the project. 
 
 ### Beginner / Flare / IndigeSteam
 
