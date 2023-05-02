@@ -21,9 +21,11 @@
       <section class="section projects">
           <div class="container">
               <div class="row">
-                  {{ range (where .Site.Pages.ByDate "Type" "projects").Reverse }}
-                      {{ partial "projects-feed.html" (dict "context" . "difficulty" "Beginner") }}
-                  {{ end }}
+                {{ range (where (where .Site.Pages.ByDate "Type" "projects").Reverse "Params.difficulty" "Beginner") }}
+                    {{ partial "projects-feed.html" (dict "context" . "difficulty" "Beginner") }}
+                {{ else }}
+                    <h3>No projects yet!</h3>                
+                {{ end }}
               </div>
           </div>
       </section>
@@ -32,9 +34,11 @@
     <section class="section projects">
       <div class="container">
           <div class="row">
-              {{ range (where .Site.Pages.ByDate "Type" "projects").Reverse }}
-                  {{ partial "projects-feed.html" (dict "context" . "difficulty" "Flare") }}
-              {{ end }}
+            {{ range (where (where .Site.Pages.ByDate "Type" "projects").Reverse "Params.difficulty" "Flare") }}
+                {{ partial "projects-feed.html" (dict "context" . "difficulty" "Flare") }}
+            {{ else }}
+                <h3>No projects yet!</h3>
+            {{ end }}
           </div>
       </div>
   </section>
@@ -43,9 +47,11 @@
     <section class="section projects">
       <div class="container">
           <div class="row">
-              {{ range (where .Site.Pages.ByDate "Type" "projects").Reverse }}
-                  {{ partial "projects-feed.html" (dict "context" . "difficulty" "Scorch") }}
-              {{ end }}
+            {{ range (where (where .Site.Pages.ByDate "Type" "projects").Reverse "Params.difficulty" "Scorch") }}
+                {{ partial "projects-feed.html" (dict "context" . "difficulty" "Scorch") }}
+            {{ else }}
+                <h3>No projects yet!</h3>
+            {{ end }}
           </div>
       </div>
   </section>
