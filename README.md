@@ -22,7 +22,7 @@
       - [Index/Home](#indexhome)
       - [Sessions](#sessions)
       - [Blog](#blog-1)
-      - [Project Showcase](#project-showcase1)
+      - [Project Showcase](#project-showcase-1)
       - [Contact](#contact-1)
       - [Building on a Schedule](#building-on-a-schedule)
       - [FAQ's](#faqs-1)
