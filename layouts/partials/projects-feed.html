@@ -1,10 +1,9 @@
+<!-- Only include this content if the page difficulty matches the given difficulty param -->
 {{ if eq .context.Params.difficulty .difficulty }}
     {{ if (.context.Params.image) }}
-
     <div class="col-lg-4 spaced-col mb-4">
         <div class="card projects-card">
             <div class="img-wrap">
-                {{ if .context.Params.image }}
                 <a href="{{ .context.Permalink }}">
                     <img class="card-img med-image projects-img" src="{{ .context.Params.image }}" alt="{{ .context.Params.title }} | {{ .context.Params.image_alt }}">
 
@@ -12,7 +11,6 @@
                         <h3 class="card-project-title">{{ .context.Params.title }}</h3>
                     </div>
                 </a>
-                {{ end }}
             </div>
         </div>
     </div>
