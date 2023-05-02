@@ -15,7 +15,7 @@
         {{ if .Params.image }}
         <span>
             <a href="{{ .Params.image }}" data-toggle="lightbox">
-                <img class="single-project-img rounded" src="{{ .Params.image }}" srcset="">
+                <img class="single-project-img rounded" src="{{ .Params.image }}" srcset="" alt="{{ .Params.title }} | {{ .Params.image_alt }}">
             </a>
         </span>
         {{ end }}
