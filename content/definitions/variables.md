@@ -69,8 +69,51 @@ let name = "Kieran" //Scoped
 name = "Kieran"     // Scoped
 ```
 
-In python you need to use the global keyword:
+In python this gets a bit more complicated you need to use the global keyword. When you use the global keyword in a function, it tells Python to look for the variable in the global scope instead of the local scope. This means that if you modify the value of a global variable inside a function, the change will be reflected in the global scope, and not just within the function. Take this example:
 
 ```python
-global name = "Kieran"
+count = 0
+
+def increment():
+    count += 1
+
+increment()
+print(count) # 1
 ```
+
+This code throws am error: `UnboundLocalError: local variable 'count' referenced before assignment`
+
+This is because `count` exists **outside** the function, which means it can't be accessed inside `increment()` because `increment()` only has access to variables that are inside the function. To get this to work we would need to do: 
+
+```python
+count = 0
+
+def increment():
+    global count # Code wouldn't run without this line
+    count += 1
+
+increment()
+print(count) # 1
+```
+
+Please note that (unfortunately) python does let you **read** global variables without scoping them, but not modify them. For example:
+
+```python
+name = "kieran"
+
+def print_name():
+    print(name)
+
+print_name()
+```
+
+#### Global variables are scary
+
+Using the global keyword in Python can be dangerous because it can lead to unexpected behavior and make code harder to understand and maintain. Here are some of the dangers of using global:
+
+1. **Name clashes**: If you use the same variable name both as a global and local variable, it can lead to unexpected behavior and errors.
+1. **Readability and maintainability**: Global variables can make it harder to understand the flow of the code and make it harder to maintain and modify the code in the future.
+1. **Debugging**: When debugging code that uses global variables, it can be difficult to trace where a value is being modified or accessed.
+1. **Side effects**: Global variables can have unintended side effects on other parts of the code, making it harder to reason about the behavior of the program.
+
+
