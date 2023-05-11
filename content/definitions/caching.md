@@ -16,6 +16,7 @@ prerequisites:
 - conditionals
 - collections
 - http
+draft: true
 ---
 Caching is the process of storing data temporarily in a cache so that it can be accessed quickly and efficiently. Caches are small, fast memory locations that store frequently used data, so that when that data is needed again, it can be accessed more quickly than if it had to be fetched from its original source.
 

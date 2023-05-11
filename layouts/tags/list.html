@@ -3,7 +3,6 @@
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Params.Title ) }}
 <nav aria-label="breadcrumb" class="mt-4 p-2" style="max-width:40%">
     <ol class="breadcrumb" style="background-color:transparent;">
-        
             <li class="breadcrumb-item text-primary" aria-current="page"><a href="/tags">Tags</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{.Params.Title}}</li>
     </ol>
@@ -11,21 +10,22 @@
 <section class="section">
     <div class="container">
         <div class="row ">
+            {{ if gt (len (where .Data.Pages.ByDate.Reverse "Section" "blog")) 0}}
             <div class="col-md-12">
                 <h2>{{ .Params.Title}} Articles</h2>
             </div>
+            {{end}}
             {{ partial "blog-feed.html" . }}
 
             {{ if gt (len (where .Data.Pages.ByDate.Reverse "Section" "definitions")) 0}}
             
-                <h2 class="col-md-12 text-center">{{ .Params.Title}} Definitions</h2>
+                <h2 class="col-md-12">{{ .Params.Title}} Related Definitions</h2>
 
-                <div class="mb-5">
+
                     
                     {{ range where .Data.Pages.ByDate.Reverse "Section" "definitions"}}
-                            <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer"><h4>{{ .Params.name }}</h4></a>
+                            <a class="m-3" href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer"><h4>{{ .Params.name }}</h4></a>
                     {{end}}
-                </div>
             {{end}}
         </div>
     </div>

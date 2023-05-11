@@ -5,6 +5,7 @@ last_modified: 2021-02-26T00:00:00-06:00
 tags:
 - web
 - scorch
+draft: true
 ---
 A Content Delivery Network (CDN) is a distributed network of servers strategically located around the world to efficiently deliver web content to users. The purpose of a CDN is to reduce the time it takes for a user to access content by caching it on servers that are closer to the user's location, thus reducing the distance and network hops between the user and the content.
 
