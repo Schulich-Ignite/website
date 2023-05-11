@@ -6,7 +6,11 @@
         <div class="row">
             {{ range sort .Data.Pages ".Params.name" }}
             <a class="card col-md-10 my-2 py-1" href="{{.Permalink}}" target="_blank" rel="noopener noreferrer">
+                {{ if .Params.accronym }}
+                <h3>{{.Params.name}} ({{.Params.accronym}})</h3>
+                {{else}}
                 <h3>{{.Params.name}}</h3>
+                {{end}}
                 <p>{{.Summary}}</p>
             </a>
             {{ end }}

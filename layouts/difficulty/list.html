@@ -19,7 +19,13 @@
                 {{- range $index, $currentDef := .Params.definitions }}                                         
                     {{- with $.Site.GetPage (printf "definitions/%s" (urlize $currentDef)) }}
                         <div>
-                            <h4><a href="{{.Permalink}}" target="_blank" rel="noopener noreferrer">{{.Params.name}}</a></h4>
+                            <h4><a href="{{.Permalink}}" target="_blank" rel="noopener noreferrer">
+                                {{if .Params.accronym }}
+                                {{.Params.name}} ({{.Params.accronym}})
+                                {{else}}
+                                {{.Params.name}}
+                                {{end}}
+                            </a></h4>
                             <p>{{.Summary}}</p>
                         </div>
                     {{end}}

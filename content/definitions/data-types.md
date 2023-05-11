@@ -1,5 +1,5 @@
 ---
-name: data types
+name: Data Types
 aka:
 - primitive types
 - basic types

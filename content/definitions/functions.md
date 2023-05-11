@@ -1,8 +1,6 @@
 ---
-name: functions
+name: Functions
 aka:
-- class methods
-- methods
 - parameters
 tags:
 - beginner

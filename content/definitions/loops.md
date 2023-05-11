@@ -1,5 +1,5 @@
 ---
-name: loops
+name: Loops
 aka:
 - while loop
 - for loop

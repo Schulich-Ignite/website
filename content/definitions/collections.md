@@ -1,5 +1,5 @@
 ---
-name: collections
+name: Collections
 aka:
 - list
 - lists

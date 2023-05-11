@@ -10,9 +10,9 @@ definitions:
 - classes
 - packages
 - file-paths
-- routing
+- api
 - http
-- webpage-anatomy
+- webpages
 courses:
 - beginner
 - flare

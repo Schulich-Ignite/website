@@ -1,5 +1,5 @@
 ---
-name: hashing
+name: Hashing
 aka:
 - hashmaps
 - hash collisions

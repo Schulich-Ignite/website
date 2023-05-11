@@ -79,6 +79,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" integrity="sha512-bgHRAiTjGrzHzLyKOnpFvaEpGzJet3z4tZnXGjpsCcqOnAH6VGUx9frc5bcIhKTVLEiCO6vEhNAgx5jtLUYrfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/http.min.js" integrity="sha512-4Rcwpn+xUuCDufCycA9UtpmboCxNHysWy23e45PJBQeh7m6Kno5/oQ4T5SmbmSAAZiDsm/IsX1IJwsOjy6ob0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     hljs.addPlugin(new CopyButtonPlugin());
     hljs.highlightAll();
@@ -105,7 +106,7 @@
   <script src="/js/youtube-api.js"></script>
 {{end}}
 
-<script defer>
+<script>
     /* This script loads all of the popovers for definitions
 
     General approach is to find all terms we have definitions for
@@ -113,44 +114,47 @@
     one by one replace them in the original innerHTML. This approach
     is relatively slow, but it works ¯\_(ツ)_/¯
     */
-    words = {   // Collects all the words from the definitions section
-    {{ range (where .Site.Pages.ByDate "Type" "definitions").Reverse }}
-        {{ if .Params.name}}
-            "{{.Params.name }}":["{{.Permalink}}","{{.Summary}}"],
-        {{end}}
-        {{ if .Params.accronym}}
-            "{{.Params.accronym}}":["{{.Permalink}}","{{.Summary}}"],
-        {{end}}
-        {{ if .Params.aka}}
-            {{/*AKA values are a list, so they need to be split*/}}
-            {{$currentPermalink := .Permalink}}
-            {{$currentSummary := .Summary}}
-            {{range $index, $word := .Params.aka }}
-                "{{$word}}":["{{$currentPermalink}}","{{$currentSummary}}"],
+
+    window.onload = ()=>{
+        words = {   // Collects all the words from the definitions section
+        {{ range (where .Site.Pages.ByDate "Type" "definitions").Reverse }}
+            {{ if .Params.name}}
+                "{{.Params.name }}":["{{.Permalink}}","{{.Summary}}"],
+            {{end}}
+            {{ if .Params.accronym}}
+                "{{.Params.accronym}}":["{{.Permalink}}","{{.Summary}}"],
+            {{end}}
+            {{ if .Params.aka}}
+                {{/*AKA values are a list, so they need to be split*/}}
+                {{$currentPermalink := .Permalink}}
+                {{$currentSummary := .Summary}}
+                {{range $index, $word := .Params.aka }}
+                    "{{$word}}":["{{$currentPermalink}}","{{$currentSummary}}"],
+                {{end}}
             {{end}}
         {{end}}
-    {{end}}
 
-    }
-
-    articleContent = document.getElementById("article-content").innerHTML
-    // Match all paragraph, OL, and UL tags
-    contentSections = articleContent.match(/<p>(.*?)<\/p>|<ul>(.*?)<\/ul>|<ol>(.*?)<\/ol>/g)
-    
-    // Parse through all p,ol,ul content and replace known words with popover
-    contentSections.forEach(section=>{
-        for (word in words){
-            searchMask = ` ${word} |^${word} |${word}$| ${word}$`;
-            regEx = new RegExp(searchMask, "igm"); //Create regex object, and ignore case
-            newval = `${section}`.replace(regEx, ` <a href="${words[word][0]}" target="_blank" data-toggle="tooltip" data-placement="top" title="${words[word][1]}">${word}</a> `)
-            document.getElementById("article-content").innerHTML = document.getElementById("article-content").innerHTML.replace(section, newval)
         }
-    })
 
-    // Activate tooltips
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
+        articleContent = document.getElementById("article-content").innerHTML
+        // Match all paragraph, OL, and UL tags
+        contentSections = articleContent.match(/<p>(.*?)<\/p>|<ul>(.*?)<\/ul>|<ol>(.*?)<\/ol>/g)
+        
+        // Parse through all p,ol,ul content and replace known words with popover
+        contentSections.forEach(section=>{
+            for (word in words){
+                searchMask = ` ${word} |^${word} |${word}$| ${word}$|${word},`;
+                regEx = new RegExp(searchMask, "igm"); //Create regex object, and ignore case
+                newval = `${section}`.replace(regEx, ` <a href="${words[word][0]}" target="_blank" data-toggle="tooltip" data-placement="top" title="${words[word][1]}">${word}</a> `)
+                document.getElementById("article-content").innerHTML = document.getElementById("article-content").innerHTML.replace(section, newval)
+            }
+        })
+
+        // Activate tooltips
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    }
 </script>
 {{ end }}
 

@@ -1,5 +1,5 @@
 ---
-name: conditionals
+name: Conditionals
 aka:
 - control flow
 - equality check

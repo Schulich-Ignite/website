@@ -1,5 +1,5 @@
 ---
-name: content delivery network
+name: Content Delivery Network
 accronym: CDN
 last_modified: 2021-02-26T00:00:00-06:00
 tags:

@@ -1,5 +1,5 @@
 ---
-name: variables
+name: Variables
 aka:
 - vars
 - let
