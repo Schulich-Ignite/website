@@ -149,25 +149,11 @@
 
     </div>
 
-    <div class="container" >
+    <div class="container">
         <div class="row">
             <div class="card no-background">
                 <div class="card-body">
-                    <h1 class="card-title">{{ .Params.title }}</h1> 
-                    {{ if .Params.authors }} 
-                    <h3 style="font-size:1em;color:#787878;">
-                        <!-- List the authors nicely -->
-                        Created by: 
-                        {{ range $index, $name := .Params.authors }}
-                            {{- "" -}}    
-                            {{ if ne $index 0 }}
-                                {{- "" -}}{{ "," }}
-                            {{ end }}
-                            {{ $name }}{{- "" -}}
-                        {{ end }}
-                    </h3>  
-                    {{ end }}  
-                           
+                    <h1 class="card-title">{{ .Params.title }}</h1>                           
                     <div class="card-text blog-text"> 
                         {{ .Content }} 
                     </div>
@@ -180,4 +166,4 @@
         </div>
     </div>
 </section>
-{{end}}
+{{ end }}
