@@ -117,21 +117,44 @@
 
     window.onload = ()=>{
         words = {   // Collects all the words from the definitions section
-        {{ range (where .Site.Pages.ByDate "Type" "definitions").Reverse }}
-            {{ if .Params.name}}
-                "{{.Params.name }}":["{{.Permalink}}","{{.Summary}}"],
-            {{end}}
-            {{ if .Params.accronym}}
-                "{{.Params.accronym}}":["{{.Permalink}}","{{.Summary}}"],
-            {{end}}
-            {{ if .Params.aka}}
-                {{/*AKA values are a list, so they need to be split*/}}
-                {{$currentPermalink := .Permalink}}
-                {{$currentSummary := .Summary}}
-                {{range $index, $word := .Params.aka }}
-                    "{{$word}}":["{{$currentPermalink}}","{{$currentSummary}}"],
+
+        {{ if .Params.whitelist_definitions }}
+            {{$whitelist := .Params.whitelist_definitions}}
+            {{ range (where .Site.Pages.ByDate "Type" "definitions").Reverse }}
+                {{ if in $whitelist (lower .Params.name) }}
+                    "{{.Params.name }}":["{{.Permalink}}","{{.Summary}}"],
+                {{end}}
+                {{ if in $whitelist (lower .Params.accronym)}}
+                    "{{.Params.accronym}}":["{{.Permalink}}","{{.Summary}}"],
+                {{end}}
+                {{ if in $whitelist .Params.aka}}
+                    {{/*AKA values are a list, so they need to be split*/}}
+                    {{$currentPermalink := .Permalink}}
+                    {{$currentSummary := .Summary}}
+                    {{range $index, $word := .Params.aka }}
+                        "{{$word}}":["{{$currentPermalink}}","{{$currentSummary}}"],
+                    {{end}}
                 {{end}}
             {{end}}
+        {{else}} 
+        
+            {{ range (where .Site.Pages.ByDate "Type" "definitions").Reverse }}
+                {{ if .Params.name}}
+                    "{{.Params.name }}":["{{.Permalink}}","{{.Summary}}"],
+                {{end}}
+                {{ if .Params.accronym}}
+                    "{{.Params.accronym}}":["{{.Permalink}}","{{.Summary}}"],
+                {{end}}
+                {{ if .Params.aka}}
+                    {{/*AKA values are a list, so they need to be split*/}}
+                    {{$currentPermalink := .Permalink}}
+                    {{$currentSummary := .Summary}}
+                    {{range $index, $word := .Params.aka }}
+                        "{{$word}}":["{{$currentPermalink}}","{{$currentSummary}}"],
+                    {{end}}
+                {{end}}
+            {{end}}
+
         {{end}}
 
         }
