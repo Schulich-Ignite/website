@@ -9,10 +9,11 @@ definitions:
 - data-types
 - classes
 - packages
-- file-paths
+- paths
 - api
 - http
 - webpages
+- encoding
 courses:
 - beginner
 - flare
