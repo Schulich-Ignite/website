@@ -1,7 +1,6 @@
 ---
 name: Hashing
 aka:
-- hashmaps
 - hash collisions
 tags:
 - scorch

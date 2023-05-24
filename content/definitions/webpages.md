@@ -1,15 +1,9 @@
 ---
 name: Webpages
 aka:
-    - html
-    - HTML
-    - CSS
-    - Cascading Style Sheets
-    - Cascading Style Sheet
-    - JS
-    - Javascript
     - MIME Type
     - mime types
+    - css
 tags:
     - scorch
     - networking

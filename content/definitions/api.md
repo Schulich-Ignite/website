@@ -21,12 +21,12 @@ prerequisites:
 - http
 ---
 
-An application program interface is basically a system that allows you to use other people’s code and/or systems.
+An application program interface is basically a system that allows you to use other people's code and/or systems.
 
 There are lots of things people mean when they say API:
 
 - A set of code that runs other code (libraries, packages)
-- Pre-written code that lets you interface with a program that’s running (i.e. [starcraft engine](https://github.com/BurnySc2/python-sc2), [Hubspot api](https://github.com/HubSpot/hubspot-api-python), etc.)
+- Pre-written code that lets you interface with a program that's running (i.e. [starcraft engine](https://github.com/BurnySc2/python-sc2), [Hubspot api](https://github.com/HubSpot/hubspot-api-python), etc.)
 
 ## Types of API's
 
@@ -34,9 +34,9 @@ There are several types of API's that exist. This list is not exhaustive, but it
 
 ### Web-based
 
-When people talk about web API’s they typically mean *ingest/endpoint API’s* these are systems where when you go to a URL you get a resource or some data. 
+When people talk about web API's they typically mean *ingest/endpoint API's* these are systems where when you go to a URL you get a resource or some data.
 
-For example you might have a weather API where you go to a URL that has your city in it (`http://weather.com/calgary`), and it returns a JSON object with information about the weather in that city.  That means we can talk between servers, and we can use other servers to extend our functionality! Essentially we can treat other people’s servers as function calls!
+For example you might have a weather API where you go to a URL that has your city in it (`http://weather.com/calgary`), and it returns a JSON object with information about the weather in that city.  That means we can talk between servers, and we can use other servers to extend our functionality! Essentially we can treat other people's servers as function calls!
 
 #### Routing
 
@@ -93,26 +93,26 @@ You don't have to completely follow these systems, however they are a good to un
 
 ### Engine based
 
-Sometimes when we’re making apps that are complicated (like games), there will need to be an “engine”, the engine basically runs in the background doing things.
+Sometimes when we're making apps that are complicated (like games), there will need to be an "engine", the engine basically runs in the background doing things.
 
-There will then be an API that you use to interact with the “engine” and do things with it.
+There will then be an API that you use to interact with the "engine" and do things with it.
 
 #### Wrappers
 
-Some API’s are complicated… Too complicated. So people will create what are called wrappers. These wrappers are basically pieces of code that use the API under the hood, but make it easier to work with.
+Some API's are complicated… Too complicated. So people will create what are called wrappers. These wrappers are basically pieces of code that use the API under the hood, but make it easier to work with.
 
 This is called an *abstraction layer*, and it does typically introduce some slowdown, but makes more complex systems much easier to use. For example game engines are often wrappers for an API that draws pixels to the screen. Most engine API's are wrappers.
 
 
 ### Hardware based
 
-These API’s talk to hardware as if they were applications. Hardware API’s are different than endpoints (web-based API's). In endpoints you have to worry about network problems, and malformed data. 
+These API's talk to hardware as if they were applications. Hardware API's are different than endpoints (web-based API's). In endpoints you have to worry about network problems, and malformed data. 
 
 In hardware, you have to do the same, but you have to deal with physical problems as well. People rarely spill a coffee on their $20,000 server, but they do it a lot with microphones, webcams etc.
 
-So your systems have to be much more resilient and adaptable when using hardware than most other types of API’s
+So your systems have to be much more resilient and adaptable when using hardware than most other types of API's
 
-Generally hardware api’s have a few stages:
+Generally hardware api's have a few stages:
 
 1. Connection; Setup a connection to the hardware
 2. Register callbacks; Callbacks are functions that do something when an event happens
@@ -133,7 +133,7 @@ flowchart TD
 
 </pre>
 
-Keep in mind that even if a webcam is available, that doesn’t mean it works!
+Keep in mind that even if a webcam is available, that doesn't mean it works!
 
 #### Callbacks
 

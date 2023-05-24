@@ -1,9 +1,5 @@
 ---
 name: Variables
-aka:
-- vars
-- let
-- const
 tags:
 - beginner
 - data-structures
