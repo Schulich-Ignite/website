@@ -12,6 +12,7 @@ prerequisites:
 - functions
 - conditionals
 - collections
+- paths
 draft: true
 ---
 
