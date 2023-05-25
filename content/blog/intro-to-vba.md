@@ -5,6 +5,8 @@ date: 2023-02-27T00:00:01-06:00
 modified_date: ""
 image: /img/blog/writing-on-laptop.jpg
 authors: ["Brendan Smiley"]
+difficulty:
+- flare
 tags:
   - vba
   - productivity

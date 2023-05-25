@@ -3,7 +3,6 @@ name: Webpages
 aka:
     - MIME Type
     - mime types
-    - css
 tags:
     - scorch
     - networking

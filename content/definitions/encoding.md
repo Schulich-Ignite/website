@@ -14,3 +14,9 @@ prerequisites:
 - collections
 draft: true
 ---
+
+- [ ] ASCII
+  - [ ] File encoding
+    - [ ] UTF-8
+  - [ ] Custom encoding (paths etc.)
+  - [ ] Sanitization
