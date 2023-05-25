@@ -13,7 +13,7 @@ tags:
   - C
   - C++
   - Python
-  - low-level programming
+  - low-level
 ---
 In many high level coding languages, The idea of a pointer either doesn't exist, or is hidden from the programmer's use. This is not the case in languages such as C and C++. However, before we can begin to understand pointers, we must first know how memory works when running a program.
 

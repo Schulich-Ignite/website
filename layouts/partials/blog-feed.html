@@ -8,18 +8,22 @@
                 <div class="col-md-4 col-xs-4">
                     <a href="{{ .Permalink }}">
                         {{ if  .Params.image }}
-                            <img class="card-img-top med-image" src="{{ .Params.image }}" alt="{{ .Params.title }}">
+                            <img class="card-img-top med-image blog-image" src="{{ .Params.image }}" alt="{{ .Params.title }}">
                         {{ else }}
-                            <img class="card-img-top med-image" src='{{ "/img/logos/ignite.svg" }}' alt="{{ .Params.title }}">
+                            <img style="height:100%; max-height:500px;" class="card-img-top med-image" src='{{ "/img/logos/ignite.svg" }}' alt="{{ .Params.title }}">
                         {{ end }}
                     </a>
                 </div>
                 <div class="col-md-8">             
                     <div class="card-body">
-                        <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Params.title }}</a> 
+                        <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Params.title }}
                             {{ if .Params.video }}
-                                <a href="https://youtu.be/{{.Params.video}}" target="_blank" style="font-size: 1.1em;padding-left:.6em;"><i class="bi bi-play-circle-fill"></i></a>
+                        </a> <a href="https://youtu.be/{{.Params.video}}" target="_blank" style="font-size: 1.1em;padding-left:.6em;"><i class="bi bi-play-circle-fill"></i></a>
                             {{end}}
+                            {{ if .Params.subtitle }}
+                            <h5 class="blog-subtitle">{{ .Params.subtitle }}</h5>
+                            {{end}}
+                        </a> 
                         </h3>
                         <div class="row">
                             <div class="col-md-4">

@@ -1,7 +1,7 @@
 ---
 name: "Arya Patel"
 role: "Jr. VP External"
-team: "exec"
+team: "jr exec"
 image: "/img/gallery/arya_patel.jpg"
 email: "arya.patel@ucalgary.ca"
 linkedin: "https://www.linkedin.com/in/arya-patel-27925120b/"

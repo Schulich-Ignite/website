@@ -1,7 +1,7 @@
 ---
 title: Intro to Visual Basic for Applications (VBA)
 subtitle: Supercharging office apps
-date: 2023-02-27T00:00:01-06:00
+date: 2023-03-06T00:00:01-06:00
 modified_date: ""
 image: /img/blog/writing-on-laptop.jpg
 authors: ["Brendan Smiley"]
@@ -110,6 +110,8 @@ End Sub
 ## Conclusion
 
 At this point, you should know what VBA is and how to start programming inside the Microsoft application of your choice. Additionally, you should have some basic knowledge of creating buttons to run the macros more cleanly. VBA syntax will be covered in the next post.
+
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/vba-syntax">See Next Post</a>
 
 ## References
 
