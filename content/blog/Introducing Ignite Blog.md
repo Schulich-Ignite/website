@@ -11,6 +11,7 @@ tags:
   - updates
   - web
   - seo
+  - blog
 ---
 
 ## Introducing the new Blog and Showcase

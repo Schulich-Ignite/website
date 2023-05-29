@@ -1,4 +1,4 @@
-
+{{ if eq "live" .Site.Params.status}}
     {{ if .Params.ready }}
     <div class="col-lg-4 spaced-col mb-4">
         <div class="card with-header">
@@ -25,3 +25,4 @@
         </div>
     </div>
     {{ end }}
+{{end}}

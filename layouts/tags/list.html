@@ -3,7 +3,6 @@
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Params.Title ) }}
 <nav aria-label="breadcrumb" class="mt-4 p-2" style="max-width:40%">
     <ol class="breadcrumb" style="background-color:transparent;">
-        
             <li class="breadcrumb-item text-primary" aria-current="page"><a href="/tags">Tags</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{.Params.Title}}</li>
     </ol>
@@ -11,81 +10,23 @@
 <section class="section">
     <div class="container">
         <div class="row ">
+            {{ if gt (len (where .Data.Pages.ByDate.Reverse "Section" "blog")) 0}}
             <div class="col-md-12">
                 <h2>{{ .Params.Title}} Articles</h2>
             </div>
-            {{ range .Data.Pages.ByDate.Reverse }}
-            <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
-            {{ if  (.Params.title) }}
-            <div class="col-12 mb-5">
-                <div class="card">
-                    <div class="row">
-                        <div class="col-md-4 col-xs-4">
-                            <a href="{{ .Permalink }}">
-                                {{ if  .Params.image }}
-                                    <img class="card-img-top med-image" src="{{ .Params.image }}" alt="{{ .Params.title }}">
-                                {{ else }}
-                                    <img class="card-img-top med-image" src='{{ "/img/logos/ignite.svg" }}' alt="{{ .Params.title }}">
-                                {{ end }}
-                            </a>
-                        </div>
-                        <div class="col-md-8">             
-                            <div class="card-body">
-                                <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Params.title }}</a></h3>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <small class="text-primary">
-                                            <i class="bi bi-calendar2-week-fill pr-1"></i><time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
-                                            {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
-                                            <p>
-                                                <i class="bi bi-stopwatch-fill"></i><em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
-                                            </p>
-                                            {{ end }}
-        
-                                        </small>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <small class="text-primary">
-                                            {{if .Params.tags }}
-                                            <p><em><i class="bi bi-tags-fill"></i></em>
-                                                
-                                                {{- range .Params.tags }}
-                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
-                                                            <a href="{{ .Permalink }}">{{ .Params.Title }}</a>,
+            {{end}}
+            {{ partial "blog-feed.html" . }}
+
+            {{ if gt (len (where .Data.Pages.ByDate.Reverse "Section" "definitions")) 0}}
             
-                                                    {{ end }}
-                                                {{ end }}
-                                                    
-            
-                                                
-                                            </p>
-                                            
-                                            {{ end }}</p>
-                                            {{if .Params.authors }}
-                                            <p style="margin-top:-15px;"><em>Author:</em>
-                                                
-                                                {{- range .Params.authors }}
-                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-                                                            <a href="{{ .Permalink }}">{{ .Params.name }}</a> 
-                                                    {{ end }}
-                                                {{ end }}</p>
-                                            {{end}}</p>
-                                        </small>
-                                    </div>
-                                    <div class="col-md-4"></div>
-                                </div>
-                                <p class="card-text">
-                                    
-                                    <a style="color:var(--text)" href="{{ .Permalink }}">{{ .Summary }}...</a>
-                                    <a href="{{ ref . .File }}">Read more</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{ end }}
-        {{ end }} 
+                <h2 class="col-md-12">{{ .Params.Title}} Related Definitions</h2>
+
+
+                    
+                    {{ range where .Data.Pages.ByDate.Reverse "Section" "definitions"}}
+                            <a class="m-3" href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer"><h4>{{ .Params.name }}</h4></a>
+                    {{end}}
+            {{end}}
         </div>
     </div>
 
