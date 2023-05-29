@@ -1,0 +1,263 @@
+<!doctype html><html style=overflow-x:hidden><head><meta charset=utf-8><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","headline":"","author":[{"@type":"Organization","name":"Shulich Ignite","url":"https://schulichignite.com"}],"dateCreated":"","text":"Collections are a data type that is used to hold multiple other data types. For example lets say you wanted to keep track of all of the names of items in a player inventory."}</script><title>Collections | Definitions | Schulich Ignite</title><link rel="shortcut icon" href=https://schulichignite.com/img/favicon.ico type=image/x-icon><link rel=icon href=https://schulichignite.com/img/favicon.ico type=image/x-icon><meta property="og:title" content=" Collections| Definitions | Schulich Ignite "><meta property="og:type" content="website"><meta property="og:url" content=" https://schulichignite.com/definitions/collections/ "><meta property="og:image" content="/img/opengraph_logo-min.jpg "><meta name=Description content=" Collections; Collections are a data type that is used to hold multiple other data types. For example lets say you wanted to keep track of all of the names of items in a player inventory. "><meta property="og:description" content=" Collections; Collections are a data type that is used to hold multiple other data types. For example lets say you wanted to keep track of all of the names of items in a player inventory. "><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@900&display=swap" rel=stylesheet><link href=https://unpkg.com/video.js@7/dist/video-js.min.css rel=stylesheet><link href=https://unpkg.com/@videojs/themes@1/dist/sea/index.css rel=stylesheet><link rel=stylesheet href=https://schulichignite.com/css/index.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css integrity="sha512-mtXspRdOWHCYp+f4c7CkWGYPPRAhq9X+xCvJMUBVAb6pqA4U8pxhT3RWT3LP3bKbiolYL2CkL1bSKZZO4eeTew==" crossorigin=anonymous referrerpolicy=no-referrer><link rel=stylesheet href=https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css></head><nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark"><a class=navbar-brand href=../../><img src=https://schulichignite.com/img/logos/ignite.svg width=40 height=60 alt="Schulich ignite logo">
+<span class=brand-name>Schulich Ignite</span></a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarSupportedContent><ul class="navbar-nav mr-auto"><li class=nav-item><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Sessions</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=../../beginner>Ignite Beginner</a>
+<a class=dropdown-item href=../../flare>Ignite Flare</a>
+<a class=dropdown-item href=../../scorch>Ignite Scorch</a></div></li></li><li class=nav-item><a class=nav-link href=https://forms.gle/ZJoDAbcTf1M3NBxYA target=_blank rel="noopener noreferrer">Mailing list</a></li><li class=nav-item><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Media</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=../../blog>Blog</a>
+<a class=dropdown-item href=../../definitions>Definitions</a></div></li></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>About</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=../../mission>Our Mission</a>
+<a class=dropdown-item href=../../team>Our Team</a></li><li class=nav-item><a class=nav-link href=../../contact>Contact</a></li></ul></div></nav><body><div class=diagonal-header><div class=mainheader>Collections</div></div><nav aria-label=breadcrumb class="mt-4 p-2" style=max-width:40%><ol class=breadcrumb style=background-color:transparent><li class="breadcrumb-item text-primary" aria-current=page><a href=../../definitions>Definitions</a></li><li class="breadcrumb-item active" aria-current=page>Collections</li></ol></nav><div class="card p-5 mb-5"><div id=definition-section><div class=row><div class=col-md-4><h2 style=line-height:2>Collections</h2></div><div class=col-md-8 style=background-color:#ffffffe1;border-radius:1em><div class=row><div class=col><h4>Also Known as/Related</h4><ul><li>list</li><li>lists</li><li>array</li><li>arrays</li><li>maps</li></ul></div><div class=col><h4>Tags</h4><ul><li><a href=https://schulichignite.com/tags/beginner/>beginner</a></li><li><a href=https://schulichignite.com/tags/data-structures/>data-structures</a></li></ul></div><div class=col><h4>Prerequisites</h4><ul><li><a href=https://schulichignite.com/definitions/variables/>Variables</a></li><li><a href=https://schulichignite.com/definitions/data-types/>Data Types</a></li><li><a href=https://schulichignite.com/definitions/functions/>Functions</a></li></ul></div></div></div></div><hr><p class=card-text><p>Collections are a data type that is used to hold multiple other data types. For example lets say you wanted to keep track of all of the names of items in a player inventory. You could put them into a collection to keep track of all of them in one variable, instead of a seperate variable for each item!</p><h2 id=collection-types>Collection types</h2><p>There are tons of different types of collections, some of the names are not always exactly the same acrosss languages, so keep that in mind when looking at this info!</p><h3 id=lists>Lists</h3><p>Lists are a dynamic collection. They basically let you add as much (besides memory constraints) data as you want. In strongly typed languages (ones where you have to specify types), they can only have 1 data type, in most other languages they can take whatever data you want. Here is an example of what it might look like in a <strong>non-strongly typed language</strong>:</p><pre tabindex=0><code>ages = [18,21,18,19,20]
+</code></pre><p>This gives you a list where</p><p><img src=../../img/definitions/collections/array.png alt=array></p><p>You can then access the element using it&rsquo;s <em>index</em>. The index is essentially the number that indicates where in the list a value is (starting from 0). You can access this using <code>ages[index]</code>. So if you wanted to access the <strong>second</strong> element you could use <code>ages[1]</code> (which in this case would be 21):</p><p><img src=../../img/definitions/collections/array_access.png alt="array access"></p><h4 id=lists-in-python>Lists in python</h4><p>Here are the basics in python:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Create a list</span>
+</span></span><span style=display:flex><span>shopping_list <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;eggs&#34;</span>, <span style=color:#e6db74>&#34;ham&#34;</span>, <span style=color:#e6db74>&#34;spam&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Add items to the list</span>
+</span></span><span style=display:flex><span>shopping_list<span style=color:#f92672>.</span>append(<span style=color:#e6db74>&#34;jam&#34;</span>)
+</span></span><span style=display:flex><span>shopping_list<span style=color:#f92672>.</span>append(<span style=color:#ae81ff>3</span>) <span style=color:#75715e># Don&#39;t have to be the same types</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(shopping_list) <span style=color:#75715e># [&#39;eggs&#39;, &#39;ham&#39;, &#39;spam&#39;, &#39;jam&#39;, 3]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## DON&#39;T DO THIS, IT ADDS EACH CHARACTER TO THE LIST</span>
+</span></span><span style=display:flex><span>shopping_list <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;yams&#34;</span>
+</span></span><span style=display:flex><span>print(shopping_list) <span style=color:#75715e># [&#39;eggs&#39;, &#39;ham&#39;, &#39;spam&#39;, &#39;jam&#39;, 3, &#39;y&#39;, &#39;a&#39;, &#39;m&#39;, &#39;s&#39;]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Get length of list</span>
+</span></span><span style=display:flex><span>len(shopping_list) <span style=color:#75715e># 9</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Accessing items</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Access first item</span>
+</span></span><span style=display:flex><span>print(shopping_list[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Access second item</span>
+</span></span><span style=display:flex><span>print(shopping_list[<span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### access last item</span>
+</span></span><span style=display:flex><span>print(shopping_list[<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### access second last item</span>
+</span></span><span style=display:flex><span>print(shopping_list[<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Removing items</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Remove item at index and return value</span>
+</span></span><span style=display:flex><span>shopping_list<span style=color:#f92672>.</span>pop(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#75715e># &#39;s&#39;</span>
+</span></span><span style=display:flex><span>print(shopping_list) <span style=color:#75715e># [&#39;eggs&#39;, &#39;ham&#39;, &#39;spam&#39;, &#39;jam&#39;, 3, &#39;y&#39;, &#39;a&#39;, &#39;m&#39;] </span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#### If you exclude a number it defaults to last item</span>
+</span></span><span style=display:flex><span>shopping_list<span style=color:#f92672>.</span>pop()  <span style=color:#75715e># &#39;m&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Remove the FIRST item where the value matches what is provided</span>
+</span></span><span style=display:flex><span>shopping_list<span style=color:#f92672>.</span>remove(<span style=color:#e6db74>&#39;y&#39;</span>)
+</span></span><span style=display:flex><span>print(shopping_list) <span style=color:#75715e># [&#39;eggs&#39;, &#39;ham&#39;, &#39;spam&#39;, &#39;jam&#39;, 3, &#39;a&#39;] </span>
+</span></span><span style=display:flex><span>shopping_list<span style=color:#f92672>.</span>append(<span style=color:#e6db74>&#34;eggs&#34;</span>) <span style=color:#75715e># Add another eggs item</span>
+</span></span><span style=display:flex><span>shopping_list<span style=color:#f92672>.</span>remove(<span style=color:#e6db74>&#39;eggs&#39;</span>) <span style=color:#75715e># Remove FIRST eggs item</span>
+</span></span><span style=display:flex><span>print(shopping_list) <span style=color:#75715e># [&#39;ham&#39;, &#39;spam&#39;, &#39;jam&#39;, 3, &#39;a&#39;, &#39;eggs&#39;] </span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Remove an item and don&#39;t return it&#39;s value</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>del</span>(shopping_list[<span style=color:#ae81ff>4</span>]) 
+</span></span><span style=display:flex><span>print(shopping_list) <span style=color:#75715e># [&#39;ham&#39;, &#39;spam&#39;, &#39;jam&#39;, 3, &#39;eggs&#39;]</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#### BE CAREFUL del() will delete the whole list if you forget the index</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Slices will let you get part of a list</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### They are in the form of: list[start:stop:step]</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Where start (default 0) is the index to start from</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Stop (default is blank/end of list) is where to stop</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Step (default 1) is how to go through indexes (i.e. 2 would mean skip every other index)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Get every item from index 1 onwards</span>
+</span></span><span style=display:flex><span>shopping_list[<span style=color:#ae81ff>1</span>:] <span style=color:#75715e># [&#39;spam&#39;, &#39;jam&#39;, 3, &#39;eggs&#39;]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Get every item except the last one</span>
+</span></span><span style=display:flex><span>shopping_list[:<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#75715e># [&#39;ham&#39;,&#39;spam&#39;, &#39;jam&#39;, 3]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### Get items between index 1 and go until the second last</span>
+</span></span><span style=display:flex><span>shopping_list[<span style=color:#ae81ff>1</span>:<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>] <span style=color:#75715e># [&#39;spam&#39;, &#39;jam&#39;]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Print each item nicely by &#39;unpacking&#39; them</span>
+</span></span><span style=display:flex><span>print(<span style=color:#f92672>*</span>shopping_list) <span style=color:#75715e># ham spam jam 3 a eggs</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>### To clear a whole list use del() or list.clear()</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>shopping_list<span style=color:#f92672>.</span>clear()
+</span></span><span style=display:flex><span>print(shopping_list) <span style=color:#75715e># []</span>
+</span></span></code></pre></div><h4 id=lists-in-javascript>Lists in Javascript</h4><p>In javascript they call lists arrays (to be confusing).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// Create a list
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>shopping_list</span> <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;eggs&#34;</span>, <span style=color:#e6db74>&#34;ham&#34;</span>, <span style=color:#e6db74>&#34;spam&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Add items to the list
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>push</span>(<span style=color:#e6db74>&#34;jam&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>push</span>(<span style=color:#ae81ff>3</span>) <span style=color:#75715e>// Don&#39;t have to be the same types
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>shopping_list</span>) <span style=color:#75715e>// [&#39;eggs&#39;, &#39;ham&#39;, &#39;spam&#39;, &#39;jam&#39;, 3]
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// DON&#39;T DO THIS, IT CONVERTS THE LIST TO A STRING AND ADDS IT TO THE LAST ELEMENT
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>shopping_list</span> <span style=color:#f92672>+=</span> <span style=color:#e6db74>&#34;yams&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>shopping_list</span>) <span style=color:#75715e>// &#39;eggs,ham,spam,jam,3yams&#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>shopping_list</span> <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;eggs&#39;</span>, <span style=color:#e6db74>&#39;ham&#39;</span>, <span style=color:#e6db74>&#39;spam&#39;</span>, <span style=color:#e6db74>&#39;jam&#39;</span>, <span style=color:#ae81ff>3</span>] <span style=color:#75715e>// Resetting to a list
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Get length of list
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>length</span> <span style=color:#75715e>// 5
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Accessing items
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/// Access first item
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>shopping_list</span>[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/// Access second item
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>shopping_list</span>[<span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/// access last item
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>shopping_list</span>[<span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>length</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/// access second last item
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>shopping_list</span>[<span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>length</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Removing items
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/// Remove item at index and return value
+</span></span></span><span style=display:flex><span><span style=color:#75715e>//// Splice takes it&#39;s first argument as where to start removing from
+</span></span></span><span style=display:flex><span><span style=color:#75715e>//// Second argument is how many things to remove
+</span></span></span><span style=display:flex><span><span style=color:#75715e>//// So in this case remove 1 item starting from index 2 and return it
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>splice</span>(<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>1</span>) <span style=color:#75715e>// [&#39;spam&#39;]
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>shopping_list</span>) <span style=color:#75715e>// [&#39;eggs&#39;, &#39;ham&#39;, &#39;jam&#39;, 3]
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/// Remove last item and return value
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>pop</span>()  <span style=color:#75715e>// 3
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>shopping_list</span>) <span style=color:#75715e>// [&#39;eggs&#39;, &#39;ham&#39;, &#39;jam&#39;]
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/// Remove ALL items where the value matches what is provided
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>push</span>(<span style=color:#e6db74>&#34;eggs&#34;</span>) <span style=color:#75715e>// [&#39;eggs&#39;, &#39;ham&#39;, &#39;jam&#39;, &#39;eggs&#39;]
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>shopping_list</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>filter</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>item</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>item</span> <span style=color:#f92672>!==</span> <span style=color:#e6db74>&#34;eggs&#34;</span>;
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>shopping_list</span>) <span style=color:#75715e>// [&#39;ham&#39;, &#39;jam&#39;]
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Slices will let you get part of an array
+</span></span></span><span style=display:flex><span><span style=color:#75715e>/// They are in the form of: list.slice(start,stop)
+</span></span></span><span style=display:flex><span><span style=color:#75715e>/// Where start (default 0) is the index to start from
+</span></span></span><span style=display:flex><span><span style=color:#75715e>/// Stop (default is blank/end of list) is where to stop
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>shopping_list</span> <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;eggs&#39;</span>, <span style=color:#e6db74>&#39;ham&#39;</span>, <span style=color:#e6db74>&#39;spam&#39;</span>, <span style=color:#e6db74>&#39;jam&#39;</span>] <span style=color:#75715e>// Resetting array
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/// Get every item from index 1 onwards
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>slice</span>(<span style=color:#ae81ff>1</span>) <span style=color:#75715e>// [&#39;ham&#39;, &#39;spam&#39;, &#39;jam&#39;]
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/// Get every item except the last one
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>slice</span>(<span style=color:#ae81ff>0</span>,<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#75715e>// [&#39;eggs&#39;, &#39;ham&#39;, &#39;spam&#39;]
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/// Get items between index 1 and go until the second last
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>shopping_list</span>.<span style=color:#a6e22e>slice</span>(<span style=color:#ae81ff>1</span>,<span style=color:#f92672>-</span><span style=color:#ae81ff>2</span>) <span style=color:#75715e>// [&#39;ham&#39;]
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Print each item nicely by &#39;spreading&#39; them
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(...<span style=color:#a6e22e>shopping_list</span>) <span style=color:#75715e>// &#39;eggs ham spam jam&#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/// To clear a whole array reassign it to an empty array
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>shopping_list</span> <span style=color:#f92672>=</span> []
+</span></span></code></pre></div><h3 id=arrays>Arrays</h3><p>Arrays are one of the most basic collection types. These are typically quite restrictive, but very fast. You will have to specify the length of an array as well as the types it will contain.</p><p>So for example if you want to store the ages of 5 people as integers you might do something like this:</p><p>*Not real code</p><pre tabindex=0><code>ages[5]&lt;Int&gt; = [18,21,18,19,20]
+</code></pre><p>This gives you an array where:</p><p><img src=../../img/definitions/collections/array.png alt=array></p><p>You can then access the element using it&rsquo;s <em>index</em>. The index is essentially the number that indicates where in the list a value is (starting from 0). You can access this using <code>ages[index]</code>. So if you wanted to access the <strong>second</strong> element you could use <code>ages[1]</code> (which in this case would be 21):</p><p><img src=../../img/definitions/collections/array_access.png alt="array access"></p><p><strong>Javascript and python do not follow the same standards outlined here</strong></p><p>For python there is a thing called an array (and sometimes people call lists arrays), but it <strong>only restricts the type not the length</strong> (<a href=https://docs.python.org/3/library/array.html>documentation here</a>):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> array <span style=color:#f92672>import</span> array
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>my_array <span style=color:#f92672>=</span> array(<span style=color:#e6db74>&#39;Q&#39;</span>) <span style=color:#75715e># Values must be an int/unsigned long long</span>
+</span></span><span style=display:flex><span>my_array<span style=color:#f92672>.</span>append(<span style=color:#ae81ff>4</span>) <span style=color:#75715e># Add 4 to the array</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(my_array) <span style=color:#75715e># prints array(&#39;Q&#39;, [4])</span>
+</span></span><span style=display:flex><span>print(my_array[<span style=color:#ae81ff>0</span>]) <span style=color:#75715e># prints 4</span>
+</span></span></code></pre></div><p>In javascript the closest thing is a <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray>typedArray</a>, but this is much more complicated to use.</p><h3 id=sets>Sets</h3><p>Sets are collections that require <strong>unique</strong> items. This is implemented different ways in different languages, but for example:</p><pre tabindex=0><code>words = set(&#34;hello&#34;, &#34;oranges&#34;, &#34;hello&#34;, &#34;great&#34;)
+print(words) # [&#34;hello&#34;, &#34;oranges&#34;, &#34;great&#34;]
+</code></pre><p>Even though &ldquo;hello&rdquo; was given twice it only appears once. This makes sets great for checking if something exists. Imagine you are searching through a book, and want to check if the book has the word &ldquo;disperate&rdquo; in it. Now lets say there are 900 times the word &ldquo;the&rdquo; appears. To search all the words you have to search through all 900 repeats of &ldquo;the&rdquo;, but with a set there&rsquo;s only 1.</p><p>Here are how sets work in python:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>words <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#34;hello&#34;</span>, <span style=color:#e6db74>&#34;oranges&#34;</span>, <span style=color:#e6db74>&#34;hello&#34;</span>, <span style=color:#e6db74>&#34;great&#34;</span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(words) <span style=color:#75715e># {&#39;hello&#39;, &#39;great&#39;, &#39;oranges&#39;}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Add values</span>
+</span></span><span style=display:flex><span>words<span style=color:#f92672>.</span>add(<span style=color:#e6db74>&#34;goodbye&#34;</span>) 
+</span></span><span style=display:flex><span>words<span style=color:#f92672>.</span>add(<span style=color:#e6db74>&#34;hello&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(words) <span style=color:#75715e># {&#39;hello&#39;, &#39;great&#39;, &#39;oranges&#39;, &#39;goodbye&#39;}</span>
+</span></span></code></pre></div><p>In javasript</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>words</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Set</span>([<span style=color:#e6db74>&#34;hello&#34;</span>, <span style=color:#e6db74>&#34;oranges&#34;</span>, <span style=color:#e6db74>&#34;hello&#34;</span>, <span style=color:#e6db74>&#34;great&#34;</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>words</span>) <span style=color:#75715e>// Set(3) {&#39;hello&#39;, &#39;oranges&#39;, &#39;great&#39;}
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// add values
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>words</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;goodbye&#34;</span>) 
+</span></span><span style=display:flex><span><span style=color:#a6e22e>words</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;hello&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>words</span>) <span style=color:#75715e>// Set(4) {&#39;hello&#39;, &#39;oranges&#39;, &#39;great&#39;, &#39;goodbye&#39;}
+</span></span></span></code></pre></div><h3 id=tuples>Tuple&rsquo;s</h3><p>Tuples are similar to lists, except once the values have been added they can&rsquo;t be changed (it&rsquo;s immutable). So you can&rsquo;t add items to a tuple, it&rsquo;s stuck how it is. This can be handy for data you don&rsquo;t want to let be modified. For example someone&rsquo;s birthday:</p><pre tabindex=0><code>birthday = (&#39;oct&#39;, 29, 1998)
+
+birthday[2] += 1 # ERROR
+</code></pre><p>You don&rsquo;t want to accidentally have someone add something to the birthday because the data doesn&rsquo;t change!</p><p>Here are how tuples work in python:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>birthday <span style=color:#f92672>=</span> (<span style=color:#e6db74>&#39;oct&#39;</span>, <span style=color:#ae81ff>29</span>, <span style=color:#ae81ff>1998</span>)
+</span></span></code></pre></div><p>Javascript does not have tuples!</p><h3 id=associative-arraysmapsjsondictionaries>Associative Arrays/Maps/JSON/Dictionaries</h3><p>These are the first collection that does not use indexes for it&rsquo;s elements. All of these are different names for what are called key-value stores. Instead of using indexes you can set your own &lsquo;key&rsquo;, which maps to a value. This lets you represent abstract data with it&rsquo;s own labels easily. For example information about a user:</p><pre tabindex=0><code>user = {&#34;name&#34;: &#34;Kieran&#34;, &#34;age&#34;:24, &#34;developer&#34;:true}
+
+user[&#34;name&#34;] # &#34;Kieran&#34;
+</code></pre><p>Here is how you can do this in python with dictionaries (any class can also be a dictionary <a href=https://www.w3schools.com/python/ref_func_vars.asp>see vars()</a>):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>user <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Kieran&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;age&#34;</span>:<span style=color:#ae81ff>24</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;developer&#34;</span>:<span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(user[<span style=color:#e6db74>&#34;name&#34;</span>]) <span style=color:#75715e># &#34;Kieran&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> user[<span style=color:#e6db74>&#34;developer&#34;</span>]: 
+</span></span><span style=display:flex><span>    <span style=color:#75715e># This would print in this case</span>
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;Is a developer!&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>user[<span style=color:#e6db74>&#34;language&#34;</span>] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;english&#34;</span>
+</span></span><span style=display:flex><span>print(user) <span style=color:#75715e># {&#39;name&#39;: &#39;Kieran&#39;, &#39;age&#39;: 24, &#39;developer&#39;: True, &#39;language&#39;: &#39;english&#39;}</span>
+</span></span></code></pre></div><p>Javascript has 2 popular options, JSON, and maps. Maps are typically a lot faster, but JSON is more popular:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// JSON
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>user</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;name&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Kieran&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;age&#34;</span><span style=color:#f92672>:</span><span style=color:#ae81ff>24</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;developer&#34;</span><span style=color:#f92672>:</span><span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>user</span>[<span style=color:#e6db74>&#34;name&#34;</span>]) <span style=color:#75715e>// &#34;Kieran&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>user</span>[<span style=color:#e6db74>&#34;developer&#34;</span>]){
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// This would print in this case
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;Is a developer!&#34;</span>)
+</span></span><span style=display:flex><span>} 
+</span></span><span style=display:flex><span><span style=color:#a6e22e>user</span>[<span style=color:#e6db74>&#34;language&#34;</span>] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;english&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>user</span>) <span style=color:#75715e>// {name: &#39;Kieran&#39;, age: 24, developer: true, language: &#39;english&#39;}
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//Maps
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>user</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Map</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>user</span>.<span style=color:#a6e22e>set</span>(<span style=color:#e6db74>&#34;name&#34;</span>, <span style=color:#e6db74>&#34;Kieran&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>user</span>.<span style=color:#a6e22e>set</span>(<span style=color:#e6db74>&#34;age&#34;</span>, <span style=color:#ae81ff>24</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>user</span>.<span style=color:#a6e22e>set</span>(<span style=color:#e6db74>&#34;developer&#34;</span>,<span style=color:#66d9ef>true</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>user</span>.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;name&#34;</span>)) <span style=color:#75715e>// &#34;Kieran&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>user</span>.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;developer&#34;</span>)){
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// This would print in this case
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;Is a developer!&#34;</span>)
+</span></span><span style=display:flex><span>} 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>user</span>.<span style=color:#a6e22e>set</span>(<span style=color:#e6db74>&#34;language&#34;</span>,<span style=color:#e6db74>&#34;english&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>user</span>) <span style=color:#75715e>// Map(4) {&#39;name&#39; =&gt; &#39;Kieran&#39;, &#39;age&#39; =&gt; 24, &#39;developer&#39; =&gt; true, &#39;language&#39; =&gt; &#39;english&#39;}
+</span></span></span></code></pre></div></p></div></div></body><footer class="footer sticky-bottom" style=position:fixed;background-color:#ffcdae><div class=container><div class=row><a href=https://www.instagram.com/schulichignite target=_blank rel="noopener noreferrer"><i class="bi bi-instagram is-large"></i></a>
+<a href=https://www.youtube.com/channel/UC7tNvdbu952HOUl_4nK7iww target=_blank rel="noopener noreferrer"><i class="bi bi-youtube is-large"></i></a>
+<a href=https://vm.tiktok.com/ZSHPbWU3/ target=_blank rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentcolor" class="bi bi-tiktok is-large mt-3" viewBox="0 0 16 16"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753.0-3.07-.814-4-1.829V11A5 5 0 116 6v2a3 3 0 103 3V0z"/></svg></a><a href=https://www.facebook.com/SchulichIgnite/ target=_blank rel="noopener noreferrer"><i class="bi bi-facebook is-large"></i></a>
+<a href=https://linkedin.com/company/schulich-ignite/ target=_blank rel="noopener noreferrer"><i class="bi bi-linkedin is-large"></i></a>
+<a href=https://discord.gg/F3Qjqqj target=_blank rel="noopener noreferrer"><i class="bi bi-discord is-large"></i></a></div></div></footer><script src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js integrity=sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js integrity=sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js integrity="sha512-bgHRAiTjGrzHzLyKOnpFvaEpGzJet3z4tZnXGjpsCcqOnAH6VGUx9frc5bcIhKTVLEiCO6vEhNAgx5jtLUYrfA==" crossorigin=anonymous referrerpolicy=no-referrer></script>
+<script src=https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js></script>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/http.min.js integrity="sha512-4Rcwpn+xUuCDufCycA9UtpmboCxNHysWy23e45PJBQeh7m6Kno5/oQ4T5SmbmSAAZiDsm/IsX1IJwsOjy6ob0g==" crossorigin=anonymous referrerpolicy=no-referrer></script>
+<script>hljs.addPlugin(new CopyButtonPlugin),hljs.highlightAll(),hljs.initLineNumbersOnLoad()</script><script type=module>
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+    
+    let mermaidConfig = {
+    startOnLoad: true,
+    "theme": "base",
+        "themeVariables": {
+            "primaryColor": "#ffde59",
+            "primaryTextColor": "#d14b3b",
+            "primaryBorderColor": "#7C0000",
+            "lineColor": "#F8B229",
+            "secondaryColor": "#fff",
+            "tertiaryColor": "#d14b3b"
+        }
+    }
+    mermaid.initialize(mermaidConfig, '.language-mermaid');
+</script></html>
