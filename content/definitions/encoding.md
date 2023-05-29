@@ -1,5 +1,5 @@
 ---
-name: Encoding
+name: encoding
 aka:
   - sanitizaion
   - encode
