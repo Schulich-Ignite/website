@@ -20,21 +20,6 @@ draft: true
 ...
 
 
-```python
-common_words = [
-    "the","at","there","some","my","of","be","use","her","than",
-    "and","this","an","would","first","a","have","each","make","water",
-    "to","from","which","like","been","in","or","she","him","call",
-    "is","one","do","into","who","you","had","how","time","oil",
-    "that","by","their","has","its","it","word","if","look","now",
-    "he","but","will","two","find","was","not","up","more","long",
-    "for","what","other","write","down","on","all","about","go","day",
-    "are","were","out","see","did","as","we","many","number","get",
-    "with","when","then","no","come","his","your","them","way","made",
-    "they","can","these","could","may","I","said","so","people","part"
-]
-```
-
 ## IMages
 
 
@@ -43,3 +28,7 @@ common_words = [
 ### Brotli
 
 ### gzip 
+
+## Why not just compress everything?
+
+Compression helps save space, this can be important where space is limited, or where the amount of information sent matters (i.e. over a network). But, this does come at a tradeoff. Every compression system needs to be decompressed at some point to read the data. The more steps it takes to compress, often the more steps it takes to decompress
