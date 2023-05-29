@@ -4,6 +4,9 @@ subtitle: A quick understanding of memory
 date: 2023-02-06T00:00:00-06:00
 modified_date: ""
 image: /img/blog/pointers.jpg
+whitelist_definitions:
+- classes
+- variables
 authors:
 - Cole Pawliw
 tags:

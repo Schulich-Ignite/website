@@ -38,98 +38,19 @@
     {{ if .Params.website }}
     <a href="{{ .Params.website }}" target="_blank"><i class="bi bi-globe"></i></a>
     {{ end }}
+    </div>
+    </div>
+    </div>
 </div>
-</div>
-                <h2>Posts</h2>
-            {{ range .Data.Pages.ByDate.Reverse }}
-            <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
-            {{ if  (.Params.title) }}
-            <div class="col-12 mb-5 text-left">
-                <div class="card">
-                    <div class="row">
-                        <div class="col-md-4 col-xs-4">
-                            <a href="{{ .Permalink }}">
-                                {{ if  .Params.image }}
-                                    <img class="card-img-top med-image" src="{{ .Params.image }}" alt="{{ .Params.title }}">
-                                {{ else }}
-                                    <img class="card-img-top med-image" src='{{ "/img/logos/ignite.svg" }}' alt="{{ .Params.title }}">
-                                {{ end }}
-                            </a>
-                        </div>
-                        <div class="col-md-8">             
-                            <div class="card-body">
-                                <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Params.title }}</a></h3>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <small class="text-primary">
-                                            <i class="bi bi-calendar2-week-fill pr-1"></i><time>{{ .Params.date.Format "Monday, 01/02/2006" }}</time>
-                                            {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
-                                            <p>
-                                                <i class="bi bi-stopwatch-fill"></i><em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
-                                            </p>
-                                            {{ end }}
-        
-                                        </small>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <small class="text-primary">
-                                            {{if .Params.tags }}
-                                            <p><em><i class="bi bi-tags-fill"></i></em>
-                                                
-                                                {{- range .Params.tags }}
-                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
-                                                            <a href="{{ .Permalink }}">{{ .Params.Title }}</a>,
-            
-                                                    {{ end }}
-                                                {{ end }}
-                                                    
-            
-                                                
-                                            </p>
-                                            
-                                            {{ end }}</p>
-                                            {{if .Params.authors }}
-                                            <p style="margin-top:-15px;"><em>Author:</em>
-                                                
-                                                {{- range .Params.authors }}
-                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-                                                            <a href="{{ .Permalink }}">{{ .Params.name }}</a> 
-                                                    {{ end }}
-                                                {{ end }}</p>
-                                            {{end}}</p>
-                                        </small>
-                                    </div>
-                                    <div class="col-md-4"></div>
-                                </div>
-                                <p class="card-text">
-                                    <a style="color:var(--text)" href="{{ .Permalink }}">{{ .Summary }}...</a>
-                                    <a href="{{ ref . .File }}">Read more</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{ end }}
-        {{ end }} 
 
+            <div class="container">
+                <div class="row">
+                <h2 class="text-center">Posts</h2>
 
-        <div class="col-md-12 text-center">
-            
-            <div class="card">
-                <div class="share-icons">
-                    <h2>Share the Author!</h2>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{.Permalink }}" target="_blank"><i class="bi bi-facebook"></i></a>
-                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{.Permalink }}" target="_blank"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20post%20from%20schulich%20ignite%3A%0A{{.Permalink }}" target="_blank"><i class="bi bi-twitter"></i></a>
-                </div>
-                <a href="/authors/{{.Params.name | urlize}}/index.xml" target="_blank" class="p-3">or subscribe to the author with RSS <i class="bi bi-rss-fill"></i></a>
-            </div>
-        </div>
-
-
+                {{ partial "blog-feed.html" . }}
+                
 
 </div>
 </section>
-<div style="padding:3em;"></div>
+
 {{end}}

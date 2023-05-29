@@ -9666,6 +9666,7 @@ a:focus.btn.btn-primary {
   cursor: pointer;
 }
 
+
 /* Styles for projects-feed cards */
 
 .projects-overlay {
@@ -9712,4 +9713,44 @@ h3.card-project-title {
   margin-left: auto;
   margin-right: auto;
   width: 40%;
+
+/*Definition styles*/
+a[data-toggle="tooltip"]{
+  color:var(--primary)!important;
+}
+
+.tooltip-inner{
+  background: #fff4c9; /*Same as var(--secondary-transparent)*/
+  opacity:1;
+  color: var(--primary);
+  border-radius:1em;
+  padding:1em;
+}
+
+.tooltip-inner ul{
+  list-style-type: none !important;
+  margin:0;
+  padding: 0;
+}
+
+.tooltip-inner ul li{
+  list-style-type: none !important;
+  text-decoration: underline;
+  text-align: center;
+  padding: 0;
+}
+
+#difficulty-tooltip{
+  text-decoration: underline;
+}
+
+.bs-tooltip-top{
+  opacity:1 !important;
+}
+
+#definition-section{
+  max-width:120ch;
+  min-width:75%;
+  margin: 0 auto;
+  min-height:50vh;
 }

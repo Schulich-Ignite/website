@@ -430,12 +430,45 @@ Can be accessed with:
 {{ end }}
 ```
 
+
 #### Project Showcase
 
 The content for the project showcase can be found in ```content/projects```. There are a number of layouts for the blog system:
 1. The single layout; This is what shows up when you navigate to an individual post (```schulichignite.com/projects/<project file name>```), and can be found in ```layouts/projects/single.html```
 2. The list layout; This is a dedicated page that shows **ALL** projects under their appropriate difficulty tab. It is what shows up on ```schulichignite.com/projects``` and the layout can be found in ```layouts/projects/list.html```.
 3. The Feed; This is the feed that pulls in the news articles into a lists. It can be used in various places on the site and is typically invoked in a template using ```{{ partial "projects-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/projects-feed.html```.
+
+
+#### Definitions
+
+The definitions can be found in `/content/definitions` and the layouts in `/layouts/definitions`, and in the `/blog/single.html` it will parse all of these and highlight them with [bootstrap tooltips](https://getbootstrap.com/docs/5.2/components/tooltips/). 
+
+Definitions have the following fields
+
+```md
+---
+name: name # Term name
+accronym: n # If the term has an accronym version include it here
+aka: # Alternative names that you want to be highlighted
+- list
+- lists
+- array
+- arrays
+- maps
+last_modified: 2021-02-26T00:00:00-06:00 # When the definition was last modified
+tags: # Tags associated with the definition
+- beginner
+- data-structures
+---
+markdown content here
+```
+
+*Fields*
+- name; Term name/fullname
+- accronym; If the term has an accronym version include it here (i.e. HTML for hyper-text markup language)
+- aka; List of alternative names that you want to be highlighted
+- last_modified; When the definition was last modified
+- tags; Tags associated with the definition
 
 
 #### Contact

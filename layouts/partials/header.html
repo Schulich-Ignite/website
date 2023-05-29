@@ -68,16 +68,22 @@
         </div>
       </li>
       {{end}}
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/why-code">Why code?</a>
-      </li>  -->
-      {{ $blog:= (where .Site.Pages.ByDate "Type" "blog") }}
-      {{ $numOfBlog := len $blog }}
-      {{ if gt $numOfBlog 1 }}
-        <li class="nav-item">
-          <a class="nav-link" href="/blog">Blog</a>
-        </li>
-      {{ end }}
+      <li class="nav-item">
+        <!-- <a class="nav-link" href="/sessions">Sessions</a> -->
+
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Media
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/blog">Blog</a>
+          <a class="dropdown-item" href="/definitions">Definitions</a>
+        </div>
+      </li>
+      </li>
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
