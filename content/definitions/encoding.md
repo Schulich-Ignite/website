@@ -97,8 +97,6 @@ Where longitude and latitude are floating points to 3 decimal places,can be nega
 
 `44.810|-166.782|NE|11`
 
-`-444.810|-166.782|NE|11`
-
 Would be someone Moving north east at 11m/s, at the location ([44.810,-166.782](https://goo.gl/maps/nXWfgErGyhuDuvZy9)). This encoding means that if each character is a byte, we can encode any boat location in the world in 23 bytes! If there are 500,000 boats in the world we could track them all using 11.5Mb of data!
 
 ## Programming languages as encodings
