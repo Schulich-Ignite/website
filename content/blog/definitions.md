@@ -29,7 +29,7 @@ With the definitions system there is a few new features!
 
 ### In-page highlighting
 
-When reading any articles now you will see that some of the words that are highlighted will have a popup appear when you hover over it. For example if we wanted to explain how to <a href="http://localhost:17635/definitions/encoding/" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Encoding just means a way to take a set of information in one format, and convert or represent it to another format.">encode</a> something. This popup indicates we have a definition that covers the concept that's being highlighted, making it easy to access the definition right from the page! This feature is opt-in for our blog authors, so it's not on every page, but it sure is handy on the page it's on:
+When reading any articles now you will see that some of the words that are highlighted will have a popup appear when you hover over it. For example if we wanted to explain how to <a href="https://schulichignite/definitions/encoding/" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Encoding just means a way to take a set of information in one format, and convert or represent it to another format.">encode</a> something. This popup indicates we have a definition that covers the concept that's being highlighted, making it easy to access the definition right from the page! This feature is opt-in for our blog authors, so it's not on every page, but it sure is handy on the page it's on:
 
 <img src="/img/blog/in-page-highlighting.gif" style="margin-left:5%; width: 80%;">
 
