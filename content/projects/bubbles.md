@@ -9,6 +9,7 @@ tags:
   - python
 link: https://trinket.io/python/6b57e7810f
 difficulty: Beginner
+draft: true
 ---
 
 Bubbles appear when the mouse is pressed. They start out small, then grow in size as they move closer towards you. Who knew soap and water could look so magical? (The following haiku is courtesy of ChatGPT)

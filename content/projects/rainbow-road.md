@@ -9,6 +9,7 @@ authors:
 tags: 
 - python
 difficulty: Beginner
+draft: true
 ---
 
 As you move your mouse around the screen, a trail of rainbow dots appears!
