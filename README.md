@@ -7,6 +7,7 @@
     - [Site Variables](#site-variables)
     - [Homepage](#homepage)
     - [Blog](#blog)
+    - [Project Showcase](#project-showcase)
     - [Beginner / Flare / IndigeSteam](#beginner--flare--indigesteam)
     - [Gallery](#gallery)
     - [Mission](#mission)
@@ -21,6 +22,7 @@
       - [Index/Home](#indexhome)
       - [Sessions](#sessions)
       - [Blog](#blog-1)
+      - [Project Showcase](#project-showcase-1)
       - [Contact](#contact-1)
       - [Building on a Schedule](#building-on-a-schedule)
       - [FAQ's](#faqs-1)
@@ -205,6 +207,38 @@ graph TD
 (if you can't see the graph head [here](https://mermaid.live/edit#pako:eNp1kc1OwzAQhF9l5QsgNangmAMSbcoRpNJKSKQHE29i09oO67VQ1fTdcRL1wo8Plq2Z_TRjn0TtFYpCtCQ7DZuycpDWw1sji0ZmMSDBNm07yLL7_jaHNX5GDAyNOWAPi2vN3IViPjetM4xZrVxeezsf5Pwj3Ey4xTANy1_QSV2O7LscFuS_Bo3lHgOwRtisXjczeI8MymNwVwzr7dOoDLF7KE9aBm1cC_LQejKs7XmCliP0OXKXhgcTWMm1TlzjGNtkPfaw-pmoAIoujPDdf5xLkpHXw-MfDGQ6gk9FdGoESORpJ2bCIllpVHrt0wCvRCpisRJFOipJ-0pU7px8sVOScaUMexIFU8SZkJH9y9HVl_vkKY1MH2dFCnAIeP4Gh6ObgA))
 
 Inline in your markdown (you cannot use standard code fences)
+
+### Project Showcase
+
+New projects can be added in ```content/projects``` and existing projects can be edited at ```content/projects```. The format is:
+
+```markdown
+---
+title: "This is the project title"
+date: 2020-07-08T15:04:38-07:00
+image: "/img/projects/image-name.png"
+image_alt: Image alt text
+authors:
+- Chantae Ho
+video: XoQvbDROucQ
+tags:
+  - python
+link: https://trinket.io/python/6b57e7810f
+difficulty: Beginner
+---
+
+Enter project post content here.
+```
+
+#### Fields
+- Date: Required. Note that the datetime format is YYYY-MM-DDTHH:MM:SSTZ. Where TZ is timezone and the T splits the date from the time.
+- Image: Required. Specify an image to display for the project. If you do not choose an image, your project will not appear in the /projects/ page. 
+- Image_alt: Optional, but recommended. Alt text for the image, to be read by screen readers. This can be 1-2 sentences long.
+- Authors: Optional, a list of the authors for the content
+- Video: Optional, A youtube video id (for example https://www.youtube.com/watch?v=XoQvbDROucQ would be everything after `watch?v=` or `XoQvbDROucQ` in this case)
+- Tags: Optional, is a list of tags
+- Link: Optional, is a link to the project source code. This link should be publically accessible. The link should the entire url, including the https:// part. 
+- Difficulty: Required. This should be Beginner/Flare/Scorch, depending on the skill level required to complete the project. 
 
 ### Beginner / Flare / IndigeSteam
 
@@ -396,6 +430,15 @@ Can be accessed with:
 {{ end }}
 ```
 
+
+#### Project Showcase
+
+The content for the project showcase can be found in ```content/projects```. There are a number of layouts for the blog system:
+1. The single layout; This is what shows up when you navigate to an individual post (```schulichignite.com/projects/<project file name>```), and can be found in ```layouts/projects/single.html```
+2. The list layout; This is a dedicated page that shows **ALL** projects under their appropriate difficulty tab. It is what shows up on ```schulichignite.com/projects``` and the layout can be found in ```layouts/projects/list.html```.
+3. The Feed; This is the feed that pulls in the news articles into a lists. It can be used in various places on the site and is typically invoked in a template using ```{{ partial "projects-feed.html" .}}```. You can find the partial template that controls this in ```layouts/partial/projects-feed.html```.
+
+
 #### Definitions
 
 The definitions can be found in `/content/definitions` and the layouts in `/layouts/definitions`, and in the `/blog/single.html` it will parse all of these and highlight them with [bootstrap tooltips](https://getbootstrap.com/docs/5.2/components/tooltips/). 
@@ -426,6 +469,7 @@ markdown content here
 - aka; List of alternative names that you want to be highlighted
 - last_modified; When the definition was last modified
 - tags; Tags associated with the definition
+
 
 #### Contact
 

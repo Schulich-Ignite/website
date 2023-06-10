@@ -9666,6 +9666,55 @@ a:focus.btn.btn-primary {
   cursor: pointer;
 }
 
+
+/* Styles for projects-feed cards */
+
+.projects-overlay {
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(0, 0, 0, .5);
+  color: white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: calc(0.25rem - 1px);
+
+  /* transition effect*/
+  transition: opacity .2s, visibility .2s;
+}
+
+.img-wrap:hover .projects-overlay {
+  visibility: visible;
+  opacity: 1;
+  object-fit: cover;
+}
+
+h3.card-project-title {
+  color: white;
+  text-align: center;
+}
+
+.projects-img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.projects-pill {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1em;
+  margin-right: 0.5rem;
+}
+
+.single-project-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+
+/*Definition styles*/
 a[data-toggle="tooltip"]{
   color:var(--primary)!important;
 }
