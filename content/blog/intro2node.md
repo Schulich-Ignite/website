@@ -110,3 +110,5 @@ With this command, the code in the file will then execute, and we'll be met with
 Congrats! With that, you've just used Node.js to run your first JavaScript file. From here, we'll be able to work on building our application. Now that we have run a file in Node, I recommend writing some scripts in JS and running them with Node to get used to running different files so you're ready to rumble when the next article drops. I'd also recommend refreshing yourself with the JS syntax if you've not had a chance to do so already because the code we write will become much more complex from this point on.
 
 In the next post, we'll expand on what we learned about here by talking about some basic project structures before diving into more detail about NPM, some different available packages, and how we can go about incorporating them into our project.
+
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/npm-intro">See Next post</a>
