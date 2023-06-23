@@ -15,9 +15,78 @@ tags:
 
 Compression is the art of taking some data and making it smaller. If you want more details about common compression schemes take a look at our [definition page for compression](/definitions/compression). This article is instead going to focus on howing you compression with code examples, and simple custom compression schemes (don't get excited they're not very good) in python!
 
-## List and dictionary comprehensions (TODO)
+## List and dictionary comprehensions
 
 On top of the basic python syntax the code examples use a few concepts you should know.
+
+A list comprehension syntactically shorter way to produce a list of values with a simple calculation. It is intended to replace the design pattern of:
+
+1. instantiating an empty list
+2. Iterate and store values in the list
+3. return or use list values.
+
+For example:
+
+```python
+result = [] # 1. Initialize empty list
+
+# 2. Iterate and store values in the list
+for number in range(10): # Square numbers from 0-9 and add them to the result list
+    result.append(number**2)
+
+print(result) # 3. Return or use list values
+```
+
+Can be shortened to:
+
+```python
+result = [number ** 2 for number in range(10)] # Steps 1-2
+
+print(result) # 3. Return or use list values
+```
+
+which produces:
+
+```python
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+
+It does exactly the same as the above example, it is just shorter. The basic syntax is `[operation for variable in iterable]` Were operation is the calculation (or function) being run, variable is the name for the temporary iteration variable made, and iterable is some form of iterable (list, generator, set etc.). We can also do this conditionally, so for example if we wanted to only include even numbers we could do:
+
+```python
+evens = [number for number in range(10) if number %2 == 0]
+print(evens) # [0, 2, 4, 6, 8]
+```
+
+And we can do an if-else statement using:
+
+```python
+evens = ["even" if number %2 == 0 else "odd" for number in range(10)]
+print(evens) # ['even', 'odd', 'even', 'odd', 'even', 'odd', 'even', 'odd', 'even', 'odd']
+```
+
+We can do the same thing with dictionaries. For example:
+
+```python
+names = ["Kieran", "Frank", "Amy"]
+
+users = dict()
+for name in names:
+    users[name] = {"new_user":True}
+
+print(users) # {'Kieran': {'new_user': True}, 'Frank': {'new_user': True}, 'Amy': {'new_user': True}}
+```
+
+Can be shortened to:
+
+```python
+names = ["Kieran", "Frank", "Amy"]
+
+users = {name:{"new_user":True} for name in names}
+
+print(users) # {'Kieran': {'new_user': True}, 'Frank': {'new_user': True}, 'Amy': {'new_user': True}}
+```
+
 
 ## Lossless vs Lossy
 
