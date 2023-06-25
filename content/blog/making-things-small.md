@@ -15,6 +15,8 @@ tags:
 
 Compression is the art of taking some data and making it smaller. If you want more details about common compression schemes take a look at our [definition page for compression](/definitions/compression). This article is instead going to focus on howing you compression with code examples, and simple custom compression schemes (don't get excited they're not very good) in python!
 
+The repository for the full code examples can be found [here](https://github.com/Descent098/compression)
+
 ## List and dictionary comprehensions
 
 On top of the basic python syntax the code examples use a few concepts you should know.
