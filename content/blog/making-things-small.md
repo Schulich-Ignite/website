@@ -13,7 +13,7 @@ tags:
   - terminology
 ---
 
-Compression is the art of taking some data and making it smaller. If you want more details about common compression schemes take a look at our [definition page for compression](/definitions/compression). This article is instead going to focus on howing you compression with code examples, and simple custom compression schemes (don't get excited they're not very good) in python!
+Compression is the art of taking some data and making it smaller. If you want more details about common compression schemes take a look at our [definition page for compression](/definitions/compression). This article is instead going to focus on showing you compression with code examples, and simple custom compression schemes in python!
 
 The repository for the full code examples can be found [here](https://github.com/Descent098/compression)
 
@@ -92,7 +92,7 @@ print(users) # {'Kieran': {'new_user': True}, 'Frank': {'new_user': True}, 'Amy'
 
 ## Lossless vs Lossy
 
-There are two different common ways of doing compression depending on what you need it for. Lossless and lossy. The text algorithm we will cover is lossless, the image one is lossy.
+The other concept you should be aware of is that there are two different common ways of doing compression depending on what you need it for. Lossless and lossy. The text algorithm we will cover is lossless, the image one is lossy.
 
 ### Lossless
 
@@ -100,9 +100,9 @@ Lossless formats are what we're used to. They take in some data, compress it, an
 
 ### Lossy
 
-Lossy is unlike the systems we've seen before. With typical compression we want to get back **exactly** what we had before we compressed it. With lossy compression we want to be "close". Imagine you have a large image on a small screen, let's say a 1920x1080px image on a 480x720p screen. If we were to resize the image and in the process remove 1/8 of the pixels and just stich together a smaller but "close enough" version of the image, most people wouldn't notice. 
+Lossy is unlike the systems we've seen before. With typical compression we want to get back **exactly** what we had before we compressed it. With lossy compression we want to be "close". Imagine you have a large image on a small screen, let's say a 1920x1080px image on a 480x720px screen. If we were to resize the image and in the process remove 1/8 of the pixels and just stich together a smaller but "close enough" version of the image, most people wouldn't notice. 
 
-Formats like JPG are lossy. They basically create versions of images that are "close enough" to the original source images. This can cause some issues like [artifacts](https://en.wikipedia.org/wiki/Compression_artifact), a good quick explainer about this can be found [here as a video](https://www.youtube.com/watch?v=yBX8GFqt6GA)
+Formats like JPG are lossy. They basically create versions of images that are "close enough" to the original source images. This can cause some issues like [artifacts](https://en.wikipedia.org/wiki/Compression_artifact), a good quick explainer about this can be found [here as a video](https://www.youtube.com/watch?v=yBX8GFqt6GA). Lossy schemes are good for large data like images and videos. Especially when sending the data over a network! 
 
 ## Simple text example
 
