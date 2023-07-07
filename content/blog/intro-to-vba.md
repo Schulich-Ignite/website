@@ -2,7 +2,7 @@
 title: Intro to Visual Basic for Applications (VBA)
 subtitle: Supercharging office apps
 date: 2023-03-06T00:00:01-06:00
-modified_date: ""
+modified_date: "2023-07-07T00:00:01-06:00"
 image: /img/blog/writing-on-laptop.jpg
 authors: ["Brendan Smiley"]
 difficulty:
