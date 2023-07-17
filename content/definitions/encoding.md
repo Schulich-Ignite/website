@@ -112,3 +112,18 @@ If you are interested in more examples of different encodings take a look at our
 Having these lookup systems is great, but what happens when someone does something invalid? What happens in ASCII if someone puts 512 bits? What happens if someone includes a character that's outside your character set? These questions are all questions of sanitization.
 
 Sanitization is essentially the process of cleaning data to make sure it's safe before usiing it for anything. This can be raising errors and stopping execution for invalid encoded information, or stripping invalid information.
+
+## Honorable mentions
+
+This section just includes some interesting references and encoding systems that help drive home just how diverse encoding can be:
+
+- [Plain Text - Dylan Beattie - NDC Copenhagen 2022 (5:48)](https://youtu.be/gd5uJ7Nlvvo?t=348)
+- [Mike's Cube Code - Computerphile (2:52)](https://youtu.be/g9n0a0644B4?t=172)
+- [Everything you need to know about emoji 🍭](https://www.smashingmagazine.com/2016/11/character-sets-encoding-emoji/)
+- [Storing and displaying images with base64](https://tunghatbh.medium.com/storing-and-displaying-images-with-base64-897b1ceee502)
+- [Moorse Code](https://www.britannica.com/topic/Morse-Code)
+- [Baudot Code](https://cs.stanford.edu/people/eroberts/courses/soco/projects/2008-09/colossus/baudot.html#:~:text=The%20Baudot%20code%20or%20International,%5E5%3D32%20characters%20efficiently.)
+- [FEN Chess Encoding](https://www.chess.com/terms/fen-chess)
+- [Computer Chess Encodings](https://en.wikipedia.org/wiki/Board_representation_(computer_chess))
+- [Unicode Playing cards](https://en.wikipedia.org/wiki/Playing_cards_in_Unicode)
+- [Pickling in python (binary encoding)](https://docs.python.org/3/library/pickle.html)
