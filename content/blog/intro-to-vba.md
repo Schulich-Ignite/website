@@ -2,22 +2,26 @@
 title: Intro to Visual Basic for Applications (VBA)
 subtitle: Supercharging office apps
 date: 2023-03-06T00:00:01-06:00
-modified_date: ""
+modified_date: "2023-07-07T00:00:01-06:00"
 image: /img/blog/writing-on-laptop.jpg
 authors: ["Brendan Smiley"]
 difficulty:
-- flare
+  - flare
 tags:
   - vba
   - productivity
 ---
+
 VBA is a programming language that was created by Microsoft to help program inside their office applications. These office applications have helped students, teachers, office workers, and many others complete tasks quickly. However, users will often find themselves doing redundant tasks or wishing there was a tool to do a unique task. VBA is the tool to use in those situations, you can program time-saving programs to remove redundancy from your work [^1].
 
 It may be hard to grasp what kind of projects you can do with VBA. Below are some automation tools that I have built in the past which may help show VBA's capabilities:
 
-- **Extracting selected data from a computer-generated excel file and populating it into a formal report.** This was an industry application, the client was manually grabbing the pipe corrosion data from the computer-generated report and pasting it into their formal report. However, there were easily hundreds of pipe sections that needed populating. After using VBA the task took seconds to complete.
+- **Generating Reports with Data**. A common application is to use data from other portions of the code to create a report. Considering Word and Excel are both greatly used in industry, it is common for them to be used to make reports manually. If you use VBA, you can program the report to be generated automatically. This can save you time and reduce the chance of human error.
+  I have built mulitple reports where the data was being extracted from another file and then being populated into a formal report. You will learn more about generating reports in a later VBA blog post.
+
 - **Converting multiple Word Documents to PDF.** A School teacher I know needed to convert a bunch of separate word documents into individual pdf files. The quickest non-VBA way (I know of) to do this is to open each document and export it to pdf. Using VBA this task takes a few seconds.
-- **Window Forms can be used to create UIs.** If you need a complex system you can create full-scale Windows Forms (similar to C# Windows Forms). I have used a Windows Form to help "mail merge" customer information inside a Word Document template. More specifically, most of the reports will be very similar for each client, but you may need to replace the report date, customer name, and repopulate a Bill of Materials table for each customer.
+
+- **Window Forms can be used to create UIs.** If you need a complex system you can create full-scale Windows Forms (similar to C# Windows Forms). I have used a Windows Form to help "mail merge" information inside a Word Document template. More specifically, most of the reports will be very similar for each client, but you may need to replace the report date, customer name, and repopulate a Bill of Materials table for each customer.
 
 Below is a list of the office applications you can use VBA for [^1]:
 
@@ -37,7 +41,7 @@ This blog series assumes you have an understanding of the basic concepts of prog
 
 ### Macro Enabled Files
 
-An important thing to remember is that "Macros" also known as scripts or programs, need to be enabled by the user for security reasons. ***You should always be mindful of the macros you enable and allow to run on your computer. Only enable macros you trust.*** To be able to run VBA programs, you must have a macro-enabled version of the file. **To get a macro-enabled file select it from the save as dropdown.** Some examples of the regular file extensions vs. their macro-enabled file extensions are listed below:
+An important thing to remember is that "Macros" also known as scripts or programs, need to be enabled by the user for security reasons. **_You should always be mindful of the macros you enable and allow to run on your computer. Only enable macros you trust._** To be able to run VBA programs, you must have a macro-enabled version of the file. **To get a macro-enabled file select it from the save as dropdown.** Some examples of the regular file extensions vs. their macro-enabled file extensions are listed below:
 
 - Excel Workbook (.xlsx) vs. Excel Macro-Enabled Workbook (.xlsm)
 - Word Document (.docx) vs. Word Macro-Enabled Document (.docm)
