@@ -1,7 +1,7 @@
 ---
 title: A brief overview of how computers work
 subtitle: From Electricity to Python
-date: 2023-07-17T00:00:01-06:00
+date: 2023-07-16T00:00:01-06:00
 modified_date: ""
 image: /img/blog/pexels-craig-dennis-57007.jpg
 authors: ["Brendan Smiley"]
@@ -19,7 +19,7 @@ There are many additional processes in between the ones discussed in this articl
 
 The combination of electricity and transistors was used to create logic gates. Logic gates were then used to create programming languages. Programming languages were then used to create complex programs like operating systems and web browsers.
 
-```mermaid
+<pre class="mermaid">
 graph LR
     A[Electricity] --> B[Transistors]
     B --> C[Logic Gates]
@@ -28,7 +28,7 @@ graph LR
     D --> F[Web Browsers]
     D --> G[Video Games]
     D --> O[Other Technologies]
-```
+</pre>
 
 [How does knowing this make me a better programmer](#how-is-lower-level-computer-knowledge-useful-when-programming)
 
@@ -64,13 +64,13 @@ The people who made these complex logic gates with electrical circuits converted
 
 **A Black Box is the idea that you have no idea how the insides of the box work, you only know what comes in, and what comes out. You can enter an input and know the expected output.** [^2]
 
-![Black Box](/img/blog/HowDoComputersWork/Black_box_diagram.svg.png)
+<img src="/img/blog/HowDoComputersWork/Black_box_diagram.svg.png" alt="Black Box" width="40%">
 
 Turning Complete is an excellent game that helps teach the different levels of "black boxing" involved with logic gates.
 
 Turning Complete[^3]:
 
-<iframe width="80%" height="500" src="https://www.youtube.com/watch?v=-YY73ejihZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="80%" height="315" src="https://www.youtube.com/embed/-YY73ejihZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 As you can see from the video, you can eventually use those 1 and 0s to create Assembly Language. From Assembly, you can then make more programming languages.
 
@@ -79,6 +79,7 @@ As you can see from the video, you can eventually use those 1 and 0s to create A
 Python is a high-level programming language **built from C.** That means **Guido van Rossum** (The author of Python) wrote Python in C programming language. **Dennis Ritchie** wrote C in Assembly and **Kathleen Booth** wrote Assembly in Binary (1's and 0's)!
 
 The following diagram helps describe programming hierarchy [^4].
+
 ![Computer Languages](/img/blog/HowDoComputersWork/computer-languages.png)
 
 Programming languages show that the computer science and software engineering community depends on each other and builds off each other’s work.
