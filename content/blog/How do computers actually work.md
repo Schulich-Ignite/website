@@ -1,7 +1,7 @@
 ---
 title: A brief overview of how computers work
 subtitle: From Electricity to Python
-date: 2023-07-16T00:00:01-06:00
+date: 2023-07-17T00:00:01-06:00
 modified_date: ""
 image: /img/blog/pexels-craig-dennis-57007.jpg
 authors: ["Brendan Smiley"]
