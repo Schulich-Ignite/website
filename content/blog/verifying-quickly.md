@@ -1,5 +1,5 @@
 ---
-title: hash me harder
+title: How to verify quickly
 subtitle: A quick introduction to hashing
 date: 2023-07-31T00:00:00-06:00
 modified_date: ""
