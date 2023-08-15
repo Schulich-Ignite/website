@@ -11,8 +11,6 @@ tags:
   - SOLID
 ---
 
-# Programming Like a Professional (SOLID)
-
 Learning how to program is more than just finding a cool language and writing code. While it's true that anybody can learn to code, most people stop before learning the best practices for developing and maintaining their code. Many years ago, before there were standards in programming, successful applications would have to be rewritten many times over just to make small changes that didn't work with the original code. SOLID principles were created as a standard for all programmers to follow, not only so that your code remains open and flexible for change, but also so that another programmer can work on your code without having to figure out everything you did!
 
 If you want to pursue programming beyond small personal projects, then learning how to follow SOLID principles will help you along that path. We will learn what each of the letters in SOLID stands for, as well as a brief explanation of how to follow that principle. These principles involve much more advanced knowledge of programming than what is typically covered by this blog, so if you have not learned about abstraction, I would recommend doing some personal research on that before coming back to this article. Currently there are no articles on our blog about more advanced forms of object-oriented programming, however there are plenty of resources online about what interfaces are and how they work. A good starting point would be [this online guide.] (https://isaaccomputerscience.org/concepts/dsa_ctm_abstraction?examBoard=all&stage=all)
