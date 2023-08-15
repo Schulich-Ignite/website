@@ -4,7 +4,7 @@ subtitle: An introduction to compression
 date: 2023-07-03T00:00:00-06:00
 modified_date: ""
 difficulty: [scorch]
-image: "https://images.pexels.com/photos/4498091/pexels-photo-4498091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+image: /img/blog/compression/hero.jpeg
 authors: 
   - Kieran Wood
 tags:

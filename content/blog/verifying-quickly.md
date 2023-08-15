@@ -4,7 +4,7 @@ subtitle: A quick introduction to hashing
 date: 2023-07-31T00:00:00-06:00
 modified_date: ""
 difficulty: [scorch]
-image: "https://images.pexels.com/photos/6802630/pexels-photo-6802630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+image: "/img/blog/hashing/hero.jpeg"
 authors: 
   - Kieran Wood
 tags:
