@@ -1,7 +1,7 @@
 ---
 title: Writing your own HTTP server
 subtitle: HHTTPP creation Series Introduction & Setup
-date: 2023-08-27T00:00:00-06:00
+date: 2023-08-28T00:00:00-06:00
 modified_date: ""
 image: /img/blog/hhttpp/hero.jpg
 authors: 

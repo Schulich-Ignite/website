@@ -1,7 +1,7 @@
 ---
 title: HHTTPPP Post 1
 subtitle: Setting up the HTTP protocol
-date: 2023-08-27T00:00:00-06:00
+date: 2023-09-04T00:00:00-06:00
 modified_date: ""
 image: /img/blog/hhttpp/hero.jpg
 authors: 
