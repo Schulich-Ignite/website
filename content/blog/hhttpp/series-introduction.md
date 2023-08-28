@@ -1,8 +1,8 @@
 ---
 title: Writing your own HTTP server
 subtitle: HHTTPP creation Series Introduction & Setup
-date: 2023-06-05T00:00:00-06:00
-modified_date: 2023-01-19T00:00:00-06:00
+date: 2023-08-27T00:00:00-06:00
+modified_date: ""
 image: /img/blog/hhttpp/hero.jpg
 authors: 
 - Kieran Wood
@@ -13,7 +13,7 @@ tags:
   - theory
 ---
 
-The overall goal with the project is to create a simple [HTTP proxy server](#what-is-an-http-proxy). It is **not** designed to be a framework with routing, or any other fancy features. 
+HTTP is the way that we communicate over the internet. It's what allows you to see the content you're currently looking at. The overall goal with the project is to create a simple [HTTP proxy server](#what-is-an-http-proxy). It is **not** designed to be a framework with routing, or any other fancy features. 
 
 On top of that, there are a few caveats:
 
@@ -23,7 +23,7 @@ On top of that, there are a few caveats:
 
 ## Terms & Concepts
 
-To start there are some terms we need to understand. Here are some of the basics:
+To start there are some terms we need to understand in order to understand HTTP ([this video is also pretty good](https://www.youtube.com/watch?v=SzSXHv8RKdM)). Here are some of the basics:
 
 |Term | Description | Example |
 |-----|-------------|---------|
