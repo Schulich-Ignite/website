@@ -112,24 +112,213 @@ function(first_name= "Dene", last_name="Atwill") # prints: {'first_name': 'Dene'
 
 One great use for this is that it will allow you to write a function that allows you to pass config variables to a function, and you never have to change the function signatures to support new config variables!
 
-## Magic methods (TODO)
+## Magic/dunder methods (TODO)
 
-...
-- `__init__()`
-- Conversions: `__repr__()` & `__str__()`
+Magic/dunder methods are special types of methods that have some sort of special functionality in python. They're often called magic methods, but they're also called dunder (double underscore) methods because they all follow the patern `__<name>__()`. If you've created a class before you've actually used one before `__init__()`. Why can't you have an initialize method just called `init()` or `start()`? Because `__init__()` is reserved as a name and is invoked when the code that creates an instance is called, which is why it works at all.
+
+There are tons of other existing dunder methods to interact with various aspects of python.
+
+### Printing
+
+For example let's say you have a `User` class, when you try to print it to the console you will get something like `<__main__.User object at 0x0000017CC4F90310>`. This isn't super useful, so how could we instead override what prints when we call print on an object? Let's say we have a `name` and `age` attribute, and we want to print `<name>: <age>`.
+
+There is a built in magic method called `__repr__()` (I believe this is a short version of **repr**esentation), this allows you to override the representation of the object (which is what's printed). All we need to do is return a string with what we want to print, for example:
+
+```python
+class User:
+    def __init__(self, name, age):
+      self.name = name
+      self.age = age
+    
+    def __repr__(self):
+      return f"{self.name}: {self.age}"
+
+print(User("Kieran", 24)) # Prints: "Kieran: 24"
+```
+
+### Conversions
+
+There are tons of magic methods you can define to convert between types. These will also apply in *implicit conversions* (i.e. when printing something a call to convert the object into a string happens). These methods tend to follow this pattern when defined:
+
+```python
+def __<type>__(self):
+  return value
+```
+
+Where type is some type (i.e. `str`, `int`, `float`), and `value` is some value of that type (i.e. `"Class"`, `12`, `3.14`). Let's say for example we have a class (`MyValue`), that class takes in an int or float, and then when casted to a string returns the word representation of a number (i.e. `1` would be `"One"`), and other number types (`int`,`float` return that type of data):
+
+```python
+# Define lists of words for numbers 1-19 and multiples of 10 up to 90 (used in string conversion)
+ones = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]
+tens = ["", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+
+class MyValue:
+    def __init__(self, value):
+      if not type(value) in [float, int]:
+        # Try to cast invalid values into a float
+        value = float(value)
+      self.value = value
+
+    def __int__(self):
+      # Returns a int representation of the object
+      return int(self.value)
+
+    def __float__(self):
+      # Returns a float representation of the object
+      return float(self.value)
+    
+    ###### Defining helper functions to help with the string conversion ######
+
+    def convert_less_than_hundred(self, number):
+        # Function to convert a number less than 100 to text
+        if number < 20:
+            return ones[number]
+        else:
+            return tens[number // 10] + " " + ones[number % 10]
+
+    def convert_less_than_thousand(self, number):
+        # Function to convert a number less than 1_000 to text
+        if number < 100:
+            return self.convert_less_than_hundred(number)
+        else:
+            if number % 100 == 0:
+                return ones[number // 100] + " Hundred"
+            else:
+                return ones[number // 100] + " Hundred and " + self.convert_less_than_hundred(number % 100)
+    
+    def convert_less_than_million(self, number):
+        # Function to convert a number less than 1_000_000 to text
+        thousands = number // 1000
+        remainder = number % 1000
+        if remainder == 0:
+            return self.convert_less_than_thousand(thousands) + " Thousand"
+        else:
+            return self.convert_less_than_thousand(thousands) + " Thousand " + self.convert_less_than_thousand(remainder)
+    
+    def convert_less_than_billion(self, number):
+        # Function to convert a number less than 1_000_000_000 to text
+        if number >= 1_000_000_000:
+            raise ValueError(f"Number provided is too large (only up to billions accepted) recieved: {number}")
+        millions = number // 1000000
+        remainder = number % 1000000
+        if remainder == 0:
+            return self.convert_less_than_thousand(millions) + " Million"
+        else:
+            return self.convert_less_than_thousand(millions) + " Million " + self.convert_integer_to_text(remainder)
+    
+    def convert_integer_to_text(self, number):
+        # Takes in an integer, and converts it to text
+        if not isinstance(number, int): # Confirm value is an int
+            raise ValueError(f"Value not an integer {number}")
+        
+        # Handle simple & edge cases cases
+        if number == 0:
+            return "Zero"
+        elif number < 0:
+            return "Negative " + self.convert_integer_to_text(-1 * number)
+
+        # Handle 1-999
+        elif number < 1000:
+            return self.convert_less_than_thousand(number)
+
+        # Handle 1000-999_999
+        elif number < 1_000_000:
+            return self.convert_less_than_million(number)
+
+        # Handle 1_000_000-999_999_999
+        else:
+            return self.convert_less_than_billion(number)
+
+    ###### End of Defining helper functions to help with the string conversion ######
+
+    def __str__(self):
+        # Returns a string representation of the object
+        number = self.value
+        # Handle float input
+        if isinstance(number, float):
+            # Split into part before decimal (integer_part) and after (fractional_part)
+            integer_part, fractional_part = str(number).split('.')
+
+            # Convert each part to a str
+            integer_text = self.convert_integer_to_text(int(integer_part))
+            fractional_text = " ".join([ones[int(n)] if int(n) > 0 else "Zero" for n in fractional_part])
+            # Combine if fractional_text exists, else skip and return just integer part
+            if fractional_text:
+                return integer_text + " point " + fractional_text
+            else:
+                return integer_text
+
+        # Handle integer input
+        elif isinstance(number, int):
+            return self.convert_integer_to_text(number)   
+```
+
+We can then test this with:
+
+```python
+# Test converting integers to strings
+print(str(MyClass(1))) # Prints: 'One'
+print(str(MyClass(10))) # Prints: 'Ten'
+print(str(MyClass(20))) # Prints: 'Twenty Zero'
+print(str(MyClass(12))) # Prints: 'Twelve'
+print(str(MyClass(45))) # Prints: 'Forty Five'
+print(str(MyClass(375))) # Prints: 'Three Hundred and Seventy Five'
+print(str(MyClass(5_231))) # Prints: 'Five Thousand Two Hundred and Thirty One'
+print(str(MyClass(25_231))) # Prints: 'Twenty Five Thousand Two Hundred and Thirty One'
+print(str(MyClass(954_231))) # Prints: 'Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One'
+print(str(MyClass(8_954_231))) # Prints: 'Eight Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One'
+print(str(MyClass(85_954_231))) # Prints: 'Eighty Five Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One'
+print(str(MyClass(345_954_231))) # Prints: 'Three Hundred and Forty Five Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One'
+print(str(MyClass(999_999_999))) # Prints: 'Nine Hundred and Ninety Nine Million Nine Hundred and Ninety Nine Thousand Nine Hundred and Ninety Nine'
+
+# Test converting floats to strings
+print(str(MyClass(1.0))) # Prints: 'One point Zero'
+print(str(MyClass(10.15))) # Prints: 'Ten point One Five'
+print(str(MyClass(20.2))) # Prints: 'Twenty Zero point Two'
+print(str(MyClass(12.34))) # Prints: 'Twelve point Three Four'
+print(str(MyClass(45.734))) # Prints: 'Forty Five point Seven Three Four'
+print(str(MyClass(375.841))) # Prints: 'Three Hundred and Seventy Five point Eight Four One'
+print(str(MyClass(5_231.9591))) # Prints: 'Five Thousand Two Hundred and Thirty One point Nine Five Nine One'
+print(str(MyClass(25_231.12345))) # Prints: 'Twenty Five Thousand Two Hundred and Thirty One point One Two Three Four Five'
+print(str(MyClass(954_231.324698))) # Prints: 'Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One point Three Two Four Six Nine Eight'
+print(str(MyClass(8_954_231.5454654))) # Prints: 'Eight Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One point Five Four Five Four Six Five Four'
+print(str(MyClass(85_954_231.45657988))) # Prints: 'Eighty Five Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One point Four Five Six Five Seven Nine Eight Eight'
+print(str(MyClass(345_954_231.5454654))) # Prints: 'Three Hundred and Forty Five Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One point Five Four Five Four Six Five Four'
+print(str(MyClass(999_954_231.0567646))) # Prints: 'Nine Hundred and Ninety Nine Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One point Zero Five Six Seven Six Four Six'
+print(str(MyClass(999_999_999.9999999))) # Prints: 'Nine Hundred and Ninety Nine Million Nine Hundred and Ninety Nine Thousand Nine Hundred and Ninety Nine point Nine Nine Nine Nine Nine Nine Nine'
+
+# Test converting floats to ints
+print(int(MyClass(1.0)))    # Prints: 1
+print(int(MyClass(10.15)))  # Prints: 10
+print(int(MyClass(20.2)))   # Prints: 20
+print(int(MyClass(12.34)))  # Prints: 12
+print(int(MyClass(45.734))) # Prints: 45
+
+# Test converting ints to floats
+print(float(MyClass(1)))  # Prints: 1.0
+print(float(MyClass(10))) # Prints: 10.0
+print(float(MyClass(20))) # Prints: 20.0
+print(float(MyClass(12))) # Prints: 12.0
+print(float(MyClass(45))) # Prints: 45.0
+```
+  
+### Operators  (TODO)
 - Operators: `__add__()` & `__mul__()` & `__div__()`
+
+### Logical Comparisons (TODO)
 - Logic comparison: `__lt__()`, `__gt__()`, `__le__()`, `__ge__()`, `__eq__()`
 
-- Dangers of implementing your own magic methods
+### Class/data-structure type magic methods
 
-Class/data-structure type magic methods
+There are also several other dunder methods that exist for creating special types of objects including:
+
 - `__call__()` for callable classes
   - Be careful with this
-- `__getitem__()` & `__setitem__()` for key-value pairs
+- `__getitem__()` & `__setitem__()` for key-value pairs (see example in [this post](https://schulichignite.com/blog/verifying-quickly/#hashtable))
   - hash-maps
   - dictionaries
   - etc.
-- `__len__()` for container-like structures
+- `__len__()` for container-like structures (what `len()` uses)
   - lists
   - arrays
   - linked-list
@@ -138,6 +327,12 @@ Class/data-structure type magic methods
   - files
   - sockets
 - `__iter__()` & `__next__()` for [iterators](#iterators)
+
+### Creating your own dunder methods
+
+Why not create your own magic methods? If you're writing a program it seems "pythonic" to create your own magic methods that can be used by an API (I did this for [this project](https://github.com/Descent098/ezcv/blob/master/ezcv/content.py#L295-L313), where I created `__html__()` to turn a class into HTML). There is an implicit danger with doing this though. 
+
+The PSF (group that makes python) reserves the right to create whatever of these dunder methods they want. This means something like `__html__()` if it ever gets imlemented in python natively will break my app. So if you rely on this in your programs then python can completely break your program at any point, so you need to be careful.
 
 ## Higher order functions
 
