@@ -1,7 +1,7 @@
 ---
 title: HHTTPPP Post 2
 subtitle: Parsing HTTP requests and responses
-date: 2023-09-11T00:00:00-06:00
+date: 2023-09-18T00:00:00-06:00
 modified_date: ""
 image: /img/blog/hhttpp/hero.jpg
 authors: 
