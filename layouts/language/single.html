@@ -61,7 +61,10 @@
     <div class="container" >
         <div class="row">
             <div class="card col-md-12 p5">
-                <h2>{{ .Title}} | {{.Parent.Params.name}}</h2>
+                <h2 style="padding:2em;padding-left:0.5em;">{{ .Title}} | {{.Parent.Params.name}}</h2>
+                <div class="language-description">
+                    {{.Params.description | markdownify}}
+                </div>
             </div>
             <div class="spacer" style="margin-top:100px"></div>
             <div class="card col-md-12 no-background language-intro">

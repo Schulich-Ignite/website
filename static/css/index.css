@@ -9827,8 +9827,18 @@ summary{
   border-radius: 15px;
 }
 
+.language-description,
 .language-intro{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.25rem;
 }
 
+.language-description{
+  padding:1em; 
+  padding-top:0;
+  margin-top:-.25em;
+}
+
+.language-description > *{
+  display: inline; 
+}

@@ -1,8 +1,9 @@
 ---
 title: Advanced
+description: |
+  If you haven't covered the basics of python I would recommend looking at [our basic syntax overview](/language/python/syntax). This section will cover more advanced methods that will help you once you have the ability to broadly use python
 ---
 
-If you haven't covered the basics of python I would recommend looking at [our basic syntax overview](/language/python/syntax). This section 
 
 {{% collapse heading="Type hints" %}}
 
@@ -654,6 +655,7 @@ If you need to run code after a class instance is created you can use `__post_in
 ### \_\_post\_init\_\_() (TODO)
 
 ...
+[magic method](#magic/dunder-methods)
 
 
 ### ClassVars (TODO)
