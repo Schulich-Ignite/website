@@ -1,3 +1,7 @@
+---
+title: Basics and syntax
+---
+
 ## Creating and using files
 
 Creating and using Python files, also known as Python scripts, is the foundation of writing and running Python programs. Here's a beginner-friendly explanation of how to get started:

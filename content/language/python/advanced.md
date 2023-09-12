@@ -1,9 +1,15 @@
-## Type hints
+---
+title: Advanced
+---
+
+If you haven't covered the basics of python I would recommend looking at [our basic syntax overview](/language/python/syntax). This section 
+
+{{% collapse heading="Type hints" %}}
 
 Type hints are a way in python to specify the **intended** type of a variable (not enforced just highly suggested). This works by having a colon, then the type declaration for each varaible/parameter/attribute. You can even include details about return types in functions with `def function_name(parameter) -> return_type` For example:
 
 ```python
-age = 21
+age = 21 
 
 def greet(name):
    return f"Hello {name}"
@@ -44,7 +50,9 @@ This gives an indication to people running your code which data types they shoul
 - pypy
 - mypy
 
-## Packing and Unpacking
+{{% /collapse %}}
+
+{{% collapse heading="Packing and Unpacking" %}}
 
 When looking at collections you can "unpack" them. This basically allows you to break them up into peices. For example:
 
@@ -111,8 +119,10 @@ function(first_name= "Dene", last_name="Atwill") # prints: {'first_name': 'Dene'
 ```
 
 One great use for this is that it will allow you to write a function that allows you to pass config variables to a function, and you never have to change the function signatures to support new config variables!
+{{% /collapse %}}
 
-## Magic/dunder methods (TODO)
+
+{{% collapse heading="Magic/dunder methods (TODO)" %}}
 
 Magic/dunder methods are special types of methods that have some sort of special functionality in python. They're often called magic methods, but they're also called dunder (double underscore) methods because they all follow the patern `__<name>__()`. If you've created a class before you've actually used one before `__init__()`. Why can't you have an initialize method just called `init()` or `start()`? Because `__init__()` is reserved as a name and is invoked when the code that creates an instance is called, which is why it works at all.
 
@@ -334,7 +344,9 @@ Why not create your own magic methods? If you're writing a program it seems "pyt
 
 The PSF (group that makes python) reserves the right to create whatever of these dunder methods they want. This means something like `__html__()` if it ever gets imlemented in python natively will break my app. So if you rely on this in your programs then python can completely break your program at any point, so you need to be careful.
 
-## Higher order functions
+{{% /collapse %}}
+
+{{% collapse heading="Higher order functions" %}}
 
 A higher order function will allow you to run code before and after a function executes. To explain how this works you need to understand that **EVERYTHING** in python is an object, including functions. If I look at this example:
 
@@ -497,8 +509,9 @@ def foo(a, b):
 result, time_taken = foo(1,2) # Returns (1, 0.30090832710266113)
 print(f"foo() took {time_taken} and had a result of {result}") # foo() took 0.30090832710266113 and had a result of 1
 ```
+{{% /collapse%}}
 
-## Properties (getters and setters)
+{{% collapse heading="Properties (getters and setters)" %}}
 
 Properties are a method in python to enforce the getter-setter pattern. This is more popular in languages like Java, but essentially instead of having tons of attributes that you access directly you have methods that control access to, and modification of certain attributes. This is useful for various scenarios such as:
 
@@ -543,7 +556,10 @@ class City:
 
 So in this case `temperature()` and `population()` are the getters, which means that when you try to access `City.temperature` this function is called and the result is returned. Syntax wise you need to append an underscore to access the current value. Once you have declared a property, you can then create a setter as a decorator, which would be the functions that also take in `value` as a parameter. 
 
-## Iterators (TODO)
+{{% /collapse %}}
+
+
+{{% collapse heading="Iterators (TODO)" %}}
 
 ...
 
@@ -603,8 +619,9 @@ print(evens) # ['even', 'odd', 'even', 'odd', 'even', 'odd', 'even', 'odd', 'eve
 
 ...
 
+{{% /collapse %}}
 
-## Dataclasses
+{{% collapse heading="Dataclasses" %}}
 
 Dataclasses are a special way to define classes in python. They help make classes more efficient, but have some caveats (that I find are positives), namely all your attributes must be defined with type hints. For example here is a `User` class the typical python way:
 
@@ -650,11 +667,15 @@ If you need to run code after a class instance is created you can use `__post_in
 
 Link to LAMBDA section
 
-## Context managers (TODO)
+{{% /collapse%}}
+
+{{% collapse heading="Context managers (TODO)" %}}
 
 ...
 
-## Lambdas (TODO)
+{{% /collapse%}}
+
+{{% collapse heading="Lambdas (TODO)" %}}
 
 Lambdas are a way in python to declare anonymous functions. What this means is you can assign a function call to a variable. So for example let's take the simplest case, a function that takes in a name and returns a greeting string using the name:
 
@@ -692,3 +713,4 @@ empty_list = lambda : []
 class Student:
    grades:List[int] = field(default_factory=empty_list) # Initialize Student.grades to an empty list
 ```
+{{% /collapse%}}

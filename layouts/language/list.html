@@ -1,0 +1,78 @@
+{{ define "main" }}
+
+{{if .Title }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" (.Title | title)) }}
+
+{{else if .Params.name}}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" (.Params.name | title)) }}
+{{ else }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Languages") }}
+{{end}}
+
+<section class="section" id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5">
+                <div class="language-intro">
+                    {{ .Content }}
+                </div>
+            </div>
+            {{if or .Params.name }}
+            <h2>Learn More</h2>
+            {{end}}
+            {{ range .Data.Pages }}
+
+            <!--For some reason hugo ads a 'blank' event, so this makes sure the necessary metadata is there for each event-->
+            <div class="col-12 mb-5">
+                <div class="card">
+                    <div class="row">
+                    {{ if  .Params.logo }}
+                        <div class="col-md-4 col-xs-4">
+                            <a href="{{ .Permalink }}">
+                                <img class="card-img-top med-image blog-image" src="{{ .Params.logo }}" alt="{{ .Params.name }}"style="padding:1.5em;">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                    {{ else }}
+                        <div class="col-md-12">
+                    {{end}}
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    {{ if .Params.name }}
+                                    <a href="{{ .Permalink }}">{{ .Params.name }}</a> 
+                                    {{else}}
+                                    <a href="{{ .Permalink }}">{{ .Params.title }}</a> 
+                                    {{ end }}
+                                </h3>
+                                <div class="row">
+                                </div>
+                                <p class="card-text">
+                                    {{ if  .Params.logo }}
+                                    <a style="color:var(--text);font-size:1.2rem;" href="{{ .Permalink }}">{{ .RawContent | truncate 400 }}...</a>
+                                    {{ else }}
+                                    <a style="color:var(--text);font-size:1.2rem;" href="{{ .Permalink }}">{{ .Summary }}...</a>
+                                    
+                                    {{end}}
+                                    <a href="{{ ref . .File }}">Read more</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{ end }}
+        
+        
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+{{ end }}

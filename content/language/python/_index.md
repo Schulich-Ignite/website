@@ -5,7 +5,6 @@ website: https://python.org/
 source: https://github.com/python
 ---
 
-
 Python is a versatile and widely-used programming language that is used by developers, data scientists, and educators alike. Created by Guido van Rossum and first released in 1991, Python has steadily grown in popularity due to its simplicity and readability. Its design philosophy emphasizes code readability, making it an ideal choice for both beginners and experienced programmers. Python's ease of use, combined with its robust libraries and frameworks, has made it a top choice for a wide range of applications, from web development and data analysis to artificial intelligence and scientific computing.
 
 One of Python's key strengths is its extensive standard library (largely housed on [PyPi](https://pypi.org/)), which provides a wide array of modules and packages that simplify tasks such as file handling, machine learning, networking, web development and even graphical user interface (GUI) development. Python's versatility extends to its cross-platform compatibility, as it can be run on various operating systems, including Windows, macOS, and Linux. Furthermore, its open-source nature fosters a vibrant community of developers who continuously contribute to its growth, ensuring that Python remains at the forefront of programming languages.
