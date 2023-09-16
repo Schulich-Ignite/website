@@ -6,8 +6,8 @@ on:
       - master
   schedule:
     # Runs on UTC (7 hours ahead)
-    # Run At 02:00am MST on Monday, Tuesday, Wednesday, and Thursday
-    - cron:  '0 9 * * 1,2,3,4'
+    # Run At 02:00am MST on Monday (for blog), Wednesday, Thursday, and Friday
+    - cron:  '0 9 * * 1,3,4,5'
 
 jobs:
   build-deploy:
