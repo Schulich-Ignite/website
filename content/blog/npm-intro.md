@@ -5,10 +5,10 @@ date: 2023-06-19T00:00:00-06:00
 modified_date: ""
 image: /img/blog/nodejs/pexels-npm.jpg
 authors: [Spencer Fietz]
+language: [javascript]
 tags:
   - scorch
   - web
-  - javascript
   - node
   - npm
 ---

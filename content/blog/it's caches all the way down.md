@@ -6,6 +6,9 @@ modified_date: 2023-04-03T00:00:00-06:00
 image: /img/blog/whiteboard-2.jpg
 authors: 
 - Kieran Wood
+language:
+  - python
+  - javascript
 tags:
     - optimization
     - web

@@ -5,10 +5,10 @@ date: 2023-04-10T00:00:00-06:00
 modified_date: ""
 image: /img/blog/nodejs/header-from-pexels.jpg
 authors: [Spencer Fietz]
+language: [javascript]
 tags:
   - scorch
   - web
-  - javascript
   - node
 ---
 If you've been learning or reading about web development, you've probably heard about Node.js. In this article series, we'll help you get started using Node by building a homework-tracking application and providing you with all the information and tools you need to develop your own projects using Node. Before that, let's talk about what Node is and how we can get started using it.

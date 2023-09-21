@@ -6,8 +6,8 @@ modified_date: 2023-01-19T00:00:00-06:00
 image: https://images.unsplash.com/photo-1429743305873-d4065c15f93e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1467&q=80
 authors: 
 - Kieran Wood
+language: [python]
 tags:
-  - python
   - scorch
   - web
   - theory

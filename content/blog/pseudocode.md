@@ -7,10 +7,8 @@ modified_date: ""
 image: /img/blog/whiteboarding.jpg
 authors: [Cole Pawliw]
 tags:
-
 - theory
 - terminology
-
 ---
 
 Perhaps you have taken a computer science course, and you heard the term "pseudocode" used at some point. If you have ever wondered what this is, here is the guide for you. Even if this has never happened to you, it is good to know what pseudocode is, and how to write it.
