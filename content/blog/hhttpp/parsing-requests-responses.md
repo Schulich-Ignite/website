@@ -1,6 +1,6 @@
 ---
-title: HHTTPPP Post 2
-subtitle: Parsing HTTP requests and responses
+title: HHTTPPP; Parsing HTTP requests and responses
+subtitle: Using pattern matching to create objects
 date: 2023-09-18T00:00:00-06:00
 modified_date: ""
 image: /img/blog/hhttpp/hero.jpg

@@ -1,6 +1,6 @@
 ---
-title: HHTTPPP Post 1
-subtitle: Setting up the HTTP protocol
+title: HHTTPPP; Setting up the HTTP protocol
+subtitle: Creating our classes & data model
 date: 2023-09-04T00:00:00-06:00
 modified_date: ""
 image: /img/blog/hhttpp/hero.jpg
