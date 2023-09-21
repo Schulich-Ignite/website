@@ -8,6 +8,12 @@
 {{ else }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Languages") }}
 {{end}}
+<nav aria-label="breadcrumb" class="mt-4 p-2" style="max-width:40%">
+    <ol class="breadcrumb" style="background-color:transparent;">
+        <li class="breadcrumb-item text-primary" aria-current="page"><a href="/language">Language</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{.Params.name}}</li>
+    </ol>
+</nav>
 
 <section class="section" id="blog">
     <div class="container">
@@ -33,7 +39,14 @@
                             </a>
                         </div>
                         <div class="col-md-8">
-                    {{ else }}
+                    {{ else if .Parent.Params.logo }}
+                    <div class="col-md-4 col-xs-4">
+                        <a href="{{ .Permalink }}">
+                            <img class="card-img-top med-image blog-image" src="{{ .Parent.Params.logo }}" alt="{{ .Parent.Params.name }}"style="max-height:200px; object-fit: contain !important;">
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                    {{else}}
                         <div class="col-md-12">
                     {{end}}
                             <div class="card-body">
@@ -50,7 +63,7 @@
                                     {{ if  .Params.logo }}
                                     <a style="color:var(--text);font-size:1.2rem;" href="{{ .Permalink }}">{{ .RawContent | truncate 400 }}...</a>
                                     {{ else }}
-                                    <a style="color:var(--text);font-size:1.2rem;" href="{{ .Permalink }}">{{ .Summary }}...</a>
+                                    <a style="color:var(--text);font-size:1.2rem;" href="{{ .Permalink }}">{{ .Params.description | markdownify }}</a>
                                     
                                     {{end}}
                                     <a href="{{ ref . .File }}">Read more</a>
@@ -75,4 +88,5 @@
         </div>
     </div>
 </section>
+
 {{ end }}

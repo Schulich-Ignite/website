@@ -259,6 +259,19 @@
         
                                                 {{ end }}
                                             {{ end }}
+                                            {{ if .Params.language}}
+                                                <br>
+                                                <em><i class="bi bi-tags-fill"></i></em>
+                                                {{ $tagLength := len (.Params.language)}}
+                                                    
+                                                {{- range $index, $language := .Params.language }}
+
+                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "language/%s" (urlize .)) }}
+                                                            <a href="{{ .Permalink }}">{{ .Params.Title }}</a>{{ if and (gt $tagLength 1) (lt $index (sub $tagLength 1))}},{{end}}
+            
+                                                    {{ end }}
+                                                {{ end }}
+                                            {{ end }}
                                         </p>
                                             {{ end }}
                                         {{end}}
@@ -291,11 +304,25 @@
                                                     {{ end }}
                                                 {{ end }}</p>
                                             {{ end }}
+                                            {{ if .Params.language}}
+                                                <i class="bi bi-file-code-fill text-primary"></i>  
+                                                {{ $tagLength := len (.Params.language)}}
+                                                    
+                                                {{- range $index, $language := .Params.language }}
+
+                                                    {{- with $.Site.GetPage "taxonomyTerm" (printf "language/%s" (urlize .)) }}
+                                                            <a href="{{ .Permalink }}">{{ .Params.name }}</a>{{ if and (gt $tagLength 1) (lt $index (sub $tagLength 1))}},{{end}}
+            
+                                                    {{ end }}
+                                                {{ end }}
+                                            {{ end }}
                                             {{ if .Params.difficulty }}
-                                                <strong class="text-primary">Difficulty:
-                                                {{ partial "difficulty-popup.html" .}}
+                                                <br>
+                                                <em>Difficulty:
+                                                <span class="text-primary">{{ partial "difficulty-popup.html" .}}</span>
                                                 </strong>
                                             {{end}}
+
                                             
                                         {{end}}
 

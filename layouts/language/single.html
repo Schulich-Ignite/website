@@ -54,6 +54,13 @@
 
 {{ define "main" }}
 {{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Parent.Params.name) }}
+<nav aria-label="breadcrumb" class="mt-4 p-2" style="max-width:40%">
+    <ol class="breadcrumb" style="background-color:transparent;">
+        <li class="breadcrumb-item text-primary" aria-current="page"><a href="/language">Language</a></li>
+        <li class="breadcrumb-item text-primary" aria-current="page"><a href="/language/{{.Parent.Params.name}}">{{.Parent.Params.name}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{.Params.Title}}</li>
+    </ol>
+</nav>
 <section class="section">
     {{ if .Params.image }}
         <img class="card-img-top large-image blog-hero-image" src="{{ .Params.image }}">
@@ -61,10 +68,17 @@
     <div class="container" >
         <div class="row">
             <div class="card col-md-12 p5">
-                <h2 style="padding:2em;padding-left:0.5em;">{{ .Title}} | {{.Parent.Params.name}}</h2>
-                <div class="language-description">
-                    {{.Params.description | markdownify}}
+                <div style="padding:2em;padding-left:0.5em;">
+                    <h2>{{ .Title}} | {{.Parent.Params.name}}</h2>
+                    <div class="language-description">
+                        {{.Params.description | markdownify}}
+                    </div>
+                    {{ if .TableOfContents }}
+                    <h2>Table of contents</h2>
+                    {{.TableOfContents}}
+                    {{end}}
                 </div>
+
             </div>
             <div class="spacer" style="margin-top:100px"></div>
             <div class="card col-md-12 no-background language-intro">
