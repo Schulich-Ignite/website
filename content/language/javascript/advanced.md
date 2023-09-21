@@ -1,7 +1,7 @@
 ---
 title: Advanced
 description: |
-  If you haven't covered the basics of javascript I would recommend looking at [our basic syntax overview](/language/javascript/syntax). This section will cover more advanced methods that will help you once you have the ability to broadly use javascript
+  If you haven't covered the basics of javascript I would recommend looking at [our basic syntax overview](/language/javascript/syntax). This section will cover more advanced methods that will help you once you have the ability to broadly use javascript more effectively!
 ---
 
 ## Async/Await and Promises

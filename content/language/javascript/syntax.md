@@ -1,5 +1,7 @@
 ---
 title: Basics and syntax
+description: |
+  This page will give you everything you need to get up and running using javascript. It will cover the essentials you need to start building software!
 ---
 
 ## Running JavaScript
@@ -17,6 +19,8 @@ console.log("Hello, world!");
 ```
 
 ## Variables and Data Types
+
+Variables are used to store data in your programs. Every variable has a label, it's data and it's data types. The label is the name you assign to it, and the data is on the right hand side of the `=`. The data type is a bit more complicated, and will be explained below.
 
 ### Integers, Floats, and Strings
 
