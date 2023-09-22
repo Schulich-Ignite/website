@@ -111,4 +111,4 @@ Congrats! With that, you've just used Node.js to run your first JavaScript file.
 
 In the next post, we'll expand on what we learned about here by talking about some basic project structures before diving into more detail about NPM, some different available packages, and how we can go about incorporating them into our project.
 
-<a class="btn btn-secondary" href="https://schulichignite.com/blog/npm-intro">See Next post</a>
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/intro-to-node/npm-intro">See Next post</a>
