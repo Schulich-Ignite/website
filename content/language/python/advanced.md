@@ -1,7 +1,8 @@
 ---
 title: Advanced
 description: |
-  If you haven't covered the basics of python I would recommend looking at [our basic syntax overview](/language/python/syntax). This section will cover more advanced methods that will help you once you have the ability to broadly use python
+  If you haven't covered the basics of python I would recommend looking at [our basic syntax overview](/language/python/syntax). This section will cover more advanced methods that will help you once you have the ability to broadly use python more effectively!
+excludeTOC: True
 ---
 
 
@@ -43,13 +44,148 @@ This gives an indication to people running your code which data types they shoul
 | List | A list is a collection. Collections can be subscripted to tell you what's inside | users is a list of list of strings `users:List[List[str]] = [["kieran"],["James"]]`
 | Callable | This means any object that has a `__call__()` method including functions (yes they are objects) | Passing the function `do_stuff()` to `time(func:Callable)` so it can run it and time it `time(do_stuff)` |  
 
-### Enforcing types (TODO)
+### Enforcing types
 
-...
+Python does not enforce types on function parameters. But you can make your own type enforcement by doing type comparisons. There are two ways to do this. The first is to use `type()` and compare to the class, for example:
 
-- Pydantic
-- pypy
-- mypy
+```python
+def greet(name:str) -> str:
+  if not type(name) == str:
+    raise ValueError(f"{name} is not a string")
+  return f"Hello {name}"
+
+class Animal:
+  def __init__(self, name:str):
+    self.name:str = name
+
+def show_animal(animal:Animal):
+  if not type(animal) == Animal:
+    raise ValueError(f"{animal} is not an Animal")
+  return f"This animal is a {animal.name}"
+```
+
+This method works **ok**, but it's not the best. For example let's say you have a class that extends the `str` class, it would fail that check:
+
+```python
+class MyString(str):
+  def __init__(self,value:str):
+    if not type(value) == str:
+      raise ValueError(f"{value} is not a string")
+    self.value = value
+
+  def __str__(self) -> str:
+    return self.value  
+
+
+def greet(name:str) -> str:
+  if not type(name) == str:
+    raise ValueError(f"{name} is not a string")
+  return f"Hello {name}"
+
+greet(MyString("Kieran")) # ValueError: Kieran is not a string
+```
+
+If we want to include subclasses we should use `isinstance()`:
+
+```python
+class MyString(str):
+  def __init__(self,value:str):
+    if not type(value) == str:
+      raise ValueError(f"{value} is not a string")
+    self.value = value
+
+  def __str__(self) -> str:
+    return self.value  
+
+
+def greet(name:str) -> str:
+  if not isinstance(name, str):
+    raise ValueError(f"{name} is not a string")
+  return f"Hello {name}"
+
+greet(MyString("Kieran")) # Hello Kieran
+```
+
+Here are some good types you can use with `isinstance()` that are more general:
+
+|Type|Uses|package|
+|----|----|-------|
+| Number | All number types (int and float) work with it |[numbers](https://docs.python.org/3/library/numbers.html).Number|
+| Iterable | Any type that can be iterated (a for loop works on it) | Iterable |
+| Callable | Any type that can be called with parenthesis `()` (like function objects) | Callable |
+
+For example:
+
+```python
+from numbers import Number
+print(isinstance(1,Number)) # True
+print(isinstance(1.2,Number)) # True
+print(isinstance(1j,Number)) # True
+
+from typing import Iterable
+print(isinstance([],Iterable)) # True
+print(isinstance("",Iterable)) # True
+print(isinstance({},Iterable)) # True
+
+from typing import Callable
+
+def greet(name:str) -> str:
+  if not isinstance(name, str):
+    raise ValueError(f"{name} is not a string")
+  return f"Hello {name}"
+
+is_str = lambda s: isinstance(s, str) # Anonymous function
+
+class SquareNum:
+    def __init__(self, num:Number):
+        if not isinstance(num, Number):
+            raise ValueError(f"{num} is not a Number")
+        self.num=num
+    
+    def __call__(self) -> Number:
+        return self.num *self.num
+
+print(isinstance(greet, Callable)) # True
+print(isinstance(is_str, Callable)) # True
+print(isinstance(SquareNum, Callable)) # True
+
+```
+
+While this works there are even better solutions. [Pydantic](https://docs.pydantic.dev/latest/) is a python package that's designed to help make data validation easy. The package helps with a few things, but mostly it helps solve a very annoying situation that happens constantly. When you get data from a server it will often come down as JSON, which will be converted to a python dictionary. These dictionaries can sometimes be very large. Here's an example from their website:
+
+```python
+
+from pydantic import BaseModel, PositiveInt
+class User(BaseModel):
+    id: int  
+    name: str = 'John Doe'  
+    signup_ts: datetime | None  
+    tastes: dict[str, PositiveInt]  
+
+
+external_data = {
+    'id': 123,
+    'signup_ts': '2019-06-01 12:22',  
+    'tastes': {
+        'wine': 9,
+        b'cheese': 7,  
+        'cabbage': '1',  
+    },
+}
+
+user = User(**external_data)  # Valid data, creates without issue NOTE: cabbage will have int(1) as value not str("1")
+
+external_data = {'id': 'not an int', 'tastes': {}}  
+
+User(**external_data)  # Invalid data, raises ValidationError
+```
+
+There are some more strict systems you can use if you want to enforce static typing (checking before you run code). The most popular is [mypy](https://www.mypy-lang.org/), which throws errors if you try to run code that might have the wrong type. There's also a newer library called [pyre](https://pyre-check.org/) from meta (formerly facebook) which has a [playground you can test with](https://pyre-check.org/play?input=%23%20Pyre%20is%20being%20run%20in%20gradual%20typing%20mode%3A%20https%3A%2F%2Fpyre-check.org%2Fdocs%2Ftypes-in-python%2F%23gradual-typing%0A%23%20Use%20the%20%60%23%20pyre-strict%60%20header%20to%20run%20in%20strict%20mode%2C%20which%20requires%20annotations.%0A%0Afrom%20typing%20import%20*%0A%0A%23%20reveal_type%20will%20produce%20a%20type%20error%20that%20tells%20you%20the%20type%20Pyre%20has%0A%23%20computed%20for%20the%20argument%20(in%20this%20case%2C%20int)%0Aclass%20Animal%3A%0A%20%20%20%20def%20__init__(self)%3A%0A%20%20%20%20%20%20%20%20...%0A%20%20%20%20%20%20%20%20%0Aa%20%3D%20Animal()%0A%0Adef%20foo(a%3AAnimal)%20-%3E%20Animal%3A%0A%20%20%20%20return%20a%0A%0Afoo(a)%0Afoo(3)%0A).
+
+There's a few others:
+
+- [Google Pytype](https://google.github.io/pytype/)
+- [Microsoft Pyright](https://github.com/Microsoft/pyright)
 
 {{% /collapse %}}
 
@@ -123,7 +259,7 @@ One great use for this is that it will allow you to write a function that allows
 {{% /collapse %}}
 
 
-{{% collapse heading="Magic/dunder methods (TODO)" %}}
+{{% collapse heading="Magic/dunder methods" %}}
 
 Magic/dunder methods are special types of methods that have some sort of special functionality in python. They're often called magic methods, but they're also called dunder (double underscore) methods because they all follow the patern `__<name>__()`. If you've created a class before you've actually used one before `__init__()`. Why can't you have an initialize method just called `init()` or `start()`? Because `__init__()` is reserved as a name and is invoked when the code that creates an instance is called, which is why it works at all.
 
@@ -313,11 +449,55 @@ print(float(MyClass(12))) # Prints: 12.0
 print(float(MyClass(45))) # Prints: 45.0
 ```
   
-### Operators  (TODO)
-- Operators: `__add__()` & `__mul__()` & `__div__()`
+### Operators
 
-### Logical Comparisons (TODO)
-- Logic comparison: `__lt__()`, `__gt__()`, `__le__()`, `__ge__()`, `__eq__()`
+Operators allows you to do operator overloading. This allows you to overwrite what happens when you use an operator (+, -, /, //, % etc.). To do this you just use the pattern of using the operator name with one argument and a return:
+
+```python
+class DoMath:
+  def __init__(self, value):
+    self.value = value
+
+  def __add__(self, value):
+    return self.value + value
+
+
+print(DoMath(5) + 3)
+```
+
+Other Operators:
+
+| Function name | Operator |
+|`__sub__()`|	`-`|
+|`__mul__()`|	`*`|
+|`__floordiv__()`|	`//`|
+|`__truediv__()`|	`/`|
+|`__mod__()`|	`%`|
+|`__pow__()`|	`**`|
+
+Keep in mind you can also add an `i` in front of the function name to change the behaviour with assignment operators. For example `__iadd__()` will override behaviour for `+=`
+
+### Logical Comparisons
+
+Logical operators allows you to do logical operator overloading. This allows you to overwrite what happens when you use an operator (`<`, `>`, `<=`, `>=`, `==` etc.). To do this you just use the pattern of using the operator name with one argument and a return (must be a `bool`):
+
+```python
+class CheckLessThan:
+  def __init__(self, value):
+    self.value = value
+
+  def __lt__(self, value):
+    return self.value < value
+
+print(DoMath(5) < 3)
+```
+
+| Function name | Operator |
+|`__lt__()`|	`<`|
+|`__le__()`|	`<=`|
+|`__eq__()`|	`==`|
+|`__ne__()`|	`!=`|
+|`__ge__()`|	`>=`|
 
 ### Class/data-structure type magic methods
 
@@ -560,9 +740,56 @@ So in this case `temperature()` and `population()` are the getters, which means 
 {{% /collapse %}}
 
 
-{{% collapse heading="Iterators (TODO)" %}}
+{{% collapse heading="Iterators" %}}
 
-...
+When you use a for loop in python there is something interesting happening under the hood. Iterators are a special type of class that implements the iterator protocol. The protocol operates on classes that have two [magic methods](#magic/dunder-methods). This is what is used when you iterate. For example take this for loop:
+
+```python
+shopping_list = ["eggs", "ham", "spam"]
+
+for item in shopping_list:
+  print(item)
+```
+
+This can functionally be done the same with:
+
+```python
+index = 0
+
+while index < len(shopping_list):
+  print(shopping_list[index])
+  index += 1 
+```
+
+You will notice that essentially our loop calls the next item, until there are no more items. This is what the iterator is based on, it asks you to tell it what to call on each iteration (`__iter__()`), and then on each iteration it will call that `Iterable`'s `__next__()` function until a `StopIteration` exception is raised.
+
+### Creating your own Iterator
+
+With that knowledge let's create an iterator to understand how this works:
+
+```python
+from typing import List
+
+class ShoppingList:
+  def __init__(self, items:List[str]):
+    self.items = items
+    self.current_index = 0
+
+  def __iter__(self):
+    return self # Shopping list is an Iterator and an Iterable
+  
+  def __next__(self):
+    if self.current_index < len(self.items):
+        return_value = self.items[self.current_index]
+        self.current_index += 1
+        return return_value
+    raise StopIteration
+
+for item in ShoppingList(["Eggs", "Ham", "Spam"]):
+  print(item)
+```
+
+This means you can also make `Iterator`s out of things that don't have a defined length. For example let's say you have a database you're looping through, but data is coming in while you're looping. Instead of storing the current state and iterating over that, you can continuously keep iterating until a `StopIteration` is raised!
 
 ### List comprehensions
 
@@ -612,13 +839,67 @@ evens = ["even" if number %2 == 0 else "odd" for number in range(10)]
 print(evens) # ['even', 'odd', 'even', 'odd', 'even', 'odd', 'even', 'odd', 'even', 'odd']
 ```
 
-### Generators (TODO)
+### Generators
 
-...
+A generator is a type of iterator. This will allow you to make an iterator out of results of functions. For example:
 
-### Creating your own Iterator (TODO)
+```python
+def lots_of_numbers():
+  for number in range(10_000_000):
+    yield number
 
-...
+for number in lots_of_numbers:
+  print(number)
+```
+
+Essentially you can iterate over results 1 at a time. The question is why? Efficiency.
+
+In order to iterate over 10 million numbers you would normally need to put those numbers in a list, store that list and then iterate over it. This means that data needs to be stored somewhere while iterating. With a generator the value is generated **when it's needed**, and then is "paused" until `next()` is called on it again. So if instead of a full loop I did something like:
+
+```python
+def lots_of_numbers():
+  for number in range(10_000_000):
+    yield number
+
+nums = lots_of_numbers()
+
+print(next(nums)) # prints 0
+print(next(nums)) # prints 1
+```
+
+Which we can run while using essentially 0 memory. We can also use generators to do memory efficient returns of different values. For example let's say we need to get a bunch of data from an API but don't want to have to store it all we could turn the response into a generator and only process the results one at a time. Lets say for example that `get_user_orders()` sends back a JSON string that we're storing in a file:
+
+```python
+def get_user_info():
+  yield get_user_name() # "kieran"
+  yield get_user_orders() # Returns a large JSON string
+  yield get_user_age() # 24
+
+user_info = get_user_info()
+
+print(next(user_info)) # kieran
+print(next(user_info)) # prints a large JSON string
+print(next(user_info)) # 24
+```
+
+This means we only use the memory for `get_user_orders()` when the second `next()` is called, compared to something more traditional like this:
+
+
+```python
+def get_user_info():
+  return {
+    "name": get_user_name(),
+    "orders": get_user_orders(),
+    "age": get_user_age()
+  }
+
+user_info = get_user_info()
+
+print(user_info) # prints a large JSON string
+```
+
+We need to store it in RAM the whole time!
+
 
 {{% /collapse %}}
 
@@ -652,32 +933,219 @@ The handy thing about this is that the birthday attribute was not clear in the o
 
 If you need to run code after a class instance is created you can use `__post_init__(self)`.
 
-### \_\_post\_init\_\_() (TODO)
+### \_\_post\_init\_\_()
 
-...
-[magic method](#magic/dunder-methods)
+This is a [magic method](#magic/dunder-methods) that runs after your dataclass instance is setup. So for example maybe you want to do some birthday checking to make sure someone's birthday matches their age, and they aren't saying they're over 200 years old:
+
+```python
+from datetime import datetime
+from dataclasses import dataclass
+
+@dataclass
+class User:
+    name: str
+    age:int
+    birthday:datetime
+
+    def __post_init__(self):
+      if self.age > 200:
+        raise ValueError("You can't be over 200 years old >:(")
+      
+      if ((datetime.now().year - self.birthday.year) != self.age) and ((datetime.now().year - self.birthday.year) != self.age+1):
+        raise ValueError("Your birthday doesn't match your age")
+      
+      
+print(User("Kieran", 24, datetime(1998,10,29)))
+
+# Invalid
+print(User("Kieran", 24, datetime(1864,10,5)))
+print(User("Kieran", 400, datetime(2023-400,10,5)))
+```
 
 
-### ClassVars (TODO)
+### ClassVar's
 
-...
-- Make sure to have cleanup when deleted
+A class variable is a variable that exists as part of a class **not part of an instance**. This means each instance has **the same value** because it comes from the class they come from. This is handy in many situations such as keeping track of isntances that are created:
 
-### Fields (TODO)
+```python
+from __future__ import annotations
+from typing import ClassVar, List
+from dataclasses import dataclass
 
-...
+@dataclass
+class Slide:
+    content: str
+    slides: ClassVar[List[Slide]] = []
 
-Link to LAMBDA section
+    def __post_init__(self):
+      Slide.slides.append(self)
+
+
+Slide("Hello World")
+Slide("World Hello")
+Slide("HeLlO WoRlD")
+
+print(Slide.slides) # [Slide(content='Hello World'), Slide(content='World Hello'), Slide(content='HeLlO WoRlD')]
+```
+
+`Slide.slides` will now have a list of every class instance that is created, but keep in mind this means that the instances will **NEVER** be deleted unless you clear them out. So you might end up wasting a ton of memory. You can resolve this by having some sort of `Slide.delete()` method to remove itself from the list when removed:
+
+```python
+from __future__ import annotations
+from typing import ClassVar, List
+from dataclasses import dataclass
+@dataclass
+class Slide:
+    content: str
+    slides: ClassVar[List[Slide]] = []
+
+    def __post_init__(self):
+      Slide.slides.append(self)
+      
+    def delete(self):
+      Slide.slides.remove(self)
+
+Slide("Hello World")
+q = Slide("World Hello")
+Slide("HeLlO WoRlD")
+
+print(Slide.slides) # [Slide(content='Hello World'), Slide(content='World Hello'), Slide(content='HeLlO WoRlD')]
+q.delete()
+print(Slide.slides) # [Slide(content='Hello World'), Slide(content='HeLlO WoRlD')]
+```
+
+### Fields
+
+Some types of attributes in dataclasses need to be instantiated in more complex ways. These types require you to use `field()`. For example most lists will need you to use a function to instantiate it:
+
+```python
+from typing import ClassVar, List, Any
+from dataclasses import dataclass, field
+
+@dataclass
+class Student:
+  name:str
+  age:int
+  student_id: str
+
+def create_empty_list() -> List[Any]:
+  return []
+
+@dataclass
+class School:
+  students: List[Student] = field(default_factory=create_empty_list)
+```
+
+So in this case the `field()` function takes in a `default_factory` which is a `Callable`. This is a great case for using [anonymous functions/lambdas](#lambdas):
+
+```python
+from typing import ClassVar, List, Any
+from dataclasses import dataclass, field
+
+@dataclass
+class Student:
+  name:str
+  age:int
+  student_id: str
+
+@dataclass
+class School:
+  students: List[Student] = field(default_factory=lambda: [])
+```
 
 {{% /collapse%}}
 
-{{% collapse heading="Context managers (TODO)" %}}
+{{% collapse heading="Context managers" %}}
 
-...
+There are many situations where you will want to have an object exist temporarily, and that object **must** run some code to "close" it. The most common case is files. Check out this python code:
+
+```python
+f = open("my_file.txt", "w+")
+
+f.write("some content")
+
+... # more code
+
+f.write("some content")
+
+... # more code
+
+f.write("some content")
+```
+
+You will notice we opened the file, wrote to it a few times, and never closed it. Lets say the code between one of the writes took a while, and someone else wanted to write to the file, what happens? In the best case the won't be allowed to write to the file, in the worst case the changes will trample over each other, or just cause a file corruption in some cases (like if an error happens mid-write). This is why we have to close the file between writes:
+
+```python
+f = open("my_file.txt", "w+")
+f.write("some content")
+f.close()
+
+... # more code
+
+f = open("my_file.txt", "w+")
+f.write("some content")
+f.close()
+
+... # more code
+
+f = open("my_file.txt", "w+")
+f.write("some content")
+f.close()
+```
+
+This is very tedious, and doesn't guarentee you will always remember to close your file. This is where context managers come in. A context manager is an object that defines an "opening", and "close" and will even handle if an error is raised to make sure the file is still closed anyway. You can technically call these manually, but python has a `with` statement that makes this easier:
+
+```python
+with open("my_file.txt", "w+") as f:
+  f.write("some content")
+
+... # more code
+
+with open("my_file.txt", "w+") as f:
+  f.write("some content")
+
+... # more code
+
+with open("my_file.txt", "w+") as f:
+  f.write("some content")
+```
+Now `f` only exists in the indentation level up from the `with` statement! Outside that indentation level it has either not yet been opened, or been closed!
+
+These are implemented with [magic/dunder methods](#magic/dunder-methods).
+
+
+### Creating your own context managers
+
+To create a context manager you just need a `__enter__()` and `__exit__()` method. For example:
+
+```python
+class MyContextManager:
+  def __init__(self):
+    ...
+  
+  def __enter__(self):
+    print('Opened')
+    return self
+     
+  def __exit__(self, exc_type, exc_value, exc_traceback):
+      print('Closed')
+
+  def do_stuff(self):
+    print("Hello")
+
+with MyContextManager() as m:
+  m.do_stuff()
+```
+
+`__enter__()` is self-explanatory, but `__exit__()` has some interesting parameters. Like I said the method will be called even if there is an error thrown. Those parameters tell you if an error occurred (if no error occurs all 3 are `None`):
+
+- exc_type; The type of the error (i.e. `ValueError`)
+- exc_value; The instance of the exception raised
+- exc_traceback; The [traceback object](https://docs.python.org/3/library/traceback.html) related to the error
 
 {{% /collapse%}}
 
-{{% collapse heading="Lambdas (TODO)" %}}
+{{% collapse heading="Lambdas" %}}
 
 Lambdas are a way in python to declare anonymous functions. What this means is you can assign a function call to a variable. So for example let's take the simplest case, a function that takes in a name and returns a greeting string using the name:
 

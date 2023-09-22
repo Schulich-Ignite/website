@@ -73,7 +73,7 @@
                     <div class="language-description">
                         {{.Params.description | markdownify}}
                     </div>
-                    {{ if .TableOfContents }}
+                    {{ if (and .TableOfContents (not .Params.excludeTOC)) }}
                     <h2>Table of contents</h2>
                     {{.TableOfContents}}
                     {{end}}
