@@ -1,7 +1,7 @@
 ---
 title: How to give a stranger your credit card
 subtitle: An intro to encryption & public-key encryption
-date: 2023-09-22T00:00:00-06:00
+date: 2023-10-02T00:00:00-06:00
 modified_date: ""
 image: /img/blog/cc.jpg
 difficulty: [flare]
@@ -174,6 +174,22 @@ Alice and Bob can now calculate a common secret that can be used to encrypt late
         Bob's Calculation:
                 s = A^b mod p = 119
 ```
+
+<pre class="mermaid">
+sequenceDiagram
+    actor Alice
+    actor Bob
+    Note left of Alice: a = 348 (private)
+    Note right of Bob: b = 26699 (private)
+    critical Public communication
+        Alice-->Bob: p = 281 g = 53493
+        Alice ->> Bob: A = 70 (calculated using g^a mod p)
+        Bob ->> Alice: B = 122 (calculated using g^b mod p)
+    end
+    Note left of Alice: s = B^a mod p = 119 (private)
+    Note right of Bob: s = A^b mod p = 119 (private)
+</pre>
+
 
 The code is pretty simple to implement, you can find an example of it [here](https://github.com/Descent098/diffie-hellman). Once that key is generated it can either be used directly, or can be put into another encryption protocol in some way. A variant of diffie hellman called [ECDH (Eliptic Curve Diffie Hellman)](https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/) is one of the public-key algorithms used to encrypt your web traffic. When you go to a website that has `https` in it's name, this means some kind of public-key exchanged happened and was used to help  encrypt your connection. The s at the end means secure, and many TLS/SSL certificates use Diffie-Hellman to generate their keys.
 
