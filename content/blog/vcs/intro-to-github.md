@@ -1,7 +1,7 @@
 ---
 title: "Intro to Github"
 subtitle: "Taking git repositories online"
-date: 2023-09-13T00:00:00-06:00
+date: 2023-10-29T00:00:00-06:00
 modified_date: ""
 image: /img/blog/vcs/hero.jpg
 authors: 
