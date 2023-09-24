@@ -1,0 +1,760 @@
+<!doctype html><html style=overflow-x:hidden><head><meta charset=utf-8><title>Advanced | python | Schulich Ignite</title><link rel="shortcut icon" href=https://schulichignite.com/img/favicon.ico type=image/x-icon><link rel=icon href=https://schulichignite.com/img/favicon.ico type=image/x-icon><meta property="og:title" content=" Advanced | python "><meta property="og:type" content="website"><meta property="og:url" content=" https://schulichignite.com/language/python/advanced/ "><meta property="og:image" content="/img/opengraph_logo-min.jpg "><meta name=Description content=" Advanced; Type hints Click to expand Type hints are a way in python to specify the intended type of a variable (not enforced just highly suggested). "><meta property="og:description" content=" Advanced; Type hints Click to expand Type hints are a way in python to specify the intended type of a variable (not enforced just highly suggested). "><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@900&display=swap" rel=stylesheet><link href=https://unpkg.com/video.js@7/dist/video-js.min.css rel=stylesheet><link href=https://unpkg.com/@videojs/themes@1/dist/sea/index.css rel=stylesheet><link rel=stylesheet href=https://schulichignite.com/css/index.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css integrity="sha512-mtXspRdOWHCYp+f4c7CkWGYPPRAhq9X+xCvJMUBVAb6pqA4U8pxhT3RWT3LP3bKbiolYL2CkL1bSKZZO4eeTew==" crossorigin=anonymous referrerpolicy=no-referrer><link rel=stylesheet href=https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css></head><nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark"><a class=navbar-brand href=../../../><img src=https://schulichignite.com/img/logos/ignite.svg width=40 height=60 alt="Schulich ignite logo">
+<span class=brand-name>Schulich Ignite</span></a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarSupportedContent><ul class="navbar-nav mr-auto"><li class=nav-item><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Sessions</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=../../../beginner>Ignite Beginner</a>
+<a class=dropdown-item href=../../../flare>Ignite Flare</a>
+<a class=dropdown-item href=../../../scorch>Ignite Scorch</a></div></li></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Sign up</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=https://forms.gle/wPjvobFc1ya6hrHeA target=_blank rel="noopener noreferrer">To learn</a>
+<a class=dropdown-item href=https://forms.gle/vWzxciKkvVsKsYPC8 target=_blank rel="noopener noreferrer">To teach</a></div></li><li class=nav-item><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Media</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=../../../blog>Blog</a>
+<a class=dropdown-item href=../../../language>Languages</a>
+<a class=dropdown-item href=../../../definitions>Definitions</a></div></li></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>About</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=../../../mission>Our Mission</a>
+<a class=dropdown-item href=../../../team>Our Team</a></li><li class=nav-item><a class=nav-link href=../../../contact>Contact</a></li></ul></div></nav><body><div class=diagonal-header><div class=mainheader>python</div></div><nav aria-label=breadcrumb class="mt-4 p-2" style=max-width:40%><ol class=breadcrumb style=background-color:transparent><li class="breadcrumb-item text-primary" aria-current=page><a href=../../../language>Language</a></li><li class="breadcrumb-item text-primary" aria-current=page><a href=../../../language/python>python</a></li><li class="breadcrumb-item active" aria-current=page>Advanced</li></ol></nav><section class=section><div class=container><div class=row><div class="card col-md-12 p5"><div style=padding:2em;padding-left:.5em><h2>Advanced | python</h2><div class=language-description>If you haven&rsquo;t covered the basics of python I would recommend looking at <a href=../../../language/python/syntax>our basic syntax overview</a>. This section will cover more advanced methods that will help you once you have the ability to broadly use python more effectively!</div></div></div><div class=spacer style=margin-top:100px></div><div class="card col-md-12 no-background language-intro"><details id=type-hints class=collapse-section><summary><h2>Type hints<em><small style=font-size:small> Click to expand</small></em></h2></summary><p>Type hints are a way in python to specify the <strong>intended</strong> type of a variable (not enforced just highly suggested). This works by having a colon, then the type declaration for each varaible/parameter/attribute. You can even include details about return types in functions with <code>def function_name(parameter) -> return_type</code> For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>age <span style=color:#f92672>=</span> <span style=color:#ae81ff>21</span> 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>greet</span>(name):
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Hello </span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Animal</span>:
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>def</span> __init__(self, name):
+</span></span><span style=display:flex><span>      self<span style=color:#f92672>.</span>name <span style=color:#f92672>=</span> name
+</span></span></code></pre></div><p>Can be converted to:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>age:int <span style=color:#f92672>=</span> <span style=color:#ae81ff>21</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>greet</span>(name:str) <span style=color:#f92672>-&gt;</span> str:
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Hello </span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Animal</span>:
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>def</span> __init__(self, name:str):
+</span></span><span style=display:flex><span>      self<span style=color:#f92672>.</span>name:str <span style=color:#f92672>=</span> name
+</span></span></code></pre></div><p>This gives an indication to people running your code which data types they should use. Along with this there are a few special types to keep in mind (most need to be imported from the typing module):</p><table><thead><tr><th>Type</th><th>Usage</th><th>Example</th></tr></thead><tbody><tr><td>Union</td><td>To indicate one type <strong>OR</strong> another</td><td>A variable called age which can be a string or int could be given as <code>age:Union[str,int] = "Twenty Three"</code></td></tr><tr><td>Literal</td><td>The avlue for the variable is literally one of the subscripted values</td><td>x is 2, 4 or 6 <strong>only</strong> <code>x:Literal[2,4,6]</code></td></tr><tr><td>Tuple</td><td>A tuple is an imutable data type similar to a list, this can mean a tuple, or is used to indicate multiple return values</td><td>The function <code>func()</code> returns an int and a bool in that order <code>def func() -> Tuple[int, bool</code></td></tr><tr><td>List</td><td>A list is a collection. Collections can be subscripted to tell you what&rsquo;s inside</td><td>users is a list of list of strings <code>users:List[List[str]] = [["kieran"],["James"]]</code></td></tr><tr><td>Callable</td><td>This means any object that has a <code>__call__()</code> method including functions (yes they are objects)</td><td>Passing the function <code>do_stuff()</code> to <code>time(func:Callable)</code> so it can run it and time it <code>time(do_stuff)</code></td></tr></tbody></table><h3 id=enforcing-types>Enforcing types</h3><p>Python does not enforce types on function parameters. But you can make your own type enforcement by doing type comparisons. There are two ways to do this. The first is to use <code>type()</code> and compare to the class, for example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>greet</span>(name:str) <span style=color:#f92672>-&gt;</span> str:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> type(name) <span style=color:#f92672>==</span> str:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74> is not a string&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Hello </span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Animal</span>:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __init__(self, name:str):
+</span></span><span style=display:flex><span>    self<span style=color:#f92672>.</span>name:str <span style=color:#f92672>=</span> name
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>show_animal</span>(animal:Animal):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> type(animal) <span style=color:#f92672>==</span> Animal:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>animal<span style=color:#e6db74>}</span><span style=color:#e6db74> is not an Animal&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;This animal is a </span><span style=color:#e6db74>{</span>animal<span style=color:#f92672>.</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span></code></pre></div><p>This method works <strong>ok</strong>, but it&rsquo;s not the best. For example let&rsquo;s say you have a class that extends the <code>str</code> class, it would fail that check:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MyString</span>(str):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __init__(self,value:str):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> type(value) <span style=color:#f92672>==</span> str:
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>value<span style=color:#e6db74>}</span><span style=color:#e6db74> is not a string&#34;</span>)
+</span></span><span style=display:flex><span>    self<span style=color:#f92672>.</span>value <span style=color:#f92672>=</span> value
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __str__(self) <span style=color:#f92672>-&gt;</span> str:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>value  
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>greet</span>(name:str) <span style=color:#f92672>-&gt;</span> str:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> type(name) <span style=color:#f92672>==</span> str:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74> is not a string&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Hello </span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>greet(MyString(<span style=color:#e6db74>&#34;Kieran&#34;</span>)) <span style=color:#75715e># ValueError: Kieran is not a string</span>
+</span></span></code></pre></div><p>If we want to include subclasses we should use <code>isinstance()</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MyString</span>(str):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __init__(self,value:str):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> type(value) <span style=color:#f92672>==</span> str:
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>value<span style=color:#e6db74>}</span><span style=color:#e6db74> is not a string&#34;</span>)
+</span></span><span style=display:flex><span>    self<span style=color:#f92672>.</span>value <span style=color:#f92672>=</span> value
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __str__(self) <span style=color:#f92672>-&gt;</span> str:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>value  
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>greet</span>(name:str) <span style=color:#f92672>-&gt;</span> str:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> isinstance(name, str):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74> is not a string&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Hello </span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>greet(MyString(<span style=color:#e6db74>&#34;Kieran&#34;</span>)) <span style=color:#75715e># Hello Kieran</span>
+</span></span></code></pre></div><p>Here are some good types you can use with <code>isinstance()</code> that are more general:</p><table><thead><tr><th>Type</th><th>Uses</th><th>package</th></tr></thead><tbody><tr><td>Number</td><td>All number types (int and float) work with it</td><td><a href=https://docs.python.org/3/library/numbers.html>numbers</a>.Number</td></tr><tr><td>Iterable</td><td>Any type that can be iterated (a for loop works on it)</td><td>Iterable</td></tr><tr><td>Callable</td><td>Any type that can be called with parenthesis <code>()</code> (like function objects)</td><td>Callable</td></tr></tbody></table><p>For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> numbers <span style=color:#f92672>import</span> Number
+</span></span><span style=display:flex><span>print(isinstance(<span style=color:#ae81ff>1</span>,Number)) <span style=color:#75715e># True</span>
+</span></span><span style=display:flex><span>print(isinstance(<span style=color:#ae81ff>1.2</span>,Number)) <span style=color:#75715e># True</span>
+</span></span><span style=display:flex><span>print(isinstance(<span style=color:#ae81ff>1</span>j,Number)) <span style=color:#75715e># True</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> Iterable
+</span></span><span style=display:flex><span>print(isinstance([],Iterable)) <span style=color:#75715e># True</span>
+</span></span><span style=display:flex><span>print(isinstance(<span style=color:#e6db74>&#34;&#34;</span>,Iterable)) <span style=color:#75715e># True</span>
+</span></span><span style=display:flex><span>print(isinstance({},Iterable)) <span style=color:#75715e># True</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> Callable
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>greet</span>(name:str) <span style=color:#f92672>-&gt;</span> str:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> isinstance(name, str):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74> is not a string&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Hello </span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>is_str <span style=color:#f92672>=</span> <span style=color:#66d9ef>lambda</span> s: isinstance(s, str) <span style=color:#75715e># Anonymous function</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SquareNum</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, num:Number):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> isinstance(num, Number):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>num<span style=color:#e6db74>}</span><span style=color:#e6db74> is not a Number&#34;</span>)
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>num<span style=color:#f92672>=</span>num
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __call__(self) <span style=color:#f92672>-&gt;</span> Number:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>num <span style=color:#f92672>*</span>self<span style=color:#f92672>.</span>num
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(isinstance(greet, Callable)) <span style=color:#75715e># True</span>
+</span></span><span style=display:flex><span>print(isinstance(is_str, Callable)) <span style=color:#75715e># True</span>
+</span></span><span style=display:flex><span>print(isinstance(SquareNum, Callable)) <span style=color:#75715e># True</span>
+</span></span></code></pre></div><p>While this works there are even better solutions. <a href=https://docs.pydantic.dev/latest/>Pydantic</a> is a python package that&rsquo;s designed to help make data validation easy. The package helps with a few things, but mostly it helps solve a very annoying situation that happens constantly. When you get data from a server it will often come down as JSON, which will be converted to a python dictionary. These dictionaries can sometimes be very large. Here&rsquo;s an example from their website:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> pydantic <span style=color:#f92672>import</span> BaseModel, PositiveInt
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>User</span>(BaseModel):
+</span></span><span style=display:flex><span>    id: int  
+</span></span><span style=display:flex><span>    name: str <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;John Doe&#39;</span>  
+</span></span><span style=display:flex><span>    signup_ts: datetime <span style=color:#f92672>|</span> <span style=color:#66d9ef>None</span>  
+</span></span><span style=display:flex><span>    tastes: dict[str, PositiveInt]  
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>external_data <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;id&#39;</span>: <span style=color:#ae81ff>123</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;signup_ts&#39;</span>: <span style=color:#e6db74>&#39;2019-06-01 12:22&#39;</span>,  
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;tastes&#39;</span>: {
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#39;wine&#39;</span>: <span style=color:#ae81ff>9</span>,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>b</span><span style=color:#e6db74>&#39;cheese&#39;</span>: <span style=color:#ae81ff>7</span>,  
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#39;cabbage&#39;</span>: <span style=color:#e6db74>&#39;1&#39;</span>,  
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>user <span style=color:#f92672>=</span> User(<span style=color:#f92672>**</span>external_data)  <span style=color:#75715e># Valid data, creates without issue NOTE: cabbage will have int(1) as value not str(&#34;1&#34;)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>external_data <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#39;id&#39;</span>: <span style=color:#e6db74>&#39;not an int&#39;</span>, <span style=color:#e6db74>&#39;tastes&#39;</span>: {}}  
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>User(<span style=color:#f92672>**</span>external_data)  <span style=color:#75715e># Invalid data, raises ValidationError</span>
+</span></span></code></pre></div><p>There are some more strict systems you can use if you want to enforce static typing (checking before you run code). The most popular is <a href=https://www.mypy-lang.org/>mypy</a>, which throws errors if you try to run code that might have the wrong type. There&rsquo;s also a newer library called <a href=https://pyre-check.org/>pyre</a> from meta (formerly facebook) which has a <a href="https://pyre-check.org/play?input=%23%20Pyre%20is%20being%20run%20in%20gradual%20typing%20mode%3A%20https%3A%2F%2Fpyre-check.org%2Fdocs%2Ftypes-in-python%2F%23gradual-typing%0A%23%20Use%20the%20%60%23%20pyre-strict%60%20header%20to%20run%20in%20strict%20mode%2C%20which%20requires%20annotations.%0A%0Afrom%20typing%20import%20*%0A%0A%23%20reveal_type%20will%20produce%20a%20type%20error%20that%20tells%20you%20the%20type%20Pyre%20has%0A%23%20computed%20for%20the%20argument%20(in%20this%20case%2C%20int)%0Aclass%20Animal%3A%0A%20%20%20%20def%20__init__(self)%3A%0A%20%20%20%20%20%20%20%20...%0A%20%20%20%20%20%20%20%20%0Aa%20%3D%20Animal()%0A%0Adef%20foo(a%3AAnimal)%20-%3E%20Animal%3A%0A%20%20%20%20return%20a%0A%0Afoo(a)%0Afoo(3)%0A">playground you can test with</a>.</p><p>There&rsquo;s a few others:</p><ul><li><a href=https://google.github.io/pytype/>Google Pytype</a></li><li><a href=https://github.com/Microsoft/pyright>Microsoft Pyright</a></li></ul></details><details id=packing-and-unpacking class=collapse-section><summary><h2>Packing and Unpacking<em><small style=font-size:small> Click to expand</small></em></h2></summary><p>When looking at collections you can &ldquo;unpack&rdquo; them. This basically allows you to break them up into peices. For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>shopping_list <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;eggs&#34;</span>, <span style=color:#e6db74>&#34;ham&#34;</span>, <span style=color:#e6db74>&#34;spam&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>item1, <span style=color:#f92672>*</span>remainders <span style=color:#f92672>=</span> shopping_list
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(item1) <span style=color:#75715e># &#39;eggs&#39;</span>
+</span></span><span style=display:flex><span>print(remainders) <span style=color:#75715e># [&#39;ham&#39;, &#39;spam&#39;]</span>
+</span></span></code></pre></div><p>The <code>*remainder</code> will &ldquo;unpack&rdquo; values. This basically will &ldquo;consume&rdquo; collections. So <code>item1</code> will access the first item in the list, and <code>*remainders</code> will unpack the remaining values into it. This can be used in a ton of situations, one major one is to unpack variables as parameters for functions. So for example let&rsquo;s say someone has a tuple with coordinates <code>coords = (x, y, z)</code>, and a function <code>process_object(x, y, z)</code>, we can unpack the <code>coords</code> variable into the function:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>coords <span style=color:#f92672>=</span> (x, y, z)
+</span></span><span style=display:flex><span>process_object(<span style=color:#f92672>*</span>coords) <span style=color:#75715e># Same as process_object(x, y, z)</span>
+</span></span></code></pre></div><p>You can also use this to do the oposite and &ldquo;pack&rdquo; values to allow for any number of parameters in a function (they will be put into a tuple):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>function</span>(<span style=color:#f92672>*</span>parameters):
+</span></span><span style=display:flex><span>  print(parameters)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>function(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>) <span style=color:#75715e># Prints: (1, 2, 3, 4, 5)</span>
+</span></span></code></pre></div><p>You could then unpack them using <code>*</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>function</span>(<span style=color:#f92672>*</span>parameters):
+</span></span><span style=display:flex><span>  print(<span style=color:#f92672>*</span>parameters)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>function(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>5</span>) <span style=color:#75715e># Prints: 1 2 3 4 5</span>
+</span></span></code></pre></div><p>You can also do this with dictionaries, but it&rsquo;s more complex. It will allow you to get the keys and values from a dictionary. So one useful case is combining two dictionaries. For example let&rsquo;s say you have some of your user info in one dict, and some in another that you want to combine:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>user_info_1 <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;id&#34;</span>: <span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;first_name&#34;</span>: <span style=color:#e6db74>&#34;Dene&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;last_name&#34;</span>: <span style=color:#e6db74>&#34;Atwill&#34;</span>,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>user_info_2 <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;first_name&#34;</span>: <span style=color:#e6db74>&#34;Dene&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;email&#34;</span>: <span style=color:#e6db74>&#34;datwill0@wordpress.com&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;gender&#34;</span>: <span style=color:#e6db74>&#34;Male&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;ip_address&#34;</span>: <span style=color:#e6db74>&#34;38.119.114.174&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>user_info <span style=color:#f92672>=</span> {<span style=color:#f92672>**</span>user_info_1, <span style=color:#f92672>**</span>user_info_2} <span style=color:#75715e># {&#39;id&#39;: 1, &#39;first_name&#39;: &#39;Dene&#39;, &#39;last_name&#39;: &#39;Atwill&#39;, &#39;email&#39;: &#39;datwill0@wordpress.com&#39;, &#39;gender&#39;: &#39;Male&#39;, &#39;ip_address&#39;: &#39;38.119.114.174&#39;}</span>
+</span></span></code></pre></div><p>Additionally this can be used to capture keyword arguments:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>function</span>(<span style=color:#f92672>**</span>keyword_arguments):
+</span></span><span style=display:flex><span>  print(keyword_arguments) 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>function(first_name<span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Dene&#34;</span>, last_name<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Atwill&#34;</span>) <span style=color:#75715e># prints: {&#39;first_name&#39;: &#39;Dene&#39;, &#39;last_name&#39;: &#39;Atwill&#39;}</span>
+</span></span></code></pre></div><p>One great use for this is that it will allow you to write a function that allows you to pass config variables to a function, and you never have to change the function signatures to support new config variables!</p></details><details id=magic/dunder-methods class=collapse-section><summary><h2>Magic/dunder methods<em><small style=font-size:small> Click to expand</small></em></h2></summary><p>Magic/dunder methods are special types of methods that have some sort of special functionality in python. They&rsquo;re often called magic methods, but they&rsquo;re also called dunder (double underscore) methods because they all follow the patern <code>__&lt;name>__()</code>. If you&rsquo;ve created a class before you&rsquo;ve actually used one before <code>__init__()</code>. Why can&rsquo;t you have an initialize method just called <code>init()</code> or <code>start()</code>? Because <code>__init__()</code> is reserved as a name and is invoked when the code that creates an instance is called, which is why it works at all.</p><p>There are tons of other existing dunder methods to interact with various aspects of python.</p><h3 id=printing>Printing</h3><p>For example let&rsquo;s say you have a <code>User</code> class, when you try to print it to the console you will get something like <code>&lt;__main__.User object at 0x0000017CC4F90310></code>. This isn&rsquo;t super useful, so how could we instead override what prints when we call print on an object? Let&rsquo;s say we have a <code>name</code> and <code>age</code> attribute, and we want to print <code>&lt;name>: &lt;age></code>.</p><p>There is a built in magic method called <code>__repr__()</code> (I believe this is a short version of <strong>repr</strong>esentation), this allows you to override the representation of the object (which is what&rsquo;s printed). All we need to do is return a string with what we want to print, for example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>User</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, name, age):
+</span></span><span style=display:flex><span>      self<span style=color:#f92672>.</span>name <span style=color:#f92672>=</span> name
+</span></span><span style=display:flex><span>      self<span style=color:#f92672>.</span>age <span style=color:#f92672>=</span> age
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __repr__(self):
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74>: </span><span style=color:#e6db74>{</span>self<span style=color:#f92672>.</span>age<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(User(<span style=color:#e6db74>&#34;Kieran&#34;</span>, <span style=color:#ae81ff>24</span>)) <span style=color:#75715e># Prints: &#34;Kieran: 24&#34;</span>
+</span></span></code></pre></div><h3 id=conversions>Conversions</h3><p>There are tons of magic methods you can define to convert between types. These will also apply in <em>implicit conversions</em> (i.e. when printing something a call to convert the object into a string happens). These methods tend to follow this pattern when defined:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>__</span><span style=color:#f92672>&lt;</span>type<span style=color:#f92672>&gt;</span>__(self):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> value
+</span></span></code></pre></div><p>Where type is some type (i.e. <code>str</code>, <code>int</code>, <code>float</code>), and <code>value</code> is some value of that type (i.e. <code>"Class"</code>, <code>12</code>, <code>3.14</code>). Let&rsquo;s say for example we have a class (<code>MyValue</code>), that class takes in an int or float, and then when casted to a string returns the word representation of a number (i.e. <code>1</code> would be <code>"One"</code>), and other number types (<code>int</code>,<code>float</code> return that type of data):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Define lists of words for numbers 1-19 and multiples of 10 up to 90 (used in string conversion)</span>
+</span></span><span style=display:flex><span>ones <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;Zero&#34;</span>, <span style=color:#e6db74>&#34;One&#34;</span>, <span style=color:#e6db74>&#34;Two&#34;</span>, <span style=color:#e6db74>&#34;Three&#34;</span>, <span style=color:#e6db74>&#34;Four&#34;</span>, <span style=color:#e6db74>&#34;Five&#34;</span>, <span style=color:#e6db74>&#34;Six&#34;</span>, <span style=color:#e6db74>&#34;Seven&#34;</span>, <span style=color:#e6db74>&#34;Eight&#34;</span>, <span style=color:#e6db74>&#34;Nine&#34;</span>, <span style=color:#e6db74>&#34;Ten&#34;</span>, <span style=color:#e6db74>&#34;Eleven&#34;</span>, <span style=color:#e6db74>&#34;Twelve&#34;</span>, <span style=color:#e6db74>&#34;Thirteen&#34;</span>, <span style=color:#e6db74>&#34;Fourteen&#34;</span>, <span style=color:#e6db74>&#34;Fifteen&#34;</span>, <span style=color:#e6db74>&#34;Sixteen&#34;</span>, <span style=color:#e6db74>&#34;Seventeen&#34;</span>, <span style=color:#e6db74>&#34;Eighteen&#34;</span>, <span style=color:#e6db74>&#34;Nineteen&#34;</span>]
+</span></span><span style=display:flex><span>tens <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;&#34;</span>, <span style=color:#e6db74>&#34;Ten&#34;</span>, <span style=color:#e6db74>&#34;Twenty&#34;</span>, <span style=color:#e6db74>&#34;Thirty&#34;</span>, <span style=color:#e6db74>&#34;Forty&#34;</span>, <span style=color:#e6db74>&#34;Fifty&#34;</span>, <span style=color:#e6db74>&#34;Sixty&#34;</span>, <span style=color:#e6db74>&#34;Seventy&#34;</span>, <span style=color:#e6db74>&#34;Eighty&#34;</span>, <span style=color:#e6db74>&#34;Ninety&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MyValue</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, value):
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> type(value) <span style=color:#f92672>in</span> [float, int]:
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Try to cast invalid values into a float</span>
+</span></span><span style=display:flex><span>        value <span style=color:#f92672>=</span> float(value)
+</span></span><span style=display:flex><span>      self<span style=color:#f92672>.</span>value <span style=color:#f92672>=</span> value
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __int__(self):
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Returns a int representation of the object</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> int(self<span style=color:#f92672>.</span>value)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __float__(self):
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Returns a float representation of the object</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> float(self<span style=color:#f92672>.</span>value)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>###### Defining helper functions to help with the string conversion ######</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>convert_less_than_hundred</span>(self, number):
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Function to convert a number less than 100 to text</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> number <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>20</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> ones[number]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> tens[number <span style=color:#f92672>//</span> <span style=color:#ae81ff>10</span>] <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; &#34;</span> <span style=color:#f92672>+</span> ones[number <span style=color:#f92672>%</span> <span style=color:#ae81ff>10</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>convert_less_than_thousand</span>(self, number):
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Function to convert a number less than 1_000 to text</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> number <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>100</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>convert_less_than_hundred(number)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> number <span style=color:#f92672>%</span> <span style=color:#ae81ff>100</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> ones[number <span style=color:#f92672>//</span> <span style=color:#ae81ff>100</span>] <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; Hundred&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> ones[number <span style=color:#f92672>//</span> <span style=color:#ae81ff>100</span>] <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; Hundred and &#34;</span> <span style=color:#f92672>+</span> self<span style=color:#f92672>.</span>convert_less_than_hundred(number <span style=color:#f92672>%</span> <span style=color:#ae81ff>100</span>)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>convert_less_than_million</span>(self, number):
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Function to convert a number less than 1_000_000 to text</span>
+</span></span><span style=display:flex><span>        thousands <span style=color:#f92672>=</span> number <span style=color:#f92672>//</span> <span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span>        remainder <span style=color:#f92672>=</span> number <span style=color:#f92672>%</span> <span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> remainder <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>convert_less_than_thousand(thousands) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; Thousand&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>convert_less_than_thousand(thousands) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; Thousand &#34;</span> <span style=color:#f92672>+</span> self<span style=color:#f92672>.</span>convert_less_than_thousand(remainder)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>convert_less_than_billion</span>(self, number):
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Function to convert a number less than 1_000_000_000 to text</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> number <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>1_000_000_000</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Number provided is too large (only up to billions accepted) recieved: </span><span style=color:#e6db74>{</span>number<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>        millions <span style=color:#f92672>=</span> number <span style=color:#f92672>//</span> <span style=color:#ae81ff>1000000</span>
+</span></span><span style=display:flex><span>        remainder <span style=color:#f92672>=</span> number <span style=color:#f92672>%</span> <span style=color:#ae81ff>1000000</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> remainder <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>convert_less_than_thousand(millions) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; Million&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>convert_less_than_thousand(millions) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; Million &#34;</span> <span style=color:#f92672>+</span> self<span style=color:#f92672>.</span>convert_integer_to_text(remainder)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>convert_integer_to_text</span>(self, number):
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Takes in an integer, and converts it to text</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> isinstance(number, int): <span style=color:#75715e># Confirm value is an int</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Value not an integer </span><span style=color:#e6db74>{</span>number<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Handle simple &amp; edge cases cases</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> number <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Zero&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>elif</span> number <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Negative &#34;</span> <span style=color:#f92672>+</span> self<span style=color:#f92672>.</span>convert_integer_to_text(<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>*</span> number)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Handle 1-999</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>elif</span> number <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>1000</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>convert_less_than_thousand(number)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Handle 1000-999_999</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>elif</span> number <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>1_000_000</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>convert_less_than_million(number)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Handle 1_000_000-999_999_999</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>convert_less_than_billion(number)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>###### End of Defining helper functions to help with the string conversion ######</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __str__(self):
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Returns a string representation of the object</span>
+</span></span><span style=display:flex><span>        number <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>value
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Handle float input</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> isinstance(number, float):
+</span></span><span style=display:flex><span>            <span style=color:#75715e># Split into part before decimal (integer_part) and after (fractional_part)</span>
+</span></span><span style=display:flex><span>            integer_part, fractional_part <span style=color:#f92672>=</span> str(number)<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;.&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># Convert each part to a str</span>
+</span></span><span style=display:flex><span>            integer_text <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>convert_integer_to_text(int(integer_part))
+</span></span><span style=display:flex><span>            fractional_text <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34; &#34;</span><span style=color:#f92672>.</span>join([ones[int(n)] <span style=color:#66d9ef>if</span> int(n) <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>else</span> <span style=color:#e6db74>&#34;Zero&#34;</span> <span style=color:#66d9ef>for</span> n <span style=color:#f92672>in</span> fractional_part])
+</span></span><span style=display:flex><span>            <span style=color:#75715e># Combine if fractional_text exists, else skip and return just integer part</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> fractional_text:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> integer_text <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34; point &#34;</span> <span style=color:#f92672>+</span> fractional_text
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span> integer_text
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Handle integer input</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>elif</span> isinstance(number, int):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>convert_integer_to_text(number)   
+</span></span></code></pre></div><p>We can then test this with:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Test converting integers to strings</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>1</span>))) <span style=color:#75715e># Prints: &#39;One&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>10</span>))) <span style=color:#75715e># Prints: &#39;Ten&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>20</span>))) <span style=color:#75715e># Prints: &#39;Twenty Zero&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>12</span>))) <span style=color:#75715e># Prints: &#39;Twelve&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>45</span>))) <span style=color:#75715e># Prints: &#39;Forty Five&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>375</span>))) <span style=color:#75715e># Prints: &#39;Three Hundred and Seventy Five&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>5_231</span>))) <span style=color:#75715e># Prints: &#39;Five Thousand Two Hundred and Thirty One&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>25_231</span>))) <span style=color:#75715e># Prints: &#39;Twenty Five Thousand Two Hundred and Thirty One&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>954_231</span>))) <span style=color:#75715e># Prints: &#39;Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>8_954_231</span>))) <span style=color:#75715e># Prints: &#39;Eight Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>85_954_231</span>))) <span style=color:#75715e># Prints: &#39;Eighty Five Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>345_954_231</span>))) <span style=color:#75715e># Prints: &#39;Three Hundred and Forty Five Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>999_999_999</span>))) <span style=color:#75715e># Prints: &#39;Nine Hundred and Ninety Nine Million Nine Hundred and Ninety Nine Thousand Nine Hundred and Ninety Nine&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Test converting floats to strings</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>1.0</span>))) <span style=color:#75715e># Prints: &#39;One point Zero&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>10.15</span>))) <span style=color:#75715e># Prints: &#39;Ten point One Five&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>20.2</span>))) <span style=color:#75715e># Prints: &#39;Twenty Zero point Two&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>12.34</span>))) <span style=color:#75715e># Prints: &#39;Twelve point Three Four&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>45.734</span>))) <span style=color:#75715e># Prints: &#39;Forty Five point Seven Three Four&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>375.841</span>))) <span style=color:#75715e># Prints: &#39;Three Hundred and Seventy Five point Eight Four One&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>5_231.9591</span>))) <span style=color:#75715e># Prints: &#39;Five Thousand Two Hundred and Thirty One point Nine Five Nine One&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>25_231.12345</span>))) <span style=color:#75715e># Prints: &#39;Twenty Five Thousand Two Hundred and Thirty One point One Two Three Four Five&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>954_231.324698</span>))) <span style=color:#75715e># Prints: &#39;Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One point Three Two Four Six Nine Eight&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>8_954_231.5454654</span>))) <span style=color:#75715e># Prints: &#39;Eight Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One point Five Four Five Four Six Five Four&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>85_954_231.45657988</span>))) <span style=color:#75715e># Prints: &#39;Eighty Five Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One point Four Five Six Five Seven Nine Eight Eight&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>345_954_231.5454654</span>))) <span style=color:#75715e># Prints: &#39;Three Hundred and Forty Five Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One point Five Four Five Four Six Five Four&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>999_954_231.0567646</span>))) <span style=color:#75715e># Prints: &#39;Nine Hundred and Ninety Nine Million Nine Hundred and Fifty Four Thousand Two Hundred and Thirty One point Zero Five Six Seven Six Four Six&#39;</span>
+</span></span><span style=display:flex><span>print(str(MyClass(<span style=color:#ae81ff>999_999_999.9999999</span>))) <span style=color:#75715e># Prints: &#39;Nine Hundred and Ninety Nine Million Nine Hundred and Ninety Nine Thousand Nine Hundred and Ninety Nine point Nine Nine Nine Nine Nine Nine Nine&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Test converting floats to ints</span>
+</span></span><span style=display:flex><span>print(int(MyClass(<span style=color:#ae81ff>1.0</span>)))    <span style=color:#75715e># Prints: 1</span>
+</span></span><span style=display:flex><span>print(int(MyClass(<span style=color:#ae81ff>10.15</span>)))  <span style=color:#75715e># Prints: 10</span>
+</span></span><span style=display:flex><span>print(int(MyClass(<span style=color:#ae81ff>20.2</span>)))   <span style=color:#75715e># Prints: 20</span>
+</span></span><span style=display:flex><span>print(int(MyClass(<span style=color:#ae81ff>12.34</span>)))  <span style=color:#75715e># Prints: 12</span>
+</span></span><span style=display:flex><span>print(int(MyClass(<span style=color:#ae81ff>45.734</span>))) <span style=color:#75715e># Prints: 45</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Test converting ints to floats</span>
+</span></span><span style=display:flex><span>print(float(MyClass(<span style=color:#ae81ff>1</span>)))  <span style=color:#75715e># Prints: 1.0</span>
+</span></span><span style=display:flex><span>print(float(MyClass(<span style=color:#ae81ff>10</span>))) <span style=color:#75715e># Prints: 10.0</span>
+</span></span><span style=display:flex><span>print(float(MyClass(<span style=color:#ae81ff>20</span>))) <span style=color:#75715e># Prints: 20.0</span>
+</span></span><span style=display:flex><span>print(float(MyClass(<span style=color:#ae81ff>12</span>))) <span style=color:#75715e># Prints: 12.0</span>
+</span></span><span style=display:flex><span>print(float(MyClass(<span style=color:#ae81ff>45</span>))) <span style=color:#75715e># Prints: 45.0</span>
+</span></span></code></pre></div><h3 id=operators>Operators</h3><p>Operators allows you to do operator overloading. This allows you to overwrite what happens when you use an operator (+, -, /, //, % etc.). To do this you just use the pattern of using the operator name with one argument and a return:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DoMath</span>:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __init__(self, value):
+</span></span><span style=display:flex><span>    self<span style=color:#f92672>.</span>value <span style=color:#f92672>=</span> value
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __add__(self, value):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>value <span style=color:#f92672>+</span> value
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(DoMath(<span style=color:#ae81ff>5</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>3</span>)
+</span></span></code></pre></div><p>Other Operators:</p><p>| Function name | Operator |
+|<code>__sub__()</code>| <code>-</code>|
+|<code>__mul__()</code>| <code>*</code>|
+|<code>__floordiv__()</code>| <code>//</code>|
+|<code>__truediv__()</code>| <code>/</code>|
+|<code>__mod__()</code>| <code>%</code>|
+|<code>__pow__()</code>| <code>**</code>|</p><p>Keep in mind you can also add an <code>i</code> in front of the function name to change the behaviour with assignment operators. For example <code>__iadd__()</code> will override behaviour for <code>+=</code></p><h3 id=logical-comparisons>Logical Comparisons</h3><p>Logical operators allows you to do logical operator overloading. This allows you to overwrite what happens when you use an operator (<code>&lt;</code>, <code>></code>, <code>&lt;=</code>, <code>>=</code>, <code>==</code> etc.). To do this you just use the pattern of using the operator name with one argument and a return (must be a <code>bool</code>):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CheckLessThan</span>:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __init__(self, value):
+</span></span><span style=display:flex><span>    self<span style=color:#f92672>.</span>value <span style=color:#f92672>=</span> value
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __lt__(self, value):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>value <span style=color:#f92672>&lt;</span> value
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(DoMath(<span style=color:#ae81ff>5</span>) <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>3</span>)
+</span></span></code></pre></div><p>| Function name | Operator |
+|<code>__lt__()</code>| <code>&lt;</code>|
+|<code>__le__()</code>| <code>&lt;=</code>|
+|<code>__eq__()</code>| <code>==</code>|
+|<code>__ne__()</code>| <code>!=</code>|
+|<code>__ge__()</code>| <code>>=</code>|</p><h3 id=classdata-structure-type-magic-methods>Class/data-structure type magic methods</h3><p>There are also several other dunder methods that exist for creating special types of objects including:</p><ul><li><code>__call__()</code> for callable classes<ul><li>Be careful with this</li></ul></li><li><code>__getitem__()</code> & <code>__setitem__()</code> for key-value pairs (see example in <a href=https://schulichignite.com/blog/verifying-quickly/#hashtable>this post</a>)<ul><li>hash-maps</li><li>dictionaries</li><li>etc.</li></ul></li><li><code>__len__()</code> for container-like structures (what <code>len()</code> uses)<ul><li>lists</li><li>arrays</li><li>linked-list</li><li>doubly-linked-lists</li></ul></li><li><code>__enter__()</code> & <code>__exit__()</code> for <a href=#context-managers>context managers</a><ul><li>files</li><li>sockets</li></ul></li><li><code>__iter__()</code> & <code>__next__()</code> for <a href=#iterators>iterators</a></li></ul><h3 id=creating-your-own-dunder-methods>Creating your own dunder methods</h3><p>Why not create your own magic methods? If you&rsquo;re writing a program it seems &ldquo;pythonic&rdquo; to create your own magic methods that can be used by an API (I did this for <a href=https://github.com/Descent098/ezcv/blob/master/ezcv/content.py#L295-L313>this project</a>, where I created <code>__html__()</code> to turn a class into HTML). There is an implicit danger with doing this though.</p><p>The PSF (group that makes python) reserves the right to create whatever of these dunder methods they want. This means something like <code>__html__()</code> if it ever gets imlemented in python natively will break my app. So if you rely on this in your programs then python can completely break your program at any point, so you need to be careful.</p></details><details id=higher-order-functions class=collapse-section><summary><h2>Higher order functions<em><small style=font-size:small> Click to expand</small></em></h2></summary><p>A higher order function will allow you to run code before and after a function executes. To explain how this works you need to understand that <strong>EVERYTHING</strong> in python is an object, including functions. If I look at this example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(a, b):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> b<span style=color:#f92672>-</span>a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(type(foo)) <span style=color:#75715e># &lt;class &#39;function&#39;&gt;</span>
+</span></span></code></pre></div><p>We can see the type of foo is the class function. Specifically it&rsquo;s a class that runs the function body when <code>__call__()</code> is called. Adding a parenthesis to the end of a class causes this <code>__call__()</code> to happen, so <code>foo()</code> is a shortform for <code>foo.__call__()</code>. So since it&rsquo;s a class we can pass it as an object the same way we could with other classes and call it later. This can help us solve some more awkward issues like timing functions.</p><p>Let&rsquo;s say we want a function we can use to measure how long a function takes to run, the basic code would look like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> time
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(a, b):
+</span></span><span style=display:flex><span>  time<span style=color:#f92672>.</span>sleep(<span style=color:#ae81ff>.3</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> b<span style=color:#f92672>-</span>a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>before <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>foo(<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>after <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>time_taken <span style=color:#f92672>=</span> after<span style=color:#f92672>-</span>before
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;foo() took </span><span style=color:#e6db74>{</span>time_taken<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>) <span style=color:#75715e># foo() took 0.30090832710266113</span>
+</span></span></code></pre></div><p>So turning this approach into a function we get:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> time
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(a, b):
+</span></span><span style=display:flex><span>  time<span style=color:#f92672>.</span>sleep(<span style=color:#ae81ff>.3</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> b<span style=color:#f92672>-</span>a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>time_function</span>(function_to_time):
+</span></span><span style=display:flex><span>  before <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>  function_to_time(<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>  after <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>  time_taken <span style=color:#f92672>=</span> after<span style=color:#f92672>-</span>before
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> time_taken
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;foo() took </span><span style=color:#e6db74>{</span>time_function(foo)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>) <span style=color:#75715e># foo() took 0.30090832710266113</span>
+</span></span></code></pre></div><p>But, how do we allow for people to pass arguments to the function? We could hardcode passing in 2 parameters, but what if we want to time a function with 3, or 4 parameters? We can allow a function to accept an arbitrary number of arguments to a function using <code>*</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> time
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(a, b):
+</span></span><span style=display:flex><span>  time<span style=color:#f92672>.</span>sleep(<span style=color:#ae81ff>.3</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> b<span style=color:#f92672>-</span>a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>time_function</span>(function_to_time, <span style=color:#f92672>*</span>args):
+</span></span><span style=display:flex><span>  before <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>  function_to_time(<span style=color:#f92672>*</span>args)
+</span></span><span style=display:flex><span>  after <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>  time_taken <span style=color:#f92672>=</span> after<span style=color:#f92672>-</span>before
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> time_taken
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;foo() took </span><span style=color:#e6db74>{</span>time_function(foo, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>) <span style=color:#75715e># foo() took 0.30090832710266113</span>
+</span></span></code></pre></div><p><code>*args</code> in this case allows us to pass any number of arguments (see <a href=#packing-and-unpacking>Packing and Unpacking</a> for details and details about using keyword/named arguments).</p><h3 id=decorators>Decorators</h3><p>Decorators are an extra layer of syntactic sugar that allow you to make higher order functions easier to work with. If we take our example of a timing function like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> time
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(a, b):
+</span></span><span style=display:flex><span>  time<span style=color:#f92672>.</span>sleep(<span style=color:#ae81ff>.3</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> b<span style=color:#f92672>-</span>a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>time_function</span>(function_to_time, <span style=color:#f92672>*</span>args):
+</span></span><span style=display:flex><span>  before <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>  function_to_time(<span style=color:#f92672>*</span>args)
+</span></span><span style=display:flex><span>  after <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>  time_taken <span style=color:#f92672>=</span> after<span style=color:#f92672>-</span>before
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> time_taken
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;foo() took </span><span style=color:#e6db74>{</span>time_function(foo, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>) <span style=color:#75715e># foo() took 0.30090832710266113</span>
+</span></span></code></pre></div><p>From this lets say we want to <strong>always</strong> time the <code>foo()</code> function (for example if it was a <a href="https://asq.org/quality-resources/benchmarking#:~:text=Benchmarking%20is%20defined%20as%20the,more%20aspects%20of%20their%20operations.">benchmark</a> function). We can do this by using an <code>@</code> and the function name we want to wrap, and put it before the definition. In order for this to work there is an awkward step, we need to create an inner function, which runs our function:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> time
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>time_function</span>(function_to_time):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>dummy_function</span>(<span style=color:#f92672>*</span>args):
+</span></span><span style=display:flex><span>    before <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>    function_to_time(<span style=color:#f92672>*</span>args)
+</span></span><span style=display:flex><span>    after <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>    time_taken <span style=color:#f92672>=</span> after<span style=color:#f92672>-</span>before
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> time_taken
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> dummy_function
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@time_function</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(a, b):
+</span></span><span style=display:flex><span>  time<span style=color:#f92672>.</span>sleep(<span style=color:#ae81ff>.3</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> b<span style=color:#f92672>-</span>a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;foo() took </span><span style=color:#e6db74>{</span>foo(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>2</span>)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>) <span style=color:#75715e># foo() took 0.30090832710266113</span>
+</span></span></code></pre></div><p>So what just happened? When <code>foo()</code> runs <code>time_function</code> and passes itself as an instance to <code>time_function()</code>. Which is a fancy way to say <code>foo()</code> passes itself and it&rsquo;s arguments to <code>time_function()</code>. From there we must create a <a href>closure</a> to get our variables back. So <code>dummy_function()</code> exists to capture <code>*args</code> (positional arguments to the function [in our case <code>1, 2</code>]).</p><p>So all in all we are running <code>foo()</code> with it&rsquo;s arguments inside <code>dummy_function()</code>, we are then returning the time taken from the function, and with our decorator (the <code>time_function()</code>) we are returning the <code>dummy_function</code> to be called. So <code>foo(1,2)</code> calls <code>dummy_function(1,2)</code> and returns it&rsquo;s <code>time_taken</code>.</p><p>This works great&mldr; but keep in mind that when we called <code>foo()</code> we got the result of <code>time_function()</code> <strong>NOT</strong> the function call. If we wanted the value of the function call we need to capture it in <code>time_function()</code>, and return it instead:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> time
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>time_function</span>(function_to_time):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>dummy_function</span>(<span style=color:#f92672>*</span>args):
+</span></span><span style=display:flex><span>    before <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>    result <span style=color:#f92672>=</span> function_to_time(<span style=color:#f92672>*</span>args)
+</span></span><span style=display:flex><span>    after <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>    time_taken <span style=color:#f92672>=</span> after<span style=color:#f92672>-</span>before
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>function_to_time<span style=color:#f92672>.</span>__name__<span style=color:#e6db74>}</span><span style=color:#e6db74>() took </span><span style=color:#e6db74>{</span>time_taken<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>) <span style=color:#75715e># foo() took 0.30090832710266113</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> result
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> dummy_function
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@time_function</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(a, b):
+</span></span><span style=display:flex><span>  time<span style=color:#f92672>.</span>sleep(<span style=color:#ae81ff>.3</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> b<span style=color:#f92672>-</span>a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>foo(<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>) <span style=color:#75715e># Returns 1</span>
+</span></span></code></pre></div><p>If we wanted to return both, we could:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> time
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>time_function</span>(function_to_time):
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>dummy_function</span>(<span style=color:#f92672>*</span>args):
+</span></span><span style=display:flex><span>    before <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>    result <span style=color:#f92672>=</span> function_to_time(<span style=color:#f92672>*</span>args)
+</span></span><span style=display:flex><span>    after <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>time()
+</span></span><span style=display:flex><span>    time_taken <span style=color:#f92672>=</span> after<span style=color:#f92672>-</span>before
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> result, time_taken
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> dummy_function
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@time_function</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>foo</span>(a, b):
+</span></span><span style=display:flex><span>  time<span style=color:#f92672>.</span>sleep(<span style=color:#ae81ff>.3</span>)
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> b<span style=color:#f92672>-</span>a
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>result, time_taken <span style=color:#f92672>=</span> foo(<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>) <span style=color:#75715e># Returns (1, 0.30090832710266113)</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;foo() took </span><span style=color:#e6db74>{</span>time_taken<span style=color:#e6db74>}</span><span style=color:#e6db74> and had a result of </span><span style=color:#e6db74>{</span>result<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>) <span style=color:#75715e># foo() took 0.30090832710266113 and had a result of 1</span>
+</span></span></code></pre></div></details><details id=properties-getters-and-setters class=collapse-section><summary><h2>Properties (getters and setters)<em><small style=font-size:small> Click to expand</small></em></h2></summary><p>Properties are a method in python to enforce the getter-setter pattern. This is more popular in languages like Java, but essentially instead of having tons of attributes that you access directly you have methods that control access to, and modification of certain attributes. This is useful for various scenarios such as:</p><ul><li>Ensuring a provided value is within a range when trying to set an attribute to the value</li><li>If a value is taken from a remote service then ensuring it is up to date when accessing</li><li>In asynchronus contexts it can be used to ensure locks and safe concurrent access/writes</li></ul><p>Let&rsquo;s say for example you have an app that displays a dashboard about a city, this includes the name, population and temperature. When people access the population and temperature you want to access external services (like the city registry for population, and a weather monitor for remperature). So every time you want a bit of code to run to make sure the value being accessed is up to date. To do this you can make the attributes for temperature and population into properties. Then for each you will need a property declaration (the getter), and a setter. The getter will be used when people call <code>City.temperature</code> or <code>City.population</code>, and the setter will run when <code>City.temperature = value</code> or <code>City.population = value</code> is called.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>MINIMUM_TEMPERATURE_CELCIUS <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>273</span> <span style=color:#75715e># Absolute zero in celcius</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>City</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> __init__(self, name, population, temperature<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>):
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>name <span style=color:#f92672>=</span> name
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>population <span style=color:#f92672>=</span> population
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>temperature <span style=color:#f92672>=</span> temperature
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@property</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>population</span>(self) <span style=color:#f92672>-&gt;</span> int:
+</span></span><span style=display:flex><span>        api_result <span style=color:#f92672>=</span> <span style=color:#ae81ff>1_000_000</span> <span style=color:#75715e># A fake call to the external API</span>
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>_population <span style=color:#f92672>=</span> api_result
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>_population
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@temperature.setter</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>population</span>(self, value):
+</span></span><span style=display:flex><span>        <span style=color:#75715e># No special processing</span>
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>_population <span style=color:#f92672>=</span> value
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@property</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>temperature</span>(self):
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>&#34;Getting value...&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> self<span style=color:#f92672>.</span>_temperature
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@temperature.setter</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>temperature</span>(self, value):
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>&#34;Setting value...&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> value <span style=color:#f92672>&lt;</span> MINIMUM_TEMPERATURE_CELCIUS:
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Temperature below </span><span style=color:#e6db74>{</span>MINIMUM_TEMPERATURE_CELCIUS<span style=color:#e6db74>}</span><span style=color:#e6db74> is not possible&#34;</span>)
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>_temperature <span style=color:#f92672>=</span> value
+</span></span></code></pre></div><p>So in this case <code>temperature()</code> and <code>population()</code> are the getters, which means that when you try to access <code>City.temperature</code> this function is called and the result is returned. Syntax wise you need to append an underscore to access the current value. Once you have declared a property, you can then create a setter as a decorator, which would be the functions that also take in <code>value</code> as a parameter.</p></details><details id=iterators class=collapse-section><summary><h2>Iterators<em><small style=font-size:small> Click to expand</small></em></h2></summary><p>When you use a for loop in python there is something interesting happening under the hood. Iterators are a special type of class that implements the iterator protocol. The protocol operates on classes that have two <a href=#magic/dunder-methods>magic methods</a>. This is what is used when you iterate. For example take this for loop:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>shopping_list <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;eggs&#34;</span>, <span style=color:#e6db74>&#34;ham&#34;</span>, <span style=color:#e6db74>&#34;spam&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> item <span style=color:#f92672>in</span> shopping_list:
+</span></span><span style=display:flex><span>  print(item)
+</span></span></code></pre></div><p>This can functionally be done the same with:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>index <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> index <span style=color:#f92672>&lt;</span> len(shopping_list):
+</span></span><span style=display:flex><span>  print(shopping_list[index])
+</span></span><span style=display:flex><span>  index <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span> 
+</span></span></code></pre></div><p>You will notice that essentially our loop calls the next item, until there are no more items. This is what the iterator is based on, it asks you to tell it what to call on each iteration (<code>__iter__()</code>), and then on each iteration it will call that <code>Iterable</code>&rsquo;s <code>__next__()</code> function until a <code>StopIteration</code> exception is raised.</p><h3 id=creating-your-own-iterator>Creating your own Iterator</h3><p>With that knowledge let&rsquo;s create an iterator to understand how this works:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> List
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ShoppingList</span>:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __init__(self, items:List[str]):
+</span></span><span style=display:flex><span>    self<span style=color:#f92672>.</span>items <span style=color:#f92672>=</span> items
+</span></span><span style=display:flex><span>    self<span style=color:#f92672>.</span>current_index <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __iter__(self):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> self <span style=color:#75715e># Shopping list is an Iterator and an Iterable</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __next__(self):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> self<span style=color:#f92672>.</span>current_index <span style=color:#f92672>&lt;</span> len(self<span style=color:#f92672>.</span>items):
+</span></span><span style=display:flex><span>        return_value <span style=color:#f92672>=</span> self<span style=color:#f92672>.</span>items[self<span style=color:#f92672>.</span>current_index]
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>current_index <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> return_value
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>StopIteration</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> item <span style=color:#f92672>in</span> ShoppingList([<span style=color:#e6db74>&#34;Eggs&#34;</span>, <span style=color:#e6db74>&#34;Ham&#34;</span>, <span style=color:#e6db74>&#34;Spam&#34;</span>]):
+</span></span><span style=display:flex><span>  print(item)
+</span></span></code></pre></div><p>This means you can also make <code>Iterator</code>s out of things that don&rsquo;t have a defined length. For example let&rsquo;s say you have a database you&rsquo;re looping through, but data is coming in while you&rsquo;re looping. Instead of storing the current state and iterating over that, you can continuously keep iterating until a <code>StopIteration</code> is raised!</p><h3 id=list-comprehensions>List comprehensions</h3><p>A list comprehension syntactically shorter way to produce a list of values with a simple calculation. It is intended to replace the design pattern of:</p><ol><li>instantiating an empty list</li><li>Iterate and store values in the list</li><li>return or use list values.</li></ol><p>For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>result <span style=color:#f92672>=</span> [] <span style=color:#75715e># 1. Initialize empty list</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 2. Iterate and store values in the list</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> number <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>10</span>): <span style=color:#75715e># Square numbers from 0-9 and add them to the result list</span>
+</span></span><span style=display:flex><span>    result<span style=color:#f92672>.</span>append(number<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(result) <span style=color:#75715e># 3. Return or use list values</span>
+</span></span></code></pre></div><p>Can be shortened to:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>result <span style=color:#f92672>=</span> [number <span style=color:#f92672>**</span> <span style=color:#ae81ff>2</span> <span style=color:#66d9ef>for</span> number <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>10</span>)] <span style=color:#75715e># Steps 1-2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(result) <span style=color:#75715e># 3. Return or use list values</span>
+</span></span></code></pre></div><p>which produces:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>[<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>9</span>, <span style=color:#ae81ff>16</span>, <span style=color:#ae81ff>25</span>, <span style=color:#ae81ff>36</span>, <span style=color:#ae81ff>49</span>, <span style=color:#ae81ff>64</span>, <span style=color:#ae81ff>81</span>]
+</span></span></code></pre></div><p>It does exactly the same as the above example, it is just shorter. The basic syntax is <code>[operation for variable in iterable]</code> Were operation is the calculation (or function) being run, variable is the name for the temporary iteration variable made, and iterable is some form of iterable (list, generator, set etc.). We can also do this conditionally, so for example if we wanted to only include even numbers we could do:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>evens <span style=color:#f92672>=</span> [number <span style=color:#66d9ef>for</span> number <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>10</span>) <span style=color:#66d9ef>if</span> number <span style=color:#f92672>%</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>print(evens) <span style=color:#75715e># [0, 2, 4, 6, 8]</span>
+</span></span></code></pre></div><p>And we can do an if-else statement using:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>evens <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#34;even&#34;</span> <span style=color:#66d9ef>if</span> number <span style=color:#f92672>%</span><span style=color:#ae81ff>2</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span> <span style=color:#66d9ef>else</span> <span style=color:#e6db74>&#34;odd&#34;</span> <span style=color:#66d9ef>for</span> number <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>10</span>)]
+</span></span><span style=display:flex><span>print(evens) <span style=color:#75715e># [&#39;even&#39;, &#39;odd&#39;, &#39;even&#39;, &#39;odd&#39;, &#39;even&#39;, &#39;odd&#39;, &#39;even&#39;, &#39;odd&#39;, &#39;even&#39;, &#39;odd&#39;]</span>
+</span></span></code></pre></div><h3 id=generators>Generators</h3><p>A generator is a type of iterator. This will allow you to make an iterator out of results of functions. For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>lots_of_numbers</span>():
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> number <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>10_000_000</span>):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>yield</span> number
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> number <span style=color:#f92672>in</span> lots_of_numbers:
+</span></span><span style=display:flex><span>  print(number)
+</span></span></code></pre></div><p>Essentially you can iterate over results 1 at a time. The question is why? Efficiency.</p><p>In order to iterate over 10 million numbers you would normally need to put those numbers in a list, store that list and then iterate over it. This means that data needs to be stored somewhere while iterating. With a generator the value is generated <strong>when it&rsquo;s needed</strong>, and then is &ldquo;paused&rdquo; until <code>next()</code> is called on it again. So if instead of a full loop I did something like:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>lots_of_numbers</span>():
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> number <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>10_000_000</span>):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>yield</span> number
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>nums <span style=color:#f92672>=</span> lots_of_numbers()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(next(nums)) <span style=color:#75715e># prints 0</span>
+</span></span><span style=display:flex><span>print(next(nums)) <span style=color:#75715e># prints 1</span>
+</span></span></code></pre></div><p>Which we can run while using essentially 0 memory. We can also use generators to do memory efficient returns of different values. For example let&rsquo;s say we need to get a bunch of data from an API but don&rsquo;t want to have to store it all we could turn the response into a generator and only process the results one at a time. Lets say for example that <code>get_user_orders()</code> sends back a JSON string that we&rsquo;re storing in a file:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>get_user_info</span>():
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>yield</span> get_user_name() <span style=color:#75715e># &#34;kieran&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>yield</span> get_user_orders() <span style=color:#75715e># Returns a large JSON string</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>yield</span> get_user_age() <span style=color:#75715e># 24</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>user_info <span style=color:#f92672>=</span> get_user_info()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(next(user_info)) <span style=color:#75715e># kieran</span>
+</span></span><span style=display:flex><span>print(next(user_info)) <span style=color:#75715e># prints a large JSON string</span>
+</span></span><span style=display:flex><span>print(next(user_info)) <span style=color:#75715e># 24</span>
+</span></span></code></pre></div><p>This means we only use the memory for <code>get_user_orders()</code> when the second <code>next()</code> is called, compared to something more traditional like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>get_user_info</span>():
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> {
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;name&#34;</span>: get_user_name(),
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;orders&#34;</span>: get_user_orders(),
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;age&#34;</span>: get_user_age()
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>user_info <span style=color:#f92672>=</span> get_user_info()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(user_info) <span style=color:#75715e># prints a large JSON string</span>
+</span></span></code></pre></div><p>We need to store it in RAM the whole time!</p></details><details id=dataclasses class=collapse-section><summary><h2>Dataclasses<em><small style=font-size:small> Click to expand</small></em></h2></summary><p>Dataclasses are a special way to define classes in python. They help make classes more efficient, but have some caveats (that I find are positives), namely all your attributes must be defined with type hints. For example here is a <code>User</code> class the typical python way:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>User</span>:
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>def</span> __init__(self, name, age, birthday):
+</span></span><span style=display:flex><span>      self<span style=color:#f92672>.</span>name <span style=color:#f92672>=</span> name
+</span></span><span style=display:flex><span>      self<span style=color:#f92672>.</span>age <span style=color:#f92672>=</span> age
+</span></span><span style=display:flex><span>      self<span style=color:#f92672>.</span>birthday <span style=color:#f92672>=</span> birthday
+</span></span></code></pre></div><p>Now here is the same class in a dataclass:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> datetime <span style=color:#f92672>import</span> datetime
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> dataclasses <span style=color:#f92672>import</span> dataclass
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@dataclass</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>User</span>:
+</span></span><span style=display:flex><span>      name: str
+</span></span><span style=display:flex><span>      age:int
+</span></span><span style=display:flex><span>      birthday:datetime
+</span></span></code></pre></div><p>The handy thing about this is that the birthday attribute was not clear in the original example. It could have been a 3 value tuple for year, month, day (<code>(1998,10,28)</code>), a formatted string <code>"28-10-1998"</code> or any other types. But now users know what type they <strong>should use</strong> (this is not enforced).</p><p>If you need to run code after a class instance is created you can use <code>__post_init__(self)</code>.</p><h3 id=__post_init__>__post_init__()</h3><p>This is a <a href=#magic/dunder-methods>magic method</a> that runs after your dataclass instance is setup. So for example maybe you want to do some birthday checking to make sure someone&rsquo;s birthday matches their age, and they aren&rsquo;t saying they&rsquo;re over 200 years old:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> datetime <span style=color:#f92672>import</span> datetime
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> dataclasses <span style=color:#f92672>import</span> dataclass
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@dataclass</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>User</span>:
+</span></span><span style=display:flex><span>    name: str
+</span></span><span style=display:flex><span>    age:int
+</span></span><span style=display:flex><span>    birthday:datetime
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>__post_init__</span>(self):
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> self<span style=color:#f92672>.</span>age <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>200</span>:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>&#34;You can&#39;t be over 200 years old &gt;:(&#34;</span>)
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> ((datetime<span style=color:#f92672>.</span>now()<span style=color:#f92672>.</span>year <span style=color:#f92672>-</span> self<span style=color:#f92672>.</span>birthday<span style=color:#f92672>.</span>year) <span style=color:#f92672>!=</span> self<span style=color:#f92672>.</span>age) <span style=color:#f92672>and</span> ((datetime<span style=color:#f92672>.</span>now()<span style=color:#f92672>.</span>year <span style=color:#f92672>-</span> self<span style=color:#f92672>.</span>birthday<span style=color:#f92672>.</span>year) <span style=color:#f92672>!=</span> self<span style=color:#f92672>.</span>age<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>&#34;Your birthday doesn&#39;t match your age&#34;</span>)
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>print(User(<span style=color:#e6db74>&#34;Kieran&#34;</span>, <span style=color:#ae81ff>24</span>, datetime(<span style=color:#ae81ff>1998</span>,<span style=color:#ae81ff>10</span>,<span style=color:#ae81ff>29</span>)))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Invalid</span>
+</span></span><span style=display:flex><span>print(User(<span style=color:#e6db74>&#34;Kieran&#34;</span>, <span style=color:#ae81ff>24</span>, datetime(<span style=color:#ae81ff>1864</span>,<span style=color:#ae81ff>10</span>,<span style=color:#ae81ff>5</span>)))
+</span></span><span style=display:flex><span>print(User(<span style=color:#e6db74>&#34;Kieran&#34;</span>, <span style=color:#ae81ff>400</span>, datetime(<span style=color:#ae81ff>2023</span><span style=color:#f92672>-</span><span style=color:#ae81ff>400</span>,<span style=color:#ae81ff>10</span>,<span style=color:#ae81ff>5</span>)))
+</span></span></code></pre></div><h3 id=classvars>ClassVar&rsquo;s</h3><p>A class variable is a variable that exists as part of a class <strong>not part of an instance</strong>. This means each instance has <strong>the same value</strong> because it comes from the class they come from. This is handy in many situations such as keeping track of isntances that are created:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> __future__ <span style=color:#f92672>import</span> annotations
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> ClassVar, List
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> dataclasses <span style=color:#f92672>import</span> dataclass
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@dataclass</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Slide</span>:
+</span></span><span style=display:flex><span>    content: str
+</span></span><span style=display:flex><span>    slides: ClassVar[List[Slide]] <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>__post_init__</span>(self):
+</span></span><span style=display:flex><span>      Slide<span style=color:#f92672>.</span>slides<span style=color:#f92672>.</span>append(self)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Slide(<span style=color:#e6db74>&#34;Hello World&#34;</span>)
+</span></span><span style=display:flex><span>Slide(<span style=color:#e6db74>&#34;World Hello&#34;</span>)
+</span></span><span style=display:flex><span>Slide(<span style=color:#e6db74>&#34;HeLlO WoRlD&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(Slide<span style=color:#f92672>.</span>slides) <span style=color:#75715e># [Slide(content=&#39;Hello World&#39;), Slide(content=&#39;World Hello&#39;), Slide(content=&#39;HeLlO WoRlD&#39;)]</span>
+</span></span></code></pre></div><p><code>Slide.slides</code> will now have a list of every class instance that is created, but keep in mind this means that the instances will <strong>NEVER</strong> be deleted unless you clear them out. So you might end up wasting a ton of memory. You can resolve this by having some sort of <code>Slide.delete()</code> method to remove itself from the list when removed:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> __future__ <span style=color:#f92672>import</span> annotations
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> ClassVar, List
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> dataclasses <span style=color:#f92672>import</span> dataclass
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@dataclass</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Slide</span>:
+</span></span><span style=display:flex><span>    content: str
+</span></span><span style=display:flex><span>    slides: ClassVar[List[Slide]] <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>__post_init__</span>(self):
+</span></span><span style=display:flex><span>      Slide<span style=color:#f92672>.</span>slides<span style=color:#f92672>.</span>append(self)
+</span></span><span style=display:flex><span>      
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>delete</span>(self):
+</span></span><span style=display:flex><span>      Slide<span style=color:#f92672>.</span>slides<span style=color:#f92672>.</span>remove(self)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Slide(<span style=color:#e6db74>&#34;Hello World&#34;</span>)
+</span></span><span style=display:flex><span>q <span style=color:#f92672>=</span> Slide(<span style=color:#e6db74>&#34;World Hello&#34;</span>)
+</span></span><span style=display:flex><span>Slide(<span style=color:#e6db74>&#34;HeLlO WoRlD&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(Slide<span style=color:#f92672>.</span>slides) <span style=color:#75715e># [Slide(content=&#39;Hello World&#39;), Slide(content=&#39;World Hello&#39;), Slide(content=&#39;HeLlO WoRlD&#39;)]</span>
+</span></span><span style=display:flex><span>q<span style=color:#f92672>.</span>delete()
+</span></span><span style=display:flex><span>print(Slide<span style=color:#f92672>.</span>slides) <span style=color:#75715e># [Slide(content=&#39;Hello World&#39;), Slide(content=&#39;HeLlO WoRlD&#39;)]</span>
+</span></span></code></pre></div><h3 id=fields>Fields</h3><p>Some types of attributes in dataclasses need to be instantiated in more complex ways. These types require you to use <code>field()</code>. For example most lists will need you to use a function to instantiate it:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> ClassVar, List, Any
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> dataclasses <span style=color:#f92672>import</span> dataclass, field
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@dataclass</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Student</span>:
+</span></span><span style=display:flex><span>  name:str
+</span></span><span style=display:flex><span>  age:int
+</span></span><span style=display:flex><span>  student_id: str
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>create_empty_list</span>() <span style=color:#f92672>-&gt;</span> List[Any]:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@dataclass</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>School</span>:
+</span></span><span style=display:flex><span>  students: List[Student] <span style=color:#f92672>=</span> field(default_factory<span style=color:#f92672>=</span>create_empty_list)
+</span></span></code></pre></div><p>So in this case the <code>field()</code> function takes in a <code>default_factory</code> which is a <code>Callable</code>. This is a great case for using <a href=#lambdas>anonymous functions/lambdas</a>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> ClassVar, List, Any
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> dataclasses <span style=color:#f92672>import</span> dataclass, field
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@dataclass</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Student</span>:
+</span></span><span style=display:flex><span>  name:str
+</span></span><span style=display:flex><span>  age:int
+</span></span><span style=display:flex><span>  student_id: str
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@dataclass</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>School</span>:
+</span></span><span style=display:flex><span>  students: List[Student] <span style=color:#f92672>=</span> field(default_factory<span style=color:#f92672>=</span><span style=color:#66d9ef>lambda</span>: [])
+</span></span></code></pre></div></details><details id=context-managers class=collapse-section><summary><h2>Context managers<em><small style=font-size:small> Click to expand</small></em></h2></summary><p>There are many situations where you will want to have an object exist temporarily, and that object <strong>must</strong> run some code to &ldquo;close&rdquo; it. The most common case is files. Check out this python code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>f <span style=color:#f92672>=</span> open(<span style=color:#e6db74>&#34;my_file.txt&#34;</span>, <span style=color:#e6db74>&#34;w+&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>f<span style=color:#f92672>.</span>write(<span style=color:#e6db74>&#34;some content&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span> <span style=color:#75715e># more code</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>f<span style=color:#f92672>.</span>write(<span style=color:#e6db74>&#34;some content&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span> <span style=color:#75715e># more code</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>f<span style=color:#f92672>.</span>write(<span style=color:#e6db74>&#34;some content&#34;</span>)
+</span></span></code></pre></div><p>You will notice we opened the file, wrote to it a few times, and never closed it. Lets say the code between one of the writes took a while, and someone else wanted to write to the file, what happens? In the best case the won&rsquo;t be allowed to write to the file, in the worst case the changes will trample over each other, or just cause a file corruption in some cases (like if an error happens mid-write). This is why we have to close the file between writes:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>f <span style=color:#f92672>=</span> open(<span style=color:#e6db74>&#34;my_file.txt&#34;</span>, <span style=color:#e6db74>&#34;w+&#34;</span>)
+</span></span><span style=display:flex><span>f<span style=color:#f92672>.</span>write(<span style=color:#e6db74>&#34;some content&#34;</span>)
+</span></span><span style=display:flex><span>f<span style=color:#f92672>.</span>close()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span> <span style=color:#75715e># more code</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>f <span style=color:#f92672>=</span> open(<span style=color:#e6db74>&#34;my_file.txt&#34;</span>, <span style=color:#e6db74>&#34;w+&#34;</span>)
+</span></span><span style=display:flex><span>f<span style=color:#f92672>.</span>write(<span style=color:#e6db74>&#34;some content&#34;</span>)
+</span></span><span style=display:flex><span>f<span style=color:#f92672>.</span>close()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span> <span style=color:#75715e># more code</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>f <span style=color:#f92672>=</span> open(<span style=color:#e6db74>&#34;my_file.txt&#34;</span>, <span style=color:#e6db74>&#34;w+&#34;</span>)
+</span></span><span style=display:flex><span>f<span style=color:#f92672>.</span>write(<span style=color:#e6db74>&#34;some content&#34;</span>)
+</span></span><span style=display:flex><span>f<span style=color:#f92672>.</span>close()
+</span></span></code></pre></div><p>This is very tedious, and doesn&rsquo;t guarentee you will always remember to close your file. This is where context managers come in. A context manager is an object that defines an &ldquo;opening&rdquo;, and &ldquo;close&rdquo; and will even handle if an error is raised to make sure the file is still closed anyway. You can technically call these manually, but python has a <code>with</code> statement that makes this easier:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#34;my_file.txt&#34;</span>, <span style=color:#e6db74>&#34;w+&#34;</span>) <span style=color:#66d9ef>as</span> f:
+</span></span><span style=display:flex><span>  f<span style=color:#f92672>.</span>write(<span style=color:#e6db74>&#34;some content&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span> <span style=color:#75715e># more code</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#34;my_file.txt&#34;</span>, <span style=color:#e6db74>&#34;w+&#34;</span>) <span style=color:#66d9ef>as</span> f:
+</span></span><span style=display:flex><span>  f<span style=color:#f92672>.</span>write(<span style=color:#e6db74>&#34;some content&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>...</span> <span style=color:#75715e># more code</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(<span style=color:#e6db74>&#34;my_file.txt&#34;</span>, <span style=color:#e6db74>&#34;w+&#34;</span>) <span style=color:#66d9ef>as</span> f:
+</span></span><span style=display:flex><span>  f<span style=color:#f92672>.</span>write(<span style=color:#e6db74>&#34;some content&#34;</span>)
+</span></span></code></pre></div><p>Now <code>f</code> only exists in the indentation level up from the <code>with</code> statement! Outside that indentation level it has either not yet been opened, or been closed!</p><p>These are implemented with <a href=#magic/dunder-methods>magic/dunder methods</a>.</p><h3 id=creating-your-own-context-managers>Creating your own context managers</h3><p>To create a context manager you just need a <code>__enter__()</code> and <code>__exit__()</code> method. For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MyContextManager</span>:
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __init__(self):
+</span></span><span style=display:flex><span>    <span style=color:#f92672>...</span>
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __enter__(self):
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#39;Opened&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> self
+</span></span><span style=display:flex><span>     
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> __exit__(self, exc_type, exc_value, exc_traceback):
+</span></span><span style=display:flex><span>      print(<span style=color:#e6db74>&#39;Closed&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>do_stuff</span>(self):
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;Hello&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> MyContextManager() <span style=color:#66d9ef>as</span> m:
+</span></span><span style=display:flex><span>  m<span style=color:#f92672>.</span>do_stuff()
+</span></span></code></pre></div><p><code>__enter__()</code> is self-explanatory, but <code>__exit__()</code> has some interesting parameters. Like I said the method will be called even if there is an error thrown. Those parameters tell you if an error occurred (if no error occurs all 3 are <code>None</code>):</p><ul><li>exc_type; The type of the error (i.e. <code>ValueError</code>)</li><li>exc_value; The instance of the exception raised</li><li>exc_traceback; The <a href=https://docs.python.org/3/library/traceback.html>traceback object</a> related to the error</li></ul></details><details id=lambdas class=collapse-section><summary><h2>Lambdas<em><small style=font-size:small> Click to expand</small></em></h2></summary><p>Lambdas are a way in python to declare anonymous functions. What this means is you can assign a function call to a variable. So for example let&rsquo;s take the simplest case, a function that takes in a name and returns a greeting string using the name:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>generate_greeting</span>(name: str):
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Hello </span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span></code></pre></div><p>We can make this a lambda like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>generate_greeting <span style=color:#f92672>=</span> <span style=color:#66d9ef>lambda</span> name: <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Hello </span><span style=color:#e6db74>{</span>name<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+</span></span></code></pre></div><p>Lambdas follow the form of:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>lambda</span> arguments: <span style=color:#75715e># Function body</span>
+</span></span></code></pre></div><p>Lambdas always return whatever value is evaluated in the function body. So since we evaluated the string, we get the string back at the end. We can then call it the same way:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>generate_greeting(<span style=color:#e6db74>&#34;Kieran&#34;</span>) <span style=color:#75715e># &#34;Hello Kieran&#34;</span>
+</span></span></code></pre></div><p>This comes in handy in cases where something needs a <code>Callable</code> objet, but you don&rsquo;t need to call it more than once. One example of this is in dataclasses. For some data types (like <code>List</code>s) you need to provide a <code>Callable</code> object (object with a <code>__call__()</code> funtion) to initialize an attribute that is a list. So you can do this with a lambda that returns an empty list like so:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> dataclasses <span style=color:#f92672>import</span> dataclass, field
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>empty_list <span style=color:#f92672>=</span> <span style=color:#66d9ef>lambda</span> : []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@dataclass</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Student</span>:
+</span></span><span style=display:flex><span>   grades:List[int] <span style=color:#f92672>=</span> field(default_factory<span style=color:#f92672>=</span>empty_list) <span style=color:#75715e># Initialize Student.grades to an empty list</span>
+</span></span></code></pre></div></details></div></div></div></section></body><footer class="footer sticky-bottom" style=position:fixed;background-color:#ffcdae><div class=container><div class=row><a href=https://www.instagram.com/schulichignite target=_blank rel="noopener noreferrer"><i class="bi bi-instagram is-large"></i></a>
+<a href=https://www.youtube.com/channel/UC7tNvdbu952HOUl_4nK7iww target=_blank rel="noopener noreferrer"><i class="bi bi-youtube is-large"></i></a>
+<a href=https://vm.tiktok.com/ZSHPbWU3/ target=_blank rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentcolor" class="bi bi-tiktok is-large mt-3" viewBox="0 0 16 16"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753.0-3.07-.814-4-1.829V11A5 5 0 116 6v2a3 3 0 103 3V0z"/></svg></a><a href=https://www.facebook.com/SchulichIgnite/ target=_blank rel="noopener noreferrer"><i class="bi bi-facebook is-large"></i></a>
+<a href=https://linkedin.com/company/schulich-ignite/ target=_blank rel="noopener noreferrer"><i class="bi bi-linkedin is-large"></i></a>
+<a href=https://discord.gg/F3Qjqqj target=_blank rel="noopener noreferrer"><i class="bi bi-discord is-large"></i></a></div></div></footer><script src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js integrity=sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js integrity=sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js integrity="sha512-bgHRAiTjGrzHzLyKOnpFvaEpGzJet3z4tZnXGjpsCcqOnAH6VGUx9frc5bcIhKTVLEiCO6vEhNAgx5jtLUYrfA==" crossorigin=anonymous referrerpolicy=no-referrer></script>
+<script src=https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js integrity="sha512-1NHUMVlHsFnOe0Q36JMbBrNrjVcMdue2occC2xHWYXo7epa3YR54ZibI1G4I+tnJKBGNib11d8JzOElMfUSpYg==" crossorigin=anonymous referrerpolicy=no-referrer></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/http.min.js integrity="sha512-4Rcwpn+xUuCDufCycA9UtpmboCxNHysWy23e45PJBQeh7m6Kno5/oQ4T5SmbmSAAZiDsm/IsX1IJwsOjy6ob0g==" crossorigin=anonymous referrerpolicy=no-referrer></script>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/http.min.js integrity="sha512-4Rcwpn+xUuCDufCycA9UtpmboCxNHysWy23e45PJBQeh7m6Kno5/oQ4T5SmbmSAAZiDsm/IsX1IJwsOjy6ob0g==" crossorigin=anonymous referrerpolicy=no-referrer></script>
+<script>hljs.addPlugin(new CopyButtonPlugin),hljs.highlightAll(),hljs.initLineNumbersOnLoad()</script><script type=module>
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+    
+    let mermaidConfig = {
+    startOnLoad: true,
+    "theme": "base",
+        "themeVariables": {
+            "primaryColor": "#ffde59",
+            "primaryTextColor": "#d14b3b",
+            "primaryBorderColor": "#7C0000",
+            "lineColor": "#F8B229",
+            "secondaryColor": "#fff",
+            "tertiaryColor": "#d14b3b"
+        }
+    }
+    mermaid.initialize(mermaidConfig, '.language-mermaid');
+</script></html>
