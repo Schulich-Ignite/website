@@ -6,8 +6,8 @@ modified_date: 2023-01-19T00:00:00-06:00
 image: /img/blog/paths/hero.jpg
 authors: 
 - Kieran Wood
+language: [python]
 tags:
-  - python
   - scorch
   - web
   - theory

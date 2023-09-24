@@ -162,4 +162,3 @@ Phew! I know that was a lot of information, but this article covers the basis of
 You’ll use most of this in almost any Node project you create. We’ll even build on this further in the next article of the series by installing another package called Express and using that to handle some URL routing to respond to requests by sending HTML documents. In the meantime, I encourage you to explore some of the 1.3 million packages available now that you know how to use NPM!
 
 <a class="btn btn-secondary" href="https://schulichignite.com/blog/intro-to-node/express">See Next post</a>
-

@@ -4,6 +4,7 @@ subtitle: A quick introduction to hashing
 date: 2023-07-31T00:00:00-06:00
 modified_date: ""
 difficulty: [scorch]
+language: [python]
 image: "/img/blog/hashing/hero.jpeg"
 authors: 
   - Kieran Wood
