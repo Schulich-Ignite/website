@@ -1,0 +1,345 @@
+<!doctype html><html style=overflow-x:hidden><head><meta charset=utf-8><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","author":"Schulich Ignite","name":"HHTTPPP; Creating a CLI","dateCreated":"2023-1010-06","text":"Now that we have our functionality, it\u0026rsquo;s time to make our program more practical and easy to use. For our use case a CLI is the best tool for this!","image":"\/img\/blog\/hhttpp\/hero.jpg"}</script><title>HHTTPPP; Creating a CLI | Schulich Ignite</title><link rel="shortcut icon" href=https://schulichignite.com/img/favicon.ico type=image/x-icon><link rel=icon href=https://schulichignite.com/img/favicon.ico type=image/x-icon><meta property="og:title" content=" HHTTPPP; Creating a CLI | Schulich Ignite Blog "><meta property="og:type" content="website"><meta property="og:url" content=" https://schulichignite.com/blog/hhttpp/creating-the-cli/ "><meta property="og:image" content="/img/blog/hhttpp/hero.jpg "><meta name=Description content=" HHTTPPP; Creating a CLI; Now that we have our functionality, it&rsquo;s time to make our program more practical and easy to use. For our use case a CLI is the best tool for this! "><meta property="og:description" content=" HHTTPPP; Creating a CLI; Now that we have our functionality, it&rsquo;s time to make our program more practical and easy to use. For our use case a CLI is the best tool for this! "><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@900&display=swap" rel=stylesheet><link href=https://unpkg.com/video.js@7/dist/video-js.min.css rel=stylesheet><link href=https://unpkg.com/@videojs/themes@1/dist/sea/index.css rel=stylesheet><link rel=stylesheet href=https://schulichignite.com/css/index.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css integrity="sha512-mtXspRdOWHCYp+f4c7CkWGYPPRAhq9X+xCvJMUBVAb6pqA4U8pxhT3RWT3LP3bKbiolYL2CkL1bSKZZO4eeTew==" crossorigin=anonymous referrerpolicy=no-referrer><link rel=stylesheet href=https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css></head><nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark"><a class=navbar-brand href=../../../><img src=https://schulichignite.com/img/logos/ignite.svg width=40 height=60 alt="Schulich ignite logo">
+<span class=brand-name>Schulich Ignite</span></a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarSupportedContent><ul class="navbar-nav mr-auto"><li class=nav-item><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Sessions</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=../../../beginner>Ignite Beginner</a>
+<a class=dropdown-item href=../../../flare>Ignite Flare</a>
+<a class=dropdown-item href=../../../scorch>Ignite Scorch</a></div></li></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Sign up</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=https://forms.gle/wPjvobFc1ya6hrHeA target=_blank rel="noopener noreferrer">To learn</a>
+<a class=dropdown-item href=https://forms.gle/vWzxciKkvVsKsYPC8 target=_blank rel="noopener noreferrer">To teach</a></div></li><li class=nav-item><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Media</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=../../../blog>Blog</a>
+<a class=dropdown-item href=../../../language>Languages</a>
+<a class=dropdown-item href=../../../definitions>Definitions</a></div></li></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id=navbarDropdown role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>About</a><div class=dropdown-menu aria-labelledby=navbarDropdown><a class=dropdown-item href=../../../mission>Our Mission</a>
+<a class=dropdown-item href=../../../team>Our Team</a></li><li class=nav-item><a class=nav-link href=../../../contact>Contact</a></li></ul></div></nav><body><div class=diagonal-header><div class=mainheader>Blog</div><div class="subheader dates d-none d-sm-block"><span class=long-dates>Monday, Oct 2, 2023</span>
+<span class=short-dates>10/02/23</span></div></div><section class=section><img class="card-img-top large-image blog-hero-image" src=../../../img/blog/hhttpp/hero.jpg><div class=container><div class=row><div class="card no-background"><div class=card-body><h1 class=card-title>HHTTPPP; Creating a CLI</h1><h3 style=font-size:1em;color:#787878>Making our system more usable</h3><a class="btn btn-secondary my-2" href=../../../blog>&larr; Go back to blog</a><div id=article-info class=card><div class=row><div class=col-md-6><div class=card-body><h3>Table of Contents</h3><nav id=TableOfContents><ul><li><a href=#why>Why?</a></li><li><a href=#arugment-parsing>Arugment parsing</a><ul><li><a href=#docopt>Docopt</a></li></ul></li><li><a href=#our-setup>Our setup</a></li><li><a href=#other-final-touches>Other final touches</a></li></ul></nav></p></div></div><div class=col-md-6><div class=card-body><p class=card-text><i class="bi bi-calendar2-week-fill"></i> <time>Monday, Oct 2, 2023</time></p><p class=card-text><i class="bi bi-stopwatch-fill"></i><em>~10 Minute Read</em><br><em><i class="bi bi-tags-fill"></i></em>
+<a href=https://schulichignite.com/tags/python/>python</a>,
+<a href=https://schulichignite.com/tags/scorch/>scorch</a>,
+<a href=https://schulichignite.com/tags/web/>web</a>,
+<a href=https://schulichignite.com/tags/theory/>theory</a></p><h4>Author(s) information</h4><div id=author-information><a href=https://schulichignite.com/authors/kieran-wood/ target=_blank rel="noopener noreferrer"><img width=100rem src=../../../img/blog/avatars/kieran.jpg alt></a><h6 class=card-title><a href=https://schulichignite.com/authors/kieran-wood/ target=_blank rel="noopener noreferrer"><br>Kieran Wood</a></h6><div id=author-icons><a href=mailto:kieran@canadiancoding.ca><i class="bi bi-envelope-fill"></i></a>
+<a href=https://github.com/descent098 target=_blank><i class="bi bi-github"></i></a>
+<a href=https://linkedin.com/in/kieran-wood target=_blank><i class="bi bi-linkedin"></i></a>
+<a href=https://kieranwood.ca target=_blank><i class="bi bi-globe"></i></a></div><div class=text-primary style=max-width:40ch><p>I&rsquo;m a computer science major, with a minor in philosophy. I love to do open source work, especially in scripting, automation, web development, API&rsquo;s, CLI&rsquo;s and dev ops!</p></div></div></div></div></div></div></div><hr><div id=article-content class="card-text blog-text"><p>Now that we have our functionality, it&rsquo;s time to make our program more practical and easy to use. For our use case a CLI is the best tool for this!</p><p>A CLI or command line interface is a program you use by calling it from a terminal in a directory. If you&rsquo;re not familiar with how to use the command line very effectively, here&rsquo;s some resources I would recommend:</p><ul><li><a href="https://kieranwood.ca/terminal-basics/#slide=1">Terminal basics (slideshow)</a></li><li><a href="https://www.youtube.com/watch?v=5XgBd6rjuDQ">How to use the Command Line | Terminal Basics for Beginners (MacOS | Video)</a></li><li><a href="https://www.youtube.com/watch?v=MBBWVgE0ewk&amp;list=PL6gx4Cwl9DGDV6SnbINlVUd0o2xT4JbMu">Windows Command Line Tutorial - 1 - Introduction to the Command Prompt (Video)</a></li><li><a href="https://www.youtube.com/watch?v=FpRGRLI8Fy8">Windows PowerShell/Command Line for Beginners (Video)</a></li></ul><h2 id=why>Why?</h2><p>In our case creating a GUI (Graphical User Interface), is mostly going to be slower. Our users are primarily going to be devs and/or tech savy people we expect to know how to use a command line, and a CLI will be faster for what we need.</p><p>Here are some of the main reasons we&rsquo;re creating a CLI at all instead of just making people run the script from the python file:</p><ol><li>It allows you to pass arguments/flags in an easy manner</li><li>It can be invoked from the command line; There&rsquo;s no need to keep a file in every directory you want to use it in</li><li>It allows you to seperate your more common usage into an easy to use CLI, while allowing an API to exist for more complicated functionality or use cases</li><li>It can be used in other scripts/CI/CD easily since people just need to run it from the command line</li></ol><p>So let&rsquo;s learn about how to setup CLI&rsquo;s!</p><h2 id=arugment-parsing>Arugment parsing</h2><p>A CLI allows you to pass in flags/arguments, these flags/arguments are like funciton parameters, but they&rsquo;re provided by the user before the program starts. This lets users for example choose to run an app in different modes, or pass in information like an output directory for the output of a program etc.</p><p>As such the only real &ldquo;processing&rdquo; a CLI does besides just running existing code is argument parsing. Argument parsing is basically taking what someone types into the terminal and parsing it into usable data. The most basic way of doing this is <code>sys.argv</code>. <code>sys.argv</code> is the way that information is passed into your program from <a href=https://www.computerhope.com/jargon/s/stdin.htm>stdin</a>. For example if I run <code>python hhttpp.py -h</code>, then I can run:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> sys
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(sys<span style=color:#f92672>.</span>argv) <span style=color:#75715e># [&#39;hhttpp.py&#39;, &#39;-h&#39;]</span>
+</span></span></code></pre></div><p>You can see that everything after <code>python</code> (which is the command) will be added to <code>sys.argv</code> as a list item. We could use this to for example have the first argument be a directory, and the second argument to be a port. For example if I ran <code>python hhttpp.py /site 8338</code> then <code>sys.argv</code> would be <code>['hhttpp.py', '/site', '8338']</code>. We could then use these arguments to instantiate a <code>Server</code> object, and then start it with <code>Server.start_server</code>!</p><h3 id=docopt>Docopt</h3><p><code>sys.argv</code> is great for very simple things, however for more flexibility we need something more robust. There are tons of argument parsers, but there are few that are as fast to develop with as <a href=http://docopt.org/>docopt</a>. It has a bit of a learning curve, but once you are aware of the patterns it is very fast to write. Docopt will generate your argument parsing automatically based on your usage string.</p><h4 id=usage-strings>Usage strings</h4><p>A usage string is the &ldquo;help&rdquo; text that appears for commands. For example a project I wrote called <a href=https://github.com/Descent098/ahd>ahd</a> has this usage string:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>AHD: Ad-hoc Dispatcher
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Usage: 
+</span></span><span style=display:flex><span>    ahd <span style=color:#f92672>[</span>-h<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-v<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ahd list <span style=color:#f92672>[</span>-l<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ahd docs <span style=color:#f92672>[</span>-a<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-o<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ahd config <span style=color:#f92672>[</span>-e<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-i CONFIG_FILE_PATH<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ahd register &lt;name&gt; <span style=color:#f92672>[</span>&lt;command&gt;<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>&lt;paths&gt;<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    ahd &lt;name&gt; <span style=color:#f92672>[</span>&lt;command&gt;<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>&lt;paths&gt;<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-d<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Options:
+</span></span><span style=display:flex><span>    -h, --help            show this help message and exit
+</span></span><span style=display:flex><span>    -v, --version         show program<span style=color:#960050;background-color:#1e0010>&#39;</span>s version number and exit
+</span></span><span style=display:flex><span>    -l, --long            Shows all commands in configuration with paths and commands
+</span></span><span style=display:flex><span>    -a, --api             shows the local API docs
+</span></span><span style=display:flex><span>    -o, --offline         shows the local User docs instead of live ones
+</span></span><span style=display:flex><span>    -e, --export          exports the configuration file
+</span></span><span style=display:flex><span>    -i CONFIG_FILE_PATH, --import CONFIG_FILE_PATH 
+</span></span><span style=display:flex><span>                        imports the configuration file
+</span></span><span style=display:flex><span>    -d, --details         prints the details of a command
+</span></span></code></pre></div><p>Each line under the <code>Usage</code> header is a different possible pattern. For example <code>ahd list</code> would use the pattern on line 2, <code>ahd config -e</code> would use line 4. Anything inside square parenthesis (<code>[]</code>) are optional arguments/flags/variables. For everything else you can find details <a href=http://docopt.org/>here</a>. Anything with a <code>-</code> is a flag, typically these are used as a boolean where if they&rsquo;re specified they&rsquo;re true, and if not they&rsquo;re false. They also each have a long and short version (i.e. <code>-e</code> and <code>--export</code> are the same flags). Any flag that has text after it (i.e. <code>-i CONFIG_FILE_PATH</code>) allows you to store values for flags, so in this case you can type something like <code>--import="/file/config.yaml"</code>.</p><p>Let&rsquo;s put together a quick usage string. Here is the basic format I would always use:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>&lt;CLI_name&gt;: &lt;Short Description&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Usage: 
+</span></span><span style=display:flex><span>    &lt;CLI_name&gt; <span style=color:#f92672>[</span>-h<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-v<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Options:
+</span></span><span style=display:flex><span>    -h, --help            show this help message and exit
+</span></span><span style=display:flex><span>    -v, --version         show program<span style=color:#960050;background-color:#1e0010>&#39;</span>s version number and exit
+</span></span></code></pre></div><p>From here we can start building out a CLI. In our case we can will start by building a usage string for a math CLI (called <code>math</code>) that can be used to do various math operations. So with our template we can start with:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Math: Doing mathy things
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Usage: 
+</span></span><span style=display:flex><span>    math <span style=color:#f92672>[</span>-h<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-v<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Options:
+</span></span><span style=display:flex><span>    -h, --help            show this help message and exit
+</span></span><span style=display:flex><span>    -v, --version         show program<span style=color:#960050;background-color:#1e0010>&#39;</span>s version number and exit
+</span></span></code></pre></div><p>From here we will have the following functionality:</p><table><thead><tr><th>Command</th><th>Arguments/flags</th><th>Description</th></tr></thead><tbody><tr><td>multiply</td><td>x and y both ints</td><td>Multiplies <code>x * y</code></td></tr><tr><td>divide</td><td>x and y both ints</td><td>Divides <code>x / y</code></td></tr><tr><td>idivide</td><td>x and y both ints</td><td>Divides <code>x / y</code> and rounds down to nearest integer</td></tr><tr><td>sqrt</td><td>x which is an int</td><td>Takes square root of x</td></tr><tr><td>pi</td><td>l an optional int for how many decimal places to show pi to (default 6)</td><td>Show digits of pi to <code>l</code> digits</td></tr></tbody></table><p>Let&rsquo;s build out the new usage string:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Math: Doing mathy things
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Usage: 
+</span></span><span style=display:flex><span>    math <span style=color:#f92672>[</span>-h<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-v<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>    math multiply &lt;x&gt; &lt;y&gt;
+</span></span><span style=display:flex><span>    math divide &lt;x&gt; &lt;y&gt;
+</span></span><span style=display:flex><span>    math idivide &lt;x&gt; &lt;y&gt;
+</span></span><span style=display:flex><span>    math sqrt &lt;x&gt;
+</span></span><span style=display:flex><span>    math pi <span style=color:#f92672>[</span>-l<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Options:
+</span></span><span style=display:flex><span>    -h, --help            show this help message and exit
+</span></span><span style=display:flex><span>    -v, --version         show program<span style=color:#960050;background-color:#1e0010>&#39;</span>s version number and exit
+</span></span><span style=display:flex><span>    -l, --length          The number of digits of pi you want
+</span></span></code></pre></div><p>Here are the functions we want to call with the CLI:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>multiply</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>*</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>divide</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>/</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>idivide</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>//</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sqrt</span>(x:int) <span style=color:#f92672>-&gt;</span> float:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x<span style=color:#f92672>**</span><span style=color:#ae81ff>.5</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>pi</span>(length:int <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    PI <span style=color:#f92672>=</span> <span style=color:#ae81ff>3.141592653589793238462643</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> float(str(PI)[:length])
+</span></span></code></pre></div><h4 id=docopt-basics>Docopt basics</h4><p>For most other argument parsers you build the parser (<a href=https://docs.python.org/3/library/optparse.html>Like optparse objects</a>, or <a href=https://docs.python.org/3/library/argparse.html>argparse objects</a> ), and at the end it generates usage text when people pass in <code>-h</code> or <code>--help</code>.</p><p>Docopt does the opposite, you define your usage string and it <strong>builds the parser for you</strong>. This is handy because it means that for lots of simple CLI&rsquo;s you can build out the parser in seconds by just writing a usage string. The steps are:</p><ol><li>Define a usage string</li><li>Pass the usage string into a docopt method</li><li>Docopt will parse the usage string, and the values passed in, which will be put into a dictionary you can interface with</li></ol><p>With our math example we can do something like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> Union
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> docopt <span style=color:#f92672>import</span> docopt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>usage <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;&#34;Math: Doing mathy things
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Usage: 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math [-h] [-v]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math multiply &lt;x&gt; &lt;y&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math divide &lt;x&gt; &lt;y&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math idivide &lt;x&gt; &lt;y&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math sqrt &lt;x&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math pi [-l]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Options:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -h, --help            show this help message and exit
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -v, --version         show program&#39;s version number and exit
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -l, --length          The number of digits of pi you want
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>multiply</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>*</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>divide</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>/</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>idivide</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>//</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sqrt</span>(x:int) <span style=color:#f92672>-&gt;</span> float:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x<span style=color:#f92672>**</span><span style=color:#ae81ff>.5</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>pi</span>(length:int <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    PI <span style=color:#f92672>=</span> <span style=color:#ae81ff>3.141592653589793238462643</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> float(str(PI)[:length])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>args <span style=color:#f92672>=</span> docopt(usage, version<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0.1.0&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(args)
+</span></span></code></pre></div><p>So in our case if we called the CLI with <code>math multiply 3 4</code> we would get:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>args <span style=color:#f92672>==</span> {
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;--help&#39;</span>: <span style=color:#66d9ef>False</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;--length&#39;</span>: <span style=color:#66d9ef>False</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;--version&#39;</span>: <span style=color:#66d9ef>False</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;&lt;x&gt;&#39;</span>: <span style=color:#e6db74>&#39;3&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;&lt;y&gt;&#39;</span>: <span style=color:#e6db74>&#39;4&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;divide&#39;</span>: <span style=color:#66d9ef>False</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;idivide&#39;</span>: <span style=color:#66d9ef>False</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;multiply&#39;</span>: <span style=color:#66d9ef>True</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;pi&#39;</span>: <span style=color:#66d9ef>False</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;sqrt&#39;</span>: <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>We can call <code>math -h</code> to get our usage string, the same way we would if we built our parser from scratch. From here to implement multiply we could do:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> Union
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> docopt <span style=color:#f92672>import</span> docopt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>usage <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;&#34;Math: Doing mathy things
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Usage: 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math [-h] [-v]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math multiply &lt;x&gt; &lt;y&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math divide &lt;x&gt; &lt;y&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math idivide &lt;x&gt; &lt;y&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math sqrt &lt;x&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math pi [-l]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Options:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -h, --help            show this help message and exit
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -v, --version         show program&#39;s version number and exit
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -l, --length          The number of digits of pi you want
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>multiply</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>*</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>divide</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>/</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>idivide</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>//</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sqrt</span>(x:int) <span style=color:#f92672>-&gt;</span> float:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x<span style=color:#f92672>**</span><span style=color:#ae81ff>.5</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>pi</span>(length:int <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    PI <span style=color:#f92672>=</span> <span style=color:#ae81ff>3.141592653589793238462643</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> float(str(PI)[:length])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>args <span style=color:#f92672>=</span> docopt(usage, version<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0.1.0&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(args)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> args[<span style=color:#e6db74>&#34;multiply&#34;</span>]:
+</span></span><span style=display:flex><span>    print(multiply(int(args[<span style=color:#e6db74>&#34;&lt;x&gt;&#34;</span>]), int(args[<span style=color:#e6db74>&#34;&lt;y&gt;&#34;</span>])))
+</span></span></code></pre></div><p>You will notice that <strong>all arguments come in as strings</strong> (besides flags which are booleans), so you need to explicitly convert to other data types like int/float. So implementing all our functionality would look something like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> Union
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> docopt <span style=color:#f92672>import</span> docopt
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>usage <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;&#34;Math: Doing mathy things
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Usage: 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math [-h] [-v]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math multiply &lt;x&gt; &lt;y&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math divide &lt;x&gt; &lt;y&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math idivide &lt;x&gt; &lt;y&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math sqrt &lt;x&gt;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    math pi [-l DIGITS]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Options:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -h, --help            show this help message and exit
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -v, --version         show program&#39;s version number and exit
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -l DIGITS, --length DIGITS
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                          The number of digits of pi you want
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>multiply</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>*</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>divide</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>/</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>idivide</span>(x:int, y:int) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x <span style=color:#f92672>//</span> y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>sqrt</span>(x:int) <span style=color:#f92672>-&gt;</span> float:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> x<span style=color:#f92672>**</span><span style=color:#ae81ff>.5</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>pi</span>(length:int <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>) <span style=color:#f92672>-&gt;</span> Union[int, float]:
+</span></span><span style=display:flex><span>    PI <span style=color:#f92672>=</span> <span style=color:#ae81ff>3.141592653589793238462643</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> float(str(PI)[:length])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>args <span style=color:#f92672>=</span> docopt(usage, version<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0.1.0&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> args[<span style=color:#e6db74>&#34;&lt;x&gt;&#34;</span>]:
+</span></span><span style=display:flex><span>    args[<span style=color:#e6db74>&#34;&lt;x&gt;&#34;</span>] <span style=color:#f92672>=</span> int(args[<span style=color:#e6db74>&#34;&lt;x&gt;&#34;</span>])
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> args[<span style=color:#e6db74>&#34;&lt;y&gt;&#34;</span>]:
+</span></span><span style=display:flex><span>    args[<span style=color:#e6db74>&#34;&lt;y&gt;&#34;</span>] <span style=color:#f92672>=</span> int(args[<span style=color:#e6db74>&#34;&lt;y&gt;&#34;</span>])
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> args[<span style=color:#e6db74>&#34;--length&#34;</span>]:
+</span></span><span style=display:flex><span>    args[<span style=color:#e6db74>&#34;--length&#34;</span>] <span style=color:#f92672>=</span> int(args[<span style=color:#e6db74>&#34;--length&#34;</span>])
+</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>    args[<span style=color:#e6db74>&#34;--length&#34;</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> args[<span style=color:#e6db74>&#34;multiply&#34;</span>]:
+</span></span><span style=display:flex><span>    print(multiply(args[<span style=color:#e6db74>&#34;&lt;x&gt;&#34;</span>], args[<span style=color:#e6db74>&#34;&lt;y&gt;&#34;</span>]))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> args[<span style=color:#e6db74>&#34;divide&#34;</span>]:
+</span></span><span style=display:flex><span>    print(divide(args[<span style=color:#e6db74>&#34;&lt;x&gt;&#34;</span>], args[<span style=color:#e6db74>&#34;&lt;y&gt;&#34;</span>]))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> args[<span style=color:#e6db74>&#34;idivide&#34;</span>]:
+</span></span><span style=display:flex><span>    print(idivide(args[<span style=color:#e6db74>&#34;&lt;x&gt;&#34;</span>], args[<span style=color:#e6db74>&#34;&lt;y&gt;&#34;</span>]))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> args[<span style=color:#e6db74>&#34;sqrt&#34;</span>]:
+</span></span><span style=display:flex><span>    print(sqrt(args[<span style=color:#e6db74>&#34;&lt;x&gt;&#34;</span>]))
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> args[<span style=color:#e6db74>&#34;pi&#34;</span>]:
+</span></span><span style=display:flex><span>    print(pi(args[<span style=color:#e6db74>&#34;--length&#34;</span>]))
+</span></span></code></pre></div><p>We can test this without installing the cli, if the file is called <code>docopt_testing.py</code> then we can run something like <code>python docopt_testing.py pi --length=15</code>.</p><h4 id=when-to-use-docopt-and-when-not-to>When to use docopt and when not to</h4><p>Docopt is great, and some extra features it grants you without extra config are:</p><ul><li>Another issues docopt solves is ordering, you can</li><li>Invalid states will just print the usage string to the command line so people know they made a mistake</li><li>People can check version they have installed easily with <code>-v</code></li></ul><p>You do have to learn how to read usage strings, but you <strong>should</strong> do that anyways since ou need to learn how to read usage strings to use other people&rsquo;s projects. If you already have these skills you should already know the rules for writing the parser!</p><p>Docopt is a great option for argument parsing, but it has it&rsquo;s drawbacks:</p><ul><li>You must have access to install libraries which is not always possible</li><li>You are introducing a third party library and all it&rsquo;s bugs</li><li>in very very simple cases it&rsquo;s more effort to write a usage string than just use <code>sys.argv</code></li></ul><h2 id=our-setup>Our setup</h2><p>For HHTTPP we will be using the following usage string:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>hhttpp
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Free range artisnal HTTP server
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Usage:
+</span></span><span style=display:flex><span>    hhttpp <span style=color:#f92672>[</span>-h<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-v<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-p PORT<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>-f PROXY_FOLDER<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Options:
+</span></span><span style=display:flex><span>    -h, --help            Show this help message and exit
+</span></span><span style=display:flex><span>    -v, --version         Show program<span style=color:#960050;background-color:#1e0010>&#39;</span>s version number and exit
+</span></span><span style=display:flex><span>    -p PORT, --port PORT  The port to start the server on
+</span></span><span style=display:flex><span>    -f PROXY_FOLDER, --folder PROXY_FOLDER
+</span></span><span style=display:flex><span>                          Lets you specify a folder to proxy instead of cwd
+</span></span></code></pre></div><p>So in this case we have the option to get the version, or help. From there we have 2 optional positional arguments. <code>-p</code>/<code>--port</code> and <code>f</code>/<code>--folder</code>, the reason these are not optional variables is because with optional variables <strong>ORDER MATTERS</strong>. Meaning if people wanted to specify a folder they would have to speficy a port, which I didn&rsquo;t want. In our code we provide sensible defaults, so someone can offer both, or neither of the <code>-p</code> or <code>-f</code> flags, people can also skip the <code>-h</code>, or <code>-v</code> flags completely.</p><p>From here the argument parsing looks like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Python Standard Library dependencies</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> os                           <span style=color:#75715e># Used to validate paths</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> socket                       <span style=color:#75715e># Used to validate ports</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> random <span style=color:#f92672>import</span> randint          <span style=color:#75715e># Provides a random integer between a range</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Internal Dependencies</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> hhttpp <span style=color:#f92672>import</span> __version__      <span style=color:#75715e># Get the current hhttpp version</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> hhttpp.classes <span style=color:#f92672>import</span> Server   <span style=color:#75715e># Used to instantiate hhttpp Server&#39;s</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Third Party Dependencies</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> docopt <span style=color:#f92672>import</span> docopt           <span style=color:#75715e># Used for argument parsing</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>usage <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;&#34;hhttpp
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Free range artisnal HTTP server
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Usage: 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    hhttpp [-h] [-v] [-p PORT] [-f PROXY_FOLDER]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Options:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -h, --help            Show this help message and exit
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -v, --version         Show program&#39;s version number and exit
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -p PORT, --port PORT  The port to start the server on 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    -f PROXY_FOLDER, --folder PROXY_FOLDER 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                          Lets you specify a folder to proxy instead of cwd
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>main</span>():
+</span></span><span style=display:flex><span>    <span style=color:#75715e># This will be the primary entrypoint for the CLI</span>
+</span></span><span style=display:flex><span>    args <span style=color:#f92672>=</span> docopt(usage, version<span style=color:#f92672>=</span>__version__) <span style=color:#75715e># Will be used in later post to do CLI parsing</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Specify default port and folder if none is provided</span>
+</span></span><span style=display:flex><span>    port <span style=color:#f92672>=</span> <span style=color:#ae81ff>8338</span>
+</span></span><span style=display:flex><span>    folder <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;.&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Override defaults if valid alternative was provided</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> args[<span style=color:#e6db74>&#34;--port&#34;</span>]:
+</span></span><span style=display:flex><span>        port <span style=color:#f92672>=</span> int(args[<span style=color:#e6db74>&#34;--port&#34;</span>])
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> args[<span style=color:#e6db74>&#34;--folder&#34;</span>]:
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> os<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>exists(args[<span style=color:#e6db74>&#34;--folder&#34;</span>]):
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Folder path </span><span style=color:#e6db74>{</span>args[<span style=color:#e6db74>&#39;--folder&#39;</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74> does not exist&#34;</span>)
+</span></span><span style=display:flex><span>        folder <span style=color:#f92672>=</span> args[<span style=color:#e6db74>&#34;--folder&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Attempt to assign requested port, retry on failure</span>
+</span></span><span style=display:flex><span>    valid_port <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>while</span> <span style=color:#f92672>not</span> valid_port:
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Check if port is open </span>
+</span></span><span style=display:flex><span>        port_testing_socket <span style=color:#f92672>=</span> socket<span style=color:#f92672>.</span>socket(socket<span style=color:#f92672>.</span>AF_INET, socket<span style=color:#f92672>.</span>SOCK_STREAM)
+</span></span><span style=display:flex><span>        destination <span style=color:#f92672>=</span> (<span style=color:#e6db74>&#34;127.0.0.1&#34;</span>, port)
+</span></span><span style=display:flex><span>        result <span style=color:#f92672>=</span> port_testing_socket<span style=color:#f92672>.</span>connect_ex(destination)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> result: <span style=color:#75715e># Port is taken, assign new random one</span>
+</span></span><span style=display:flex><span>            new_port <span style=color:#f92672>=</span> randint(<span style=color:#ae81ff>1_000</span>,<span style=color:#ae81ff>10_000</span>)
+</span></span><span style=display:flex><span>            print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Could not connect to port </span><span style=color:#e6db74>{</span>port<span style=color:#e6db74>}</span><span style=color:#e6db74> trying other port </span><span style=color:#e6db74>{</span>new_port<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>            port <span style=color:#f92672>=</span> new_port
+</span></span><span style=display:flex><span>            port_testing_socket<span style=color:#f92672>.</span>close()
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>: <span style=color:#75715e># Current port is valid</span>
+</span></span><span style=display:flex><span>            print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Valid port found: </span><span style=color:#e6db74>{</span>port<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>            valid_port <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>            port_testing_socket<span style=color:#f92672>.</span>close()
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Start server with specified values!</span>
+</span></span><span style=display:flex><span>    Server(folder, port<span style=color:#f92672>=</span>port)<span style=color:#f92672>.</span>start_server()
+</span></span></code></pre></div><h2 id=other-final-touches>Other final touches</h2><p>Now we have a CLI there&rsquo;s a few extras we can work on to improve our CLI:</p><ul><li>Documenting the CLI and usage in something like a <code>readme.md</code>, or if it&rsquo;s really complicated a dedicated site to using the system can be handy (like <a href=https://ezcv.readthedocs.io/en/latest/cli/>this project</a> I wrote). Not having a readme or some other documentation makes it really hard for people to use your project (things that seem obvious to you aren&rsquo;t obvious to everyone).</li><li>Documenting API usage for people who want to use it programatically. For example if people want to be able to extend your project, or pass argumetns themselves directly etc. (an example would be <a href=https://kieranwood.ca/ezcv/>the api docs</a> for the same project from earlier)</li></ul></div><div class="card text-center"><div class=share-icons><h2>Share the article</h2><a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fschulichignite.com%2fblog%2fhhttpp%2fcreating-the-cli%2f" target=_blank><i class="bi bi-facebook"></i></a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fschulichignite.com%2fblog%2fhhttpp%2fcreating-the-cli%2f" target=_blank><i class="bi bi-linkedin"></i></a>
+<a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20post%20from%20schulich%20ignite%3A%0Ahttps%3a%2f%2fschulichignite.com%2fblog%2fhhttpp%2fcreating-the-cli%2f" target=_blank><i class="bi bi-twitter"></i></a></div><a href=../../../blog/index.xml target=_blank class=p-3>or subscribe to the blog with RSS <i class="bi bi-rss-fill"></i></a></div></div></div></div></div></section></body><footer class="footer sticky-bottom" style=position:fixed;background-color:#ffcdae><div class=container><div class=row><a href=https://www.instagram.com/schulichignite target=_blank rel="noopener noreferrer"><i class="bi bi-instagram is-large"></i></a>
+<a href=https://www.youtube.com/channel/UC7tNvdbu952HOUl_4nK7iww target=_blank rel="noopener noreferrer"><i class="bi bi-youtube is-large"></i></a>
+<a href=https://vm.tiktok.com/ZSHPbWU3/ target=_blank rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentcolor" class="bi bi-tiktok is-large mt-3" viewBox="0 0 16 16"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753.0-3.07-.814-4-1.829V11A5 5 0 116 6v2a3 3 0 103 3V0z"/></svg></a><a href=https://www.facebook.com/SchulichIgnite/ target=_blank rel="noopener noreferrer"><i class="bi bi-facebook is-large"></i></a>
+<a href=https://linkedin.com/company/schulich-ignite/ target=_blank rel="noopener noreferrer"><i class="bi bi-linkedin is-large"></i></a>
+<a href=https://discord.gg/F3Qjqqj target=_blank rel="noopener noreferrer"><i class="bi bi-discord is-large"></i></a></div></div></footer><script src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js integrity=sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js integrity=sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js integrity="sha512-bgHRAiTjGrzHzLyKOnpFvaEpGzJet3z4tZnXGjpsCcqOnAH6VGUx9frc5bcIhKTVLEiCO6vEhNAgx5jtLUYrfA==" crossorigin=anonymous referrerpolicy=no-referrer></script>
+<script src=https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/django.min.js integrity="sha512-1NHUMVlHsFnOe0Q36JMbBrNrjVcMdue2occC2xHWYXo7epa3YR54ZibI1G4I+tnJKBGNib11d8JzOElMfUSpYg==" crossorigin=anonymous referrerpolicy=no-referrer></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/http.min.js integrity="sha512-4Rcwpn+xUuCDufCycA9UtpmboCxNHysWy23e45PJBQeh7m6Kno5/oQ4T5SmbmSAAZiDsm/IsX1IJwsOjy6ob0g==" crossorigin=anonymous referrerpolicy=no-referrer></script>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/http.min.js integrity="sha512-4Rcwpn+xUuCDufCycA9UtpmboCxNHysWy23e45PJBQeh7m6Kno5/oQ4T5SmbmSAAZiDsm/IsX1IJwsOjy6ob0g==" crossorigin=anonymous referrerpolicy=no-referrer></script>
+<script>hljs.addPlugin(new CopyButtonPlugin),hljs.highlightAll(),hljs.initLineNumbersOnLoad()</script><script type=module>
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+    
+    let mermaidConfig = {
+    startOnLoad: true,
+    "theme": "base",
+        "themeVariables": {
+            "primaryColor": "#ffde59",
+            "primaryTextColor": "#d14b3b",
+            "primaryBorderColor": "#7C0000",
+            "lineColor": "#F8B229",
+            "secondaryColor": "#fff",
+            "tertiaryColor": "#d14b3b"
+        }
+    }
+    mermaid.initialize(mermaidConfig, '.language-mermaid');
+</script><script>window.onload=()=>{words={},articleContent=document.getElementById("article-content").innerHTML,contentSections=articleContent.match(/<p>(.*?)<\/p>|<ul>(.*?)<\/ul>|<ol>(.*?)<\/ol>/g),contentSections.forEach(e=>{for(word in words)searchMask=` ${word} |^${word} |${word}$| ${word}$|${word},`,regEx=new RegExp(searchMask,"igm"),newval=`${e}`.replace(regEx,` <a href="${words[word][0]}" target="_blank" data-toggle="tooltip" data-placement="top" title="${words[word][1]}">${word}</a> `),document.getElementById("article-content").innerHTML=document.getElementById("article-content").innerHTML.replace(e,newval)}),$(function(){$('[data-toggle="tooltip"]').tooltip()})}</script></html>
