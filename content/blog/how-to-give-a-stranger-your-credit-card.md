@@ -1,7 +1,7 @@
 ---
 title: How to give a stranger your credit card
 subtitle: An intro to encryption & public-key encryption
-date: 2023-10-02T00:00:00-06:00
+date: 2023-11-13T00:00:00-06:00
 modified_date: ""
 image: /img/blog/cc.jpg
 difficulty: [flare]
