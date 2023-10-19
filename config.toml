@@ -10,8 +10,8 @@ relativeURLs = true
     # status = "signup"     # When recruitment is happening
     status = "live"        # When courses are live
     emailListSignup = "https://forms.gle/ZJoDAbcTf1M3NBxYA"
-    mentorSignUp = "https://forms.gle/vWzxciKkvVsKsYPC8"
-    menteeSignUp = "https://forms.gle/wPjvobFc1ya6hrHeA"
+    mentorSignUp = ""
+    menteeSignUp = ""
     ignitePoints = "https://docs.google.com/spreadsheets/d/1mm-WC6pxfTo5U8HsCWuqyS6bIH2oU8CUNCmnDoHX5M4/edit"
     sparkDocs    = "https://spark.schulichignite.com/"
     submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLSfVaAAe_HUOiHpSakQ16Ig-PLtea3DR2Bat4yYq_diXDIWpMw/viewform?usp=sf_link"
