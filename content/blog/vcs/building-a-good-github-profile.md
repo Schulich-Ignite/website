@@ -1,7 +1,7 @@
 ---
 title: Building a Good Github profile
 subtitle: Building your street cred
-date: 2023-11-05T00:00:00-06:00
+date: 2023-11-06T00:00:00-06:00
 modified_date: ""
 image: /img/blog/vcs/hero.jpg
 authors: 
