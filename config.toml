@@ -16,7 +16,7 @@ relativeURLs = true
     sparkDocs    = "https://spark.schulichignite.com/"
     submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLSfVaAAe_HUOiHpSakQ16Ig-PLtea3DR2Bat4yYq_diXDIWpMw/viewform?usp=sf_link"
     submitPythonicLava = "https://docs.google.com/forms/d/e/1FAIpQLScZrRqcE0ngV_i_auuLbpyzaH-kkgdmFKUnl7vIK6aQENr5Bg/viewform"
-    submitScorch = "https://docs.google.com/forms/d/e/1FAIpQLSf1F_z_UR6lNSnDxw9zy5ddqMjUjHOzhHXsmIY9EOEY5_vBaQ/viewform?usp=share_link" 
+    submitScorch = "https://docs.google.com/forms/d/e/1FAIpQLSdA483t-TmN10mS04WeGtHibOi2fsnVqSDWMZHTMfHp4dpGqg/viewform?usp=sf_link" 
     submitFlare = "https://docs.google.com/forms/d/e/1FAIpQLScz3CR6sTczw3Df4GnkdLLOtyBoCGj3Oemwuf3JqeQKOuqL_g/viewform"
     current_startDate = 2023-10-15T14:15:59-06:00
     current_endDate   = 2023-12-09T14:15:59-06:00
