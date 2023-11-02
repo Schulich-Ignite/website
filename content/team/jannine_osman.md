@@ -1,10 +1,12 @@
 ---
 name: "Jannine Osman"
-role: "VP Communications"
+role: "Co-President"
 team: "exec"
 image: "/img/gallery/jannine_osman.jpg"
 email: "jannine.osman@ucalgary.ca"
 linkedin: "https://www.linkedin.com/in/jannine-osman-30615421a/"
 ---
 
-Hello! I’m Jannine and I’m the VP of Communications at Schulich Ignite.  I am responsible for managing the club’s media platforms, facilitating communication between mentors and mentees as well as conducting overall outreach initiatives to grow the club’s membership. I am currently in my third year of software engineering. In my free time, I like to read and crochet!
+Hello! I'm Jannine, your Co-President at Schulich Ignite. My primary role involves collaborating closely with my fellow Co-President and our dedicated executive team to guarantee the delivery of top-tier coding workshops and experiences.
+
+I am a Software Engineering student currently undergoing a 16-month internship at Bentley Systems. I am set to return to my final year of studies next fall. In my free time I love working on coding projects, reading and knitting! 
