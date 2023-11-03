@@ -3,7 +3,7 @@ name: "Liveshmun Mohindee"
 role: "VP Finance"
 team: "exec"
 image: "/img/gallery/liveshmun_mohindee.jpg"
-email: ""
+email: "liveshmun.mohindee@ucalgary.ca"
 linkedin: ""
 ---
 
