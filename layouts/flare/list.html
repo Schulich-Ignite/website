@@ -71,18 +71,14 @@
 
             {{ end}}
             {{ if eq "live" .Site.Params.status}}
-                <h2>Looking to submit an exercise?</h2>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 my-3">
-                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.submitBugBusters }}" target="_blank"
-                            rel="noopener noreferrer">Submit Bug Buster Exercise</a>
-                    </div>
-                    <div class="col-lg-4 col-md-6 my-3">
-                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.submitPythonicLava }}" target="_blank"
-                            rel="noopener noreferrer">Submit Pythonic Lava Exercise</a>
-                    </div>
+            <h2>Looking to submit an exercise?</h2>
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <a class="btn btn-secondary singup-button" href="{{ .Site.Params.submitFlare }}" target="_blank"
+                        rel="noopener noreferrer">Submit Exercise</a>
                 </div>
-                {{ end }}
+            </div>
+            {{ end }}
         </div>
     </div>
 </div>
