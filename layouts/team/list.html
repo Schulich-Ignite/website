@@ -14,7 +14,9 @@
                 </div>
             </div>
             <div class="row our-webcoderskull">
-                {{ range where .Data.Pages ".Params.team" "==" "exec"}}
+                {{ $executiveTeam := sort (where .Data.Pages ".Params.team" "==" "exec") ".Params.role" "asc" }}
+
+                {{ range $executiveTeam }}
                 <div class="col-md-4 mb-4 spaced-col md-5">
                     <div class="card highlight-card">
                         <div class="embed-responsive embed-responsive-1by1">
