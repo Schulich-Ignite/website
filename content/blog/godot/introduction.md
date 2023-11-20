@@ -77,7 +77,7 @@ Underneath your scene tree on the left is the file system. This is just a built-
 
 ### Documentation Search
 
-![Image of the help search](/img/blog/godot/FirstScene.png)
+![Image of the help search](/img/blog/godot/HelpSearch.png)
 
 As you are learning more about Godot and game development, your strongest tool will be the Godot documentation. Fortunately, Godot has its entire documentation library built into the editor! All you have to do is click the "Search Help" button in the Help menu at the top left of your window, then search for the node you need. Unfortunately, the documentation is only in GDScript, which is not super helpful if you're trying to code in C#. If you are trying to develop in C#, all you need to remember is all variable and function names are named using PascalCase instead of the snake_case you will see in the documentation. Most nodes also have tutorials online for how to use them, which can usually be found linked in the documentation for that node. The nice part about these tutorials is they are offered in both GDScript and C#, so you can get a better understanding of different functions and syntax when programming in C#.
 
