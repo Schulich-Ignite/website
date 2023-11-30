@@ -69,15 +69,100 @@ While this works, the UI kinda sucks. There's a ton of options that the ollama t
 
 ## Image Generative AI's
 
-Image generation is an incredibly popular use for AI. Many people argue it helps to democratize art and make it easy for people to realize their ideas. Like other forms of ai they come with their fair share of controversies, but the results are undeniably useful. Here is an example of a few images generated using the system we will show you how to setup (keep in mind these are compressed versions):
+Image generation is an incredibly popular use for AI. Many people argue it helps to democratize art and make it easy for people to realize their ideas. Like other forms of ai they come with their fair share of controversies [^12] [^13] [^14] [^15], but the results are undeniably useful. We will be going through and showing you a few options. There are some options we will not look at, but might be worth looking at down the road (such as [Comfy UI](https://github.com/comfyanonymous/ComfyUI)). It's also important to note this is a relatively new (to the public) technology, and so there may be better tools to look out for in the future.
+
+The two tools we will look at are Fooocus and Invoke AI. I would recommend Foocus for simple use, and generally it "just works", if you want to learn more and/or have more granular control I would look into Invoke AI.
+
+### Fooocus
+
+Fooocus is one of the easiest to use image generators. It's a free and open source system that is based on [Juggernaut](https://stablediffusionapi.com/models/juggernaut-xl). There are also 2 additional Models that can be run separately designed for photorealism and anime (yes I'm also dissapointed). 
+
+Here is an example of a few images generated using Fooocus, which we will show you how to setup (keep in mind these are compressed versions):
+
+![](/img/blog/ai-at-home/example-images-fooocus.png)
+
+#### Installation
+
+Before installing make sure you have at least 16GB of RAM, ~30GB of disk space, and a GPU with at least 4GB of VRAM. All images as examples were done on a system with an RTX 4070 and 32GB of RAM. You will also need to install python 3.10 regardless of your OS. Installation is relatively simple, I would recommend checking [their guide](https://github.com/lllyasviel/Fooocus?tab=readme-ov-file#download).
+
+For windows you just [download the zip](https://github.com/lllyasviel/Fooocus/releases/download/release/Fooocus_win64_2-1-791.7z) and run `run.bat` which will set everything up.
+
+For linux/macos you will need to run the following commands:
+
+```bash
+git clone https://github.com/lllyasviel/Fooocus.git
+cd Fooocus
+python3 -m venv fooocus_env
+source fooocus_env/bin/activate
+pip install -r requirements_versions.txt
+```
+
+#### Usage
+
+For windows simply use `run.bat` (or the realistic or anime alternatives), for linux/macos you need to activate your venv and then run the python file:
+
+```bash
+source fooocus_env/bin/activate
+python entry_with_update.py
+```
+
+You can pass `--preset realistic` for the realistic model, and `--preset anime` to run those specific models on linux/macos
+
+You can then access the web interface at [http://localhost:7865/](http://localhost:7865/)
+
+![](/img/blog/ai-at-home/fooocus.gif)
+
+#### Additional examples
+
+Here are some additional examples using all the default settings:
+
+![](/img/blog/ai-at-home/space-example-fooocus.png)
+
+```yaml
+Prompt: Space station orbiting a planet with dust rings and a nebula in the background
+Style: Fooocus V2, Fooocus Sharp, Fooocus Photograph, Fooocus Enhance, Fooocus Cinematic, MRE Surreal Painting, SAI Fantasy Art, MRE Space ART
+```
+
+![](/img/blog/ai-at-home/cabin-example-fooocus.png)
+
+```yaml
+Prompt: Spooky wood cabin with moss overgrown in a swamp
+Style: Fooocus V2, Fooocus Sharp, Fooocus Photograph, Fooocus Enhance, Fooocus Cinematic, Misc Horror, MRE Gloomy Art, Dark Moody Atmosphere
+```
+
+![](/img/blog/ai-at-home/cowboy-example-fooocus.png)
+
+```yaml
+Prompt: A steampunk cowboy in a western town pixel art style
+Style: SAI Pixel Art, Artstyle Steampunk
+```
+
+Because it was available I decided to test the anime optimized model as well:
+
+![](/img/blog/ai-at-home/cyberpunk-example-fooocus.png)
+
+```yaml
+Prompt: Girl with robot arm in a hoodie in front of a window at night in a city
+Style: Fooocus V2, SAI Anime, SAI Digital Art, SAI Enhance, Futuristic Cyberpunk Cityscape, Game Cyberpunk Game
+```
+
+![](/img/blog/ai-at-home/anime-cowboy-example-fooocus.png)
+
+```yaml
+Prompt: Cowboy on a black horse in a town with the sun setting behind them
+Style: Fooocus V2, SAI Anime, SAI Digital Art, SAI Enhance, Artstyle Steampunk, Steampunk 2
+```
+
+
+### Invoke AI
+
+Invoke AI is a more configurable image generation system that gives you more manual control. Here is an example of a few images generated using invoke ai, which we will show you how to setup (keep in mind these are compressed versions):
 
 ![](/img/blog/ai-at-home/example-images.png)
 
 Before we bother getting started the requirements to run the software are **very high**. You can find them [here](https://invoke-ai.github.io/InvokeAI/installation/INSTALLATION/#hardware-requirements), but the basics are that you will need a LOT of RAM, and a powerful GPU. You will also need quite a bit of disk space ~100GB at minimum. This is not something that most laptops can run unfortunately.
 
-### Invoke AI
-
-The easiest to use system I have found for local image generation is [invoke AI](https://invoke.ai/) [^10] [^11]. This is a framework for running image generation models and has support for many of the great open source ones (like [stable diffusion](https://stability.ai/stable-diffusion) and [openjourney](https://huggingface.co/prompthero/openjourney)).
+[invoke AI](https://invoke.ai/) [^10] [^11] is a framework for running image generation models and has support for many of the great open source ones (like [stable diffusion](https://stability.ai/stable-diffusion) and [openjourney](https://huggingface.co/prompthero/openjourney)).
 
 #### Installation
 
@@ -96,6 +181,52 @@ You can run invoke very similarly to configuring it. Go to Invoke's install loca
 ![](/img/blog/ai-at-home/invoke-ui.gif)
 
 Image generation is a bit more finicky and complicated than text generation. Instead of trying to explain what all the knobs and dials do, I would suggest looking at the invoke AI resources that are actually quite useful for learning (especially their [youtube channel](https://www.youtube.com/@invokeai)).
+
+#### Examples
+
+Invoke AI is a bit more difficult to use than foocus, but it does work well, all the below examples were using sdxl:
+
+![](/img/blog/ai-at-home/space-example-invoke.png)
+
+```yaml 
+Prompt: Space station orbiting a planet with dust rings and a nebula in the background
+Positive Style: photorealistic, bright, vivid colours, nature, intricate, highly detailed, artstation, concept art, sharp focus, unreal engine 5, 8 k
+Negative Prompt: out of frame, duplicate, watermark, signature, text
+Negative Style Prompt: city, electronics
+```
+
+![](/img/blog/ai-at-home/cabin-example-invoke.png)
+
+```yaml 
+Prompt: Spooky wood cabin with moss overgrown in a swamp
+Positive Style: photorealistic, dark, gloomy, nature, water, intricate, highly detailed, artstation, horror, concept art, sharp focus, unreal engine 5, 8k
+Negative Prompt: out of frame, duplicate, watermark, signature, text
+Negative Style Prompt: city, electronics
+```
+
+SDXL can be a bit finicky, but sometimes there are combinations of prompts that work really well. You can find examples of these sorts of prompts [here](https://aituts.com/sdxl-prompts/#SDXL_v10_Prompt_Styles):
+
+![](/img/blog/ai-at-home/night-tokyo-example-invoke.png)
+
+```yaml 
+Prompt: breathtaking night street of Tokyo
+Positive Style: neon lights. award-winning, professional, highly detailed
+Negative Prompt: sunlight
+Negative Style Prompt: anime, cartoon, graphic, text, painting, crayon, graphite, abstract glitch, blurry
+```
+
+As we can see SDXL does not do as well with pixel art and some other styles...
+
+![](/img/blog/ai-at-home/cowboy-example-invoke.png)
+
+```yaml 
+Prompt: A steampunk cowboy in a western town pixel art style
+Positive Style: pixel art, steampunk, noon, western, hard lines, clean lines
+Negative Prompt: out of frame, duplicate, watermark, signature, text
+Negative Style Prompt: nature, blury
+```
+
+
 
 ## Additional resources about AI
 
@@ -154,3 +285,7 @@ There's also some other projects in and around AI systems that can be useful:
 [^9]: [orca-mini](https://ollama.ai/library/orca-mini)
 [^10]: https://invoke-ai.github.io/InvokeAI/
 [^11]: https://github.com/invoke-ai/InvokeAI
+[^12]: [Is A.I. Art Stealing from Artists?](https://www.newyorker.com/culture/infinite-scroll/is-ai-art-stealing-from-artists)
+[^13]: [Image Apps Like Lensa AI Are Sweeping the Internet, and Stealing From Artists](https://www.thedailybeast.com/how-lensa-ai-and-image-generators-steal-from-artists)
+[^14]: [Is DALL-E's art borrowed or stolen?](https://www.engadget.com/dall-e-generative-ai-tracking-data-privacy-160034656.html)
+[^15]: [Artists Are Suing Over Stable Diffusion Stealing Their Work for AI Art](https://www.vice.com/en/article/dy7b5y/artists-are-suing-over-stable-diffusion-stealing-their-work-for-ai-art)
