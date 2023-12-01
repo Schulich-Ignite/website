@@ -3,7 +3,7 @@ title: "Introduction to Physics and Collision"
 number: 5
 date: 2023-11-15T00:00:00-00:00
 slides: "https://docs.google.com/presentation/d/1mJt4GzgP4JrUyEc7f_vFUf7nPMqhEg_nHkjiu0q_bJg/edit?usp=share_link"
-recording: ""
+recording: "https://youtu.be/ePzYzIMZ1pc?si=i1hgVLTT02QCcPXr"
 ready: True
 ---
 
