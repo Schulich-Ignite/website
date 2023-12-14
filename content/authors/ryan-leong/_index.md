@@ -5,4 +5,4 @@ linkedin: ryan-leong-12b98429a
 medium: https://ryan-leong.medium.com/
 avatar: /img/blog/avatars/ryan-leong.jpg
 ---
-I'm a computer science major, with a minor in philosophy. I love to do open source work, especially in scripting, automation, web development, API's, CLI's and dev ops!
+Hi! My name is Ryan, and I’m a 17 year old innovator working to create the technologies of the future. I love learning about new tech and ideas, and I’m always looking for ways to grow :)
