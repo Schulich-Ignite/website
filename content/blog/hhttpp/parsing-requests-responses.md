@@ -20,6 +20,9 @@ Now that we have our basic HTTP structure we need a way to read **actual** http 
 3. **Process the `Request` object and generate a `Reponse` object**
 4. **Generate a plaintext response from the `Response` object**
 
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/hhttpp/setting-up-http-protocol/">See Previous post</a>
+
+
 ## Terms & Concepts
 
 To start there are some terms we need to understand. Here's what we need to know about, and what we're going to cover in more detail later.
@@ -333,3 +336,5 @@ print(f"{header_version=}, {status_code=}, {response_description=}")
 - [regex 101; Great tool for writing regex](https://regex101.com/)
 - [Regexper; online visualizer for regex](https://regexper.com/)
 - [debuggex; An online debugger for regex](https://www.debuggex.com/)
+
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/hhttpp/implementing-the-networking-portion/">See Next post</a>

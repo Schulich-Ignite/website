@@ -15,6 +15,8 @@ tags:
 
 HTTP is the protocol that runs the web, it's the way most devices talk to each other these days. It's also the protocol we are going to use, and as such we need to get everything setup for the http protocol. For this series we are taking an object-oriented aproach, so we will want to create the `Server`, `Request` and `Response` objects to house our info. This will help us model out the HTTP protocol, so we can do everything else we need to later. 
 
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/hhttpp/series-introduction/">See Previous post</a>
+
 ## Terms & Concepts
 
 **These two next sections are a repeat of the [terms section in the series introduction](../series-introduction/#terms--concepts), you can skip them by clicking [here](#how-http-works)**
@@ -448,3 +450,5 @@ Response
 - [RFC-4229 Official Header Fields HTTP](https://datatracker.ietf.org/doc/html/rfc4229)
 - [HTTPie (header visualizer)](https://httpie.io/)
 - [CURL online headers](https://tools.keycdn.com/curl)
+
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/hhttpp/parsing-requests-responses/">See Next post</a>

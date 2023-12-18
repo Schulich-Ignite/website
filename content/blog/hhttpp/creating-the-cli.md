@@ -22,6 +22,7 @@ A CLI or command line interface is a program you use by calling it from a termin
 - [Windows Command Line Tutorial - 1 - Introduction to the Command Prompt (Video)](https://www.youtube.com/watch?v=MBBWVgE0ewk&list=PL6gx4Cwl9DGDV6SnbINlVUd0o2xT4JbMu)
 - [Windows PowerShell/Command Line for Beginners (Video)](https://www.youtube.com/watch?v=FpRGRLI8Fy8)
 
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/hhttpp/implementing-the-networking-portion/">See Previous post</a>
 
 ## Why?
 

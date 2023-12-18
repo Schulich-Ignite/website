@@ -309,3 +309,5 @@ Now onto the good stuff. `📁hhttpp/` contains all the code that will be part o
 - 📄cli.py; Will be filled out later, but will contain code to let people use the CLI
 
 This sets us up well for being able to start building our package!
+
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/hhttpp/setting-up-http-protocol/">See Next post</a>

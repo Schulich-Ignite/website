@@ -17,6 +17,8 @@ We have what we need to make HTTP requests and responses properly, so now let's 
 
 Another warning is that for this set of code there is no easy way to test it without a ton of boilerplate code and concepts I would need to cover, and as such there are no additional tests for this post. If you want to know if your code works then open the URL to your server in a browser and see if it loads ¯\\\_(ツ)\_/¯.
 
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/hhttpp/parsing-requests-responses/">See Previous post</a>
+
 ## How connections work
 
 In previous posts we looked at a bunch of terms:
@@ -338,3 +340,5 @@ All this functionality was added to `Server.start_server()`, which you can see t
 - [Berkley Socket's (video)](https://www.youtube.com/watch?v=onQTzTJ5sqU)
 - [Python Socket Programming Tutorial (video)](https://www.youtube.com/watch?v=3QiPPX-KeSc)
 - [Socket Programming in Python(Simplified) - in 7 minutes! (Video, covers client and server)](https://www.youtube.com/watch?v=JNzfG7XMYSg)
+
+<a class="btn btn-secondary" href="https://schulichignite.com/blog/hhttpp/creating-the-cli/">See Next post</a>
