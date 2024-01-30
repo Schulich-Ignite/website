@@ -18,8 +18,8 @@ relativeURLs = true
     submitPythonicLava = "https://docs.google.com/forms/d/e/1FAIpQLScZrRqcE0ngV_i_auuLbpyzaH-kkgdmFKUnl7vIK6aQENr5Bg/viewform"
     submitScorch = "https://docs.google.com/forms/d/e/1FAIpQLSdA483t-TmN10mS04WeGtHibOi2fsnVqSDWMZHTMfHp4dpGqg/viewform?usp=sf_link" 
     submitFlare = "https://docs.google.com/forms/d/e/1FAIpQLScz3CR6sTczw3Df4GnkdLLOtyBoCGj3Oemwuf3JqeQKOuqL_g/viewform"
-    current_startDate = 2023-10-15T14:15:59-06:00
-    current_endDate   = 2023-12-09T14:15:59-06:00
+    current_startDate = 2024-02-21T14:15:59-06:00
+    current_endDate   = 2024-04-20T14:15:59-06:00
     [params.links]
         youtube = "https://www.youtube.com/channel/UC7tNvdbu952HOUl_4nK7iww"
         instagram = "https://www.instagram.com/schulichignite"
