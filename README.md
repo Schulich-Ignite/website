@@ -2,12 +2,17 @@
 
 ## Table of contents
 
-- [How to add/edit content](#how-to-addedit-content)
-    - [Dates & Times](#dates--times)
+- [Schulich Ignite Website](#schulich-ignite-website)
+  - [Table of contents](#table-of-contents)
+  - [How to add/edit content](#how-to-addedit-content)
+    - [Dates \& Times](#dates--times)
     - [Site Variables](#site-variables)
     - [Homepage](#homepage)
     - [Blog](#blog)
+      - [Fields](#fields)
+      - [Note about diagrams](#note-about-diagrams)
     - [Project Showcase](#project-showcase)
+      - [Fields](#fields-1)
     - [Beginner / Flare / IndigeSteam](#beginner--flare--indigesteam)
     - [Gallery](#gallery)
     - [Mission](#mission)
@@ -15,16 +20,20 @@
     - [Sponsors](#sponsors)
     - [Contact](#contact)
     - [FAQ's](#faqs)
-- [Development guide](#development-guide)
+  - [Development guide](#development-guide)
     - [Infastructure](#infastructure)
     - [Running locally](#running-locally)
+      - [Running netlify locally](#running-netlify-locally)
     - [Per-page breakdown](#per-page-breakdown)
       - [Index/Home](#indexhome)
       - [Sessions](#sessions)
       - [Blog](#blog-1)
+        - [Blog authors \& tags](#blog-authors--tags)
       - [Project Showcase](#project-showcase-1)
+      - [Definitions](#definitions)
       - [Contact](#contact-1)
       - [Building on a Schedule](#building-on-a-schedule)
+        - [How it works](#how-it-works)
       - [FAQ's](#faqs-1)
 
 ## How to add/edit content
@@ -48,7 +57,7 @@ Here is a list of the current site variables:
 - discord: The link to join the discord server
 - tiktok: The link to the Schulich Ignite TikTok account
 - status: This controls what to display on the header on the front page - it has 3 possible values: 
-    - ```status = "recruiting"``` for when there are no current dates but you have a mailing list
+    - ```status = "closed"``` for when there are no current dates but you have a mailing list
     - ```status = "signup"``` for when there are active sign up links
     - ```status = "live"``` for when the workshops are currently active (this is the default value)
 - current_startDate: The start of the first workshop for the current semester
