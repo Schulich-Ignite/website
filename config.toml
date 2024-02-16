@@ -18,7 +18,7 @@ relativeURLs = true
     submitPythonicLava = ""
     submitScorch = "" 
     submitFlare = ""
-    current_startDate = 2024-02-21T14:15:59-06:00
+    current_startDate = 2024-02-18T14:15:59-06:00
     current_endDate   = 2024-04-20T14:15:59-06:00
     [params.links]
         youtube = "https://www.youtube.com/channel/UC7tNvdbu952HOUl_4nK7iww"
