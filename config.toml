@@ -7,17 +7,17 @@ relativeURLs = true
 [params]
     email = "info@schulichignite.com"
     # status = "closed" # When no recruitment is happening, and mailing list is available
-    status = "signup"     # When recruitment is happening
-    # status = "live"        # When courses are live
+    # status = "signup"     # When recruitment is happening
+    status = "live"        # When courses are live
     emailListSignup = "https://forms.gle/ZJoDAbcTf1M3NBxYA"
-    mentorSignUp = "https://docs.google.com/forms/d/e/1FAIpQLScXjv2fLfJqJJifJq0b5xapU-jlp9GDH7J-wa7GP4HZwNPsSA/viewform"
-    menteeSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSdsuQBfyB0VzkHJTSx27DywObIVYzfex0Rl2XCJvreypzRivw/viewform"
-    ignitePoints = "https://docs.google.com/spreadsheets/d/1mm-WC6pxfTo5U8HsCWuqyS6bIH2oU8CUNCmnDoHX5M4/edit"
+    mentorSignUp = ""
+    menteeSignUp = ""
+    ignitePoints = ""
     sparkDocs    = "https://spark.schulichignite.com/"
-    submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLSfVaAAe_HUOiHpSakQ16Ig-PLtea3DR2Bat4yYq_diXDIWpMw/viewform?usp=sf_link"
-    submitPythonicLava = "https://docs.google.com/forms/d/e/1FAIpQLScZrRqcE0ngV_i_auuLbpyzaH-kkgdmFKUnl7vIK6aQENr5Bg/viewform"
-    submitScorch = "https://docs.google.com/forms/d/e/1FAIpQLSdA483t-TmN10mS04WeGtHibOi2fsnVqSDWMZHTMfHp4dpGqg/viewform?usp=sf_link" 
-    submitFlare = "https://docs.google.com/forms/d/e/1FAIpQLScz3CR6sTczw3Df4GnkdLLOtyBoCGj3Oemwuf3JqeQKOuqL_g/viewform"
+    submitBugBusters   = ""
+    submitPythonicLava = ""
+    submitScorch = "" 
+    submitFlare = ""
     current_startDate = 2024-02-21T14:15:59-06:00
     current_endDate   = 2024-04-20T14:15:59-06:00
     [params.links]
