@@ -1,7 +1,7 @@
 ---
 title: "Operators and Making Objects Move"
 number: 2
-date: 2023-10-26T00:00:00-00:00
+date: 2024-02-29T00:00:00-00:00
 slides: "https://docs.google.com/presentation/d/15S9oHrph5eIXtCvTx_-degEuNa3oNTftBAOEhtVcjJ8/edit?usp=sharing"
 ready: True
 recording: "https://youtu.be/WZ6gEqgKKlw"
