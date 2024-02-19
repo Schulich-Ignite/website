@@ -10,7 +10,7 @@
                 <h1> <span>Schulich</span><span class="break"></span><span>Ignite</span></h1>
             </div>
         </div>
-        {{ if eq "recruiting" .Site.Params.status}}
+        {{ if eq "closed" .Site.Params.status}}
         <div class="row">
             <div class="message col-lg-12">
                 Learn how to code for free!
@@ -36,6 +36,7 @@
         </div>
         {{ else }}
         {{ partial "session-dates.html" .}}
+        {{ if .Site.Params.ignitePoints}}
         <div class="row mb-5 pb-5">
             <div class="col-xl-3 col-md-6 col-xs-12">
                 <a class="btn btn-secondary" href="{{ .Site.Params.ignitePoints }}" target="_blank"
@@ -59,6 +60,7 @@
                 </div>
             </div>
         </div>
+        {{ end }}
         {{ end }}
     </div>
 </section>
