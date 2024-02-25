@@ -49,7 +49,7 @@ Site variables are used for a large portion of the content. It essentially is th
 To edit any of these go to ```config.toml``` in the root directory and modify the variable you want to change. If you haven't used TOML, [here is a primer](https://learnxinyminutes.com/docs/toml/).
 
 Here is a list of the current site variables:
-- email: The primary shulich ignite email
+- email: The primary schulich ignite email
 - instagram: The schulich ignite instagram link
 - facebook: the link to the schulich ignite facebook page
 - youtube: The link to the official Schulich ignite YouTube Channel
