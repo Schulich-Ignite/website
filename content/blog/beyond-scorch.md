@@ -1,7 +1,7 @@
 ---
 title: Beyond Scorch
-date: 2023-12-18T00:00:00-06:00
-modified_date: 2023-12-18T00:00:00-06:00
+date: 2024-04-11T00:00:00-06:00
+modified_date: 2024-04-11T00:00:00-06:00
 image: /img/blog/beyond-scorch.png
 authors:
   - Kieran Wood
@@ -303,8 +303,8 @@ Structured Query Language is the most popular language we use to talk with datab
 
 For this we would say we have a table with 4 rows and 3 columns. The columns make up the schema which is:
 
-- Name: a Varchar (basically a string)
-- Email: A Varchar (basically a  string)
+- Name: A Varchar (basically a string but with a max length)
+- Email: A Varchar (basically a  string but with a max length)
 - Age: An integer
 
 Usually databases are their own apps that will run, and then you will connect to them and send your SQL queries. So if the table above existed I could get all rows with people over 30 using:
@@ -354,28 +354,28 @@ No-SQL databases are databases that do not follow the same paradigms as SQL data
   "Users":
     [
       {
-          "_id":"asdfkjhsdahlkfh", 
-          "name": "Kieran Wood", 
-          "email": "kieran@canadiancoding.ca", 
-          "age": 25 
+          _id:"asdfkjhsdahlkfh", 
+          name: "Kieran Wood", 
+          email: "kieran@canadiancoding.ca", 
+          age: 25 
       },
       {
-		  "_id":"treertyhtreyhrty", 
-          "name": "Lucille Johnson", 
-          "email": "lucille.johnson@example.com", 
-          "age": 37 
+		  _id:"treertyhtreyhrty", 
+          name: "Lucille Johnson", 
+          email: "lucille.johnson@example.com", 
+          age: 37 
       },
 	  {
-		  "_id":"dsfgsdfgsdfgsdfg", 
-          "name": "Lonnie Bell", 
-          "email": "lonnie.bell@example.com", 
-          "age": 19
+		  _id:"dsfgsdfgsdfgsdfg", 
+          name: "Lonnie Bell", 
+          email: "lonnie.bell@example.com", 
+          age: 19
       },
       {
-		  "_id":"jhgkghjkddddhfdg", 
-          "name": "Carole Miller", 
-          "email": "carole.miller@example.com", 
-          "age": 42
+		  _id:"jhgkghjkddddhfdg", 
+          name: "Carole Miller", 
+          email: "carole.miller@example.com", 
+          age: 42
       }
     ]
 }
@@ -430,13 +430,31 @@ I briefly mentioned containerization during CI/CD. Essentially this is running a
 	- [The "thundering herd" problem - Nick's Blog and Digital Garden (groenen.me)](https://nick.groenen.me/notes/thundering-herd/)
 	- [Microservices Explained in 5 Minutes - YouTube](https://www.youtube.com/watch?v=lL_j7ilk7rc)
 
+#### SMTP (Simple Mail Transfer Protocol)
+Another useful protocol to know would be the SMTP protocol. This protocol is what we use to handle email. Learning about how to setup an SMTP server is important because it comes up more often than you think. Want to send a newsletter to someone from your own email, you need SMTP, want to setup a "forgot password" system on your app, you need SMTP. 
 
+- SMTP
+	- [What is the Simple Mail Transfer Protocol (SMTP)? | Cloudflare](https://www.cloudflare.com/learning/email-security/what-is-smtp/)
+	- [SMTP Basics: How It Works and Why It Matters [2024] (mailtrap.io)](https://mailtrap.io/blog/smtp/)
+- DNS records related to email
+	- [What is a DNS MX record? | Cloudflare](https://www.cloudflare.com/learning/dns/dns-records/dns-mx-record/)
+	- [What is an MX Record, and How Do They Work? (practical365.com)](https://practical365.com/mx-record/)
+	- [MX Lookup Tool - Check your DNS MX Records online - MxToolbox](https://mxtoolbox.com/)
+	- [What is a DNS SPF record? | Cloudflare](https://www.cloudflare.com/learning/dns/dns-records/dns-spf-record/)
+	- [Set up SPF identify valid email sources for your Microsoft 365 domain | Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/email-authentication-spf-configure?view=o365-worldwide)
 
 ### Frameworks
 We talked about UI frameworks and meta frameworks earlier. Both of these approaches are focused on the frontend. They will often allow you to do backend operations, but they are built primarily with the frontend in mind, and try to blur the lines between frontend and backend in many cases. Traditional frameworks are the opposite. The backend is there to have data, to generate the information to send to the client, and the clients job on the frontend is just to display the information, and query the backend for updates. This separation is called Co-location, and it's a reason why frameworks are still popular today. Frameworks are designed typically to be a "batteries-included" option, with standard ways of interacting with databases, doing security, and managing your data. This makes them very idiosyncratic, and some people would argue it makes them easier to work with since there's a "correct way" often.
 
 #### Flask
 We covered flask in the sessions, flask is a micro-framework. It provides the tools you need to build your own framework. It will let you do basic routing, and pass data to the frontend. Everything else needs to be installed and configured, but it's a good base to start from.
+
+#### FastAPI
+[FastAPI](https://fastapi.tiangolo.com/) is a flask-like framework that has some additional features added. It's primarily a good option when you wan to build some larger API's that **other people** are going to be using. It provides built in:
+
+- Data cleaning + validation
+- Documentation of endpoints
+- Much faster execution
 
 #### Django
 [Django](https://www.djangoproject.com/) is a full framework. It has systems for automating database management, doing security for things like forms etc. It has all the tools you need out of the box to run a full-fledged app, and is designed to be that way. You can even use django just on the backend, and use react on the frontend where it's data is populated by django.
@@ -502,5 +520,5 @@ Web development is very complicated. There's a lot of moving parts. I would reco
 [^10]: [Vector Database | Microsoft Learn](https://learn.microsoft.com/en-us/semantic-kernel/memories/vector-db)
 [^11]: [Writing your own HTTP server | Schulich Ignite](https://schulichignite.com/blog/hhttpp/series-introduction/)
 [^12]: [OSI model - Wikipedia](https://en.wikipedia.org/wiki/OSI_model)
-[^13]: [What is the OSI Model? | Cloudflare](https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi)
+[^13]: [What is the OSI Model? Cloudflare](https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/#:~:text=Copy%20article%20link-,What%20is%20the%20OSI%20Model%3F,-The%20open%20systems)
 [^14]: [What is OSI Model | 7 Layers Explained | Imperva](https://www.imperva.com/learn/application-security/osi-model/)
