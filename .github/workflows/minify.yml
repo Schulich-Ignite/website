@@ -1,0 +1,22 @@
+name: Minify JS and CSS on pages branch
+
+on:
+  watch:
+    types: [started]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+    
+      - name: minisauras
+        uses: TeamTigers/minisauras@v2.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        id: dir
+        with:
+          directory: './' ## minify all files under root directory

@@ -1,0 +1,26 @@
+{{ range $index, $element := (where .Site.Pages "Type" "faq") }}
+{{ if  (.Params.question) }}
+
+  <div class="card expandable-card">
+    <div class="card-header" id="heading-{{$index}}">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-{{$index}}" aria-expanded="false"
+          aria-controls="collapse-{{$index}}">
+          <div class="btn-title">
+              <span class="btn-title-text">{{ .Params.question }}</span>
+              <span class="arrow-expand iconify" data-icon="ic:baseline-expand-more" data-inline="false"></span>
+              <span class="arrow-less iconify" data-icon="ic:baseline-expand-less" data-inline="false"></span>
+          </div>
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapse-{{$index}}" class="collapse" aria-labelledby="heading-{{$index}}" data-parent="#faq-questions">
+      <div class="card-body">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+
+{{ end }}
+{{ end }}

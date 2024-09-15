@@ -1,0 +1,169 @@
+{{ define "extra-js" }}
+<!-- lightbox stuff  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bs5-lightbox/1.8.3/index.bundle.min.js" integrity="sha512-wOwwlvSeaATXscQHfDsAUnt3cBBvrKkyf7lI+k/88X6x/fxtc678fTdKRNcxZxtRdpzYFiIqqW5uIRUiPlZJlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+{{ if .Params.video }}
+  <script src="/js/youtube-api.js"></script>
+{{ end }}
+{{ end }}
+
+{{ define "main" }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Params.title) }}
+<section class="section">
+    <div>
+        <a class="btn btn-secondary my-2 ml-5" href="/projects">&larr; Go back to Project Showcase</a>
+    </div>
+
+    <div class="container" >
+            <div class="card no-background">
+                <div class="card-body">
+                    <div id="article-info" class="card"> 
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card-body mt-2 single-project-">
+                                    <p class="card-text">
+                                        <i class="bi bi-calendar2-week-fill"></i> <time>{{ .Params.date.Format "Monday, Jan 2, 2006" }}</time>
+                                    </p>
+
+                                    <p class="card-text">
+                                        {{ if gt (math.Round (div .WordCount 238.0)) 1 }} {{/*Show if article is longer than 1 min read*/}}
+                                            <i class="bi bi-stopwatch-fill"></i><em>~{{math.Round (div .WordCount 238.0)}} {{/*238 is the average words/min read*/}} Minute Read</em>
+                                        {{ end }}
+                                        
+                                        {{ if .Params.tags }}
+                                            <br>
+                                            <em><i class="bi bi-tags-fill"></i></em>
+                                            {{ $tagLength := (len .Params.tags)}}
+                                            
+                                            {{- range $index, $currentTag := .Params.tags }}
+                                                {{- with $.Site.GetPage "taxonomyTerm" (printf "tags/%s" (urlize .)) }}
+                                                        <a href="{{ .Permalink }}">{{ .Params.Title }}</a>{{ if and (gt $tagLength 1) (lt $index (sub $tagLength 1))}},{{end}}
+
+                                                {{ end }}
+                                            {{ end }}
+                                        {{ end }}
+                                    </p>
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                {{ if .Params.authors }}
+                                    <h4>Author(s) information</h4>
+                                    <div id="author-information">
+
+                                    {{ $authorLength := (len .Params.authors)}}
+                                    {{- range $index, $currentAuthor := .Params.authors }}
+                                        {{ if gt $authorLength 1 }}
+                                            {{ if eq $index 0}}
+                                            <div class="row">
+                                            {{ end }}
+                                            <div class="col">
+                                        {{ end }}
+
+                                        {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+                                        
+                                            <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
+                                            {{if not .Params.avatar }}
+                                            <img width="100rem" src="https://api.dicebear.com/5.0/identicon/svg?seed={{ .Params.name }}" alt="">
+                                            {{ else }}
+                                            <img width="100rem" src="{{.Params.avatar}}" alt="">
+                                            {{end}}
+                                            </a>
+                                            <h6 class="card-title"><a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer"><br>{{ $currentAuthor }}</a></h6>
+                                            <div id="author-icons">
+                                                {{ if .Params.email }}
+                                                <a href="mailto:{{.Params.email }}" ><i class="bi bi-envelope-fill"></i></a>
+                                                {{ end }}
+                                                {{ if .Params.github }}
+                                                <a href="https://github.com/{{.Params.github }}" target="_blank"><i class="bi bi-github"></i></a>
+                                                {{ end }}
+                                                {{ if .Params.linkedin }}
+                                                <a href="https://linkedin.com/in/{{.Params.linkedin }}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                                                {{ end }}
+                                                {{ if .Params.website }}
+                                                <a href="{{ .Params.website }}" target="_blank"><i class="bi bi-globe"></i></a>
+                                                {{ end }}
+                                            </div>
+                                            <div class="text-primary" style="max-width:40ch;">
+                                                
+                                            {{  .Content }}
+                                            </div>
+                                            {{ if  gt $authorLength 1 }}
+                                            </div>
+                                                {{ if eq $index (sub $authorLength 1) }}
+                                                </div>
+                                                {{end}}
+                                            {{ end }}
+                                        
+                                        {{ end }}
+
+                                    {{ end }}
+                                    </div>
+
+                                {{ end }}
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <hr>
+
+    <div class="container mt-4">
+        {{ if .Params.image }}
+        <span>
+            <a href="{{ .Params.image }}" data-toggle="lightbox">
+                <img class="single-project-img rounded" src="{{ .Params.image }}" srcset="" alt="{{ .Params.title }} | {{ .Params.image_alt }}">
+            </a>
+        </span>
+        {{ end }}
+
+        {{ if .Params.video }}
+        <a href="#play-blog-video" data-toggle="modal" data-target="#play-blog-video" style="z-index:100">
+        <section class="section blog-video">
+        </section>
+        </a>
+        <div id="play-blog-video" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <div id="videoLink" style="display: none">https://youtu.be/{{.Params.video}}</div>
+                            <div id="infoVideoPlayer"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="card no-background">
+                <div class="card-body">
+                    <h1 class="card-title">{{ .Params.title }}</h1>                           
+                    <div class="card-text blog-text"> 
+                        {{ .Content }} 
+                    </div>
+
+                    {{ if .Params.link }}
+                    <a class="btn btn-secondary my-4" href="{{ .Params.link }}" target="_blank" rel="noopener noreferrer">View Project Code</a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

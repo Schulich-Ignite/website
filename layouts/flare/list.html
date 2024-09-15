@@ -1,0 +1,95 @@
+{{/* Metadata*/}}
+{{define "title"}}Flare | Schulich Ignite{{end}}
+{{define "og-title"}} Flare | Schulich Ignite{{end}}
+{{define "desc"}}Ignite Flare is an 8 week intermediate python course, split up into 1.5 hour sessions once a week.{{end}}
+{{define "og-desc"}}Ignite Flare is an 8 week intermediate python course, split up into 1.5 hour sessions once a week.{{end}}
+{{/*End of Metadata*/}}
+
+{{define "extra-js"}}
+<!-- lightbox stuff below  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bs5-lightbox/1.8.3/index.bundle.min.js" integrity="sha512-wOwwlvSeaATXscQHfDsAUnt3cBBvrKkyf7lI+k/88X6x/fxtc678fTdKRNcxZxtRdpzYFiIqqW5uIRUiPlZJlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{{end}}
+
+{{ define "main" }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Ignite Flare") }}
+<div class="container">
+    <div class="row">
+        <div class="column-md-12">
+            {{with .Site.GetPage "/flare/_index.md "}}
+            {{.Content}}
+            {{end}}
+
+            <h3>Here's what you can expect to build!</h3>
+            <div class="row">
+
+                <div class="col">
+                    <a href="/img/sessions/flare-1.gif" data-toggle="lightbox">
+                        <img class="img-fluid rounded" src="/img/sessions/flare-1.gif" alt="" srcset="">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="/img/sessions/flare-2.gif" data-toggle="lightbox">
+                        <img class="img-fluid rounded" src="/img/sessions/flare-2.gif" alt="" srcset="">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="/img/sessions/flare-3.gif" data-toggle="lightbox">
+                        <img class="img-fluid rounded" src="/img/sessions/flare-3.gif" alt="" srcset="">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="/img/sessions/flare-4.gif" data-toggle="lightbox">
+                        <img class="img-fluid rounded" src="/img/sessions/flare-4.gif" alt="" srcset="">
+                    </a>
+                </div>
+            </div>
+
+            <h2>How do I sign up?</h2>
+            {{ if eq "signup" .Site.Params.status }}
+                <p>We are currently looking for mentors and mentees. You can signup at the links below which will also have all the details about the times and dates the sessions will run.</p>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.menteeSignup }}" target="_blank"
+                            rel="noopener noreferrer">Signup to LEARN</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.mentorSignUp }}" target="_blank"
+                            rel="noopener noreferrer">Signup to TEACH</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                            <a class="btn btn-secondary singup-button" href="/contact" target=""
+                                rel="noopener noreferrer">See our FAQ</a>
+                        </div>
+                </div>
+                
+
+            {{ else }}
+
+            <p>We are not currently looking for mentors and mentees. You can signup for our newsletter with <a href="https://forms.gle/ZJoDAbcTf1M3NBxYA" target="_blank">this link</a> to be notified when the next set of sessions are available</p>
+
+            {{ end}}
+            {{ if eq "live" .Site.Params.status}}
+            <h2>Looking to submit an exercise?</h2>
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <a class="btn btn-secondary singup-button" href="{{ .Site.Params.submitFlare }}" target="_blank"
+                        rel="noopener noreferrer">Submit Exercise</a>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+    <section class="section single-item">
+        <div class="container">
+            <div class="row">
+                {{ range (where .Site.Pages.ByDate "Type" "flare") }}
+                    {{ partial "sessions-feed.html" .}}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    
+{{ end }}

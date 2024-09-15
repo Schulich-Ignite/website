@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+# when using the default proxy server port
+local_backend: true
+
+publish_mode: editorial_workflow
+media_folder: "static/img/blog" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/img/blog" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+- name: "blog" # Used in routes, e.g., /admin/collections/blog
+  label: "blog" # Used in the UI
+  folder: "content/blog" # The path to the folder where the documents are stored
+  create: true # Allow users to create new documents in this collection
+  slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  fields: # The fields for each document, usually in front matter
+    - {label: "Title", name: "title", widget: "string"}
+    - {label: "Subtitle", name: "subtitle", widget: "string"}
+    - {label: "Publish Date", name: "date", widget: "datetime", hint: "Specifies when the article should be published"}
+    - {label: "Modified Date", name: "modified_date", widget: "datetime", required: FALSE, hint: "Used if there is an update to the article", default: ""}
+    - {label: "Video", name: "video", widget: "string", required: FALSE}
+    - {label: "Featured Image", name: "image", widget: "image", required: FALSE}
+    - {label: "Authors", name: "authors", widget: "list", hint: "Specifies Who wrote the article, make sure the author already exists in `/content/authors/<author name>`"}
+    - {label: "Body", name: "body", widget: "markdown"}
+    - {label: "Tags", name: "tags", widget: "list"}

@@ -1,0 +1,28 @@
+{{ if eq "live" .Site.Params.status}}
+    {{ if .Params.ready }}
+    <div class="col-lg-4 spaced-col mb-4">
+        <div class="card with-header">
+            <div class="card-header">
+                Session {{ .Params.number }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ .Params.title }}</h5>
+                <p class="card-text">
+                    Published: <time>{{ .Params.date.Format "01/02/2006" }}</time>
+                </p>
+                <p class="card-text">{{ .Content }} </p>
+                <p class="card-text">
+                {{ if  (.Params.slides) }}
+                    <a href="{{ .Params.slides }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View the slides</a>
+                {{ end }}
+                {{ if  .Params.recording }}
+                <a href="{{ .Params.recording }}" target="_blank" rel="noopener noreferrer">
+                    <i style="font-size:2.3em" class="bi bi-play-circle-fill"></i>
+                </a>
+                {{ end }}
+                </p>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+{{end}}

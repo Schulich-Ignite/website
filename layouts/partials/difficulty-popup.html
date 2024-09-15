@@ -1,0 +1,23 @@
+{{ $defData := newScratch }} {{/* Create data store to gather difficulty info */}}
+{{$defData.Set "toolTipHTML" "<strong>You should know these terms/topics for this article</strong><ul>"}}
+
+{{/* Iterate difficulty parameter, 
+    find all definitions associated 
+    with the difficulty and put them
+    in a list with links to the definitions
+    then stuff those in the tooltip for the difficulty */}}
+
+{{- range $index, $currentTag := .Params.difficulty }}                                         
+    {{- with $.Site.GetPage (printf "difficulty/%s" (urlize $currentTag)) }}
+        {{- range $index, $currentDef := .Params.definitions }}
+            {{- with $.Site.GetPage (printf "definitions/%s" (urlize $currentDef)) }}
+                {{$defData.Add "toolTipHTML" (print "<li><a target='_blank' href='" .Permalink "'>" .Params.name "</a></li>")}}
+            {{end}}
+        {{end}}
+            <a id="difficulty-tooltip" href="{{.Permalink}}" target="_blank" data-toggle="tooltip" data-placement="top"  data-original-title='{{$defData.Get "toolTipHTML"}}' data-html="true">{{.Params.name}}</a>
+    {{end}}
+{{end}}
+
+
+
+

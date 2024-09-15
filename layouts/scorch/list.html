@@ -1,0 +1,93 @@
+{{/* Metadata*/}}
+{{define "title"}}Scorch | Schulich Ignite{{end}}
+{{define "og-title"}} Scorch | Schulich Ignite{{end}}
+{{define "desc"}}Ignite Scorch is an 8 week introduction to web development course, split up into 1.5 hour sessions once a week. The aim of the course is to give people a chance to explore web development, and learn the skills they need to get websites up and running. Since this is a more advanced course you will need to know the programming fundamentals taught in ignite beginner & ignite flare, but no prior web development experience is required.{{end}}
+{{define "og-desc"}}Ignite Scorch is an 8 week introduction to web development course, split up into 1.5 hour sessions once a week. The aim of the course is to give people a chance to explore web development, and learn the skills they need to get websites up and running. Since this is a more advanced course you will need to know the programming fundamentals taught in ignite beginner & ignite flare, but no prior web development experience is required.{{end}}
+{{/*End of Metadata*/}}
+
+{{define "extra-js"}}
+<!-- lightbox stuff below  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bs5-lightbox/1.8.3/index.bundle.min.js" integrity="sha512-wOwwlvSeaATXscQHfDsAUnt3cBBvrKkyf7lI+k/88X6x/fxtc678fTdKRNcxZxtRdpzYFiIqqW5uIRUiPlZJlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{{end}}
+
+{{ define "main" }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Scorch") }}
+<div class="container">
+    <div class="row">
+        <div class="column-md-12">
+            {{with .Site.GetPage "/scorch/_index.md "}}
+            {{.Content}}
+            <h3>Here's what you can expect to build!</h3>
+
+            <div class="row text-center">
+                <div class="col">
+                    <a href="/img/sessions/scorch-1.gif" data-toggle="lightbox">
+                        <img class="img-fluid rounded" src="/img/sessions/scorch-1.gif" alt="" srcset="">
+                    </a>
+                    <p>Mobile responsive sites!</p>
+                </div>
+                <div class="col">
+                    <a href="/img/sessions/scorch-2.gif" data-toggle="lightbox">
+                        <img class="img-fluid rounded" src="/img/sessions/scorch-2.gif" alt="" srcset="">
+                    </a>
+                    <p>Interactive sites with filtering and ability to add content</p>
+
+                </div>
+                <div class="col">
+                    <a href="/img/sessions/scorch-3.gif" data-toggle="lightbox">
+                        <img class="img-fluid rounded" src="/img/sessions/scorch-3.gif" alt="" srcset="">
+                    </a>
+                    <p>Sites that call other databases!</p>
+                    
+                </div>
+            </div>
+            {{end}}
+            <h2>How do I sign up?</h2>
+            {{ if eq "signup" .Site.Params.status }}
+                <p>We are currently looking for mentors and mentees. You can signup at the links below which will also have all the details about the times and dates the sessions will run.</p>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.menteeSignup }}" target="_blank"
+                            rel="noopener noreferrer">Signup to LEARN</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.mentorSignUp }}" target="_blank"
+                            rel="noopener noreferrer">Signup to TEACH</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <a class="btn btn-secondary singup-button" href="/contact" target=""
+                            rel="noopener noreferrer">See our FAQ</a>
+                    </div>
+                </div>
+                
+
+            {{ else }}
+
+            <p>We are not currently looking for mentors and mentees. You can signup for our newsletter with <a href="https://forms.gle/ZJoDAbcTf1M3NBxYA" target="_blank">this link</a> to be notified when the next set of sessions are available</p>
+            {{ end}}
+
+            {{ if eq "live" .Site.Params.status}}
+            <h2>Looking to submit an exercise?</h2>
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <a class="btn btn-secondary singup-button" href="{{ .Site.Params.submitScorch }}" target="_blank"
+                        rel="noopener noreferrer">Submit Exercise</a>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+    <section class="section single-item">
+        <div class="container">
+            <div class="row">
+                {{ range (where .Site.Pages.ByDate "Type" "scorch") }}
+                    {{ partial "sessions-feed.html" .}}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    
+{{ end }}

@@ -1,0 +1,9 @@
+<div class="row image-container">
+    {{ range where .Site.Pages.ByDate "Type" "sponsors" }}
+    {{ if  (.Params.name) }}
+    <div class="col-lg-2 col-sm-3 col-4">
+        <img src="{{ .Params.image }}" alt="{{ .Params.name }}" >
+    </div>
+    {{ end }}
+{{ end }}
+</div>

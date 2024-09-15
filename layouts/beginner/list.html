@@ -1,0 +1,96 @@
+{{/* Metadata*/}}
+{{define "title"}}Beginner | Schulich Ignite{{end}}
+{{define "og-title"}} Beginner | Schulich Ignite{{end}}
+{{define "desc"}}Ignite Beginner is an 8 week course, split up into 1.5 hour sessions once a week. The aim of the course is to give people an easy to understand introduction to the python programming language. Python is one of the most popular programming languages largely because of how easy it is to get into. We have also refined our sessions over the years to make them as welcoming as possible, while providing all the important information!{{end}}
+{{define "og-desc"}}Ignite Beginner is an 8 week course, split up into 1.5 hour sessions once a week. The aim of the course is to give people an easy to understand introduction to the python programming language. Python is one of the most popular programming languages largely because of how easy it is to get into. We have also refined our sessions over the years to make them as welcoming as possible, while providing all the important information!{{end}}
+{{/*End of Metadata*/}}
+
+{{define "extra-js"}}
+<!-- lightbox stuff below  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bs5-lightbox/1.8.3/index.bundle.min.js" integrity="sha512-wOwwlvSeaATXscQHfDsAUnt3cBBvrKkyf7lI+k/88X6x/fxtc678fTdKRNcxZxtRdpzYFiIqqW5uIRUiPlZJlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{{end}}
+
+{{ define "main" }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" "Ignite Beginner") }}
+
+    <div class="container">
+        <div class="row">
+            <div class="column-md-12">
+                {{with .Site.GetPage "/beginner/_index.md "}}
+                {{.Content}}
+                {{end}}
+
+                <h3>Here's what you can expect to build!</h3>
+                <div class="row">
+                    <div class="col">
+                        <a href="/img/sessions/beginner-1.gif" data-toggle="lightbox">
+                            <img class="img-fluid rounded" src="/img/sessions/beginner-1.gif" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="/img/sessions/beginner-2.gif" data-toggle="lightbox">
+                            <img class="img-fluid rounded" src="/img/sessions/beginner-2.gif" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="/img/sessions/beginner-3.gif" data-toggle="lightbox">
+                            <img class="img-fluid rounded" src="/img/sessions/beginner-3.gif" alt="" srcset="">
+                        </a>
+                    </div>
+                </div>
+
+                <h2>How do I sign up?</h2>
+                {{ if eq "signup" .Site.Params.status }}
+                    <p>We are currently looking for mentors and mentees. You can signup at the links below which will also have all the details about the times and dates the sessions will run.</p>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <a class="btn btn-secondary singup-button" href="{{ .Site.Params.menteeSignup }}" target="_blank"
+                                rel="noopener noreferrer">Signup to LEARN</a>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <a class="btn btn-secondary singup-button" href="{{ .Site.Params.mentorSignUp }}" target="_blank"
+                                rel="noopener noreferrer">Signup to TEACH</a>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <a class="btn btn-secondary singup-button" href="/contact" target=""
+                                rel="noopener noreferrer">See our FAQ</a>
+                        </div>
+                    </div>
+                    
+
+                {{ else }}
+
+                <p>We are not currently looking for mentors and mentees. You can signup for our newsletter with <a href="https://forms.gle/ZJoDAbcTf1M3NBxYA" target="_blank">this link</a> to be notified when the next set of sessions are available</p>
+
+                {{ end}}
+
+                {{ if eq "live" .Site.Params.status}}
+                <h2>Looking to submit an exercise?</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.submitBugBusters }}" target="_blank"
+                            rel="noopener noreferrer">Submit Bug Buster Exercise</a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <a class="btn btn-secondary singup-button" href="{{ .Site.Params.submitPythonicLava }}" target="_blank"
+                            rel="noopener noreferrer">Submit Pythonic Lava Exercise</a>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    <section class="section single-item">
+        <div class="container">
+            <div class="row">
+                {{ range (where .Site.Pages.ByDate "Type" "beginner") }}
+                    {{ partial "sessions-feed.html" .}}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+{{ end }}
+
+

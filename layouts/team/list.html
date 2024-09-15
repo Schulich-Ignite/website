@@ -1,0 +1,157 @@
+{{ define "main" }}
+{{ partial "diagonal-header.html" (dict "context" . "pageTitle" .Params.title ) }}
+    <section class="section" id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    {{ .Content }}
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Executive Team</h3>
+                </div>
+            </div>
+            <div class="row our-webcoderskull">
+                {{ $executiveTeam := sort (where .Data.Pages ".Params.team" "==" "exec") ".Params.role" "asc" }}
+
+                {{ range $executiveTeam }}
+                <div class="col-md-4 mb-4 spaced-col md-5">
+                    <div class="card highlight-card">
+                        <div class="embed-responsive embed-responsive-1by1">
+                            <img class="card-img-top embed-responsive-item" title="{{ .Params.name }}"
+                                src="{{ .Params.image | absURL }}">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ .Params.name }}</h5>
+                            <p class="card-text no-margin">
+                                <small class="text-muted">
+                                    {{ .Params.role }}
+                                </small>
+                                <hr>
+                            </p>
+                            <div class="card-text d-none d-xl-block">
+                                {{ .Content }}
+                            </div>
+                            <p class="card-text icons">
+                                {{ if .Params.linkedin }}
+                                <a href="{{ .Params.linkedin }}" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-linkedin is-large"></i>
+                                </a>
+                                {{ end }}
+                                {{ if .Params.email }}
+                                <a href="mailto:{{ .Params.email }}">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </a>
+                                {{ end }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+
+        <!--Only show if there are junior execs-->
+        {{ $juniorExecs := (where .Data.Pages ".Params.team" "==" "jr exec") }}
+        {{ $jeLength := len $juniorExecs }}
+        {{ if gt $jeLength 0}} 
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Junior Executive Team</h3>
+                </div>
+            </div>
+            <div class="row">
+                {{ range where .Data.Pages ".Params.team" "==" "jr exec"}}
+                <div class="col-md-3 mb-4 spaced-col md-5">
+                    <div class="card highlight-card">
+                        <div class="embed-responsive embed-responsive-1by1">
+                            <img class="card-img-top embed-responsive-item" title="{{ .Params.name }}" src="{{ .Params.image | absURL }}">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ .Params.name }}</h5>
+                            <p class="card-text no-margin">
+                                <small class="text-muted">
+                                    {{ .Params.role }}
+                                </small>
+                            </p>
+                            <hr>
+                            <p class="icons">
+                                {{ if .Params.linkedin }}
+                                <a href="{{ .Params.linkedin }}" target="_blank" rel="noopener noreferrer">
+                                    <i class="bi bi-linkedin is-large"></i>
+                                </a>
+                                {{ end }}
+                                {{ if .Params.email }}
+                                <a href="mailto:{{ .Params.email }}">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </a>
+                                {{ end }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        {{ end }}
+        
+        </div>
+    </section>
+
+    <section class="section single-item" id="contributors">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Other Contributors</h3>
+                </div>
+            </div>
+            <div class="row">
+                {{ range where .Data.Pages ".Params.team" "==" "none"}}
+                <div class="col-md-2 col-sm-4 col-6 spaced-col md-5">
+                    <div class="card no-background">
+                        <div class="embed-responsive embed-responsive-1by1" >
+                            {{ if .Params.linkedin }}
+                            <a href="{{ .Params.linkedin }}" target="_blank" rel="noopener noreferrer">
+                                <img class="card-img-top embed-responsive-item" title="{{ .Params.name }}" src="{{ .Params.image | absURL }}"style="border-radius: 50%;">
+                            </a>
+                            {{ else }}
+                                <img class="card-img-top embed-responsive-item" title="{{ .Params.name }}" src="{{ .Params.image | absURL }}"style="border-radius: 50%;">
+                            {{ end }}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ .Params.name }}</h5>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    {{ .Params.role }}
+                                </small>
+                            </p>
+
+                            <!--Adds icons to other contributors-->
+                            <!--
+                            <p class="card-text icons" style="font-size: 1.75em; margin-top: -15px;">
+                                {{ if .Params.linkedin }}
+                                <a href="{{ .Params.linkedin }}" target="_blank" rel="noopener noreferrer">
+                                    <span class="iconify" data-icon="ant-design:linkedin-filled" data-inline="false"></span>
+                                </a>
+                                {{ end }}
+                                {{ if .Params.email }}
+                                <a href="mailto: {{ .Params.email }}">
+                                    <span class="iconify" data-icon="clarity:email-solid" data-inline="false"></span>
+                                </a>
+                                {{ end }}
+                                {{ if .Params.github }}
+                                <a href="{{ .Params.github }}" target="_blank">
+                                    <span class="iconify" data-icon="ant-design:github-filled" data-inline="false"></span>
+                                </a>
+                                {{ end }}
+                            </p>-->
+
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+{{ end }}
