@@ -1,7 +1,7 @@
 baseURL = "https://schulichignite.com/"
 languageCode = "en-us"
 title = "Schulich Ignite"
-summaryLength = 20
+summaryLength = 20 
 relativeURLs = true
 
 [params]
