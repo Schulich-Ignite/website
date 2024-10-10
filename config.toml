@@ -14,12 +14,12 @@ relativeURLs = true
     menteeSignUp = ""
     ignitePoints = "https://docs.google.com/spreadsheets/d/1YwXV-09PoVZI0_yPvmnEHCQpg4NaA2JGvyP-xfdyBCM/edit?usp=sharing"
     sparkDocs    = "https://spark.schulichignite.com/"
-    submitBugBusters   = "https://docs.google.com/forms/d/e/1FAIpQLScwCd0u3Tcw8lxQTGhiU5DROfqKgBPkfrhVEKXdn9O-D7K6mg/viewform?usp=sf_link"
-    submitPythonicLava = "https://docs.google.com/forms/d/e/1FAIpQLSf7CEqEWACdKhn-rZape329ySsR3Zo5oBSdFEgvWxIYNI8ViQ/viewform?usp=sf_link"
-    submitScorch = "https://docs.google.com/forms/d/e/1FAIpQLSdjPwp-zFQCVFON7PWfL1jtCqcTds2yc9EmaqZdjowjKSQ-rA/viewform?usp=sf_link" 
-    submitFlare = "https://docs.google.com/forms/d/e/1FAIpQLSf17M81kmL-Y2pt5FDxsgHDOt3St299b30ft0oTdMcxa9iVSw/viewform?usp=sf_link"
-    current_startDate = 2024-02-18T14:15:59-06:00
-    current_endDate   = 2024-04-20T14:15:59-06:00
+    submitBugBusters   = "https://forms.gle/pXge52uyrJK4R5qaA"
+    submitPythonicLava = "https://forms.gle/Jmp7JKuGh251E5878"
+    submitScorch = "https://forms.gle/ZUR8dkqcrJLQCR6P9" 
+    submitFlare = "https://forms.gle/gSY5wERM1CzbejS76"
+    current_startDate = 2024-10-12T14:15:59-06:00
+    current_endDate   = 2024-12-20T14:15:59-06:00
     [params.links]
         youtube = "https://www.youtube.com/channel/UC7tNvdbu952HOUl_4nK7iww"
         instagram = "https://www.instagram.com/schulichignite"
