@@ -1,5 +1,5 @@
 ---
-name: "Suesh Padhi"
+name: "Sujesh Padhi"
 role: "VP Finance"
 team: "exec"
 image: "/img/gallery/sujesh_padhi.jpg"
