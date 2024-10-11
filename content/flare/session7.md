@@ -1,9 +1,9 @@
 ---
 title: "Best Practices, and Level Design"
 number: 7
-date: 2024-04-03T00:00:00-00:00
+date: 2024-11-20T00:00:00-00:00
 slides: "https://docs.google.com/presentation/d/10ZFVBxoU_VzJSXJ7Bq2HrnMu6VCshQGb8sO_kFSk-hw/edit?usp=share_link"
-recording: "https://www.youtube.com/watch?v=Zc-3UvVq2Ao"
+recording:
 ready: True
 ---
 
