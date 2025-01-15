@@ -14,10 +14,10 @@ relativeURLs = true
     menteeSignUp = ""
     ignitePoints = "https://docs.google.com/spreadsheets/d/1YwXV-09PoVZI0_yPvmnEHCQpg4NaA2JGvyP-xfdyBCM/edit?usp=sharing"
     sparkDocs    = "https://spark.schulichignite.com/"
-    submitBugBusters   = "https://forms.gle/pXge52uyrJK4R5qaA"
-    submitPythonicLava = "https://forms.gle/Jmp7JKuGh251E5878"
-    submitFlare = "https://forms.gle/ZUR8dkqcrJLQCR6P9"
-    submitScorch = "https://forms.gle/gSY5wERM1CzbejS76" 
+    # submitBugBusters   = "https://forms.gle/pXge52uyrJK4R5qaA"  # Combining BugBusters & PythonicLava
+    submitPythonicLava = "https://docs.google.com/forms/d/1H59Zvw9gNdKFATBSTlPXxLumVWx5eSylphy8pIvEep8/edit"
+    submitFlare = "https://docs.google.com/forms/d/12c0RPKAcboEoGlcK7XMZomHOvv04a2oAHIh0SGG9wkM/edit"
+    submitScorch = "https://docs.google.com/forms/d/15iRE_US5KRnIfnjGOwRn0fcp-RNCIismhKnN4m6b64Q/edit" 
     current_startDate = 2025-02-08T14:15:59-06:00
     current_endDate   = 2025-04-26T14:15:59-06:00
     [params.links]
