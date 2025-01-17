@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Python"
 number: 1
-date: 2024-10-17T00:00:00-00:00
+date: 2025-02-20T00:00:00-00:00
 slides: "https://docs.google.com/presentation/d/1BA1dj4BM_3ycLB81Il7CtbHLD5kJKhlNg6y9Ollyxd4/edit?usp=sharing"
 ready: True
 recording: "https://www.youtube.com/watch?v=PkMhgAtsLj8"
