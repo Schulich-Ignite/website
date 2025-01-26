@@ -1,5 +1,7 @@
 ## What is ignite Scorch?
 
+Note: Ignite Scorch will not be taught this Winter 2025 semester, we encourage you to take Python Beginner or Flare!
+
 Ignite Scorch is an 8 week introduction to web development course, split up into 1.5 hour sessions once a week. The aim of the course is to give people a chance to explore web development, and learn the skills they need to get websites up and running. Since this is a more advanced course you will need to know the programming fundamentals taught in [ignite beginner](/beginner) & [ignite flare](/flare), but **no prior web development experience is required**.
 
 ## What will I learn?
