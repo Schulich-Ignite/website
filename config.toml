@@ -10,8 +10,8 @@ relativeURLs = true
     # status = "signup"     # When recruitment is happening
     status = "live"        # When courses are live
     emailListSignup = "https://forms.gle/ZJoDAbcTf1M3NBxYA"
-    mentorSignUp = ""
-    menteeSignUp = ""
+    mentorSignUp = "https://forms.gle/zgjTLiWRL4U2VPgz7"
+    menteeSignUp = "https://forms.gle/QzRo1AB8MGRH5M7W8"
     ignitePoints = "https://docs.google.com/spreadsheets/d/1YwXV-09PoVZI0_yPvmnEHCQpg4NaA2JGvyP-xfdyBCM/edit?usp=sharing"
     sparkDocs    = "https://spark.schulichignite.com/"
     # submitBugBusters   = "https://forms.gle/pXge52uyrJK4R5qaA"  # Combining BugBusters & PythonicLava
