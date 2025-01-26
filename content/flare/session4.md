@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Inheritance and Sprites"
 number: 4
-date: 2024-11-06T00:00:00-00:00
+date: 2025-03-08T00:00:00-00:00
 slides: "https://docs.google.com/presentation/d/11EdZM12tBwzQ_UAl-yXM3h4LW7PPM674xczxVCOQNjo/edit?usp=share_link"
 recording:
 ready: True
