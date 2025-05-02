@@ -5,10 +5,10 @@ summaryLength = 20
 relativeURLs = true
 
 [params]
-    email = "info@schulichignite.com"
-    status = "closed" # When no recruitment is happening, and mailing list is available
+     email = "info@schulichignite.com"
+    #status = "closed" # When no recruitment is happening, and mailing list is available
     #status = "signup"     # When recruitment is happening
-    #status = "live"        # When courses are live
+    status = "live"        # When courses are live
     emailListSignup = "https://forms.gle/ZJoDAbcTf1M3NBxYA"
     mentorSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSdXLv6jBoZT5z_t8eyRwJkUM7RoZxqj3pB5Ygx1UrLj59V0YA/viewform?usp=header"
     menteeSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSdD1q0BnAZ6gfGJt4f3e1JXkaHGrJ9RtD5gKKxBhwtE9Gp_QA/viewform?usp=header"
