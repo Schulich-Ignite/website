@@ -8883,6 +8883,19 @@ body {
   justify-content: center;
 }
 
+.footer .row a {
+  padding-left: 10px;
+}
+
+.footer p {
+  margin-bottom: 0px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  font-weight: lighter;
+  color: var(--primary);
+}
+
 .diagonal-header {
   height: 120px;
   width: 100%;
@@ -9041,6 +9054,7 @@ body {
 #sponsors {
   text-align: center;
   padding-bottom: 30px;
+  margin-bottom: 80px;
 }
 
 .image-container {
