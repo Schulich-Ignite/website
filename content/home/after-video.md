@@ -22,22 +22,22 @@
 <br>
 
 {{< row >}}
-  {{%3-column%}}
+  {{%3-column-orange%}}
 
   ### Market Growth
   The growth for software development jobs is estimated to be **9-21%**, indicating that programmers will continue to be in high demand. 
 
-  {{%/3-column%}}
-  {{%3-column%}}
+  {{%/3-column-orange%}}
+  {{%3-column-orange%}}
 
   ### Financial Potential
   The average starting salary for software engineers in Canada ranges from $60,000 to over **$100,000** per year.
 
-  {{%/3-column%}}
-  {{%3-column%}}
+  {{%/3-column-orange%}}
+  {{%3-column-orange%}}
     
   ### Endless Possibilities
   Programming jobs are available in almost **every** industry. This includes health care, agriculture, business, education, automotives and more.
 
-  {{%/3-column%}}
+  {{%/3-column-orange%}}
 {{< /row >}}

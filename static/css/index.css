@@ -9853,3 +9853,17 @@ summary{
   object-fit: contain;
   margin-bottom: 1rem;
 }
+
+.orange-box {
+  padding: 0.5rem 2rem 0.5rem 2rem ;
+  height: 90%;
+  border-radius: 40px;
+  background-color: #fce5d7;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+.orange-box h3 {
+  font-size: 1.5rem;
+}
+
