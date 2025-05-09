@@ -108,6 +108,7 @@ The homepage is organized in to four main sections which can be controlled as fo
     
     - For each column, you need to provide:
         - an icon name from **iconify** (for example, ```twemoji:man-student``` displays a male student),
+            UPDATE: The icons have been changed to images which are stored in static/img/homepage
         - the title (which will be bolded),
         - and the description (which will be displayed below the title). 
     - Currently designed to best display **three** columns, although more are supported - each row will contain three columns.
@@ -133,24 +134,24 @@ The homepage is organized in to four main sections which can be controlled as fo
     <br>
     
     {{< row >}}
-      {{%3-column%}}
+      {{%3-column-orange%}}
     
       ### Title of column 1
       Content of column 1
     
-      {{%/3-column%}}
-      {{%3-column%}}
+      {{%/3-column-orange%}}
+      {{%3-column-orange%}}
     
       ### Title of column 2
       Content of column 2
     
-      {{%/3-column%}}
-      {{%3-column%}}
+      {{%/3-column-orange%}}
+      {{%3-column-orange%}}
     
       ### Title of column 3
       Content of column 3
     
-      {{%/3-column%}}
+      {{%/3-column-orange%}}
     {{< /row >}}
     
     ```
