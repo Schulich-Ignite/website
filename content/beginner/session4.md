@@ -1,7 +1,7 @@
 ---
 title: "Lists and an Introduction to Loops"
 number: 4
-date: 2025-11-03T00:00:00-00:00
+date: 2025-11-02T00:00:00-00:00
 slides: "https://docs.google.com/presentation/d/1Ggvc4LAgVqHhBPcHtPPOcbi1h1t2P0SAf7OnrO2WhNM/edit?usp=sharing"
 ready: True
 recording:
