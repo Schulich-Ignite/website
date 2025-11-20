@@ -18,6 +18,8 @@ jobs:
         uses: actions/checkout@master
         with:
           submodules: true
+          fetch-depth: 0  # Fetch all commit history
+          persist-credentials: false
 
       - name: Compress Images
         id: calibre
