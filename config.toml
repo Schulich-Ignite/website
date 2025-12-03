@@ -12,7 +12,7 @@ relativeURLs = true
     emailListSignup = "https://forms.gle/ZJoDAbcTf1M3NBxYA"
     mentorSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSdXLv6jBoZT5z_t8eyRwJkUM7RoZxqj3pB5Ygx1UrLj59V0YA/viewform?usp=header"
     menteeSignUp = "https://docs.google.com/forms/d/e/1FAIpQLSdD1q0BnAZ6gfGJt4f3e1JXkaHGrJ9RtD5gKKxBhwtE9Gp_QA/viewform?usp=header"
-    ignitePoints = "https://docs.google.com/spreadsheets/d/1YwXV-09PoVZI0_yPvmnEHCQpg4NaA2JGvyP-xfdyBCM/edit?usp=sharing"
+    ignitePoints = "https://docs.google.com/spreadsheets/d/1PkSAIxFbzmYER9eKCA5AMUOb-nRQntyz6yq20YorTLc/edit?usp=sharing"
     sparkDocs    = "https://spark.schulichignite.com/"
     # submitBugBusters   = "https://forms.gle/pXge52uyrJK4R5qaA"  # Combining BugBusters & PythonicLava
     submitPythonicLava = "https://docs.google.com/forms/d/1H59Zvw9gNdKFATBSTlPXxLumVWx5eSylphy8pIvEep8/edit"
